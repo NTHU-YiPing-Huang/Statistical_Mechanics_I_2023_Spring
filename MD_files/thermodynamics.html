@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thermodynamics as an effective theory &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Thermodynamics as an effective theory</a><ul>
+<li><a class="reference internal" href="#what-is-thermodynamics">What is thermodynamics?</a></li>
+<li><a class="reference internal" href="#how-to-go-from-microscopic-to-macroscopic">How to go from microscopic to macroscopic?</a><ul>
+<li><a class="reference internal" href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables">Microscopic theory, statistical mechanics and macroscopic observables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Thermodynamics as an effective theory</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/thermodynamics.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="thermodynamics-as-an-effective-theory">
+<h1>Thermodynamics as an effective theory<a class="headerlink" href="#thermodynamics-as-an-effective-theory" title="Permalink to this headline"></a></h1>
+<p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id2" title="Luca Peliti. Statistical mechanics in a nutshell. Princeton University Press, 2011.">Pel11</a>]</span> Chapter 2 and <span id="id2">[<a class="reference internal" href="biblio.html#id3" title="James Sethna. Statistical mechanics: entropy, order parameters, and complexity. Volume 14. Oxford University Press, USA, 2021.">Set21</a>]</span> 6.4</em></p>
+<section id="what-is-thermodynamics">
+<h2>What is thermodynamics?<a class="headerlink" href="#what-is-thermodynamics" title="Permalink to this headline"></a></h2>
+<p>Thermodynamics is a phenomenological theory. Phenomenological theory means it is based on observed phenomena or based on experiments. However, the microscopic question such as why the macroscopic system behaves in a specific way given we assume how the microscopic components interact with each other is not within the describability region of a phenomenological theory.</p>
+<p>What phenomenological theory provides is the relation between different macroscopic quantities. For example, we will discuss energy, temperature, pressure, volume, particle number, chemical potential, free energy, <em>etc.</em> . Of course, those quantities are related to each other by several equations. Thermodynamics provides a framework to start from a minimum set of axioms such that we are able to derive the core relations and use them to construct various relations between those quantities that we need to explain our experiments.</p>
+<p>The logic is like we have a set of experiments; we might construct some relations using this particular set of experimental data. Then, we apply the set of rules to other systems. Of course, this set of rules could work or fail. If it works, we keep it into our phenomenological theory. If it doesn’t, we try to find ways to fix it by including other rules.  After exploring a huge set of experiments, we reformulate our theory by finding physical arguments to keep the core relations. We iterated this process for a long time; now, we have the thermodynamics in our textbook that can be applied to various systems.</p>
+<figure class="align-default" id="micro-macro-1">
+<a class="reference internal image-reference" href="../_images/micro_macro_1.png"><img alt="../_images/micro_macro_1.png" src="../_images/micro_macro_1.png" style="width: 750px;" /></a>
+<figcaption>
+<p><span class="caption-text">The microscopic physics and connection with macroscopic physics.</span><a class="headerlink" href="#micro-macro-1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="how-to-go-from-microscopic-to-macroscopic">
+<h2>How to go from microscopic to macroscopic?<a class="headerlink" href="#how-to-go-from-microscopic-to-macroscopic" title="Permalink to this headline"></a></h2>
+<p>Different systems might have very different microscopic descriptions. Therefore, going from microscopic physics to macroscopic physics also varies. It is usually challenging to derive the macroscopic expressions from microscopic theories. The challenge lies in the microscopic degrees of freedom that interact with each other.</p>
+<p>In this course, as many textbooks did, we will start from the idealized limit where the microscopic theory is “simple” in the sense that they do not have interaction. Those models are usually too naive to describe real physical systems. However, the non-interacting limit allows us to go pretty far and make an explicit connection with the macroscopic observables. In that sense, they are very useful for us to formulate abstract ideas in statistical mechanics. We will formally describe the idea of statistical mechanics and use those non-interacting systems to build some intuition about the meaning of the system.</p>
+<p>Once we know what happened in non-interacting systems, we can use them as a starting point to treat the interaction effects through mean-field treatment or perturbative pictures. With those examples, it helps us to develop a picture of how we can go from microscopic theory to macroscopic description, at least in principle.</p>
+<p>Of course, those examples are introduced because they are tractable and well studied. There are more interesting systems that are still under active research. We will not be able to cover them all. I will try to mention some of them during the lectures.</p>
+<section id="microscopic-theory-statistical-mechanics-and-macroscopic-observables">
+<h3>Microscopic theory, statistical mechanics and macroscopic observables<a class="headerlink" href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables" title="Permalink to this headline"></a></h3>
+<p>I mentioned microscopic theory in the last section. What does it mean? The definition of microscopic physics is not very sharp. Usually, in condensed matter physics, what we mean by microscopic refers to the scale below or around atomic scales. For example, when we study the thermodynamic property of salt (<span class="math notranslate nohighlight">\(NaCl\)</span>), the microscopic degrees of freedom will be the ions <span class="math notranslate nohighlight">\(Na^+\)</span>, <span class="math notranslate nohighlight">\(Cl^-\)</span> and the electrons surrounding them. In practice, understanding those degrees of freedom is still quite challenging. The nuclei of <span class="math notranslate nohighlight">\(Na^+\)</span> and <span class="math notranslate nohighlight">\(Cl^-\)</span> will interact with electrons. The nuclei could oscillate. The electrons could interact with each other, <em>etc.</em></p>
+<p>At the microscopic scale defined above, we are facing a quite complicated system. There are at least three families of degrees of freedom: the nuclei of <span class="math notranslate nohighlight">\(Na^+\)</span>, the nuclei of <span class="math notranslate nohighlight">\(Cl^-\)</span> and the electrons. All of them are interact with each other. Even worse, we are talking about <span class="math notranslate nohighlight">\(10^{23}\)</span> of them. How should we analyze a system with such high complexity?</p>
+<p>There are at least two routes:</p>
+<ol class="simple">
+<li><p>Find a good computer and try to use the computational power to understand the complicated behavior of the system.</p></li>
+<li><p>Make some approximation. When we drop some information, maybe we will be able to analyze the problem. Then we compare with experiments to see if the approximation we made at the very beginning makes sense.</p></li>
+</ol>
+<p>How to proceed using different routes is related to condensed matter physics, so I am not going to elaborate on them further. The point is, no matter which route we take, we will eventually get the information of the energy spectrum if the approach works. Depending on our approach, the spectrum might be discrete, or it might be continuous. The energy spectrum we derived will depend on the microscopic parameters that characterize the system. With the information of the spectrum(derived with various routes), statistical mechanics provides a protocol to convert that information into the macroscopic measurable quantities such as specific heat, magnetization, <em>etc.</em> Then one can compare our calculations with the real experiments and see if we can learn something from the experiments to construct what happened at the microscopic scale. The result will not be identical to the experiments since we usually need to make certain approximations to proceed. The difference between our calculation and the experiments provides hints on improving our approximation or abandon the theoretically proposed microscopic picture. By iterating this process and comparing the experiments and theoretical predictions back and forth, we will eventually reach some conclusion, if we are lucky.</p>
+<figure class="align-default" id="micro-macro-logic-2">
+<a class="reference internal image-reference" href="../_images/micro_macro_logic_2.png"><img alt="../_images/micro_macro_logic_2.png" src="../_images/micro_macro_logic_2.png" style="width: 750px;" /></a>
+<figcaption>
+<p><span class="caption-text">How statistical mechanics helps us understanding the physics at microscopic level.</span><a class="headerlink" href="#micro-macro-logic-2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>That means statistical mechanics provides a way to extract finer information about what happened at the microscopic scale. That is very helpful for us to develop a picture that can bridge the macroscopic behavior using microscopic pictures.</p>
+<p>The astonishing part of thermodynamics is that we can describe the macroscopic system using relatively few physical quantities. Regularity emerges out of a macroscopic number of degrees of freedom. It is not obvious that we could find a way to describe the essential information of the macroscopic system with <span class="math notranslate nohighlight">\(10^{23}\)</span> degrees of freedom. A theory that captures the essential physics of the system with relatively small sets of physical observables is the <strong>effective theory</strong> of our complex system. It means we can understand the complex system effectively using our effective theory. <strong>Effective theory</strong> and the concept of <strong>emergent phenomena</strong> form the backbone of modern condensed matter physics and have profoundly influence other research fields. We will discuss the concept of emergent phenomena in the next section.</p>
+<figure class="align-default" id="directive-fig">
+<a class="reference internal image-reference" href="../_images/StatMech_roadmap.png"><img alt="../_images/StatMech_roadmap.png" src="../_images/StatMech_roadmap.png" style="width: 750px;" /></a>
+<figcaption>
+<p><span class="caption-text">The roadmap of the course!</span><a class="headerlink" href="#directive-fig" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

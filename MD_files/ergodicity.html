@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ergodicity &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Ergodicity</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Ergodicity</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/ergodicity.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ergodicity">
+<h1>Ergodicity<a class="headerlink" href="#ergodicity" title="Permalink to this headline"></a></h1>
+<p>Here we will introduce an abstract concept– ergodicity. The idea provides a connection between time-evolution and the statistical description of the system. However, prove a system is ergodic or not is in general difficult. (That’s why I skip the discussion during the lecture. For those who are interested in this concept, please check <span id="id1">[<a class="reference internal" href="biblio.html#id3" title="James Sethna. Statistical mechanics: entropy, order parameters, and complexity. Volume 14. Oxford University Press, USA, 2021.">Set21</a>]</span> and the related references.) Therefore, the approach is usually we assume our system is ergodic. Then, we argue the <strong>time average</strong> equals <strong>micro canonical averages</strong>. We will discuss the concept of ergodicity here and the concept of <strong>micro canonical ensemble</strong> later.</p>
+<p>In the study of statistical mechanics, we are trying to describe the observables of many-body system under time-evolution using statistical description. The bottleneck that we are trying to pass is how to go from time-evolution to statistics? The Liouville’s theorem suggest that understanding the time-evolution in phase space is a good approach as it has the nice properties 3 that we discussed in the last section, <em>i.e.</em> it is possible to have a probability density function <span class="math notranslate nohighlight">\(\rho\)</span> does not depends on <span class="math notranslate nohighlight">\(t\)</span> explicitly. But it does not tell us how to derive the probability density function.</p>
+<p>The time average starting at initial condition <span class="math notranslate nohighlight">\(\xi(t=0)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\overline{O(t=0)}\equiv \lim_{T\to\infty} \frac{1}{T}\int_{0}^{T} dt O(\xi(t))\text{.}
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(O\)</span> is well behaved, we expect <span class="math notranslate nohighlight">\(\overline{O(t=0)}=\overline{O(t=t')}\)</span>. That is, the long time average should not depends on the value of <span class="math notranslate nohighlight">\(O\)</span> during the time interval <span class="math notranslate nohighlight">\((0,t')\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\overline{O(t=0)}\equiv \lim_{T\to\infty} \frac{1}{T}\int_{0}^{T} dt O(\xi(t))\\
+\overline{O(t=t')}\equiv \lim_{T\to\infty} \frac{1}{T}\int_{t'}^{T} dt O(\xi(t))\text{.}
+\end{split}\]</div>
+<p>Therefore, we found the long time averages are constant on trajectories.</p>
+<p>Since <span class="math notranslate nohighlight">\(\overline{O}\)</span> is constant on trajectories. The microcanonical ensemble average of a constant is still a constant. <em>i.e.</em></p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{\overline{O}=a^*=\langle \overline{O} \rangle}_{\text{long time average is constant}}=\langle  \lim_{T\to\infty} \frac{1}{T}\int_{0}^{T} dt O(\xi(t))\rangle=\lim_{T\to\infty} \frac{1}{T}\int_{0}^{T} dt \langle  O(\xi(t))\rangle=\langle  O \rangle
+\]</div>
+<p>Because of the nice properties 3 from Liouville’s theorem, the micro canonical ensemble  was time independent and the ensemble average equals to the time average.</p>
+<div class="tip admonition">
+<p class="admonition-title">Note</p>
+<p>The microcanonical ensemble that we are going to discuss later means we average over all apossible phase space configuration with equal weight.</p>
+<div class="math notranslate nohighlight">
+\[
+\langle O\rangle\equiv \frac{1}{|\Gamma|}\sum_{\xi\in\Gamma} O(\xi)\text{.}
+\]</div>
+</div>
+<p>The ergodicity support that</p>
+<div class="math notranslate nohighlight">
+\[
+\overline{O}=\langle O\rangle\text{.}
+\]</div>
+<p>We will discuss the idea of micro canonical ensemble in the next section such that we will establish</p>
+<div class="math notranslate nohighlight">
+\[
+\langle O\rangle=O_{eq}\text{.}
+\]</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

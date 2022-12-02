@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canonical ensemble &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Canonical ensemble</a><ul>
+<li><a class="reference internal" href="#the-energy-fluctuation">The energy fluctuation</a></li>
+<li><a class="reference internal" href="#the-ideal-gas-model-canonical-ensemble">The ideal gas model (canonical ensemble)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Canonical ensemble</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/c_ensemble.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="canonical-ensemble">
+<h1>Canonical ensemble<a class="headerlink" href="#canonical-ensemble" title="Permalink to this headline"></a></h1>
+<p>We have introduce the micro canonical ensemble which has fixed total energy. However, we usually did not have control over the energy. Instead, we can control the temperature of the system. One question is: can we form ensemble theory under the fixed temperature constraint instead of the fixed energy constraint? It turns out the corresponding ensemble with fixed temperature is the canonical ensemble. To go from the micro canonical ensemble where the probability of microscopic state <span class="math notranslate nohighlight">\(\xi\)</span> is <span class="math notranslate nohighlight">\(P(\xi)=\frac{1}{|\Gamma_E|}\)</span>, to canonical ensemble, the modification we need to make is to modify the probability such that it is proportional with the Boltzmann factor, <em>i.e.</em>, <span class="math notranslate nohighlight">\(P(\xi)\propto \exp\left[-\frac{H(\xi)}{k_BT}\right]\)</span>.</p>
+<p>To derive this conclusion, we put our system into thermal contact with a reservoir at fixed temperature <span class="math notranslate nohighlight">\(T\)</span>. Now our composite system (contains the system that we are interested in and the reservoir) is considered as an isolated system with fixed total energy, <span class="math notranslate nohighlight">\(E_t\)</span>, so we can use the micro canonical ensemble to describe the composite system. Let’s use <span class="math notranslate nohighlight">\(\xi_s\)</span> and <span class="math notranslate nohighlight">\(\xi_R\)</span> to represent the microscopic configurations of our system and the reservoir. The expectation value of observable <span class="math notranslate nohighlight">\(A\)</span> defined on the system is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle A\rangle=\frac{1}{|\Gamma_{E_t}|}\int d\xi_R\int d\xi_s A(\xi_s) \delta(H^{(s)}(\xi_s)+H^{(R)}(\xi_R)-E_t)\\
+=\frac{1}{|\Gamma_{E_t}|}\int d\xi_s A(\xi_s) \underbrace{\int d\xi_R\delta(H^{(s)}(\xi_s)+H^{(R)}(\xi_R)-E_t)}_{|\Gamma_R(E_t-H^{(s)}(\xi_s))|=\exp\left[k_B^{-1} S_R(E_t-H^{(s)}(\xi_s))\right]}\\
+\approx \frac{1}{|\Gamma_{E_t}|}\int d\xi_s A(\xi_s) \exp\left[k_B^{-1} \left( S_R(E_t)-\underbrace{\left.\frac{\partial S_R}{\partial E}\right|_{E_t}}_{T^{-1}} H^{(s)}(\xi_s)+\cdots \right)\right]
+\end{split}\]</div>
+<p>In the last line, we expand the entropy <span class="math notranslate nohighlight">\(S_R\)</span> around the total energy <span class="math notranslate nohighlight">\(E_t\)</span>. Since the reservoir is huge comparing with our target system. So we can expand the expression around <span class="math notranslate nohighlight">\(E_t\)</span> By definition, <span class="math notranslate nohighlight">\(\langle A \rangle=\int d\xi_s A(\xi_s) P(\xi_s)\)</span>. From the above expression, we have shown</p>
+<div class="math notranslate nohighlight">
+\[
+P(\xi_s)\propto \exp\left[-\frac{H^{(s)}(\xi_s)}{k_BT}\right]\text{.}
+\]</div>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>Why can we assume <span class="math notranslate nohighlight">\(A\)</span> only depends on <span class="math notranslate nohighlight">\(\xi_s\)</span>? The derivation above is true when we can have our observable defined on the support of the system’s microscopic configurations <span class="math notranslate nohighlight">\(\xi_s\)</span>. It turns out most of the observable related to the system can be defined in this way. For example, the volume of the system will depends only on the microscopic configurations of the target system. How about the energy of the system?</p>
+</div>
+<p>Once we know the probability is proportional with the Boltzmann factor, <span class="math notranslate nohighlight">\(\exp\left[-\frac{H^{(s)}(\xi_s)}{k_BT}\right]\)</span>. We can normalize the probability <span class="math notranslate nohighlight">\(P(\xi_s)\)</span>. The normalization factor is the partition function</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Z=\left\{
+\begin{array}{c}
+\sum_{\xi_s}\exp\left[-\frac{H^{(s)}(\xi_s)}{k_BT}\right]\\
+\int d\xi_s\exp\left[-\frac{H^{(s)}(\xi_s)}{k_BT}\right]
+\end{array}
+\right.
+\text{.}
+\end{split}\]</div>
+<p>When <span class="math notranslate nohighlight">\(\xi\)</span> is treated as continuous variable, we can represent the expectation value of observable <span class="math notranslate nohighlight">\(A\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+\langle A\rangle =\int d\xi A(\xi) P(\xi)=\frac{1}{Z}\int dE'\underbrace{\left\{\int d\xi \delta( H(\xi)-E' ) A(\xi)\right\}}_{a^*(E')e^{\frac{S(E')T}{k_BT}}} exp\left[-\frac{E'}{k_BT}\right]\text{.}
+\]</div>
+<p>Here, the integral in the curly parentheses is the average value of <span class="math notranslate nohighlight">\(A\)</span> in the micro canonical ensemble picture. As we have learned, the configuration number in micro canonical ensemble is overwhelmed by the configurations with equilibrium value <span class="math notranslate nohighlight">\(a^*\)</span>. So this integral can be approximated by the equilibrium value at <span class="math notranslate nohighlight">\(E'\)</span> times the phase space volume which can be expressed as the exponential of entropy according to the Boltzmann’s postulate.</p>
+<p>So we have</p>
+<div class="math notranslate nohighlight">
+\[
+\langle A\rangle =\frac{1}{Z}\int dE'a^*(E')exp\left[-\frac{E'-TS(E')}{k_BT}\right]\text{.}
+\]</div>
+<p>If we stare at this expression, we can realize the degenerate configurations in the energy, <span class="math notranslate nohighlight">\(E'\)</span>, is captured by the entropy <span class="math notranslate nohighlight">\(S(E')\)</span>.</p>
+<p>Here, if we make a reasonable assumption that <span class="math notranslate nohighlight">\(a^*(E')\)</span> varies slowly comparing with the exponential function. We can use the saddle point approximation. The integral is dominated by the contribution that <span class="math notranslate nohighlight">\(E'=E^*\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\left.\frac{\partial}{\partial E'}\left( E'-TS(E')\right)\right|_{E'=E^*}=0\text{.}
+\]</div>
+<p>This equation leads to</p>
+<div class="math notranslate nohighlight">
+\[
+\left.\frac{\partial S}{\partial E}\right|_{E^*}=T\text{.}
+\]</div>
+<p>That is, the integral is dominated by the energy such that the corresponding temperature is the equilibrium temperature <span class="math notranslate nohighlight">\(T\)</span>. <em>i.e.</em> the equilibrium energy <span class="math notranslate nohighlight">\(E^*=\langle H\rangle\)</span>. Similarly, the partition function will also have similar behavior.</p>
+<div class="math notranslate nohighlight">
+\[
+Z\approx \exp\left[-\frac{E^*-TS(E^*)}{k_BT}\right]\equiv \exp\left[-\frac{F}{k_BT}\right]\text{.}
+\]</div>
+<p>Once we got <span class="math notranslate nohighlight">\(Z\)</span>, we can easily connect it with the Helmholtz free energy <span class="math notranslate nohighlight">\(F\)</span> by</p>
+<div class="math notranslate nohighlight">
+\[
+F=-k_BT\ln Z\text{.}
+\]</div>
+<p>So statistical mechanics can bridge the microscopic picture with thermodynamics! Even more, it provides the probability for each microscopic configuration <span class="math notranslate nohighlight">\(P(\xi)\)</span>. To some extend, we have finer information so we can make further predictions about our system beyond conventional thermodynamics! Here we use the following calculation to show this point.</p>
+<section id="the-energy-fluctuation">
+<h2>The energy fluctuation<a class="headerlink" href="#the-energy-fluctuation" title="Permalink to this headline"></a></h2>
+<p>The expectation value of the energy for continuous <span class="math notranslate nohighlight">\(\xi\)</span> can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+\langle H\rangle =\int d\xi H(\xi) P(\xi)=\frac{1}{Z}\int d\xi H(\xi)\exp\left[-\beta H(\xi)\right]\text{.}
+\]</div>
+<p>Here, we follow the convention to denote <span class="math notranslate nohighlight">\((k_BT)^{-1}\)</span> as <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{\partial \ln Z(\beta)}{\partial \beta}=-\int d\xi H(\xi) \frac{e^{-\beta H(\xi)}}{Z} =-\langle H\rangle =-E\propto N\\
+\frac{\partial^2 \ln Z(\beta)}{\partial \beta^2}= \langle H^2\rangle-\langle H\rangle^2=\frac{\partial (-E)}{\partial \beta}=k_BT^2\frac{\partial E}{\partial T}=k_BT^2C\propto N\ge0\text{.}
+\end{split}\]</div>
+<p>So we have the very important result of the <em>Fluctuation-dissipation theorem</em>!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\underbrace{\langle H^2\rangle-\langle H\rangle^2}_{\substack{\text{fluctuation}\\ \text{in energy}}}=k_BT^2\times \underbrace{C}_{\substack{\text{specific heat,}\\ \text{thermodynamic quantity}}}\text{.}
+\end{split}\]</div>
+<p>Through statistical mechanics, we found the specific heat(macroscopic quantity) is related to the fluctuation(microscopic picture) in energy!</p>
+</section>
+<section id="the-ideal-gas-model-canonical-ensemble">
+<h2>The ideal gas model (canonical ensemble)<a class="headerlink" href="#the-ideal-gas-model-canonical-ensemble" title="Permalink to this headline"></a></h2>
+<p>The partition function is</p>
+<div class="math notranslate nohighlight">
+\[
+Z=\frac{1}{N!}\int \left(\prod_{i=1}^{N}\frac{d \textbf{R}d\textbf{P}}{h^3}\right) \exp\left[-\beta \sum_{j=1}^N\frac{\textbf{P}_j^2}{2m}\right]
+=\frac{V^N}{N!}\left\{\int \frac{d P}{h} \exp\left[-\beta \frac{P^2}{2m}\right]\right\}^{3N}=\frac{1}{N!}\left(\frac{V}{\lambda^3}\right)^N\text{.}
+\]</div>
+<p>In the second equality, we integrate over the space and use the fact that the momentum integral over each component of each particle factorizes. Here, the Gaussian integral over momentum give us the result that can be expressed by the de Broglie wave length, <span class="math notranslate nohighlight">\(\lambda=\sqrt{\frac{h^2}{2\pi mk_BT}}\)</span>.</p>
+<p>The Helmholtz free energy can be calculated by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{-F}{k_BT}=\ln Z\xrightarrow{\text{Stirling's approximation}} N\ln\left[ e \frac{V/N}{\lambda^3}\right]\text{.}
+\]</div>
+<p>When the average occupied space for each particle is much larger then the unit of volume formed by the de Broglie wave length, the wave function overlap can be ignored, so we don’t need to worry about the quantum statistics (<em>i.e.</em> the Bose/Fermi statistics). Once we have the Helmholtz free energy, we can derive other thermodynamic quantities easily.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

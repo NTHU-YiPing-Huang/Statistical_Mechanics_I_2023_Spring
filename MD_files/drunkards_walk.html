@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drunkard’s walk &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Drunkard’s walk</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Drunkard’s walk</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/drunkards_walk.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="drunkard-s-walk">
+<h1>Drunkard’s walk<a class="headerlink" href="#drunkard-s-walk" title="Permalink to this headline"></a></h1>
+<p>We can generalize the idea a little bit into the two-dimensional case. Suppose we have a drunk guy leaving a bar. The guy is drunk to the suitable level that he can keep the size of each step but lose the ability to be oriented. So the direction of each step is random. We can use a randomly oriented vector of length <span class="math notranslate nohighlight">\(L\)</span>, <span class="math notranslate nohighlight">\(\textbf{l}_j=L(\cos\theta_j,\sin\theta_j)\)</span>, to denote the <span class="math notranslate nohighlight">\(j\)</span>-th step of the drunk guy. By definition, we also have <span class="math notranslate nohighlight">\(\langle \textbf{l}_m\cdot\textbf{l}_n\rangle=L^2\langle\cos(\theta_m-\theta_n)\rangle=0\)</span> since <span class="math notranslate nohighlight">\(\theta_m\)</span> and <span class="math notranslate nohighlight">\(\theta_n\)</span> are random angles.</p>
+<figure class="align-default" id="d-rw-fig">
+<a class="reference internal image-reference" href="../_images/2D_RW_4.png"><img alt="../_images/2D_RW_4.png" src="../_images/2D_RW_4.png" style="width: 750px;" /></a>
+<figcaption>
+<p><span class="caption-text">Two-dimensional drunkard’s walk.</span><a class="headerlink" href="#d-rw-fig" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>What is the probability for a specific value of <span class="math notranslate nohighlight">\(\theta_j\)</span>? That is, what is <span class="math notranslate nohighlight">\(P(\theta_j)\)</span>?</p>
+</div>
+<p>Similarly, we can define the position of the drunk guy after <span class="math notranslate nohighlight">\(N\)</span> steps as</p>
+<div class="math notranslate nohighlight">
+\[
+  \textbf{X}_N=\sum_{j=1}^{N}\textbf{l}_j.
+\]</div>
+<p>We can evaluate <span class="math notranslate nohighlight">\(\langle \textbf{X}_N\rangle\)</span> as following</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \textbf{X}_N^2\rangle\equiv\langle (\textbf{X}_{N-1}+\textbf{l}_N)^2\rangle=\langle (\textbf{X}_{N-1})^2\rangle+\underbrace{\langle (\textbf{l}_{N})^2\rangle}_{L^2}+2\underbrace{\langle \textbf{X}_{N-1}\cdot\textbf{l}_N\rangle}_{=0}=\langle \textbf{X}_{N-1}^2\rangle+L^2.
+\]</div>
+<p>Iterate this relation, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \textbf{X}_N^2\rangle=NL^2
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_{\textbf{X}_N}=\sqrt{N}L.
+\]</div>
+<p>To compare with our previous one-dimensional case, we can set <span class="math notranslate nohighlight">\(L=1\)</span>, and we have <span class="math notranslate nohighlight">\(\sigma_{\textbf{X}_N}=\sqrt{N}\)</span>. From here, we can also generalize the idea into <span class="math notranslate nohighlight">\(D\)</span> dimensional randomly oriented walk with a unit step size. The r.m.s should also be <span class="math notranslate nohighlight">\(\sqrt{N}\)</span>.</p>
+<p>If we ask the question in a reverse way: what kind of path will be (statistically) away from the origin with distance <span class="math notranslate nohighlight">\(\sqrt{N}\)</span> after <span class="math notranslate nohighlight">\(N\)</span> steps? The answer will be the randomly oriented path.</p>
+<p>Another interesting point to notice is we start from the one-dimensional case. Then, we modify our problem by considering additional dimensions. If we keep the assumption that the orientation of the higher dimensional case is also random, we will always have the r.m.s behavior of <span class="math notranslate nohighlight">\(\sqrt{N}\)</span>.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

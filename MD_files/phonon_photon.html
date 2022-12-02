@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phonon and photon &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Phonon and photon</a><ul>
+<li><a class="reference internal" href="#phonon">Phonon</a><ul>
+<li><a class="reference internal" href="#the-phonon-band-structure">The phonon band structure</a></li>
+<li><a class="reference internal" href="#classical-1d-sound-wave">Classical 1D sound wave</a></li>
+<li><a class="reference internal" href="#debye-model">Debye model</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#photon">Photon</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Phonon and photon</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/phonon_photon.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="phonon-and-photon">
+<h1>Phonon and photon<a class="headerlink" href="#phonon-and-photon" title="Permalink to this headline"></a></h1>
+<p>We are going to discuss the statistical mechanics for phonon and photon. Here, we will brief discuss the origin of phonon and photon. The discussion will just focus on the physics and the relevant formalism to derive statistical mechanics descriptions. For readers who want to review details of the derivation, we will refer to the nice reference <span id="id1">[<a class="reference internal" href="biblio.html#id10" title="Steven H Simon. The Oxford solid state basics. OUP Oxford, 2013.">Sim13</a>]</span>.</p>
+<section id="phonon">
+<h2>Phonon<a class="headerlink" href="#phonon" title="Permalink to this headline"></a></h2>
+<p>Phonons are the quantum of sound wave. Therefore, in order to understand it, we need to have a rough picture of sound wave in solid. To get the core concept, we will focus on the simplest type of phonon: phonon in simple lattice system.</p>
+<section id="the-phonon-band-structure">
+<h3>The phonon band structure<a class="headerlink" href="#the-phonon-band-structure" title="Permalink to this headline"></a></h3>
+<p>Symmetries usually help us simplify the analysis the problems. The lattice system has a <em>discrete</em> translational symmetry. How to use this symmetry to simplify the analysis of our problem?</p>
+<p>In a system with <em>continuous</em> translation symmetry, the momentum is conserved. So we usually use momentum to label the eigen states of our system.</p>
+<p>For system with <em>discrete</em> translation symmetry, we can similarly use the crystal momentum vector <span class="math notranslate nohighlight">\(\textbf{k}\)</span> to label the eigen states.</p>
+<p>Let’s start from the simple one-dimensional system. The system contains two length scale.</p>
+<ol class="simple">
+<li><p>From the discrete translation symmetry with lattice constant <span class="math notranslate nohighlight">\(a\)</span>. <em>i.e.</em> <span class="math notranslate nohighlight">\(H(x)=H(x+a)\)</span> (Physics constraint!).</p></li>
+<li><p>Usually, we consider the periodic boundary condition. <em>i.e.</em> <span class="math notranslate nohighlight">\(H(x)=H(x+L)\)</span>(Convenient choice of boundary condition!). For later convenience, we assume we have <span class="math notranslate nohighlight">\(N\)</span> sites, so <span class="math notranslate nohighlight">\(L=Na\)</span>.</p></li>
+</ol>
+<p>We also know, the <em>continuous</em> translation symmetry system has eigen state <span class="math notranslate nohighlight">\(e^{ipx/\hbar}=e^{ikx}\)</span>. The <em>discrete</em> translation symmetry is a subset of the <em>continuous</em> translation symmetry. <em>i.e.</em> we only consider the ones that are invariant under shift of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(L=Na\)</span>. This naturally leads to two characteristic crystal momentum vectors.</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(e^{iGa}=1\)</span>, <span class="math notranslate nohighlight">\(G=G_0 m\)</span> where <span class="math notranslate nohighlight">\(G_0=\frac{2\pi}{a}\)</span> and <span class="math notranslate nohighlight">\(m\in\mathcal{Z}\)</span>. <span class="math notranslate nohighlight">\(G_0\)</span> form the reciprocal lattice in the reciprocal space.</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{iqL}=1\)</span>, <span class="math notranslate nohighlight">\(q=q_0 n\)</span> where <span class="math notranslate nohighlight">\(q_0=\frac{2\pi}{L}=\frac{1}{N}G_0\)</span> and <span class="math notranslate nohighlight">\(n\in\mathcal{Z}\)</span>. <span class="math notranslate nohighlight">\(q\)</span> are the wave vectors in the reciprocal space. Usually, when <span class="math notranslate nohighlight">\(L\to\infty\)</span>, we have <span class="math notranslate nohighlight">\(q_0\to0\)</span>. The energies corresponds to each <span class="math notranslate nohighlight">\(q\)</span> in the reciprocal space will form a band. Depends on the nature of the excitation, it could be a band of phonon, which we will discuss later, or a band of electron.</p></li>
+</ol>
+<p>The key difference between the system with <em>continuous</em> and <em>discrete</em> translation symmetry is the conservation law. For system with <em>continuous</em> translation symmetry, we have momentum conservation. For system with <em>discrete</em> translation symmetry, we have <em>quasimomentum</em> (or <em>crystal momentum</em>) conservation. The <em>quasimomentum</em> conservation means the wave vector <span class="math notranslate nohighlight">\(q\)</span> is well defined up to integer multiples of <span class="math notranslate nohighlight">\(G_0\)</span>. <em>i.e.</em> <span class="math notranslate nohighlight">\(q\equiv q+G_0\)</span>. Why it is so? it is related to the fact that the discrete representations of continuous wave for wave with wave vector <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(q+G_0\)</span> are indistinguishable. The phenomena is called <em>wave aliasing</em>. See the <a class="reference external" href="https://en.wikipedia.org/wiki/Crystal_momentum">wikipedia link</a> and the <a class="reference external" href="https://en.wikipedia.org/wiki/Crystal_momentum#/media/File:Quasimomentum.gif">wikipedia gif</a>.</p>
+<p>Because of the quasimomentum conservation, we usually focus our description for <span class="math notranslate nohighlight">\(q\in(-G_0/2,G_0/2]\)</span>. This region is called the first Brillouin zone.</p>
+<p>Usually, when we open the textbook of solid state physics, we will see two phonon bands in the first Brillouin zone. The branch that is gapless with <span class="math notranslate nohighlight">\(\lim_{|q|\to0}E(q)\propto |q|\)</span> is the acoustic phonon. The branch that is gapped is the optical phonon.</p>
+<p>In the last section, we discussed <span class="math notranslate nohighlight">\(N\)</span> decoupled quantum harmonic oscillator. They can be considered as a good approximation to the optical phonon if the gapped modes are approximately <span class="math notranslate nohighlight">\(q\)</span> independent. In fact, that is the Einstein’s phonon model<span id="id2">[<a class="reference internal" href="biblio.html#id11" title="Albert Einstein. Die plancksche theorie der strahlung und die theorie der spezifischen wärme. Annalen der Physik, 327(1):180–190, 1907.">Ein07</a>]</span>.</p>
+</section>
+<section id="classical-1d-sound-wave">
+<h3>Classical 1D sound wave<a class="headerlink" href="#classical-1d-sound-wave" title="Permalink to this headline"></a></h3>
+<p>Here, we are going to discuss a simple example which is an one-dimensional coupled oscillators. The example is a model that is analytically tractable. However, as all the simple models, we should care about the generic feature of such systems instead of focusing on the artifact due to its simplicity. I will explain what do I mean by that later.</p>
+<p>We will focus on the classical system first. Then we can derive the energy as a function of <span class="math notranslate nohighlight">\(q\)</span>. Then, we will take the short cut to perform the classical-quantum replacement <span class="math notranslate nohighlight">\(E(q)=\hbar\omega(q)\to\hbar\omega(q)\left(\frac{1}{2}+\hat{n}_q\right)\)</span>. Here <span class="math notranslate nohighlight">\(\hat{n}_q\)</span> is the quanta of a quantum oscillator with wave vector <span class="math notranslate nohighlight">\(q\)</span>.</p>
+<p>Let’s start our analysis. Consider <span class="math notranslate nohighlight">\(N\)</span> particles with mass <span class="math notranslate nohighlight">\(m\)</span> coupled through spring with elastic potential <span class="math notranslate nohighlight">\(\frac{\kappa}{2}\Delta x^2\)</span>. Here <span class="math notranslate nohighlight">\(\kappa\)</span> is the force constant and <span class="math notranslate nohighlight">\(\Delta x\)</span> is the displacement from the equilibrium position. We assume the equilibrium position of the particles form a lattice with lattice constant <span class="math notranslate nohighlight">\(a\)</span>.</p>
+<p>The total potential energy of the system is</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{total}}(\left\{x_i\right\})=\sum_i V(x_{i+1}-x_i)\approx\sum_i\frac{\kappa}{2}\left(x_{i+1}-x_i-a\right)^2=\sum_i\frac{\kappa}{2}\left(\delta x_{i+1}-\delta x_i\right)^2\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\delta x_i=x_i-x_{i,eq}\)</span>.</p>
+<p>The total force applied on the <span class="math notranslate nohighlight">\(n\)</span>-th particle is</p>
+<div class="math notranslate nohighlight">
+\[
+F_n=-\frac{\partial V_{\text{total}}(\left\{x_i\right\})}{\partial x_n}=m\frac{\partial ^2 \delta x_n}{\partial t^2} = \kappa\left[\left(\delta x_{\text{n+1}}-\delta x_{n}\right)-\left(\delta x_n-\delta x_{n+1}\right)\right]\text{.}
+\]</div>
+<p>If we use the ansatz, <span class="math notranslate nohighlight">\(\delta x_n=A e^{i\omega t-iqx_{n,eq}}\)</span>, to solve these equations, we have</p>
+<div class="math notranslate nohighlight">
+\[
+m\omega^2=2\kappa(1-\cos qa);\omega(q)=2\sqrt{\frac{\kappa}{m}}\vert\sin\frac{qa}{2}\vert\text{.}
+\]</div>
+<p>The simple function form of <span class="math notranslate nohighlight">\(\omega(q)=2\sqrt{\frac{\kappa}{m}}\vert\sin\frac{qa}{2}\vert\)</span> is not generic. The generic structure is the fact that <span class="math notranslate nohighlight">\(\lim_{q\to0}\omega(q)\approx vq\)</span>. The linear dispersive mode is related to the Goldstone theorem. When a continuous symmetry is spontaneously broken, a linear dispersive mode emerges. In this case, the continuous symmetry is the continuous translation symmetry. After the symmetry is spontaneously broken, we have our phonon model.</p>
+<p>For a quantized system, we have a quantum harmonic oscillator with frequency <span class="math notranslate nohighlight">\(\omega(q)\)</span> for each mode <span class="math notranslate nohighlight">\(q\)</span>. Also, the phonon mode has polarization. For 3D isotropic system, the polarization is 3. We will use <span class="math notranslate nohighlight">\(\alpha\)</span> to label the polarization of each mode.</p>
+<p>In general we should have partition function expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+Z=\sum_{\left\{n_{q,\alpha}\right\}} \exp\left[-\beta \sum_{q,\alpha} \hbar\omega_{\alpha}(q)\left(\frac{1}{2}+n_{q,\alpha}\right)\right]\xrightarrow{\text{factorize}}\prod_{q,\alpha}\left\{\sum_{n_{q,\alpha}}\exp\left[-\beta \hbar\omega_{\alpha}(q)\left(\frac{1}{2}+n_{q,\alpha}\right)\right]\right\}\text{.}
+\]</div>
+<p>To focus on the point, we assume the dispersion is isotropic and replace the discrete sum by integral in the later discussion.</p>
+</section>
+<section id="debye-model">
+<h3>Debye model<a class="headerlink" href="#debye-model" title="Permalink to this headline"></a></h3>
+<p>As we mentioned previously, <span class="math notranslate nohighlight">\(\omega(q)\)</span> depends on the system detail. The generic feature due to the Goldstone theorem is <span class="math notranslate nohighlight">\(\omega(q)\sim vq\)</span> as <span class="math notranslate nohighlight">\(q\to0\)</span>. Another constraint is the classical limit of the quantum model should leads to specific heat <span class="math notranslate nohighlight">\(3Nk_B\)</span> for a 3D system. To incorporate the two generic feature into one model, Debye propose to linearize the whole spectrum and put in a frequency cutoff by hand. Let’s see how it is done.</p>
+<ol>
+<li><p>The linear dispersive mode: Let’s assume <span class="math notranslate nohighlight">\(\omega(q)=vq\)</span> and <span class="math notranslate nohighlight">\(dq=v^{-1}d\omega\)</span>. Then we have the energy expectation value described as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	\langle \hat{H}\rangle=E\approx 3(4\pi)\left(\frac{L}{2\pi v}\right)^3\int_0^\infty \omega^2 d\omega \exp\left[-\beta \hbar\omega(q)\left(\frac{1}{2}+\langle \hat{n}_q\rangle\right)\right]\\
+=\int_0^{\infty}d\omega g(\omega)\hbar\omega(\frac{1}{2}+n_B(\beta\hbar\omega))
+	\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(g(\omega)\)</span> is the density of states that represents the number of states in the energy window <span class="math notranslate nohighlight">\([\omega,\omega+d\omega]\)</span> including the polarization. <span class="math notranslate nohighlight">\(n_B(\beta\hbar\omega)=\frac{1}{e^{\beta\hbar\omega}-1}\)</span>.
+After some algebra, we found</p>
+<div class="math notranslate nohighlight">
+\[
+	g(\omega)=N\frac{9\omega^2}{\omega_d^3};\omega_d^3=6\pi^2\frac{N}{L^3}v^3\text{.}
+	\]</div>
+<p>We can change the variable of the integral using dimensionless parameter <span class="math notranslate nohighlight">\(x=\beta\hbar\omega\)</span>. After that, we have</p>
+<div class="math notranslate nohighlight">
+\[
+	\langle \hat{H}\rangle=\frac{9N\hbar}{\omega_d^3} (\beta \hbar)^{-4}\underbrace{\int_0^{\infty} dx\frac{x^3}{e^x-1}}_{\pi^4/15}+\text{temperature independent constant.}
+	\]</div>
+<p>Then we can get the specific heat for bosonic linear dispersive mode to be</p>
+<div class="math notranslate nohighlight">
+\[
+	C=\frac{\partial E}{\partial T}\propto T^3
+	\]</div>
+</li>
+<li><p>The frequency cutoff: The <span class="math notranslate nohighlight">\(T^3\)</span> behavior of specific heat is tied with the linear dispersive mode. If that behavior is not changed, the behavior will extend to <span class="math notranslate nohighlight">\(T\to\infty\)</span> limit. Of course, it is not the classical behavior that we anticipate. How to fix that? Debye fix that by cutoff the frequency integral at a value <span class="math notranslate nohighlight">\(\omega_{cutoff}\)</span> such that the total number of modes below the cutoff frequency to be exactly <span class="math notranslate nohighlight">\(3N\)</span>, the total number of modes in this system. <em>i.e.</em></p>
+<div class="math notranslate nohighlight">
+\[
+	\int_0^{\infty}d\omega\to\int_0^{\omega_{cutoff}} d\omega=3N\text{.}
+	\]</div>
+<p>With this cutoff, we have the energy expectation value as</p>
+<div class="math notranslate nohighlight">
+\[
+	\langle \hat{H}\rangle=\int_0^{\omega_{cutoff}}d\omega g(\omega)\hbar\omega(\frac{1}{2}+n_B(\beta\hbar\omega))\xrightarrow{\beta\hbar\omega\to0}\int_0^{\omega_{cutoff}}d\omega g(\omega)\hbar\omega(\beta\hbar\omega)^{-1}\approx 3Nk_BT\text{.}
+	\]</div>
+<p>And we recover the classical limit <span class="math notranslate nohighlight">\(C\to 3Nk_BT\)</span>.</p>
+</li>
+</ol>
+</section>
+</section>
+<section id="photon">
+<h2>Photon<a class="headerlink" href="#photon" title="Permalink to this headline"></a></h2>
+<p>The calculation of phonon is very similar with the photon case. Here I just list some of the key difference and the derivation will be left as an exercise.</p>
+<ol class="simple">
+<li><p>Completely linear dispersive mode.</p></li>
+<li><p>The magnitude of the velocity is the speed of light.</p></li>
+<li><p>Polarization of photon is two due to its gauge nature. In three-dimensional space, we have the polarization number of photon to be 2.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

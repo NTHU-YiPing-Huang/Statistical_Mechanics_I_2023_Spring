@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teaser of the Ginsburg-Landau theory &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Teaser of the Ginsburg-Landau theory</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Teaser of the Ginsburg-Landau theory</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/GL.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="teaser-of-the-ginsburg-landau-theory">
+<h1>Teaser of the Ginsburg-Landau theory<a class="headerlink" href="#teaser-of-the-ginsburg-landau-theory" title="Permalink to this headline"></a></h1>
+<p>The mean field theory should work when the fluctuation is small. That is, mean field theory should characterize the two phases deep in the domain of the phase diagram, not near the phase boundary. If we assume the expression we derived from the mean field theory is valid in the whole phase diagram, we anticipate the order will become weaker and weaker across the phase boundary.</p>
+<p>In our simple Ising model with <span class="math notranslate nohighlight">\(h=0\)</span>, we want to explore the physics when <span class="math notranslate nohighlight">\(m\approx0\)</span>.
+Let’s take the free energy density of the mean field theory and expand it around <span class="math notranslate nohighlight">\(m\approx0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+f(T,m)\approx -k_BT \ln2+\frac{1}{2}(k_BT-\underbrace{Jz}_{k_BT_c})m^2+\frac{k_BT}{12}m^4+\cdots
+\]</div>
+<p>We can observe three different behaviors. When <span class="math notranslate nohighlight">\(T&gt;T_c\)</span>, the free energy as a function of <span class="math notranslate nohighlight">\(m\)</span> has only one minimum, <span class="math notranslate nohighlight">\(m=0\)</span>. When <span class="math notranslate nohighlight">\(T&lt;T_c\)</span>, the free energy as a function of <span class="math notranslate nohighlight">\(m\)</span> has two minimum at <span class="math notranslate nohighlight">\(m=m_{\pm}\)</span>. At <span class="math notranslate nohighlight">\(T=T_c\)</span> the system is about to develop the two minimum.</p>
+<p>So we observe the fact that we can use <span class="math notranslate nohighlight">\(m\)</span> as an indicator of the phase and phase transition in this simple example. That raises an interesting question: Can we skip the microscopic detail of the lattice model and directly guess the form of the free energy by physical arguments? If we can do that, what information we need to make related arguments? The answer to this question is the Ginsburg-Landau theory. The important information to make the argument is the symmetry of the system. The Landau theory propose the order that breaks the symmetry is described by the order parameter <span class="math notranslate nohighlight">\(\phi\)</span>. However, to form a distribution function respect that symmetry, we argue the Ginsburg-Landau free energy also respect that symmetry. In order to do that, we use the order parameter and try to form symmetric combinations. In the simple Ising model with <span class="math notranslate nohighlight">\(Z_2\)</span> symmetry, we expect to have the free energy density as</p>
+<div class="math notranslate nohighlight">
+\[
+f(\phi,T)\sim a+b(T)\phi^2+c\phi^4+\cdots
+\]</div>
+<p>This is roughly the form we got from the expansion! Phenomenologically, we want the system to have a phase transition as the temperature is lowed. So we argue the coefficient <span class="math notranslate nohighlight">\(b(T)\)</span> will change sign cross the phase boundary. How to bridge the phenomenological Landau theory with our microscopic understanding of the system in a general way? If we use the Landau theory to predict the transition, how will the critical exponents look like? How does the critical exponents derived theoretically compares with the critical exponents measured experimentally? Those interesting question will be the topics for statistical mechanics (II).</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

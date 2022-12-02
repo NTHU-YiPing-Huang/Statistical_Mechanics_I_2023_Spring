@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phase space and Observables &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Phase space and Observables</a><ul>
+<li><a class="reference internal" href="#phase-space">Phase space</a><ul>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#observables-definition-of-accessible">Observables (Definition of “accessible”)</a><ul>
+<li><a class="reference internal" href="#id1">Examples</a></li>
+<li><a class="reference internal" href="#example-of-accessible-phase-space">Example of “accessible” phase space</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Phase space and Observables</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/phase_space_observables.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="phase-space-and-observables">
+<h1>Phase space and Observables<a class="headerlink" href="#phase-space-and-observables" title="Permalink to this headline"></a></h1>
+<p>The right hand side of the Boltzmann’s postulate is related to the concept of accessible phase space. So we will start our discussion from what is a phase space and how it could related to the thermodynamic extensive variables. After that, we can ask: why choosing the phase space? What’s so special about phase space? The answer is related to the Liouville’s theorem.</p>
+<section id="phase-space">
+<h2>Phase space<a class="headerlink" href="#phase-space" title="Permalink to this headline"></a></h2>
+<p>As we mentioned, we care about the canonical evolution of a Hamiltonian system where the energy is conserved. For one particle, we need to specify its position, <span class="math notranslate nohighlight">\(\textbf{R}_1\)</span>, and momentum, <span class="math notranslate nohighlight">\(\textbf{P}_1\)</span>, to uniquely define its status. For <span class="math notranslate nohighlight">\(N\)</span> particles, we will need <span class="math notranslate nohighlight">\(N\)</span> position vectors and <span class="math notranslate nohighlight">\(N\)</span> momentum vectors to describe them.</p>
+<p>We can use <span class="math notranslate nohighlight">\(\xi\equiv\{\textbf{R}_1,\textbf{R}_2,...,\textbf{R}_N;\textbf{P}_1,\textbf{P}_2,...,\textbf{P}_N\}\)</span> to describe the status of the <span class="math notranslate nohighlight">\(N\)</span> particle system. The space spanned by <span class="math notranslate nohighlight">\(\xi\)</span> is the phase space.</p>
+<p>The phase space is a space with <span class="math notranslate nohighlight">\(6N\)</span> degrees of freedom if we consider a three-dimensional system. Since <span class="math notranslate nohighlight">\(N\sim 10^{23}\)</span>, we actually have a high-dimensional system!</p>
+<p>When we consider the evolution where energy is conserved, we therefore has <span class="math notranslate nohighlight">\(6N-1\)</span> independent degrees of freedom. The evolution of the system therefore is described by a path parameterized by the evolution time <span class="math notranslate nohighlight">\(t\)</span> in the <span class="math notranslate nohighlight">\(6N\)</span> dimensional phase space.</p>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h3>
+<ol class="simple">
+<li><p>Single free particle in one-dimensional space:
+The phase space trajectory for a single free particle is easy. We know the momentum is a fixed value <span class="math notranslate nohighlight">\(p_0\)</span> and the position just grows linearly with time <span class="math notranslate nohighlight">\(t\)</span>. That trajectory is a straight line in the phase space.</p></li>
+<li><p>Single mode simple harmonic oscillator in one-dimensional space:
+The momentum of the oscillator will change as we expected. The energy conserving condition suggest the trajectory form an eclipse in the phase space.</p></li>
+<li><p>Two free particles in one-dimensional space:
+In this case, we have a 4 dimensional phase space. Even this simplest non-trivial example takes some imagination to realize it in our brain. So we further simplify the case by assuming the momentum of particle one and particle 2 are identical, <span class="math notranslate nohighlight">\(\textbf{P}_1=\textbf{P}_2=P\hat{i}\)</span>. The trajectory for this simplified case can be visualized in a three-dimensional space where the <span class="math notranslate nohighlight">\(z\)</span> coordinate represent the momentum and the <span class="math notranslate nohighlight">\(x,y\)</span> coordinates represent the position <span class="math notranslate nohighlight">\(\textbf{R}_1,\textbf{R}_2\)</span>. The trajectory will be a straight line with fixed <span class="math notranslate nohighlight">\(z\)</span> coordinates that bisect the angle between <span class="math notranslate nohighlight">\(xz\)</span> and <span class="math notranslate nohighlight">\(yz\)</span> plane.</p></li>
+</ol>
+</section>
+</section>
+<section id="observables-definition-of-accessible">
+<h2>Observables (Definition of “accessible”)<a class="headerlink" href="#observables-definition-of-accessible" title="Permalink to this headline"></a></h2>
+<p>The path <span class="math notranslate nohighlight">\(\xi(t)\)</span> can be quite complicated in the high dimensional space. However, as we know the thermodynamic extensive variables such as energy and volume can fluctuates at the microscopic level, but they are relative smooth functions of the microscopic coordinates at the macroscopic scale.</p>
+<p>Therefore it is reasonable to define a family of function that take the rather complicated microscopic configurations <span class="math notranslate nohighlight">\(\xi(t)\)</span> as input, but output a relative smooth value as a function of time. We call such functions observables.</p>
+<p>It is quite reasonable to postulate that the extensive variables in thermodynamics are all observables. (We can measure them!) The accessible volume of the phase space is therefore specified by the thermodynamics extensive variables.</p>
+<section id="id1">
+<h3>Examples<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Observable:</p>
+<ul>
+<li><p>The total kinetic energy:
+<span class="math notranslate nohighlight">\(
+E_{k}=\sum_{i=1}^N \frac{\textbf{P}_i^2}{2m}
+\)</span></p></li>
+<li><p>The total particle number:
+<span class="math notranslate nohighlight">\(
+N=\int d\textbf{r}\sum_{i=1}^N\delta(\textbf{r}-\textbf{r}_i)
+\)</span></p></li>
+<li><p>Another example for the microscopic state and the macroscopic observable is the coin flipping game. Consider we have <span class="math notranslate nohighlight">\(N\)</span> coins with labels. And we flip them all. The microscopic state for the system is the outcome of each coins ( The outcome will be one of the <span class="math notranslate nohighlight">\(2^N\)</span> configurations) One can define the “sum” of the coins by using <span class="math notranslate nohighlight">\(\sigma_i=\pm1\)</span> to represent the heads and tails of each coin.  <span class="math notranslate nohighlight">\(\sum_{i=1}^N \sigma_i\)</span> will be an observable that is relative smooth function of the microscopic state. Since we know the law of large number suggest this function will have a smooth distribution described by a Gaussian function.</p></li>
+</ul>
+</li>
+<li><p>Not an observable: <span class="math notranslate nohighlight">\(\prod_{i=1}^N \theta(a-|\textbf{r}_i|)\)</span>.
+Here</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\theta(x)=\left\{
+\begin{array}{c}
+x&gt;0, 1\\
+x&lt;0, 0
+\end{array}
+\right.
+\end{split}\]</div>
+</section>
+<section id="example-of-accessible-phase-space">
+<h3>Example of “accessible” phase space<a class="headerlink" href="#example-of-accessible-phase-space" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>The piston: The volume of the chamber for a piston is a variable. When we discuss the accessible phase space for the gas inside the chamber, we need to discuss the real space part and the momentum part. We will discuss the space part first since it is relative straight forward. The gas in the chamber cannot escape. Therefore, the volume of the chamber is the accessible volume for the gas inside the chamber.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

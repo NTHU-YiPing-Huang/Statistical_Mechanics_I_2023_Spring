@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The fundamental postulate &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">The fundamental postulate</a><ul>
+<li><a class="reference internal" href="#accessible-phase-space-is-specified-by-the-extensive-variables">Accessible phase space is specified by the extensive variables</a></li>
+<li><a class="reference internal" href="#different-expressions-of-entropy">Different expressions of entropy</a></li>
+<li><a class="reference internal" href="#the-variation-principle-of-entropy">The variation principle of entropy</a></li>
+<li><a class="reference internal" href="#the-fundamental-postulate-quantum-version">The fundamental postulate, quantum version</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">The fundamental postulate</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/entropy_exp.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="the-fundamental-postulate">
+<h1>The fundamental postulate<a class="headerlink" href="#the-fundamental-postulate" title="Permalink to this headline"></a></h1>
+<p>The fundamental postulate is</p>
+<div class="math notranslate nohighlight">
+\[
+S=k_B\ln(|\Gamma|)\text{.}
+\]</div>
+<p>After we know what is the meaning of accessible phase space, we would like to discuss the meaning of the equality sign. Because the equality should be interpreted at the thermodynamic limit where <span class="math notranslate nohighlight">\(N\to\infty\)</span>, we have to some flexibility to define entropy using different expressions.</p>
+<section id="accessible-phase-space-is-specified-by-the-extensive-variables">
+<h2>Accessible phase space is specified by the extensive variables<a class="headerlink" href="#accessible-phase-space-is-specified-by-the-extensive-variables" title="Permalink to this headline"></a></h2>
+<p>The system’s microscopic configuration leads to different extensive thermodynamics properties. Therefore, the extensive variables actually restrict the accessible region in the phase space.</p>
+<p>Since we assume the thermodynamic state of the system can be specified by extensive variables <span class="math notranslate nohighlight">\(X_1,X_2,\cdots, X_r\)</span>. Suppose we have uncertainties <span class="math notranslate nohighlight">\(\Delta X_i\)</span> for each extensive variable. The accessible phase space of the system and entropy can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+| \Gamma_1 |=\int d\xi \prod_{i=1}^{r}\theta(X_i(\xi)-(X_i-\Delta X_i))\theta(X_i-X_i(\xi))
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+S_1(\left\{X_i\right\})=k_B\ln\left[\int d\xi \prod_{i=1}^{r}\theta(X_i(\xi)-(X_i-\Delta X_i))\theta(X_i-X_i(\xi))
+\right]\text{.}
+\]</div>
+<p>Here, the <span class="math notranslate nohighlight">\(\theta\)</span> function is used to express the idea that we want to include all possible <span class="math notranslate nohighlight">\(\xi\)</span> such that the corresponding extensive variable <span class="math notranslate nohighlight">\(X_i(\xi)\)</span> is in the range <span class="math notranslate nohighlight">\(\left[X_i-\Delta X_i,X_i\right]\)</span>.</p>
+<p>Let’s use a simple example to understand the expression. Consider the case that entropy is a function of energy only. We would focus on <span class="math notranslate nohighlight">\(X_0=E\)</span> only. In this case we have</p>
+<div class="math notranslate nohighlight">
+\[
+S_1(E)=k_B\ln\left[\int d\xi \theta(H(\xi)-(E-\Delta E))\theta(E-H(\xi))
+\right]\text{.}
+\]</div>
+</section>
+<section id="different-expressions-of-entropy">
+<h2>Different expressions of entropy<a class="headerlink" href="#different-expressions-of-entropy" title="Permalink to this headline"></a></h2>
+<p>To understand the behavior of <span class="math notranslate nohighlight">\(S(\left\{X_i\right\})\)</span>, we need to understand the behavior of the phase space volume with this expression. One of the key property of this expression is due to the high dimensionality of phase space. <span class="math notranslate nohighlight">\(\xi\)</span> is a vector in the <span class="math notranslate nohighlight">\(6N\)</span> dimensional space with <span class="math notranslate nohighlight">\(N\sim \mathcal{O}(10^{23})\)</span>. In the homework 2, we observe <strong>the volume integral of high-dimensional space has the property that the volume is dominated by the outermost shell</strong>. That is, if we define the phase space volume differently as</p>
+<div class="math notranslate nohighlight">
+\[
+| \Gamma_2 |=\int d\xi \prod_{i=1}^{r}\theta(X_i(\xi))\theta(X_i-X_i(\xi))\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+| \Gamma_3 |=\int d\xi \prod_{i=1}^{r}\delta(X_i-X_i(\xi))\text{,}
+\]</div>
+<p>the corresponding entropy, <span class="math notranslate nohighlight">\(S_2(\left\{X_i\right\})\)</span>, <span class="math notranslate nohighlight">\(S_3(\left\{X_i\right\})\)</span>, actually will be equivalent to <span class="math notranslate nohighlight">\(S_1(\left\{X_i\right\})\)</span> up to subleading terms in <span class="math notranslate nohighlight">\(N\)</span>.
+<span class="math notranslate nohighlight">\(|\Gamma_2|\)</span> is the phase space where the extensive variable has a lower bound <span class="math notranslate nohighlight">\(X_{i,l}=0\)</span>. <span class="math notranslate nohighlight">\(|\Gamma_3|\)</span> represent the phase space with only the configuration with extensive variable value <span class="math notranslate nohighlight">\(X_i\)</span>. Since Boltzmann’s postulate is to a system at thermodynamic limit where <span class="math notranslate nohighlight">\(N\to\infty\)</span>, the different definitions <span class="math notranslate nohighlight">\(S_2(\left\{X_i\right\})\)</span> and <span class="math notranslate nohighlight">\(S_3(\left\{X_i\right\})\)</span> are equivalent and are valid expressions for entropy!</p>
+<p><strong>We can use <span class="math notranslate nohighlight">\(S_2(E)\)</span> to see that it is a monotonic increasing function with <span class="math notranslate nohighlight">\(E\)</span></strong>. Can we see <span class="math notranslate nohighlight">\(S(E)\)</span> is also extensive?</p>
+</section>
+<section id="the-variation-principle-of-entropy">
+<h2>The variation principle of entropy<a class="headerlink" href="#the-variation-principle-of-entropy" title="Permalink to this headline"></a></h2>
+<p>Consider system <span class="math notranslate nohighlight">\(A\)</span> and system <span class="math notranslate nohighlight">\(B\)</span> are both isolated systems. (Energies of system <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are independently conserved) The microscopic confiugration for system <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are represented by <span class="math notranslate nohighlight">\(\xi_A\)</span> and <span class="math notranslate nohighlight">\(\xi_B\)</span>. Now if we consider the two system as a whole, the microscopic configuration of the composite system is <span class="math notranslate nohighlight">\(\xi=\left\{\xi_A,\xi_B\right\}\)</span>. Since the two system are isolated from each other, the microscopic configuration <span class="math notranslate nohighlight">\(\xi_A\)</span> is completely independent of <span class="math notranslate nohighlight">\(\xi_B\)</span>. That means the phase space volume is simiply the product of the two, <em>i.e.</em></p>
+<div class="math notranslate nohighlight">
+\[
+|\Gamma_{(A\cup B)}|=|\Gamma_A||\Gamma_B|\text{.}
+\]</div>
+<p>Now, if we put system <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> in thermal contact and are isolated from the environment. The constraint is relexed from the energes are indepenently conserved to the total energy of the composite system is conserved. The possible microscopic configurations are formally expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+|\Gamma_{(A|B)}|=\sum_{E^{(A)}}|\Gamma_A(E^{(A)})||\Gamma_B(E_{total}-E^{(A)})|\text{.}
+\]</div>
+<p>Because the constraint is more relaxed, there are more possible configurations comparing with the case before the thermal contact. So we have <span class="math notranslate nohighlight">\(|\Gamma_{(A|B)}|&gt;|\Gamma_{(A\cup B)}|\)</span>. This observation seems to suggest the entropy will increase when the system reaches equilibrium. However, when the system reaches equilibrium, the energy of the two system is <span class="math notranslate nohighlight">\(E^{(A)}_{eq}\)</span> and <span class="math notranslate nohighlight">\(E^{(B)}_{eq}=E_{total}-E^{(A)}_{eq}\)</span>. The phase space volume at equilibrium is <span class="math notranslate nohighlight">\(|\Gamma_{eq}|=|\Gamma_A(E^{(A)}_{eq})||\Gamma_B(E^{(B)}_{eq})|\le |\Gamma_{(A|B)}\)</span>! Shouldn’t the entropy (also the accessible phase space volume) be maximized when reaching equilibrium?</p>
+<p>It turns out <span class="math notranslate nohighlight">\(|\Gamma_{eq}|\lesssim|\Gamma_{(A|B)}|\)</span>! That is, even though it is smaller than <span class="math notranslate nohighlight">\(|\Gamma_{(A|B)}|\)</span>, it is almost identical with <span class="math notranslate nohighlight">\(|\Gamma_{(A|B)}|\)</span>! Why? Let’s use the Boltzman’s postulate to express <span class="math notranslate nohighlight">\(|\Gamma_{(A|B)}|\)</span> again. We have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\Gamma_{(A|B)}|=\sum_{E^{(A)}}|\Gamma_A(E^{(A)})||\Gamma_B(E_{total}-E^{(A)})|=\sum_{E^{(A)}} \exp\left[\frac{1}{k_B}\left(S_A(E^{(A)})+S_B(E_{total}-E^{(A)})\right)\right]\\
+\approx \int \frac{d E^{(A)}}{\Delta E} \exp\left\{\frac{1}{k_B}\left[\left(S_A(E^{(A)}_{eq})+S_B(E^{(B)}_{eq})\right)+\underbrace{\left.\frac{\partial (S^{(A)}(E^{(A)})+S^{(B)}(E^{(B)}))}{\partial E^{(A)}}\right|_{E^{(A)}_{eq}}}_{=0, \text{extrema condition}}\left(E^{(A)}-E^{(A)}_{eq}\right)\\
++\frac{1}{2}\left(\left. \frac{\partial^2 S^{(A)}(E^{(A)})}{ \partial E^{(A)} \,^2}\right|_{E^{(A)}_{eq}}+\left. \frac{\partial^2 S^{(B)}(E^{(B)})}{ \partial E^{(B)} \,^2}\right|_{E^{(B)}_{eq}}\right)\left(E^{(A)}-E^{(A)}_{eq}\right)^2 \right]\right\}
+\end{split}\]</div>
+<p>In the second line, we approximate the summation as integral to make further approximation. Since we know that entropy is maximized at equilibrium, we can expand the entropy around the equilibrium energy configuration. Here, the linear order correction is zero since we expand around the extrema. We stop the expansion at the quadratic order which is the leading non-trivial order.</p>
+<p>We would like to know how the correction scales as we reaches the thermodyanmic limit <span class="math notranslate nohighlight">\(N\to\infty\)</span>. We find the the scaling behavior of the following quantity is</p>
+<div class="math notranslate nohighlight">
+\[
+k\equiv \frac{\partial }{\partial E} \underbrace{\frac{\partial S}{\partial E} }_{\mathcal{O}(1)} \sim \mathcal{O}(N^{-1})&lt;0\text{.}
+\]</div>
+<p>So the we have the correction of the phase space volume to be of order <span class="math notranslate nohighlight">\(\int dE^{(A)} e^{\frac{k}{2}(E^{(A)}-E^{(A)}_{eq})^2}\sim \mathcal{O}(N^{1/2})\)</span>. <em>i.e.</em></p>
+<div class="math notranslate nohighlight">
+\[
+|\Gamma_{(A|B)}|\approx |\Gamma_{eq}|\times K; \text{ where } K\sim \mathcal{O}(N^{1/2})\text{.}
+\]</div>
+<p>Since we know <span class="math notranslate nohighlight">\(|\Gamma_{(A|B)}|\sim |\Gamma_{eq}|\sim\mathcal{O}(e^N)\)</span>, such correction is irrelevant at <span class="math notranslate nohighlight">\(N\to\infty\)</span> limit.</p>
+<p>This expression also suggests the energy fluctuation, <span class="math notranslate nohighlight">\(\sim \sqrt{\left(E^{(A)}-E^{(A)}_{eq}\right)^2}\)</span>, is of order <span class="math notranslate nohighlight">\(N^{1/2}\)</span>. So the relative deviation of energy is <span class="math notranslate nohighlight">\(\mathcal{O}(N^{-1/2})\)</span>.</p>
+<p><strong>The derivation above also shows the entroy is an extensive quantity</strong> at least when the interaction is short ranged and the system <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> can be well approximated as statistically independent.</p>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>How about the entropy should be a concave function of extensive variables?</p>
+</div>
+</section>
+<section id="the-fundamental-postulate-quantum-version">
+<h2>The fundamental postulate, quantum version<a class="headerlink" href="#the-fundamental-postulate-quantum-version" title="Permalink to this headline"></a></h2>
+<p>There is no fundamental unit of the phase space in classical mechanics. However, the quantum mechanics provide a natural unit for the phase space according to the uncertainty principle <span class="math notranslate nohighlight">\(\Delta x\Delta p\sim h\)</span>. A nature generalization of the Boltzman’s postulate is</p>
+<div class="math notranslate nohighlight">
+\[
+S=k_B\ln\mathcal{N}\text{.}
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\mathcal{N}\)</span> is the number of states within the window of extensive variable <span class="math notranslate nohighlight">\([\Delta X_i-X_i,X_i]\)</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

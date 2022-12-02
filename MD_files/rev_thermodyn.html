@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Review of thermodynamics &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Review of thermodynamics</a><ul>
+<li><a class="reference internal" href="#thermodynamic-systems">Thermodynamic systems</a></li>
+<li><a class="reference internal" href="#concept-of-equilibrium">Concept of equilibrium</a></li>
+<li><a class="reference internal" href="#extensive-variables">Extensive variables</a></li>
+<li><a class="reference internal" href="#the-central-problem-of-thermodynamics-and-its-solution">The central problem of thermodynamics and its solution</a><ul>
+<li><a class="reference internal" href="#the-postulated-solution-of-the-central-problem-of-thermodynamics-entropy">The postulated solution of the central problem of thermodynamics – entropy</a></li>
+<li><a class="reference internal" href="#systems-in-thermal-contact-the-definition-of-empirical-temperature">Systems in thermal contact (the definition of empirical temperature)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-fundamental-equation-entropy-scheme-and-energy-scheme">The fundamental equation ( Entropy scheme and energy scheme)</a></li>
+<li><a class="reference internal" href="#the-lagendre-transform-expressing-the-function-by-its-tangent">The Lagendre transform (Expressing the function by its tangent)</a></li>
+<li><a class="reference internal" href="#thermodynamic-potentials">Thermodynamic potentials</a></li>
+<li><a class="reference internal" href="#thermodynamic-stability">Thermodynamic stability</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Review of thermodynamics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/rev_thermodyn.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="review-of-thermodynamics">
+<h1>Review of thermodynamics<a class="headerlink" href="#review-of-thermodynamics" title="Permalink to this headline"></a></h1>
+<section id="thermodynamic-systems">
+<h2>Thermodynamic systems<a class="headerlink" href="#thermodynamic-systems" title="Permalink to this headline"></a></h2>
+<p>A macroscopic system whose behavior is identified by a small and finite number of thermodynamic properties such as energy, <span class="math notranslate nohighlight">\(E\)</span>, particle number, <span class="math notranslate nohighlight">\(N\)</span>, volume, <span class="math notranslate nohighlight">\(V\)</span>, temperature, <span class="math notranslate nohighlight">\(T\)</span>, chemical potential, <span class="math notranslate nohighlight">\(\mu\)</span>, pressure, <span class="math notranslate nohighlight">\(P\)</span>, e.t.c.</p>
+<p>Such description misses a lot of the microscopic information. However, we don’t care about the full detail of the system. So the thermodynamic description is still very useful.</p>
+<p>There are relations between those thermodynamic properties. Those relations are determined/observed from experiments. If we formally use <span class="math notranslate nohighlight">\(R_i\)</span> to represent the relations. We have a set of equations such as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+R_1(E,P, ...)=0\\
+R_2(E,N, ...)=0\\
+\cdots
+\end{split}\]</div>
+<p>Those equations might not be independent. Thermodynamic finds the principles behind those relations such that we can reconstruct those relations with minimum assumptions.</p>
+</section>
+<section id="concept-of-equilibrium">
+<h2>Concept of equilibrium<a class="headerlink" href="#concept-of-equilibrium" title="Permalink to this headline"></a></h2>
+<p>Feynmann’s description of equilibrium : “… when all fast processes have already occurred, while the slow ones have yet to take place.”</p>
+<p>The distinction between fast and slow depends on the observation time scale <span class="math notranslate nohighlight">\(\tau\)</span>. Thermodynamics is formulated with the notion of equilibrium. However, usually the observation time scale <span class="math notranslate nohighlight">\(\tau\)</span> is implicitly assumed to be well defined. We should keep in mind that in order to define equilibrium, we need to specify the time scale <span class="math notranslate nohighlight">\(\tau\)</span>.</p>
+</section>
+<section id="extensive-variables">
+<h2>Extensive variables<a class="headerlink" href="#extensive-variables" title="Permalink to this headline"></a></h2>
+<p>Extensive variable are the thermodynamic variables that adds up when we consider the union of the system and its duplication.</p>
+<p>For example, the particle number of system 1 is <span class="math notranslate nohighlight">\(N_1\)</span>. The particle number of its duplicate is <span class="math notranslate nohighlight">\(N_{1'}=N_1\)</span>. The particle number of the union of system 1 and its duplicate is <span class="math notranslate nohighlight">\(N^{(1\cup 1')}=N_1+N_1=2N_1\)</span>. Similar idea suggest the volume of the system is also an extensive variable.</p>
+<p>Temperature is not an extensive variable. It is an intensive variable. That is, when we have system 1 with <span class="math notranslate nohighlight">\(T_1\)</span> and its duplicate with <span class="math notranslate nohighlight">\(T_{1'}=T_1\)</span>. The union of them will reach equilibrium and still have temperature <span class="math notranslate nohighlight">\(T_1\)</span>.</p>
+<p>Is energy an extensive variable? The total energy of the system and its duplicate should be expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+E^{(1\cup1'}=E_1+E_{1'}+E_{int}(1,1')\text{.}
+\]</div>
+<p>The first two terms are easy to understand, they are the energy of system 1 and its duplicate 1’. The last term is the interaction between system 1 and its duplicate 1’. If the interaction between the system 1 and its duplicate is sub-extensive, meaning <span class="math notranslate nohighlight">\(E_{int}(1,1')\)</span> scales with particle number slower than <span class="math notranslate nohighlight">\(N\)</span>, then we can claim energy is an extensive variable at the limit <span class="math notranslate nohighlight">\(N\to\infty\)</span>. Since <span class="math notranslate nohighlight">\(\lim_{N\to\infty}E^{(1\cup1'}=E_1+E_{1'}\)</span>. This could happen when system 1 and 1’ can only interact between the interface of them. That happens when the interaction between them are short-ranged. On the other hand, for long range interactions, the relation will not hold and energy will not be an extensive variable. In most cases, we consider only short-ranged interaction. However, it is still important to keep in mind about this subtlety.</p>
+</section>
+<section id="the-central-problem-of-thermodynamics-and-its-solution">
+<h2>The central problem of thermodynamics and its solution<a class="headerlink" href="#the-central-problem-of-thermodynamics-and-its-solution" title="Permalink to this headline"></a></h2>
+<p>Given initial state of several thermodynamic systems. We can put them together and let them interact with each other in some fashion. The central problem of thermodynamics ask the following question: what will be the final equilibrium thermodynamic state of the combined system?</p>
+<p>The way that the sub systems interact with each other provides the constraint for the systems. For example, the two systems could interact in a way that it is allowed to exchange energy between the systems but not allowed to exchange particles. Or maybe there is no energy exchange between each other. However, they can still do work on the each other. Different constraints will required different ways to analyze the problem. However there is a postulated solution that can be constructed with different constraints.</p>
+<section id="the-postulated-solution-of-the-central-problem-of-thermodynamics-entropy">
+<h3>The postulated solution of the central problem of thermodynamics – entropy<a class="headerlink" href="#the-postulated-solution-of-the-central-problem-of-thermodynamics-entropy" title="Permalink to this headline"></a></h3>
+<p>The entropy postulate is: There exist a function <span class="math notranslate nohighlight">\(S\)</span> of the extensive variables called entropy that assumes the maximum value for a state of equilibrium.</p>
+<ol>
+<li><p>Entropy is a function of extensive variables: Extensive variables are those physical quantities that scales like <span class="math notranslate nohighlight">\(N\)</span> when the system size (<span class="math notranslate nohighlight">\(\propto N\)</span>) increases.</p></li>
+<li><p>Entropy is extensive: Entropy itself scales like <span class="math notranslate nohighlight">\(N\)</span>.</p></li>
+<li><p>Entropy is a concave function (The idea of a concave function. The different definition of concave and convex functions): Consider two thermodynamic states, specified by two sets of extensive variables <span class="math notranslate nohighlight">\(X^{(i)}=\{X^{(i)}_0,X^{(i)}_1,..., X^{(i)}_r\}, X^{(j)}=\{X^{(j)}_0,X^{(j)}_1,..., X^{(j)}_r\}\)</span>, describing the <strong>same</strong> system. The definition of a concave function is</p>
+<div class="math notranslate nohighlight">
+\[
+   S\left( (1-\alpha) X^{(i)}+\alpha X^{(j)}\right)\ge (1-\alpha)S(X^{(j)})+\alpha S(X^{(j)})\text{.}
+   \]</div>
+</li>
+<li><p>Entropy is a monotonic increasing function of internal energy:</p>
+<div class="math notranslate nohighlight">
+\[
+   \frac{\partial S}{\partial E}=\frac{1}{T}&gt;0\text{.}
+   \]</div>
+</li>
+</ol>
+<p><strong>The solution of the central problem of thermodynamics is the state that maximize entropy with the corresponding thermodynamic constraints.</strong></p>
+</section>
+<section id="systems-in-thermal-contact-the-definition-of-empirical-temperature">
+<h3>Systems in thermal contact (the definition of empirical temperature)<a class="headerlink" href="#systems-in-thermal-contact-the-definition-of-empirical-temperature" title="Permalink to this headline"></a></h3>
+<p>We can discuss systems under thermal contact and leave the other cases for the readers as reading materials.</p>
+<ol>
+<li><p>Thermally conductive and mobile wall ( the definition of empirical pressure ):
+Consider two systems in thermal contact that are isolated from the environment. The total energy of the two systems is conserved (This is the thermodynamic constraint of this simple system). The equilibrium state of this system is postulated to be the thermodynamic state such that the entropy is maximized. <em>i.e.</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \left.\frac{\partial S^{(A\cup B)}}{\partial E^{(A)}}\right|_{eq}=\left.\frac{\partial }{\partial E^{(A)}}\left[S^{(A)}(E^{(A)},X^{(A)}_1,...,X^{(A)}_r)+S^{(B)}(E^{(B)},X^{(B)}_1,...,X^{(B)}_r)\right]\right|_{eq}\\
+   =\left.\frac{\partial S^{(A)}}{\partial E^{(A)}}\right|_{E^{(A)}_{eq}}
+   -\left.\frac{\partial S^{(B)}}{\partial E^{(B)}}\right|_{E-E^{(A)}_{eq}}=0\text{.}
+   \end{split}\]</div>
+<p>Therefore, we find the quantity, <span class="math notranslate nohighlight">\(\frac{\partial S}{\partial E}=\frac{1}{T}\)</span>, for system <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> must be equal with each other at equilibrium. At this moment, we don’t know what is this quantity. But according to previous definition, we know <span class="math notranslate nohighlight">\(T^{(A)}=T^{(B)}\)</span> at equilibrium.</p>
+<p>How the energy flows during the process of reaching equilibrium? We know the total entropy of the system at equilibrium is larger than the initial total entropy.</p>
+<div class="math notranslate nohighlight">
+\[
+   S^{(A)}(E_{eq}^{(A)})+S^{(B)}(E_{eq}^{(B)})\ge S^{(A)}(E_{in}^{(A)})+S^{(B)}(E_{in}^{(B)})\text{.}
+   \]</div>
+<p>We also know that entropy is a concave function, so we have</p>
+<div class="math notranslate nohighlight">
+\[
+   S^{(i)}(E_{eq}^{(i)})-S^{(i)}(E_{in}^{(i)}) \le \left.\frac{\partial S}{\partial E}\right|_{E_{in}^{(i)}} \left( E_{eq}^{(i)}-E_{in}^{(i)}\right)\text{.}
+   \]</div>
+<p><em>We can get above expression by differentiate the definition of concave function with respect to <span class="math notranslate nohighlight">\(\alpha\)</span> from both side and set <span class="math notranslate nohighlight">\(\alpha=0\)</span> afterwards.</em></p>
+<p>Insert this relation into the previous inequality under the energy conserving condition, we have</p>
+<div class="math notranslate nohighlight">
+\[
+   \left( \left.\frac{\partial S^{(A)}}{\partial E^{(A)}}\right|_{E_{in}^{(A)}}-\left.\frac{\partial S^{(B)}}{\partial E^{(B)}}\right|_{E_{in}^{(B)}}\right)\left( E_{eq}^{(A)}-E_{in}^{(A)}\right)\ge 0\text{.}
+   \]</div>
+<p>This inequality says the energy flows from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> if <span class="math notranslate nohighlight">\(T^{(A)}_{in}&gt;T^{(B)}_{in}\)</span>.</p>
+<p>The behavior of <span class="math notranslate nohighlight">\(T\)</span> seems to be identical with the temperature defined in thermodynamics! In fact, we can proof that <span class="math notranslate nohighlight">\(T\)</span> is proportional with the thermodynamic temperature <span class="math notranslate nohighlight">\(\Theta\)</span>!</p>
+<p>To show <span class="math notranslate nohighlight">\(T\equiv \Theta\)</span>, we use the following strategy. One can define the thermodynamic temperature <span class="math notranslate nohighlight">\(\Theta\)</span> using the maximal efficiency of a thermal engine between <span class="math notranslate nohighlight">\(\Theta_1\)</span> and <span class="math notranslate nohighlight">\(\Theta_2\)</span> (<span class="math notranslate nohighlight">\(\Theta_1&gt;\Theta_2\)</span>). The maximal efficiency is <span class="math notranslate nohighlight">\(\eta_{Max}=1-\frac{\Theta_2}{\Theta_1}\)</span>.</p>
+<p>Consider a heat engine that is in contact between two heat bath with temperature <span class="math notranslate nohighlight">\(T_1\)</span> and <span class="math notranslate nohighlight">\(T_2\)</span> where <span class="math notranslate nohighlight">\(T_1&gt;T_2\)</span>. We assume the heat engine can only exchange energy with the environment by doing work. The second law of thermal dynamics suggest</p>
+<div class="math notranslate nohighlight">
+\[
+   dE= \delta Q-\delta W=-\delta W\text{.}
+   \]</div>
+<p>The definition of efficiency is the ratio between the work and the energy flow out from the high temperature reservoir after one cycle. After one cycle, the energy of the reservoir changes from <span class="math notranslate nohighlight">\(E_1,E_2\)</span> to <span class="math notranslate nohighlight">\(E_1', E_2'\)</span>.
+So we have</p>
+<div class="math notranslate nohighlight">
+\[
+   \eta=\frac{\delta W}{E_1-E_1'}= \frac{(E_1+E_2)-(E_1'+E_2')}{E_1-E_1'}\text{.}
+   \]</div>
+<p>We want to find an expression of <span class="math notranslate nohighlight">\(\eta\)</span> using the temperature <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>The entropy of the reservoirs after a cycle will increase. So we have</p>
+<div class="math notranslate nohighlight">
+\[
+   S^{(1)}(E_1)+S^{(2)}(E_2)\le S^{(1)}(E_1')+S^{(2)}(E_2')\text{.}
+   \]</div>
+<p>The entropy of the reservoir before and after the cycle can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+   S^{(i)}(E_i')=S^{(i)}(E_i)+\frac{E_i'-E_i}{T_i}\text{.}
+   \]</div>
+<p>Insert this relation to the entropy expression of the reservoirs, we have</p>
+<div class="math notranslate nohighlight">
+\[
+   \frac{E_1-E_1'}{T_1}\le \frac{E_2-E_2'}{T_2}
+   \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+   \delta W\le (E_1-E_1')\left(1-\frac{T_2}{T_1}\right)\text{.}
+   \]</div>
+<p>So we have shown</p>
+<div class="math notranslate nohighlight">
+\[
+   \eta_{Max}=1-\frac{T_2}{T_1}\text{.}
+   \]</div>
+<p>This relation suggest <span class="math notranslate nohighlight">\(T\propto \Theta\)</span>. The proportionality constant can be fixed by the tri-critical point of water. Therefore, we conclude <span class="math notranslate nohighlight">\(T\equiv \Theta\)</span>.</p>
+<p>The definition of empirical pressure and chemical potential can be derived in a similar fashion and will be left as an exercise.</p>
+</li>
+<li><p>Thermally conductive and mobile wall ( the definition of empirical pressure )</p></li>
+<li><p>Semipermeable wall ( the definition of empirical chemical potential )</p></li>
+</ol>
+</section>
+</section>
+<section id="the-fundamental-equation-entropy-scheme-and-energy-scheme">
+<h2>The fundamental equation ( Entropy scheme and energy scheme)<a class="headerlink" href="#the-fundamental-equation-entropy-scheme-and-energy-scheme" title="Permalink to this headline"></a></h2>
+<p>The fundamental equation can be described according to two different schemes</p>
+<ol class="simple">
+<li><p>Entropy scheme : The corresponding variation principle is to <strong>maximize</strong> the entropy of the system under the given constraints.</p></li>
+<li><p>Energy scheme : The corresponding variation principle is to <strong>minimze</strong> the energy of the system under the given constraints.</p></li>
+</ol>
+<p>Need a figure for it.</p>
+</section>
+<section id="the-lagendre-transform-expressing-the-function-by-its-tangent">
+<h2>The Lagendre transform (Expressing the function by its tangent)<a class="headerlink" href="#the-lagendre-transform-expressing-the-function-by-its-tangent" title="Permalink to this headline"></a></h2>
+<p>Suppose we have a function with two variables <span class="math notranslate nohighlight">\(f(x,\xi)\)</span> and we want to express the function using the slope of <span class="math notranslate nohighlight">\(f\)</span> along <span class="math notranslate nohighlight">\(x\)</span>, <em>i.e.</em> we want to describe our function using <span class="math notranslate nohighlight">\(p=\left.\frac{\partial f}{\partial x}\right|_{\xi}\)</span>.</p>
+<p>Let’s try to imagine how to do that. We can formally express <span class="math notranslate nohighlight">\(p\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+p=\left.\frac{\partial f}{\partial x}\right|_{\xi}\equiv g(x,\xi)\text{.}
+\]</div>
+<p>Invert this equation, we have <span class="math notranslate nohighlight">\(x=\tilde{g}(p,\xi)\)</span>. It is tempting that we insert this expression back to the expression <span class="math notranslate nohighlight">\(f(x,\xi)\)</span> to have</p>
+<div class="math notranslate nohighlight">
+\[
+f(\tilde{g}(x,\xi),\xi)=\phi(p,\xi)\text{.}
+\]</div>
+<p>The expression is almost right. However, if we think a little bit harder, we will find it is unlikely that we can express a function only via its slope. The reason is simple, we could have two functions with identical first derivative simply by having a constant shift. Therefore, we need a little bit more information other than the slope. If we consider <span class="math notranslate nohighlight">\(F(x,\xi)=f(x+\psi(\xi),\xi)\)</span>, and follow the previous procedure, we will get identical expression of <span class="math notranslate nohighlight">\(\phi(p,\xi)\)</span>.</p>
+<p>It turns out, the information we need is simply the tangent of the function.
+For the single variable function, we have the expression of the tangent as</p>
+<div class="math notranslate nohighlight">
+\[
+y=f(x)-x\frac{\partial f}{\partial x}\text{.}
+\]</div>
+<p>In analogy, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\phi(p,\xi)=f(\tilde{g}(p,\xi),\xi)-\tilde{g}(p,\xi)p\text{.}
+\]</div>
+<p>This is the meaning of Lagendre transformation.</p>
+</section>
+<section id="thermodynamic-potentials">
+<h2>Thermodynamic potentials<a class="headerlink" href="#thermodynamic-potentials" title="Permalink to this headline"></a></h2>
+<p>We are interested to discuss the equilibrium configuration of our system under different circumstances. The first question is: in equilibrium with what? Usually, we have our system interact with a reservoir described by a fixed intensive variable.</p>
+<p>For example, we can have our system to be in thermal contact with a heat bath with fixed temperature <span class="math notranslate nohighlight">\(T\)</span> which is the slope of the energy <span class="math notranslate nohighlight">\(E\)</span> as a function of entropy. Initially, we might describe our system according to the energy scheme. If we want to use this scheme to discuss our system, we need to deal with the fact that entropy is not really fixed during the process of reaching equilibrium. In this case, it is reasonable to change the description of our system using the temperature <span class="math notranslate nohighlight">\(T\)</span> instead of using <span class="math notranslate nohighlight">\(S\)</span>. From the discussion of the last section, we know we can use Lagendre transformation to achieve our goal. The corresponding description is the Helmholtz free energy.</p>
+<div class="math notranslate nohighlight">
+\[
+F(T,X)=E(S(T,X),X)-T S(T,X)\text{.}
+\]</div>
+<p>One can derive the corresponding variational principle of the Helmholtz free energy.</p>
+</section>
+<section id="thermodynamic-stability">
+<h2>Thermodynamic stability<a class="headerlink" href="#thermodynamic-stability" title="Permalink to this headline"></a></h2>
+<p>The key idea is simple, we ask how the system response when the intensive variables are not homogeneous. If the system try to even out the inhomogeneity, the system is stable. On the other hand, if the system’s response make the inhomogeneity more and more serious, the system will not reach equilibrium and will collapse.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ising models and spontaneous symmetry breaking &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Ising models and spontaneous symmetry breaking</a></li>
+<li><a class="reference internal" href="#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)</a><ul>
+<li><a class="reference internal" href="#how-can-phase-transition-happened">How can phase transition happened?</a><ul>
+<li><a class="reference internal" href="#the-zero-temperature-phase-diagram">The zero temperature phase diagram</a></li>
+<li><a class="reference internal" href="#the-finite-temperature-phase-diagram">The finite temperature phase diagram</a><ul>
+<li><a class="reference internal" href="#one-dimensional-case">One-dimensional case</a></li>
+<li><a class="reference internal" href="#two-dimensional-case">Two-dimensional case</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#symmetry-and-symmetry-breaking">Symmetry and symmetry breaking</a><ul>
+<li><a class="reference internal" href="#symmetry-of-the-system">Symmetry of the system</a></li>
+<li><a class="reference internal" href="#arguments-that-the-spontaneous-symmetry-breaking-is-impossible">Arguments that the spontaneous symmetry breaking is impossible</a></li>
+<li><a class="reference internal" href="#justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density">Justification of spontaneous symmetry breaking (I)–the analytic property of the free energy density</a></li>
+<li><a class="reference internal" href="#justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking">Justification of spontaneous symmetry breaking (II)–the ergodicity breaking</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Ising models and spontaneous symmetry breaking</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/Ising_models.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ising-models-and-spontaneous-symmetry-breaking">
+<h1>Ising models and spontaneous symmetry breaking<a class="headerlink" href="#ising-models-and-spontaneous-symmetry-breaking" title="Permalink to this headline"></a></h1>
+<p>The notion of spontaneous symmetry breaking is probably the most important non-trivial concept of statistical mechanics (I). It is related to various important phenomena in condensed matter physics, <em>e.g.</em> magnetism, liquid crystal, superconductivity, superfluidity, etc. Also, it plays important rule in the particle physics, <em>e.g.</em> Higgs mechanism, chiral symmetry breaking, etc. Once we grasp the idea of spontaneous symmetry breaking, we can not only understand above-mentioned phenomena but also the important Elitzur’s theorem which states “gauge symmetry” cannot be spontaneously broken.</p>
+<p>The important concepts can be demonstrated by using Ising models, so let’s start from the introduction of the Ising model.
+The formal definition of Ising model is</p>
+<div class="math notranslate nohighlight">
+\[
+H_{Ising,general}=\sum_{i,j} J_{ij} S_iS_j-\sum_i H_iS_i\text{.}
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(J_{i,j}\)</span> is the exchange coupling between the spins on site <span class="math notranslate nohighlight">\(i\)</span> and site <span class="math notranslate nohighlight">\(j\)</span>. <span class="math notranslate nohighlight">\(H_i\)</span> is the magnetic field coupled with the spin on site <span class="math notranslate nohighlight">\(i\)</span>. Ising model is used to study various different phenomena. Therefore, we made several remarks about the model.</p>
+<ol class="simple">
+<li><p>Classical Ising model and quantum Ising model are different. For classical Ising model the dynamical variable is the binary number 0/1 or spin up or down. In the later discussion, we will use <span class="math notranslate nohighlight">\(S_i=\{+1,-1\}\)</span>. The dynamical variable of the quantum Ising model is described by a state in the q-bit Hilbert space. Since the system has multiple q-bits, the wave function of the quantum Ising model is a many-body wave function in the <span class="math notranslate nohighlight">\(2^N\)</span> dimensional Hilbert space.</p></li>
+<li><p><span class="math notranslate nohighlight">\(J_{ij}&lt;0\)</span> is usually called the ferromagnetic coupling because the classical spins prefer to align with each other. <span class="math notranslate nohighlight">\(J_{ij}&gt;0\)</span> is usually called the anti-ferromagnetic coupling be cause the spins prefer to anti-align with each other in this case. The anti-ferromagnetic coupling could lead to interesting phenomena such as frustration.</p></li>
+<li><p><span class="math notranslate nohighlight">\(J_{ij}\)</span> decays as <span class="math notranslate nohighlight">\(|i-j|\)</span> increases. If it decays exponentially, there is a length scale where the spins are effectively decoupled. In that case we said the interaction is short-ranged or finite-ranged. Sometimes, the coupling decays slower in a power law fashion. We describe those systems as long-ranged coupled systems. Such scenario happens in trapped ion experiments. Sometimes, we will encounter the interaction that does not decay as a function of distance. Usually, they are theoretical idealization for the analytic approach. The thermodynamic limit of such system should be treated carefully.</p></li>
+<li><p>The coupling <span class="math notranslate nohighlight">\(J_{ij}\)</span> could also be a random number. Such model is used to model the disorder effects.</p></li>
+<li><p>The spins could be defined on various lattices</p>
+<ul class="simple">
+<li><p>Hypercubic lattice: the nearest-neighbors of a lattice site sits at the direction along and against the unit vector of each direction. For a D dimensional hypercubic lattice, there will be 2D nearest neighbors for each site.</p></li>
+<li><p>Triangular lattice: When we consider anti-ferromagnetic coupling on a triangular lattice, one can show the phenomena of frustration. The term simply means the three bonds of a triangular plaquette cannot minimize its energy simultaneously. Frustration plays an important role in the study of spin liquids and spin glasses.</p></li>
+</ul>
+</li>
+</ol>
+<p>For our later discussion, we focus on the simplest case: the ferromagnetic Ising model on hypercubic lattice with nearest-neighbor coupling, <span class="math notranslate nohighlight">\(\langle i,j\rangle\)</span> means the pair <span class="math notranslate nohighlight">\(i,j\)</span> are nearest-neighbors.</p>
+<div class="math notranslate nohighlight">
+\[
+H=\sum_{\langle i,j\rangle} J S_iS_j-\sum_i H S_i; J&lt;0 \text{.}
+\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">
+<h1>The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)<a class="headerlink" href="#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments" title="Permalink to this headline"></a></h1>
+<p>We want to use the Ising model to study phases and phase transition. Could we argue that the model should show at least two phases?
+We can derive the partition function as</p>
+<div class="math notranslate nohighlight">
+\[
+Z[{K,h}]=Tr\left[e^{-\beta H(K,h)}\right]=Tr\left[e^{\sum_{\langle i,j\rangle} K S_iS_j-\sum_i h S_i }\right]\text{.}
+\]</div>
+<p>Here,</p>
+<div class="math notranslate nohighlight">
+\[
+-\beta H=\sum_{\langle i,j\rangle} \underbrace{(-\beta J)}_{K} S_iS_j-\sum_i \underbrace{(-\beta H)}_{h} S_i; J&lt;0 \text{.}
+\]</div>
+<p>Let’s think in terms of the Helmholtz free energy <span class="math notranslate nohighlight">\(F=E-TS\)</span>. We can start from the simple case <span class="math notranslate nohighlight">\(h=0\)</span> and ask whether there are some non-trivial phases? At the <span class="math notranslate nohighlight">\(T\to\infty\)</span> limit, we have entropy dominates the free energy and the system prefer to maximize the entropy by randomly orient the spins. At the <span class="math notranslate nohighlight">\(T\to0\)</span> limit, the free energy is dominated by the energy of the system. We expect the system try to organize the spins such that the Ising term is minimized. From the expression, we can easily see the lowest energy corresponds to the case when all the spins are aligned upward or downward. From the simple argument above, we can already see there must be some different collective behavior at different temperature range.</p>
+<p>The above argument not only suggest there is a possible spin order at the low temperature phase. Another question is: which one? Especially when <span class="math notranslate nohighlight">\(h=0\)</span>, we can notice the system is invariant under the operation <span class="math notranslate nohighlight">\(\{S_i\}\to\{-S_i\}\)</span>. When the Hamiltonian of a system is invariant under a physical operation, we said the system has a symmetry. In this case, we said the Ising model has a <span class="math notranslate nohighlight">\(Z_2\)</span> symmetry or the Ising symmetry.</p>
+<p>One interesting question to ask is: If the <strong>Hamiltonian</strong> of a system has a specific symmetry. Will the statistical behavior of that system respects the symmetry? For our specific problem, we are asking: will the system pick the phase with magnetization <span class="math notranslate nohighlight">\(M&gt;0\)</span> (or <span class="math notranslate nohighlight">\(M&lt;0\)</span>) configuration at low temperature? <em>i.e.</em> the statistical behavior of the system <strong>breaks</strong> that symmetry <strong>spontaneously</strong>. Or they will have 50% of spin up and 50% spin down and end up with <span class="math notranslate nohighlight">\(M=0\)</span>? <em>i.e.</em> the statistical behavior of the system respect the <span class="math notranslate nohighlight">\(Z_2\)</span> symmetry?</p>
+<p>It turns out, the model will choose between the <span class="math notranslate nohighlight">\(M&gt;0\)</span> or the <span class="math notranslate nohighlight">\(M&lt;0\)</span> configuration. That is, <strong>the symmetry is broken spontaneously</strong>.</p>
+<div class="admonition-definition-spontaneous-symmetry-breaking-ssb admonition">
+<p class="admonition-title">Definition: Spontaneous symmetry breaking (SSB)</p>
+<p>When the Hamiltonian of the system has a particular symmetry but the statistical behavior of the system breaks that symmetry. We said the symmetry is broken spontaneously.</p>
+</div>
+<p>How is it possible? How the symmetry is broken? We will address this issue several times later. We will take two approaches to understand this phenomena. First approach is from the analytic behavior of the free energy density at the thermodynamic limit. The second approach is from the non-trivial structure of phase space at the thermodynamic limit. Both approach demonstrate the importance of thermodynamic limit. Before discussing these approach. We will circle back to the question on how phase transition happened in the Ising model.</p>
+<section id="how-can-phase-transition-happened">
+<h2>How can phase transition happened?<a class="headerlink" href="#how-can-phase-transition-happened" title="Permalink to this headline"></a></h2>
+<p>The zeroth order question: can we understand why the system decide to change the pattern of their collective behavior in principle?</p>
+<p>When <span class="math notranslate nohighlight">\(h=0\)</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-isingh">
+<span class="eqno">()<a class="headerlink" href="#equation-isingh" title="Permalink to this equation"></a></span>\[
+Z_{\Omega}[K]=\sum_{i=1}^{2^{N(\Omega)}} e^{-\beta \underbrace{H_{\Omega}(K;\{S_i\})}_{E_i(K)}}\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\{E_i(K)\}\)</span> is the spectrum of the Hamiltonian at coupling constant <span class="math notranslate nohighlight">\(K\)</span>.
+For finite <span class="math notranslate nohighlight">\(N(\Omega)\)</span>, every Boltzmann factor is analytic function in <span class="math notranslate nohighlight">\(K\)</span>. Sum over finite analytic functions will give us an analytic function. Therefore, we expect the partition function and the free energy for finite system to be analytic in <span class="math notranslate nohighlight">\(K\)</span>. The collective behavior at different <span class="math notranslate nohighlight">\(K\)</span> should be qualitatively the same, and there is no phase transition at finite system. From this observation, we should conclude that phase transition can only happen when <span class="math notranslate nohighlight">\(N(\Omega)\to\infty\)</span>. To get non-analytic function from the sum of analytic functions, the summation must be an infinite series. The argument is almost correct. We will use more detailed calculation to show that later. Before doing the more involved calculation, let’s develop a heuristic argument about the phase diagram of the Ising model.</p>
+<section id="the-zero-temperature-phase-diagram">
+<h3>The zero temperature phase diagram<a class="headerlink" href="#the-zero-temperature-phase-diagram" title="Permalink to this headline"></a></h3>
+<p>There is actually another possibility that we can create non-analytic behavior from the partition function of a finite system. The price we paid is to go to the quite special <span class="math notranslate nohighlight">\(T=0\)</span> limit.</p>
+<p>When <span class="math notranslate nohighlight">\(\beta\to\infty\)</span>, we know only the configuration with minimum energy will dominate the partition function.</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{\beta\to0}Z_{\Omega}[K]\sim e^{-\beta min(\{E_i(K)\})}
+\]</div>
+<p>The minimization function is not an analytic function in general. When we have two energy levels crossing each other, the dominated pattern of collective behavior swaps! Such phenomena is called level crossing. It is one possible mechanism for the zero temperature phase transition. The important features of this zero temperature phase transition are</p>
+<ol class="simple">
+<li><p>It does not rely on the thermodynamic limit <span class="math notranslate nohighlight">\(N(\omega)\to\infty\)</span>.</p></li>
+<li><p>It does not care about the dimensionality of the system. The mechanism cares about the energy specturm only.</p></li>
+</ol>
+<p>We can therefore construct our understanding of the zero temperature phase diagram along the coupling constant <span class="math notranslate nohighlight">\(h\)</span>. When <span class="math notranslate nohighlight">\(h&gt;0\)</span>, the system prefers the <span class="math notranslate nohighlight">\(M&gt;0\)</span> configurations. When <span class="math notranslate nohighlight">\(h&lt;0\)</span>, the system prefers the <span class="math notranslate nohighlight">\(M&lt;0\)</span> configurations. When <span class="math notranslate nohighlight">\(h=0\)</span>, the level crossing happens and we have our zero temperature phase transition.</p>
+<p>How the above picture changes when we are at non-zero but low temperature region? We will further discuss the stability of the corresponding <span class="math notranslate nohighlight">\(M&gt;0\)</span> and <span class="math notranslate nohighlight">\(M&lt;0\)</span> configurations. Withou loosing generality, we will focus on the physics with <span class="math notranslate nohighlight">\(M&gt;0\)</span>.</p>
+</section>
+<section id="the-finite-temperature-phase-diagram">
+<h3>The finite temperature phase diagram<a class="headerlink" href="#the-finite-temperature-phase-diagram" title="Permalink to this headline"></a></h3>
+<p>Now we know the zero temperature phase diagram. We want to ask the effect of finite temperature. Or, sometimes, we refer to the thermal fluctuation. It turns out the strength of thermal fluctuation is closely related to the dimensionality of the system. Here we will use to simple estimation to demonstrate this fact.</p>
+<section id="one-dimensional-case">
+<h4>One-dimensional case<a class="headerlink" href="#one-dimensional-case" title="Permalink to this headline"></a></h4>
+<p>We first notice that the magnetization at the thermodynamic limit is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+M=\lim_{N(\Omega)\to\infty} \frac{1}{N(\Omega)}\sum_i \langle S_i\rangle\text{.}
+\]</div>
+<p>At the thermodynamic limit, if we flip finite number of spins, we actually cannot modify <span class="math notranslate nohighlight">\(M\)</span> because any finite change devided by <span class="math notranslate nohighlight">\(N(\Omega)\to \infty\)</span> is zero. In order to have measurable effect, the thermofluctuation has at least flip a portion of the spins. Let’s consider a simple <span class="math notranslate nohighlight">\(T=0\)</span> limit with open boundary condition when the ground state is the fully polarized configuration with <span class="math notranslate nohighlight">\(M&gt;0\)</span>. If we flip half of the spins, then we have a configuration with two domains seperated by a domain wall. In one-dimensional system, this domain wall sits between two sites. We can compare the free energy of this configuration with one domain wall, <span class="math notranslate nohighlight">\(F_1\)</span>, with the fully polarized configuration with no domain wall, <span class="math notranslate nohighlight">\(F_0\)</span>. We shoudl have</p>
+<div class="math notranslate nohighlight">
+\[
+F_0=N_b J-k_BT \ln(1)=N_bJ
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(N_b\)</span> stands for the number of bonds. The entropy is zero since we consider only one configuration, the entropy is 0.</p>
+<div class="math notranslate nohighlight">
+\[
+F_1=(N_b-1) J+(-J)-k_BT \ln(N_b)=N_bJ
+\]</div>
+<p>One can immediately see</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta F=F_1-F_0= (-2J)-k_BT\ln(N_b)\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(-2J&gt;0\)</span>. That means we can always find a system that is large enough, <em>i.e.</em> <span class="math notranslate nohighlight">\(N_b&gt;e^{\frac{-2J}{k_BT}}\)</span>, such that <span class="math notranslate nohighlight">\(\Delta F&lt;0\)</span>. This means that a system with a domain wall has lower Helmholtz free energy comparing with a system with no domain wall. This argument implies the system prefer to porliferate the domain walls. Thus, the system should be in a disordered phase for any finite temperature at thermodynamic limit.</p>
+<p>Now we can see the entropy estimation is simple because it is a one-dimensional system. We can try to generalize the argument to the two-dimensional system. Let’s see what will be different.</p>
+</section>
+<section id="two-dimensional-case">
+<h4>Two-dimensional case<a class="headerlink" href="#two-dimensional-case" title="Permalink to this headline"></a></h4>
+<p>Similarly, we start from an ordered phase and ask what is the free energy for the system to have a domain wall with length <span class="math notranslate nohighlight">\(n\)</span>. Now we cannot have a exact result, since the domain wall with length <span class="math notranslate nohighlight">\(n\)</span> could have different shape. Here, we try to formulate an approximation that will over count the effect of entropy. But even for such an overcounting scheme, we can see the energy and the entropy scales in a way that the ordered phase could survive under the thermal fluctuation due to the domain walls.</p>
+<p>The free energy for a system with domain wall with circumferences <span class="math notranslate nohighlight">\(n\)</span> is approximately</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta F=F_n-F_0=(-2J)n-k_BT\ln(N_n)\gtrsim (-2J)n-k_BT\ln( (z-1)^n) =n\left[(-2J)-k_BT\ln(z-1)\right]
+\]</div>
+<p>Here, we use <span class="math notranslate nohighlight">\(N_n\)</span> to denote the configuration number of closed domain wall. We estimate it using the following simple picture. We can start with any bond and do a random walk from there. Every step, there should be <span class="math notranslate nohighlight">\((z-1)\)</span> choices. Therefore, after <span class="math notranslate nohighlight">\(n\)</span> step, we have <span class="math notranslate nohighlight">\((z-1)^n\)</span> possible paths. In those paths, there are open path which is not a valid domain wall configuration. Therefor, this approximation over estimate the effect of entropy. However, the resul already show the important structure that we can always find a temperature that is low enough such that the free energy to have a domain wall with circumference <span class="math notranslate nohighlight">\(n\)</span> is higher than the fully polarized configuration. The corresponding critical temperature is <span class="math notranslate nohighlight">\(T_c=\frac{-2J}{k_B\ln(z-1)}\)</span>.</p>
+<p>The argument implies the order can survive at finite temperature for two-dimensional system. In fact, finite temperature phase transition is possible for system with discrete symmetry above two-dimension.</p>
+<p>Collecting the information so far, we have</p>
+<ol class="simple">
+<li><p>The zero temperature phase diagram: Energy minimization gives us the corresponding magetization at <span class="math notranslate nohighlight">\(h\neq0\)</span>.</p></li>
+<li><p>The finite temperature argument suggest:</p>
+<ol class="simple">
+<li><p>One dimensional system: The order at zero temperature will be destroyed by thermal fluctuation. So the order is destroyed once <span class="math notranslate nohighlight">\(T\neq0\)</span>.</p></li>
+<li><p>Two dimensional system: The order survives when we turn on thermal fluctuation. At finite but small tempeerature, one can have a discontinuous phase transition when we go from <span class="math notranslate nohighlight">\(H&lt;0\)</span> to <span class="math notranslate nohighlight">\(H&gt;0\)</span>.</p></li>
+</ol>
+</li>
+<li><p>We expect the thermal fluctuation will supress the magnetization as temperature increases.</p></li>
+<li><p>We expect the magnetic field will enhance the magnetic order.</p></li>
+</ol>
+<p>From above information, we can argue the schematic phase diagram should look like <a class="reference internal" href="#ising-phase-diagram"><span class="std std-ref">the figure</span></a>.</p>
+<p>We posponed the discussion of <span class="math notranslate nohighlight">\(h=0\)</span> case, so we still cannot say much about what happened there. We will discuss that more carefully in the next section.</p>
+<figure class="align-default" id="ising-phase-diagram">
+<a class="reference internal image-reference" href="../_images/Ising_phase_diagram.png"><img alt="../_images/Ising_phase_diagram.png" src="../_images/Ising_phase_diagram.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Schematic phase diagram of two-dimensional Ising model.</span><a class="headerlink" href="#ising-phase-diagram" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="symmetry-and-symmetry-breaking">
+<h3>Symmetry and symmetry breaking<a class="headerlink" href="#symmetry-and-symmetry-breaking" title="Permalink to this headline"></a></h3>
+<section id="symmetry-of-the-system">
+<h4>Symmetry of the system<a class="headerlink" href="#symmetry-of-the-system" title="Permalink to this headline"></a></h4>
+<p>Let’s consider the Hamiltonian</p>
+<div class="math notranslate nohighlight">
+\[
+-\beta H=\sum_{\langle i,j\rangle} \underbrace{(-\beta J)}_{K} S_iS_j-\sum_i \underbrace{(-\beta H)}_{h} S_i; J&lt;0 \text{.}
+\]</div>
+<p>We can ask: what is the symmetry of the Hamiltonian for given parameters <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(h\)</span>? When <span class="math notranslate nohighlight">\(h=0\)</span>, we can notice the Hamiltonian is invariant if we flip all the spins. <em>i.e.</em>, <span class="math notranslate nohighlight">\(\{S_i\}\to\{-S_i\}\)</span>. This is the Ising symmetry. Because of its <span class="math notranslate nohighlight">\(Z_2\)</span> nature, it is also called the <span class="math notranslate nohighlight">\(Z_2\)</span> symmetry. (<span class="math notranslate nohighlight">\(Z_2\)</span> is a group with only two elements. The identity, <span class="math notranslate nohighlight">\(e\)</span>, and the element <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(z^2=e\)</span>.)</p>
+<p>Therefore, we said the Hamiltonian has the Ising symmetry when <span class="math notranslate nohighlight">\(h=0\)</span>. When <span class="math notranslate nohighlight">\(h\neq0\)</span>, the Hamiltonian is not invariant when we flip all the spins. So we said the magnetic field <strong>explicitly</strong> breaks the Ising symmetry. We emphasize the <strong>explicit</strong> symmetry breaking is very different with the <strong>spontaneous</strong> symmetry breaking mechanism.</p>
+<p>The model has other symmetries such as the discrete translation symmetry. Since the rest of the symmetry is not going to play an important role. So we will focus on the Ising symmetry.</p>
+<p>Maybe you will feel curious, it seems like the operation <span class="math notranslate nohighlight">\(\{S_i\}\to\{-S_i\}\)</span> is just a mathematical operation of the model. Can we relate that to any physical operation? To answer that question, we need to specify what is the microscopic origin of <span class="math notranslate nohighlight">\(S_i\)</span>. We start the discussion by assuming we are trying to model a magnetic system. Therefore, it is very tempting to identify the theoretical variable <span class="math notranslate nohighlight">\(S_i\)</span> with the atomic magnetic moments. In that case, fliping the spin corresponds to flip the orientation of the magnetic moments. We also have the physical picture that the atmoic magnetic moments came from the microscopic current. To flip its direction, it corresponds to reverse the microscopic current flow. That corresponds to the time-reversal operation. (Note that, it is actually possible to use <span class="math notranslate nohighlight">\(S_i\)</span> to model <em>electronic</em> dipole moments. In that case, the time-reversal operation will not flip the orientation of the <span class="math notranslate nohighlight">\(S_i\)</span>. To describe the physical operation, it is important to have a well-defined meaning for <span class="math notranslate nohighlight">\(S_i\)</span>.)</p>
+<p>In the lab, we cannot really perform the time reversal operation for the microscopic system. However, we can perform the time reversal operation for macroscopic current that induce the external field, <span class="math notranslate nohighlight">\(h\)</span>.</p>
+<p>We can notice there is a operation(a thought experiment) that keep the Hamiltonian invariant, <em>i.e.</em> we can globally perform the time reversal symmetry such that we flip the orientation of the microscopic and the macroscopic current. That leads to <span class="math notranslate nohighlight">\(\{S_i\}\to\{-S_i\},h\to-h\)</span>.</p>
+</section>
+<section id="arguments-that-the-spontaneous-symmetry-breaking-is-impossible">
+<h4>Arguments that the spontaneous symmetry breaking is impossible<a class="headerlink" href="#arguments-that-the-spontaneous-symmetry-breaking-is-impossible" title="Permalink to this headline"></a></h4>
+<p>We have already point out the symmetry at <span class="math notranslate nohighlight">\(h=0\)</span> will be spontaneously broken. Let’s try to see if it is possible for a finite system using the following two arguments.</p>
+<p><strong>Argument 1</strong></p>
+<p>Starting from a sample <span class="math notranslate nohighlight">\(\Omega\)</span>, we know the Hamiltonian has the property that <span class="math notranslate nohighlight">\(H_{\Omega}(h,K,\{S_i\})=H_{\Omega}(-h,K,\{-S_i\})\)</span>. So we can derive the following relation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Z_{\Omega}(-h,K,\{S_i\})=\sum_{\{S_i\}} e^{-\beta H_{\Omega}(-h,K,\{S_i\}})\\
+\xrightarrow{\text{The order of summation is not important}}\sum_{\{S_i\}} e^{-\beta H_{\Omega}(-h,k,\{-S_i\})}=\sum_{\{S_i\}} e^{-\beta H_{\Omega}(h,K,\{S_i\})}=Z_{\Omega}(h,K,\{S_i\})\text{.}
+\end{split}\]</div>
+<p>So we have <span class="math notranslate nohighlight">\(F_{\Omega}(-h,K)=F_{\Omega}(h,K)\)</span>. From the definition of magnetization, we expect</p>
+<div class="math notranslate nohighlight">
+\[
+M_{\Omega}(h) N(\Omega)=-\frac{\partial F_{\Omega}(h,K)}{\partial h}\stackrel{?}{=}\frac{\partial F_{\Omega}(-h,K)}{\partial -h}=-M_{\Omega}(-h) N(\Omega)\text{.}
+\]</div>
+<p>This relation shows the constraint that <span class="math notranslate nohighlight">\(M_{\Omega}(h)=-M_{\Omega}(-h)\)</span>. When we send <span class="math notranslate nohighlight">\(h\)</span> to zero, we inevitably get the result that <span class="math notranslate nohighlight">\(M_{\Omega}(h=0)=0\)</span>! If we send the system to thermodynamic limit, we conclude that there is no spontaneous symmetry breaking since <span class="math notranslate nohighlight">\(\lim_{N(\Omega)\to\infty}M_{\Omega}\)</span> must be zero.</p>
+<p><strong>Argument 2</strong></p>
+<p>The above derivation is equivalent to the following observation:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{\Omega}(\{S_i\})=P_{\Omega}(\{-S_i\})=\frac{e^{-\beta H_{\Omega}(h=0,K,\{S_i\})}}{Z}=\frac{e^{-\beta H_{\Omega}(h=0,K,\{-S_i\})}}{Z}\text{.}
+\]</div>
+<p>The magnetization is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+M_{\Omega}(h) N(\Omega)=\sum_{ \{S_i\} } \left[\left.\left(\sum_j S_j\right)\right|_{ \{S_j\}=\{S_i\} } P_{\Omega}(\{S_i\})\right]=0\text{.}
+\]</div>
+<p>In the last equality, we use the property that the total summation over spin is odd under the Ising symmetry, but the weight is invariant under Ising symmetry. So every possitive contribution is canceled exactly by its Ising partner in the summation.</p>
+<p>Now the idea of spontaneous symmetry looks more and more suspecious. Can symmetry really be broken spontaneously? If yes, what is wrong with the previous arguments?</p>
+</section>
+<section id="justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density">
+<h4>Justification of spontaneous symmetry breaking (I)–the analytic property of the free energy density<a class="headerlink" href="#justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density" title="Permalink to this headline"></a></h4>
+<p>The problem of the argument 1 is at the “<span class="math notranslate nohighlight">\(\stackrel{?}{=}\)</span>” when we calculate the magnetization. The implicity assumption that is used to get this equality is we assume the free energy is a <strong>smooth</strong> function of <span class="math notranslate nohighlight">\(h\)</span>, which is stronger than requireing the free energy is a <strong>continuous</strong> function of <span class="math notranslate nohighlight">\(h\)</span>. In fact, as we mentioned previously, when we have an infinite series, even though every term is analytic, the series could be non-analytic. Therefore, the additional requirement that the free energy is smooth in <span class="math notranslate nohighlight">\(h\)</span> only holds when the system is finite, not in the thermodynamic limit.</p>
+<p>In the mathematical expression, it means the two limit, <span class="math notranslate nohighlight">\(h\to0\)</span> and <span class="math notranslate nohighlight">\(N(\Omega)\to\infty\)</span> does not commute. This is a rare example that the ordering of the limit actually matters.</p>
+<p>We can define the spontaneous magnetization, <span class="math notranslate nohighlight">\(M_s\)</span>, as</p>
+<div class="math notranslate nohighlight">
+\[
+M_s=\lim_{h\to0^+}-\frac{\partial f(h)}{\partial h}=\lim_{h\to0^+}\lim_{N(\Omega)\to\infty}-\frac{\partial }{\partial h} \frac{F(h)}{N(\Omega)}\text{.}
+\]</div>
+<p>Equivalently we have</p>
+<div class="math notranslate nohighlight">
+\[
+-M_s=\lim_{h\to0^-}-\frac{\partial f(h)}{\partial h}=\lim_{h\to0^-}\lim_{N(\Omega)\to\infty}-\frac{\partial }{\partial h} \frac{F(h)}{N(\Omega)}\text{.}
+\]</div>
+<p>If we take the limit in the wrong way, we will always have <span class="math notranslate nohighlight">\(M(h=0)=0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+M(h=0)=\lim_{N(\Omega)\to\infty}\lim_{h\to0}-\frac{\partial }{\partial h} \frac{F(h)}{N(\Omega)}=0\text{.}
+\]</div>
+</section>
+<section id="justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking">
+<h4>Justification of spontaneous symmetry breaking (II)–the ergodicity breaking<a class="headerlink" href="#justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking" title="Permalink to this headline"></a></h4>
+<p>The problem of the argument 2 is about the ergodicity. We assume the system is ergodic and the system can explore any two symmetry related configurations. Let’s see how this picture breaks down at the thermodynamic limit.</p>
+<p>Suppose we have a finite field <span class="math notranslate nohighlight">\(h\)</span> that breaks the Ising symmetry. Let’s consider a specific spin configuration. The magnetic field induced energy of configuration is <span class="math notranslate nohighlight">\(N(\Omega)\epsilon(h)\)</span>. The Ising partner of this configuration will have the magnetic field induced energy <span class="math notranslate nohighlight">\(-N(\Omega)\epsilon(h)\)</span>. Without loosing generality, we call the configuration with <span class="math notranslate nohighlight">\(\epsilon(h)&gt;0\)</span> the configuration <span class="math notranslate nohighlight">\(A\)</span> and its Ising partner <span class="math notranslate nohighlight">\(\overline{A}\)</span>.</p>
+<p>The ratio of the probabilities of these two configurations is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P_A}{P_{\overline{A}}}=\frac{e^{-\beta N(\Omega)\epsilon(h)}}{e^{\beta N(\Omega)\epsilon(h)}}\xrightarrow{N(\Omega)\to\infty}0\text{.}
+\]</div>
+<p>The key observation is this ratio goes to 0 exponentially fast as we go to the thermodynamic limit. Once we take the thermodynamic limit, the probability contribution of the configuration <span class="math notranslate nohighlight">\(A\)</span> is neglegible. Therefore, finite symmetry breaking term will change the structure of the phase space and the phase space <span class="math notranslate nohighlight">\(A\)</span> is essentially inaccessible. Therefore, when we send <span class="math notranslate nohighlight">\(h\to0\)</span>, the configuration space is actually not ergodic. When we calculate the expectation values, we should consider a <strong>restricted ensemble</strong>, <em>i.e.</em> only half of the configurations with weight that is not exponentially supressed should be considered.</p>
+<div class="math notranslate nohighlight">
+\[
+M_{s}(h)=\lim_{N(\Omega)\to\infty}\frac{1}{N(\Omega)}\sum_{ \{S_i\}\in \overline{A} } \left[\left.\left(\sum_j S_j\right)\right|_{ \{S_j\}=\{S_i\} } P_{\Omega}(\{S_i\})\right]\neq 0\text{.}
+\]</div>
+<p>Even though we use the Ising model to demonstrate the spontaneous symmetry breaking phenomena. It can be applied to systems with continuous symmetry. For example, consider a system with <span class="math notranslate nohighlight">\(O(2)\)</span> symmetry, the configuration at angle <span class="math notranslate nohighlight">\(\theta_1\)</span> has the symmetry breaking field induced energy <span class="math notranslate nohighlight">\(N(\Omega)\epsilon_{\theta_1}(h)\)</span>. The configuration at angle <span class="math notranslate nohighlight">\(\theta_2\)</span> has the symmetry breaking field induced energy <span class="math notranslate nohighlight">\(N(\Omega)\epsilon_{\theta_2}(h)\)</span>. As long as <span class="math notranslate nohighlight">\(\epsilon_{\theta_1}(h)-\epsilon_{\theta_2}(h)\)</span> is finite, one of the configuration will dominates at the thermodynamic limit and the argument will work in a similar fashion.</p>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>The argument just describe the possibility of spontaneous symmetry breaking. Whether the symmetry breaking phase could survive at finite temperature is another question. For example, the argument has no dimensionality information. So it will suggest spontaneous symmetry could happen at one-dimensional system. However, the previous argument suggest the order is not stable against thermal fluctuation. Therefore, we still cannot observe spontaneous symmetry breaking at finite temperature in one-dimensional Ising model.</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

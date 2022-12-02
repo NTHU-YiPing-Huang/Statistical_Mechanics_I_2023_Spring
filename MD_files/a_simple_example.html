@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A simple example &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">A simple example</a><ul>
+<li><a class="reference internal" href="#deterministic-approach">Deterministic approach</a></li>
+<li><a class="reference internal" href="#statistical-description">Statistical description</a></li>
+<li><a class="reference internal" href="#what-do-we-achieve">What do we achieve?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">A simple example</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/a_simple_example.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="a-simple-example">
+<h1>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline"></a></h1>
+<p>Let’s start from the ideal gas model and comparing the deterministic approach and the statistical approach explicitly.</p>
+<section id="deterministic-approach">
+<h2>Deterministic approach<a class="headerlink" href="#deterministic-approach" title="Permalink to this headline"></a></h2>
+<p>To describe the system in a deterministic fashion, we need to specify the initial condition and the equation of motion.</p>
+<p>To specify the initial configuration of the system of <span class="math notranslate nohighlight">\(N\)</span> particles. We need to specify the case with one particle first. We know we need a three component position vector, <span class="math notranslate nohighlight">\(\textbf{R}\)</span>, and a three component velocity vector, <span class="math notranslate nohighlight">\(\textbf{V}\)</span>, to describe the initial condition for a single particle. When we have <span class="math notranslate nohighlight">\(N\)</span> particles, we will need <span class="math notranslate nohighlight">\(N\)</span> such vectors for the position and <span class="math notranslate nohighlight">\(N\)</span> such vectors for the velocity. That is, the initial condition of the system is specified by <span class="math notranslate nohighlight">\(\{\textbf{r},\textbf{v}\}\equiv\{\textbf{R}_1,\cdots,\textbf{R}_N;\textbf{V}_1,\cdots,\textbf{V}_N\}\)</span>. Here <span class="math notranslate nohighlight">\(\textbf{r}\)</span> and <span class="math notranslate nohighlight">\(\textbf{v}\)</span> are vectors of length <span class="math notranslate nohighlight">\(3N\)</span>.</p>
+<p>With the initial condition specified by <span class="math notranslate nohighlight">\(\{\textbf{r},\textbf{v}\}\)</span>, we still need to construct the equation of motion. In general, they are described by</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i\neq j}\textbf{F}_{ij}=m_j \frac{\partial^2}{\partial t^2} \textbf{R}_j\text{ for the $j$-th particle.}
+\]</div>
+<p>In practice, we usually do not have the detailed information of the system with <span class="math notranslate nohighlight">\(N\sim \mathcal{O}(10^{23})\)</span>. Also, the coupled equation of motion is very complicated. Even if we manage to have the solution, it is impossible to make sense out of this complicated deterministic result.</p>
+</section>
+<section id="statistical-description">
+<h2>Statistical description<a class="headerlink" href="#statistical-description" title="Permalink to this headline"></a></h2>
+<p>Now we understand the challenge from the deterministic approach. We known we have a huge space that describes the possible initial condition of our macroscopic system. Are all the initial condition equivalent? Suppose we have a <span class="math notranslate nohighlight">\(1m^3\)</span> box, it is possible that we have a “homogeneous” distribution of or particle as our initial condition. The initial condition that all the particles are concentrated at the top left corner of <span class="math notranslate nohighlight">\(1cm^3\)</span> volume of our box is also valid. However, from the intuition, we know it is more likely that the gas molecules will distribute evenly, instead of choosing to sit at one corner.</p>
+<p>This intuition motivates us to make some postulation about the initial conditions. Following is the Maxwell’s postulates:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\{\textbf{R}_i,\textbf{V}_i\}\)</span> and <span class="math notranslate nohighlight">\(\{\textbf{R}_j,\textbf{V}_j\}\)</span> are independent variables for different <span class="math notranslate nohighlight">\(i,j\)</span>. Let’s use <span class="math notranslate nohighlight">\(f(\textbf{r},\textbf{v})\)</span> to denote the density of particles in the space at <span class="math notranslate nohighlight">\(\textbf{r},\textbf{v}\)</span>. The number of particles in this volume is <span class="math notranslate nohighlight">\(dN=f(\textbf{r},\textbf{v})d\textbf{r}d\textbf{v}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\textbf{r}\)</span> and <span class="math notranslate nohighlight">\(\textbf{v}\)</span> are independent variables. So we expect <span class="math notranslate nohighlight">\(f(\textbf{r},\textbf{v})=f_r(\textbf{r})f_v(\textbf{v})\)</span>.</p></li>
+<li><p>The density is unifor in the space. So we know <span class="math notranslate nohighlight">\(f_r(\textbf{r})=N/V\)</span>.</p></li>
+<li><p>The velocity components, the <span class="math notranslate nohighlight">\(x,y,z\)</span> components, are mutually independent. So we have <span class="math notranslate nohighlight">\(f_v(\textbf{v}=f_x(v_x)f_y(v_y)f_z(v_z)\)</span></p></li>
+<li><p>The distribution of the velocity only depends on the magnitude of the velocity. That is, <span class="math notranslate nohighlight">\(f_v(\textbf{v})=f_v(|\textbf{v}|)=f_v((v_x^2+v_y^2+v_z^2)^{\frac{1}{2}})\)</span>.</p></li>
+</ol>
+<p>From 4 and 5, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\ln f_v(\textbf{v})=\ln f_v((v_x^2+v_y^2+v_z^2)^{\frac{1}{2}})= \ln f_x(v_x)+\ln f_y(v_y)+\ln f_z(v_z)\text{.}
+\]</div>
+<p>Since the system is isotropic, there is no reason that <span class="math notranslate nohighlight">\(f_x(u), f_y(u), f_z(u)\)</span> has different expression, we can simply assume <span class="math notranslate nohighlight">\(f_x(u), f_y(u), f_z(u)=g(u)\)</span>. Similar argument suggests <span class="math notranslate nohighlight">\(f_v(u)=g(u)\)</span> also. So we are looking for a functional from of <span class="math notranslate nohighlight">\(g(u)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\ln\left[ g(v_x)g(v_y)g(v_z)\right]=\ln\left[ g\left( (v_x^2+v_y^2+v_z^2)^{\frac{1}{2}}\right)\right]\text{.}
+\]</div>
+<p>We can try some form of the <span class="math notranslate nohighlight">\(g(u)\)</span>. Say <span class="math notranslate nohighlight">\(g(u)\propto u^m\)</span>, <span class="math notranslate nohighlight">\(g(u)\propto e^{B u}\)</span>, … After some trial functions, we can convince ourselves that the function <span class="math notranslate nohighlight">\(g(u)\propto e^{-\lambda u^2}\)</span> with <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span>. (<span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> since it should be a distribution function that is normalizable).</p>
+<p>Once we figure out the form of the density function, we know the normalization condition is</p>
+<div class="math notranslate nohighlight">
+\[
+N=\int f(\textbf{r},\textbf{v})d\textbf{r}d\textbf{v}=\int f_r(\textbf{r})d\textbf{r}\int f_x(v_x)f_y(v_y)f_z(v_z) dv_xdv_ydv_z\text{.}
+\]</div>
+<p>So we have the normalization condition</p>
+<div class="math notranslate nohighlight">
+\[
+\int du g(u)=1\text{.}
+\]</div>
+<p>Performing the Gaussian integral, we have <span class="math notranslate nohighlight">\(g(u)=\sqrt{\frac{\lambda}{\pi}}\exp[-\lambda u^2]\)</span>.</p>
+<p>At this point, we don’t know what is <span class="math notranslate nohighlight">\(\lambda\)</span>. But we can already evaluate the expectation value, <span class="math notranslate nohighlight">\(\langle v^2\rangle=\langle v_x^2+v_y^2+v_z^2\rangle=3\int v_x^2 g(v_x)dv_x=\frac{3}{2\lambda}\)</span>.</p>
+<p>To figure out the expression of <span class="math notranslate nohighlight">\(\lambda\)</span> using the microscopic modeling, we can consider the ideal gas equation <span class="math notranslate nohighlight">\(PV=Nk_BT\)</span> and the microscopic expression of the concept of pressure, <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<p>Consider the surface expand in the <span class="math notranslate nohighlight">\(y-z\)</span> plan, the particles collide with the container without energy lost, so we have the momentum transfer to be</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Delta P=\underbrace{\int_0^\infty dv_x f_x(v_x)}_{v_x&gt;0 \text{ particles collide with the right wall} }\underbrace{\rho S v_x\Delta t}_{\text{number of collision in time }\Delta t} \underbrace{(-2mv_x)}_{\text{momentum transfer per particle}}\\ \times \int_{-\infty}^{\infty} dv_y\int_{-\infty}^{\infty} dv_z f_y(v_y)f_z(v_z)
+\end{split}\]</div>
+<p>We also know the magnitude of pressure is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+P=\frac{|F|}{S}=\frac{|\Delta P|}{S\Delta t}=\rho m \langle v_x^2 \rangle=\frac{\rho m}{2\lambda}=\rho k_BT\text{.}
+\]</div>
+<p>So we have <span class="math notranslate nohighlight">\(\lambda=\frac{m}{2k_BT}\)</span>.</p>
+</section>
+<section id="what-do-we-achieve">
+<h2>What do we achieve?<a class="headerlink" href="#what-do-we-achieve" title="Permalink to this headline"></a></h2>
+<p>Let’s review what we have done here.</p>
+<ol class="simple">
+<li><p>We assume the initial condition satisfy some statistical properties. Here, it is the statistical independence between particles, statistical independence between <span class="math notranslate nohighlight">\(\textbf{r},\textbf{v}\)</span> and the statistical independence of the projection of <span class="math notranslate nohighlight">\(\textbf{r},\textbf{v}\)</span>  on the <span class="math notranslate nohighlight">\(x,y,z\)</span> axes.</p></li>
+<li><p>We then can argue the form of the distribution function with <span class="math notranslate nohighlight">\(\lambda\)</span> undetermined.</p></li>
+<li><p>We use the microscopic picture and the ideal gas equation <span class="math notranslate nohighlight">\(PV=Nk_BT\)</span> to derive the expression of <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
+<li><p>Then we find the corresponding distribution function.</p></li>
+</ol>
+<p>However, it is not clear that this distribution function is compatible with the deterministic approach. That is, even if we assume the initial condition satisfied this distribution function, it does not mean the distribution function will be satisfied for arbitrary time after we evolve the particles using the deterministic equation of motion!</p>
+<p>To rationalize this picture, we postulate that the statistical independence assumption captures the most relevant initial conditions. Even if the deterministic evolution of the system might drive the system outside of this statistical independence assumption, the chance that the system evolved into such status is small and measure zero when the system is at the macroscopic scale.</p>
+<p>So one can imagine that if we start from this particular distribution function as our initial condition. As the system evolved in a deterministic way, we expect the distribution function to fluctuates in time. The statistical independence picture we derived previously suggest the fluctuation to be estimated by the relative standard deviation we discussed in the random walk section. At the limit <span class="math notranslate nohighlight">\(N\to\infty\)</span>, our distribution function will play dominant role and will be a very good approximation for our system. This is the spirit of the statistical description.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

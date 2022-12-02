@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transfer matrix method &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Transfer matrix method</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Transfer matrix method</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/Ising_models_2.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="transfer-matrix-method">
+<h1>Transfer matrix method<a class="headerlink" href="#transfer-matrix-method" title="Permalink to this headline"></a></h1>
+<p>Now we are going to solve the one-dimensional Ising model with external field. Now we <strong>change the definition of our notation</strong> to make our discussion more concise.</p>
+<p>We define our Hamiltonian as</p>
+<div class="math notranslate nohighlight">
+\[
+-\beta H_{\Omega}(\{S_i\})=\underbrace{\beta H}_{\beta}\sum_iS_i+\underbrace{\beta J}_{K}\sum_iS_iS_{i+1}; J&gt;0\text{.}
+\]</div>
+<p>The partition function is</p>
+<div class="math notranslate nohighlight">
+\[
+Z(h,K,N(\Omega))=Tr\left[e^{h\sum_iS_i+K\sum_iS_iS_{i+1}}\right]\text{.}
+\]</div>
+<p>Let’s start from the simple <span class="math notranslate nohighlight">\(h=0\)</span> limit.
+When <span class="math notranslate nohighlight">\(h=0\)</span>, we can define the bond variables <span class="math notranslate nohighlight">\(\eta_{i,i+1}\equiv S_iS_{i+1}\)</span>. By definition, <span class="math notranslate nohighlight">\(\eta_{i,i+1}=\pm1\)</span>. Since the bond variables do not couple with each other, the Hamiltonian written in the bond variable is effectively another Ising model but with only magnetic field, <span class="math notranslate nohighlight">\(K\)</span>. Because of that, the partition function is simply <span class="math notranslate nohighlight">\(Z(h=0,K,N)=2(2 \cosh K)^{N-1}\)</span>.</p>
+<p>This approach cannot be generalized to the case with magnetic field <span class="math notranslate nohighlight">\(h\)</span>. Here we introduce the transfer matrix method and use it to overcome this difficulty.</p>
+<p>Let’s look at one bond and consider all the possible configurations on this single bond, <span class="math notranslate nohighlight">\((i,i+1)\)</span>. Since each bond has two spins coupled together, we can use a matrix to represent the configurations. The row index is corresponds to the spin <span class="math notranslate nohighlight">\(i\)</span> and the column index corresponds to the spin <span class="math notranslate nohighlight">\(i+1\)</span>. Explicitly, we can write down the spin configuration and the corresponding Boltzmann factors as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left(
+\begin{array}{cc}
+\uparrow_{i} \uparrow_{i+1} &amp;\uparrow_{i} \downarrow_{i+1}\\
+\downarrow_{i} \uparrow_{i+1} &amp; \downarrow_{i} \downarrow_{i+1}
+\end{array}
+\right)
+\xrightarrow{\text{Boltzmann factors}}
+\left(
+\begin{array}{cc}
+e^{K+2h} &amp;e^{-K}\\
+e^{-K} &amp; e^{K-2h}
+\end{array}
+\right)\equiv \widetilde{T}^{(i,i+1)}
+\end{split}\]</div>
+<p>Note the <span class="math notranslate nohighlight">\((i,i+1)\)</span> is just the label of the bond not the row/column indices.</p>
+<p>In the non-interacting case, we are familiar with the structure that the Boltzmann factor for the full system is just the product of the Boltzmann factors of individual mode since the exponents add up and give us the total energy. Can we do that for our one-dimensional nearest-neighbor coupled systems? Let’s take two nearby bonds, <span class="math notranslate nohighlight">\((i-1,i)\)</span> and <span class="math notranslate nohighlight">\((i,i+1)\)</span> and do the matrix product and see what will it lead to.</p>
+<p>Let’s focus on the configuration first. Here we use <span class="math notranslate nohighlight">\(\boxtimes\)</span> to denote the concept of combine the two configurations to form another configuration. We also use <span class="math notranslate nohighlight">\(\boxplus\)</span> to denote the concept of collecting configurations.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left(
+\begin{array}{cc}
+\uparrow_{i-1} \underline{\uparrow_{i}} &amp;\uparrow_{i-1} \underline{\underline{\downarrow_{i}}}\\
+\downarrow_{i-1} \uparrow_{i} &amp; \downarrow_{i-1} \downarrow_{i}
+\end{array}
+\right)
+\boxtimes
+\left(
+\begin{array}{cc}
+\underline{\uparrow_{i}} \uparrow_{i+1} &amp;\uparrow_{i} \downarrow_{i+1}\\
+\underline{\underline{\downarrow_{i}}} \uparrow_{i+1} &amp; \downarrow_{i} \downarrow_{i+1}
+\end{array}
+\right)\\
+=
+\left(
+\begin{array}{cc}
+\uparrow_{i-1} \underline{\uparrow_{i}} \uparrow_{i+1}\boxplus \uparrow_{i-1} \underline{\underline{\downarrow_{i}}} \uparrow_{i+1}
+&amp;
+\downarrow_{i-1} \uparrow_{i} \uparrow_{i+1}\boxplus \downarrow_{i-1} \downarrow_{i} \uparrow_{i+1}
+\\
+\uparrow_{i-1} \uparrow_{i} \downarrow_{i+1}\boxplus \uparrow_{i-1} \downarrow_{i} \downarrow_{i+1}
+&amp; 
+\downarrow_{i-1} \uparrow_{i} \downarrow_{i+1}\boxplus \downarrow_{i-1} \downarrow_{i} \downarrow_{i+1}
+\end{array}
+\right)
+\end{split}\]</div>
+<p>We can see we generate all the <span class="math notranslate nohighlight">\(2^3\)</span> configurations for the three spin system by this formal operation.(In fact, the <span class="math notranslate nohighlight">\(\boxplus\)</span> notation is just to help understand the structure of the matrix product. The true meaning should corresponds to a rank 3 tensor <span class="math notranslate nohighlight">\(T_{S_{i-1},S_i,S_{i+1}}\)</span>) How about the Boltzmann’s factors?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\widetilde{T}^{(i-1,i)}\widetilde{T}^{(i,i+1)}=
+\left(
+\begin{array}{cc}
+e^{K+2h} &amp;e^{-K}\\
+e^{-K} &amp; e^{K-2h}
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+e^{K+2h} &amp;e^{-K}\\
+e^{-K} &amp; e^{K-2h}
+\end{array}
+\right)\\
+=
+\left(
+\begin{array}{cc}
+e^{K+2h+K+2h}+e^{-K-K} &amp;e^{K+2h-K}+e^{-K+K-2h}\\
+e^{-K+K+2h}+e^{K-2h-K} &amp; e^{-K-K}+e^{K-2h+K-2h}
+\end{array}
+\right)
+\end{split}\]</div>
+<p>We can see the representation is very promising. Even thought we are not yet there. All the spin configurations are included. However, the product of the matrix <span class="math notranslate nohighlight">\(\widetilde{T}_{i-1,i}\widetilde{T}_{i,i+1}\)</span> does not give the correct Boltzmann factors for the corresponding spin configurations.
+For example, the Boltzmann factor for the configuration <span class="math notranslate nohighlight">\(\uparrow_{i-1}\uparrow_{i}\uparrow_{i+1}\)</span> should be <span class="math notranslate nohighlight">\(e^{2K+3h}\)</span> not <span class="math notranslate nohighlight">\(e^{2K+4h}\)</span>. If we think through the process, we can immediate realize the discrepancy came from the double counting of energy due to the magnetic field on site <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>We immediate discover how to fix our problem. We can consider a system with periodic boundary condition and modify the matrix <span class="math notranslate nohighlight">\(\widetilde{T}_{i,i+1}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\widetilde{T}^{(i,i+1)}\to T^{(i,i+1)}=T\equiv
+\left(
+\begin{array}{cc}
+e^{K+h} &amp;e^{-K}\\
+e^{-K} &amp; e^{K-h}
+\end{array}
+\right)\text{.}
+\end{split}\]</div>
+<p>The matrix <span class="math notranslate nohighlight">\(T\)</span> is the transfer matrix of the Ising model. We can use that to express the partition function as</p>
+<div class="math notranslate nohighlight">
+\[
+Z(h,K,N(\Omega))=\sum_{S_1=\uparrow,\downarrow}\sum_{S_2=\uparrow,\downarrow}\cdots\sum_{S_{N(\Omega)}=\uparrow,\downarrow} [T^{(1,2)}]_{S_1,S_2}[T^{(2,3)}]_{S_2,S_3}\cdots[T^{N(\Omega),1}]_{S_{N(\Omega),S_1}}=Tr[T^{N(\Omega)}]\text{.}
+\]</div>
+<p>The above expression is useful, since we can simplify the calculation significantly by diagonalize <span class="math notranslate nohighlight">\(T\)</span>. Once <span class="math notranslate nohighlight">\(T\)</span> is diagonalized. Let’s diagonalize the matrix <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+T\xrightarrow{diagonalized}
+D=
+\left(
+\begin{array}{cc}
+\lambda_+ &amp;0\\
+0 &amp;\lambda_-
+\end{array}
+\right)\text{.}
+\end{split}\]</div>
+<p>Here,</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\pm}=e^K\left[\cosh h\pm\sqrt{\sinh ^2 h+e^{-4K}}\right]\text{.}
+\]</div>
+<p>Let’s assume <span class="math notranslate nohighlight">\(\lambda_+&gt;\lambda_-\)</span>.</p>
+<p>We then solve the partition function exactly</p>
+<div class="math notranslate nohighlight">
+\[
+Z(h,K,N(\Omega))=\lambda_+^{N(\Omega)}+\lambda_-^{N(\Omega)}=\lambda_+^{N(\Omega)}\left[1+\left(\frac{\lambda_-}{\lambda_+}\right)^{N(\Omega)}\right]\text{.}
+\]</div>
+<p>When <span class="math notranslate nohighlight">\(N(\Omega)\to\infty\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{N(\Omega)\to\infty} Z(h,K,N(\Omega))\sim \lambda_+^{N(\Omega)}.
+\]</div>
+<p>The free energy density is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(h,K)=\lim_{N(\Omega)\to\infty}\frac{F(h,K,N(\Omega))}{N(\Omega)}=-k_BT\ln \lambda_+\\
+=-J-k_BT\ln\left[\cosh h\pm\sqrt{\sinh ^2 h+e^{-4K}}\right]\text{.}
+\end{split}\]</div>
+<p>At <span class="math notranslate nohighlight">\(T&gt;0\)</span>, we have the argument in the square root to be positive. So no non-analytic behavior for the free energy density. That is consistent with our previous argument that no finite temperature phase transition in the one-dimensional Ising model.
+At <span class="math notranslate nohighlight">\(T=0\)</span>, we can see the <span class="math notranslate nohighlight">\(e^{-4K}\)</span> drops and we have</p>
+<div class="math notranslate nohighlight">
+\[
+f(h,K)=-J-k_BT\ln[\cosh h\pm \vert \sinh h\vert]=-J-\vert H\vert \text{.}
+\]</div>
+<p>As we guessed before, <span class="math notranslate nohighlight">\(f(h,K)\)</span> is continuous in <span class="math notranslate nohighlight">\(H\)</span> but not smooth in <span class="math notranslate nohighlight">\(H\)</span> at <span class="math notranslate nohighlight">\(T=0\)</span>. Therefore, the magnetization density is <span class="math notranslate nohighlight">\(\pm1\)</span> for positive or negative <span class="math notranslate nohighlight">\(H\)</span>. We can also see this behavior will become smooth once we have the <span class="math notranslate nohighlight">\(e^{-4K}\)</span> term.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

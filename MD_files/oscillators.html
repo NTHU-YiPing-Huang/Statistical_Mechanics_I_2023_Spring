@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oscillators &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Oscillators</a><ul>
+<li><a class="reference internal" href="#classical-1d-oscillators-at-temperature-t">Classical 1D oscillators at temperature <span class="math notranslate nohighlight">\(T\)</span></a><ul>
+<li><a class="reference internal" href="#the-equi-partition-theorem">The equi-partition theorem</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quantum-harmonic-oscillators">Quantum Harmonic oscillators</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#key-points-to-learn-from-the-two-example">Key points to learn from the two example</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Oscillators</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/oscillators.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="oscillators">
+<h1>Oscillators<a class="headerlink" href="#oscillators" title="Permalink to this headline"></a></h1>
+<p>We are dealing with free systems so far. The ideal gas ( free particles) and the paramagnetic phase of spins ( free binary variables). Now we can try to explore the situation when the particles are interacting free, but experience an external potential. The most important case is the oscillators.</p>
+<section id="classical-1d-oscillators-at-temperature-t">
+<h2>Classical 1D oscillators at temperature <span class="math notranslate nohighlight">\(T\)</span><a class="headerlink" href="#classical-1d-oscillators-at-temperature-t" title="Permalink to this headline"></a></h2>
+<p>Let’s follow the flow chart in the last section to study the system.</p>
+<style>
+table th:first-of-type {
+    width: 10%;
+}
+table th:nth-of-type(2) {
+    width: 30%;
+}
+table th:nth-of-type(3) {
+    width: 60%;
+}
+</style>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Stage</p></th>
+<th class="text-align:center head"><p>Statistical mechanics idea</p></th>
+<th class="text-align:center head"><p>The physical system</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>Pick a system</p></td>
+<td class="text-align:center"><p>A bunch of independent classical oscillators</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>Identify the relevant microscopic degrees of freedom, <span class="math notranslate nohighlight">\(\xi\)</span></p></td>
+<td class="text-align:center"><p>The coordinate and momentum of the oscillator, <span class="math notranslate nohighlight">\((R_i,P_i)\)</span>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>3</p></td>
+<td class="text-align:center"><p>Construct the possible energy for the microscopic degree of freedom.</p></td>
+<td class="text-align:center"><p>In this case, the Hamiltonian is given, so we don’t need to worry about how to write down the corresponding Hamiltonian. Basically, <span class="math notranslate nohighlight">\(H=\sum_{i=1}^N H_i\)</span>. <span class="math notranslate nohighlight">\(H_i=\frac{P_i^2}{2m}+\frac{\kappa}{2}R_i^2\)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>4</p></td>
+<td class="text-align:center"><p>Now we can pick an ensemble that satisfied the constraint of our system. We pick the canonical ensemble since temperature <span class="math notranslate nohighlight">\(T\)</span> is fixed.</p></td>
+<td class="text-align:center"><p>Most of the time, the experiments study the equilibrium system with fixed temperature. Therefore, we usually pick the canonical ensemble. Then, according to our previous knowledge of statistical mechanics. We know how to construct the partition function. For our system case, <span class="math notranslate nohighlight">\(Z=\int \left(\prod_{i=1}^N\frac{dR_idP_i}{h}\right) \exp\left[-\beta \sum_{j=1}^N \frac{1}{2m}P_j^2+\frac{m\omega_0^2}{2}R_j^2\right]\)</span> with <span class="math notranslate nohighlight">\(\omega_0^2=\kappa/m\)</span>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>5</p></td>
+<td class="text-align:center"><p>We can improved our guess of <span class="math notranslate nohighlight">\(\xi\)</span> and <span class="math notranslate nohighlight">\(H(\xi)\)</span> by comparing with experiments. (Going back to stage 2.)</p></td>
+<td class="text-align:center"><p>Since the Hamiltonian is given in this problem, there is no need to compare with experiments.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The potential obstacle 1 does not exist, since the problem is a pedagogical problem. The potential obstacle 2 is whether we can evaluate the partition function.</p>
+<div class="math notranslate nohighlight">
+\[
+Z\xrightarrow{\text{interacting free}} \prod_{i=1}^{N}\left[\int \frac{dR_idP_i}{h} \exp\left[-\left(\frac{\beta}{2m}\right) P_i^2\right]\exp\left[-\left(\frac{\beta m\omega_0^2}{2}\right) R_i^2\right]\right]=\left(\frac{1}{\beta \hbar\omega_0}\right)^N\text{.}
+\]</div>
+<p>The most important structure for interacting free system is the total energy is the sum of individual degree of freedom. That property automatically leads to a factorizable partition function. Therefore, the partition function of the system is the product of partition functions for individual degree of freedom. I will leave this integral as an exercise since it is simply the Gaussian integral for momentum and coordinate.</p>
+<p>The energy expectation value of the system and the specific heat are</p>
+<div class="math notranslate nohighlight">
+\[
+\langle H\rangle=E=\frac{\partial \ln Z}{\partial (-\beta)} =Nk_BT; C=\frac{\partial E}{\partial T}=Nk_B\text{.}
+\]</div>
+<p>We can observe two very important structure:</p>
+<ol class="simple">
+<li><p>The result is independent of <span class="math notranslate nohighlight">\(\omega_0\)</span>.</p></li>
+<li><p>The Gaussian integral in momentum and space contribute <span class="math notranslate nohighlight">\(\frac{k_BT}{2}\)</span> each to the specific heat.</p></li>
+</ol>
+<section id="the-equi-partition-theorem">
+<h3>The equi-partition theorem<a class="headerlink" href="#the-equi-partition-theorem" title="Permalink to this headline"></a></h3>
+<p>Suppose the Hamiltonian of our system can be approximated by</p>
+<div class="math notranslate nohighlight">
+\[
+H=H_0(X_1,X_2,\cdots,X_r)+ H_1(X_{r+1},\cdots, X_N)\text{.}
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(H_0\)</span> is the part of the energy that is quadratic in its arguments. Because of that, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^r X_i\frac{\partial H_0}{\partial X_i}=2H_0\text{.}
+\]</div>
+<p>Here, we focus on the effect given by <span class="math notranslate nohighlight">\(H_0\)</span>. The expectation value of the energy from <span class="math notranslate nohighlight">\(H_0\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\langle H_0\rangle =\frac{1}{Z}\int \left(\prod_{i=1}^r dX_i\right)\left(\prod_{j=r+1}^N dX_j\right) \underbrace{H_0(X_1,\cdots, X_r)}_{\frac{1}{2}\sum_{l=1}^r X_l\frac{\partial H_0}{\partial X_l}} \exp\left[ -\beta (H_0(X_1,\cdots,X_r)+H_1(X_{r+1},\cdots, X_N)\right]\text{.}
+\]</div>
+<p>Now we can notice</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+X_l\frac{\partial }{\partial X_l}\left[\exp\left[ -\beta (H_0(X_1,\cdots,X_r)+H_1(X_{r+1},\cdots, X_N)\right]\right]\\
+=X_l(-\beta \frac{\partial }{\partial X_l}H_0(X_1,\cdots,X_r))\exp\left[ -\beta (H_0(X_1,\cdots,X_r)+H_1(X_{r+1},\cdots, X_N)\right]\text{.}
+\end{split}\]</div>
+<p>Using this identity, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle H_0\rangle =\frac{-k_BT}{2}\frac{1}{Z}\sum_{l=1}^r\int \left(\prod_{i=1}^r dX_i\right)\left(\prod_{j=r+1}^N dX_j\right) X_l\frac{\partial }{\partial X_l} e^{-\beta(H_0+H_1)} \\
+=\frac{-k_BT}{2}\frac{1}{Z}\sum_{l=1}^r\int \left(\prod_{i=1,i\neq l}^r dX_i\right)\left(\prod_{j=r+1}^N dX_j\right) \int dX_l X_l\frac{\partial }{\partial X_l} e^{-\beta(H_0+H_1)}
+\text{.}
+\end{split}\]</div>
+<p>Here we suppressed the argument of <span class="math notranslate nohighlight">\(H_0\)</span> and <span class="math notranslate nohighlight">\(H_1\)</span> to make our notation more concise. We also focus on the integral over <span class="math notranslate nohighlight">\(X_l\)</span> first.</p>
+<div class="math notranslate nohighlight">
+\[
+\int dX_l X_l\frac{\partial }{\partial X_l} e^{-\beta(H_0+H_1)}=\underbrace{\left. X_l e^{-\beta(H_0+H_1)}\right|_{-\infty}^{\infty}}_{=0, \because \left.e^{-\beta H_0}\right|_{\pm\infty}\to0}-\int dX_le^{-\beta(H_0+H_1)}
+\]</div>
+<p>Therefore, we can simplify the expression as</p>
+<div class="math notranslate nohighlight">
+\[
+\langle H_0\rangle 
+=\frac{k_BT}{2}\frac{1}{Z}\sum_{l=1}^r\int \left(\prod_{i=1,i\neq l}^r dX_i\right)\left(\prod_{j=r+1}^N dX_j\right) \int dX_l e^{-\beta(H_0+H_1)}=\frac{k_BT}{2} \frac{1}{Z} (rZ)= r\frac{k_BT}{2} 
+\text{.}
+\]</div>
+<p>So we can see each quadratic mode contribute energy expectation value <span class="math notranslate nohighlight">\(\frac{k_BT}{2}\)</span>. The simple harmonic oscillator and the ideal gas are the special case for this theorem.</p>
+<ul class="simple">
+<li><p>ideal gas model: energy is quadratic in momentum. In 3D, each particle contribute <span class="math notranslate nohighlight">\(3\times \frac{k_BT}{2}\)</span>. <span class="math notranslate nohighlight">\(N\)</span> particle system therefore has internal energy <span class="math notranslate nohighlight">\(\frac{3Nk_BT}{2}\)</span>.</p></li>
+<li><p>Oscillators: energy is quadratic in momentum and coordinate. In 1D, each oscillator contribute <span class="math notranslate nohighlight">\(2\times \frac{k_BT}{2}\)</span>. <span class="math notranslate nohighlight">\(N\)</span> 1D oscillators has internal energy <span class="math notranslate nohighlight">\(Nk_BT\)</span>.</p></li>
+</ul>
+</section>
+</section>
+<section id="quantum-harmonic-oscillators">
+<h2>Quantum Harmonic oscillators<a class="headerlink" href="#quantum-harmonic-oscillators" title="Permalink to this headline"></a></h2>
+<p>We will perform similar procedure to analyze the system.</p>
+<style>
+table th:first-of-type {
+    width: 10%;
+}
+table th:nth-of-type(2) {
+    width: 30%;
+}
+table th:nth-of-type(3) {
+    width: 60%;
+}
+</style>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Stage</p></th>
+<th class="text-align:center head"><p>Statistical mechanics idea</p></th>
+<th class="text-align:center head"><p>The physical system</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>Pick a system</p></td>
+<td class="text-align:center"><p>A bunch of independent quantum oscillators</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>Identify the relevant microscopic degrees of freedom, <span class="math notranslate nohighlight">\(\xi\)</span></p></td>
+<td class="text-align:center"><p>The wave function <span class="math notranslate nohighlight">\(\vert \phi_{n}^{(i)}\rangle\)</span> for each oscillator for <span class="math notranslate nohighlight">\(i=1\sim N\)</span> with energy <span class="math notranslate nohighlight">\(E_n=\left(n+\frac{1}{2}\right)\hbar \omega\)</span>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>3</p></td>
+<td class="text-align:center"><p>Construct the possible energy for the microscopic degree of freedom.</p></td>
+<td class="text-align:center"><p>In this case, the Hamiltonian is given, so we don’t need to worry about how to write down the corresponding Hamiltonian. Basically, <span class="math notranslate nohighlight">\(\hat{H}=\sum_{i=1}^N \hat{H}_i\)</span>. <span class="math notranslate nohighlight">\(\hat{H}_i=\frac{\hat{P}_i^2}{2m}+\frac{\kappa}{2}\hat{R}_i^2=\left(\hat{n}_i+\frac{1}{2}\right)\hbar\omega\)</span>. Here, the position, momentum, and Hamiltonian are promoted into quantum operators. Here <span class="math notranslate nohighlight">\([X_i,P_i]=i\hbar\)</span> and <span class="math notranslate nohighlight">\(\omega=\frac{\kappa}{m}\)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>4</p></td>
+<td class="text-align:center"><p>Now we can pick an ensemble that satisfied the constraint of our system. We pick the canonical ensemble since temperature <span class="math notranslate nohighlight">\(T\)</span> is fixed.</p></td>
+<td class="text-align:center"><p>Most of the time, the experiments study the equilibrium system with fixed temperature. Therefore, we usually pick the canonical ensemble. Then, according to our previous knowledge of statistical mechanics. We know how to construct the partition function. For our system case, <span class="math notranslate nohighlight">\(Z=\sum_{n_1=0}^{\infty}\sum_{n_2=0}^{\infty}\cdots \sum_{n_N=0}^{\infty}\exp\left[-\beta\left(\sum_{j=1}^{N}\left(n_j+\frac{1}{2}\right)\hbar\omega\right)\right]\)</span>. Because the system is interacting free, the partition function is factorizable. We have <span class="math notranslate nohighlight">\(Z=\zeta^N\)</span>. Here <span class="math notranslate nohighlight">\(\zeta=\sum_{n=0}^{\infty}\exp\left[-\beta\left(n+\frac{1}{2}\right)\hbar\omega\right]=\frac{e^{\frac{-\beta \hbar\omega}{2}}}{1-e^{-\beta\hbar\omega}}\)</span>. In the last equality, we explicitly calculate <span class="math notranslate nohighlight">\(\zeta\)</span> since it is a geometric series that we can derived explicitly. Once we have the partition function, we can follow the standard process to get the energy <span class="math notranslate nohighlight">\(E=\frac{\partial \ln Z}{\partial (-\beta)}=N\hbar\omega\left(\frac{1}{2}+n_B(\beta \hbar\omega)\right)=N\hbar\omega\left(\frac{1}{2}+\frac{1}{e^{\beta\hbar\omega}-1}\right)\)</span> and <span class="math notranslate nohighlight">\(C=\frac{\partial E}{\partial T}=Nk_B\left[(\beta\hbar\omega)^2\frac{e^{\beta\hbar\omega}}{(e^{\beta\hbar\omega}-1)^2}\right]\)</span>. The specific heat goes to <span class="math notranslate nohighlight">\(Nk_B\)</span> when <span class="math notranslate nohighlight">\(\beta\hbar\omega\to0\)</span>; at the <span class="math notranslate nohighlight">\(\beta\hbar\omega\to\infty\)</span> limit, the quantum nature of the system suppresses the specific heat exponentially.</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>5</p></td>
+<td class="text-align:center"><p>We can improved our guess of <span class="math notranslate nohighlight">\(\xi\)</span> and <span class="math notranslate nohighlight">\(H(\xi)\)</span> by comparing with experiments. (Going back to stage 2.)</p></td>
+<td class="text-align:center"><p>Since the Hamiltonian is given in this problem, there is no need to compare with experiments.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>What is the meaning of partition function of a quantum system?
+It seems like we are doing the calculation on a classical system. The only difference is the energy is quantized.</p>
+<p>In a classical system, we said we have a microscopic configuration, <span class="math notranslate nohighlight">\(\xi\)</span>, which has probability proportional with <span class="math notranslate nohighlight">\(e^{-\beta H(\xi)}\)</span>. <em>i.e.</em> We have an ensemble of microscopic configurations and the probability distribution of the ensemble is assigned accordingly.</p>
+<p>In a quantum system, we said we have an eigen state, <span class="math notranslate nohighlight">\(\vert E_n\rangle\)</span>, which has probability proportional with <span class="math notranslate nohighlight">\(e^{-\beta E_n}\)</span>. <em>i.e.</em> We have an collection of states in our ensemble with the classical probability distribution proportional with <span class="math notranslate nohighlight">\(e^{-\beta E_n}\)</span>. Readers with a keen eye on the derivation might ask: where is the information of wave function? The partition function is suppose to help us evaluate the expectation value of the system. When we evaluate the mean value of an observable in quantum mechanics, shouldn’t we evaluate something like <span class="math notranslate nohighlight">\(\langle \psi\vert \hat{O}\vert\psi\rangle\)</span>? That is correct! The reason we can avoid this complication is because the observable we choose here is the Hamiltonian and the quantum mechanics expectation value for the states, <span class="math notranslate nohighlight">\(\vert E_n\rangle\)</span>, in the ensemble give <span class="math notranslate nohighlight">\(\langle E_n\vert \hat{H}\vert E_n\rangle=E_n\)</span>. This information is already included in the partition function. If we want to evaluate the center of mass of the system, we need to evaluate <span class="math notranslate nohighlight">\(\hat{O}=\sum_i \hat{x}_i\)</span>, then, we will need to evalate <span class="math notranslate nohighlight">\(\langle E_n\vert \sum_i\hat{x}_i\vert E_n\rangle\)</span> which is the piece of information that is not contained in the partition function.</p>
+<p>That is, the general definition of an ensemble of a quantum system requires two pieces of informaiton. One is the classical probability for the collection of states, the other is the corresponding wave function. In statistical mechanics, we got the classical probability using the Boltzmann factor. In genral, one needs to define the system via the density matrix. The density matrix in the energy representation is</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\rho}=\sum_{E_n} P(E_n)\vert E_n\rangle\langle E_n\vert=\sum_{E_n} \frac{\vert E_n\rangle e^{-\beta E_n}\langle E_n\vert}{Z}=\frac{e^{-\beta \hat{H}}}{Z}\sum_{E_n} \vert E_n\rangle \langle E_n\vert=\frac{e^{-\beta \hat{H}}}{Tr\left[e^{-\beta \hat{H}}\right]}\text{.}
+\]</div>
+<p>The expectation value of an observable <span class="math notranslate nohighlight">\(\hat{O}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \hat{O}\rangle=\sum_{E_n} P(E_n)\langle E_n\vert\hat{O}\vert E_n\rangle=Tr\left[\hat{\rho} \hat{O}\right]\text{.}
+\]</div>
+<p>We can see there are two kinds of “average” for the expectation value. One is from the statistical average over <span class="math notranslate nohighlight">\(P(E_n)\)</span>. The other is from the quantum average done by the <span class="math notranslate nohighlight">\(\langle E_n\vert\hat{O}\vert E_n\rangle\)</span>. When we choose to evaluate the expectation value of the Hamiltonian, the quantum average becomes trivial. That’s why our evaluation of energy expectation value looks pretty “classical”.</p>
+<p>One interesting question is: are there qualitative difference when we try to move from classical statistical mechanics to quantum statistical mechanics? It turns out the Newton’s second law and the Schödinger equation has an intrinsic difference. The Newton’s equation could have nonlinear effect easily. However, Schödinger equation is a linear equation. That suggest the notion of chaos needs to be rethought in quantum systems. Currently, it is a research subject on how a close quantum system reaches thermal equailibrium. Readers can check the reference <span id="id1">[<a class="reference internal" href="biblio.html#id6" title="Rahul Nandkishore and David A Huse. Many body localization and thermalization in quantum statistical mechanics. arXiv preprint arXiv:1404.0686, 2014.">NH14</a>]</span> for more information.</p>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="key-points-to-learn-from-the-two-example">
+<h1>Key points to learn from the two example<a class="headerlink" href="#key-points-to-learn-from-the-two-example" title="Permalink to this headline"></a></h1>
+<p>The two examples demonstrate several important ideas:</p>
+<ol class="simple">
+<li><p>How to construct partition functions when the energy is quantized or continuous? Integral and summation!</p></li>
+<li><p>The partition function is factorizable because the systems are interacting free. The origin of this property is the total energy for interacting free systems can be derived by simply summing the energy of individual parts.</p></li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

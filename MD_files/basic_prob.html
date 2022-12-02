@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic concepts in probability theory &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../syllabus.html" class="icon icon-home"> Python
+            <img src="../_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Basic concepts in probability theory</a><ul>
+<li><a class="reference internal" href="#simple-notions">Simple notions</a><ul>
+<li><a class="reference internal" href="#what-is-probability">What is probability?</a></li>
+<li><a class="reference internal" href="#probability-of-multiple-variables">Probability of multiple variables</a><ul>
+<li><a class="reference internal" href="#joint-probability">Joint probability</a></li>
+<li><a class="reference internal" href="#margin-probability">Margin probability</a></li>
+<li><a class="reference internal" href="#conditional-probability">Conditional probability</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent-variables">Independent variables</a></li>
+<li><a class="reference internal" href="#mean-variance-and-standard-deviation">Mean, variance and standard deviation</a></li>
+<li><a class="reference internal" href="#gaussian-integral">Gaussian integral</a><ul>
+<li><a class="reference internal" href="#one-dimensional-gaussian-integral">One-dimensional Gaussian integral.</a></li>
+<li><a class="reference internal" href="#multidimensional-gaussian-integral">Multidimensional Gaussian integral</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stirling-s-approximation">Stirling’s approximation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sets-of-independent-random-numbers">Sets of independent random numbers</a></li>
+<li><a class="reference internal" href="#before-we-enter-statistical-mechanics">Before we enter statistical mechanics</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Basic concepts in probability theory</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MD_files/basic_prob.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-concepts-in-probability-theory">
+<h1>Basic concepts in probability theory<a class="headerlink" href="#basic-concepts-in-probability-theory" title="Permalink to this headline"></a></h1>
+<section id="simple-notions">
+<h2>Simple notions<a class="headerlink" href="#simple-notions" title="Permalink to this headline"></a></h2>
+<section id="what-is-probability">
+<h3>What is probability?<a class="headerlink" href="#what-is-probability" title="Permalink to this headline"></a></h3>
+<p>Suppose we have a set <span class="math notranslate nohighlight">\(\Omega\)</span> and we have several events <span class="math notranslate nohighlight">\(\omega\in\Omega\)</span>. If we randomly pick an event <span class="math notranslate nohighlight">\(\omega\)</span>, we can ask: how frequently we will get an event satisfy certain criteria <span class="math notranslate nohighlight">\(\Lambda\)</span>? The probability to have event <span class="math notranslate nohighlight">\(\lambda\in\Lambda\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{N_t\to\infty}\frac{ N(\lambda\in\Lambda)}{N_t}; N_t\text{ is the number of trials.}
+\]</div>
+</section>
+<section id="probability-of-multiple-variables">
+<h3>Probability of multiple variables<a class="headerlink" href="#probability-of-multiple-variables" title="Permalink to this headline"></a></h3>
+<p>In statistical mechanics, usually we need to face probability descriptions of multiple variables. We will use a simple example to demonstrate the following concepts.</p>
+<p>Suppose we have <span class="math notranslate nohighlight">\(\Omega\)</span> formed by integers with color red, green and blue.</p>
+<div class="math notranslate nohighlight">
+\[
+\Omega: \left\{Red: 1,34,7; Green: 12,5; Blue: 276, 19,18, 2331\right\}
+\]</div>
+<p>In addition to the color, we can also categorize the integers by its parity, <em>i.e.</em> evenness or oddness.</p>
+<p>We can use these two conditions, color and parity of the integers, to illustrate the following concepts.</p>
+<figure class="align-default" id="set-relation">
+<a class="reference internal image-reference" href="../_images/probability.png"><img alt="../_images/probability.png" src="../_images/probability.png" style="width: 350px;" /></a>
+<figcaption>
+<p><span class="caption-text">The set <span class="math notranslate nohighlight">\(\Omega\)</span>: The circled region, <span class="math notranslate nohighlight">\(\alpha+\beta\)</span>, represent the red integers. The triangular region, <span class="math notranslate nohighlight">\(\beta+\gamma\)</span>, represent the odd integers. The set <span class="math notranslate nohighlight">\(\Omega\)</span> is <span class="math notranslate nohighlight">\(\alpha+\beta+\gamma+\delta\)</span>.</span><a class="headerlink" href="#set-relation" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="joint-probability">
+<h4>Joint probability<a class="headerlink" href="#joint-probability" title="Permalink to this headline"></a></h4>
+<p>The joint probability ask what is the probability of two conditions to be true at the same time.
+For example, we can ask what is the probability that we have red odd integers? <span class="math notranslate nohighlight">\(P(red,odd)=\frac{\beta}{\alpha+\beta+\gamma+\delta}=\frac{2}{9}\)</span>.</p>
+<p>We have <span class="math notranslate nohighlight">\(P(a,b)=P(b,a)\)</span> in general.</p>
+<p>The normalization condition for the joint probability is</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{a\in A}\sum_{b\in B}P(a,b)=1\xrightarrow{i.e.}\sum_{color}\sum_{parity}P(color,parity)=1\text{.}
+\]</div>
+</section>
+<section id="margin-probability">
+<h4>Margin probability<a class="headerlink" href="#margin-probability" title="Permalink to this headline"></a></h4>
+<p>The margin probability means we sum over all the possibilities of one condition. For example, we can ask what is the probability to have red integer in this case. We can derive that from the joint probability and sum over the even and odd cases with color red.</p>
+<div class="math notranslate nohighlight">
+\[
+P_A(a)=\sum_{b\in B}P(a,b)\xrightarrow{i.e.} P_{color}(Red)=\sum_{parity}P(Red,parity)=\frac{\alpha+\beta}{\alpha+\beta+\gamma+\delta}=\frac{3}{9}\text{.}
+\]</div>
+</section>
+<section id="conditional-probability">
+<h4>Conditional probability<a class="headerlink" href="#conditional-probability" title="Permalink to this headline"></a></h4>
+<p>Conditional probability of <span class="math notranslate nohighlight">\(b\)</span> given <span class="math notranslate nohighlight">\(a\)</span> is denoted as <span class="math notranslate nohighlight">\(P(b|a)\)</span>. For example, we can ask what is the conditional probability of we pick a red integer given the integers are odd.</p>
+<div class="math notranslate nohighlight">
+\[
+P(red|odd)=\frac{\beta}{\beta+\gamma}=\frac{2}{5}\text{.}
+\]</div>
+<p><span class="math notranslate nohighlight">\(P(a|b)\neq P(b|a)\)</span> in general. For example</p>
+<div class="math notranslate nohighlight">
+\[
+P(odd|red)=\frac{\beta}{\alpha+\beta}=\frac{2}{3}\text{.}
+\]</div>
+<p><em>Bayes’ theorem</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(a,b)=P(b,a)=P(b|a)P_A(a)=P(a|b)P_B(b)\\
+\xrightarrow{i.e.} P(red,odd)=P(red|odd)P_{parity}(odd)=P(odd|red)P_{color}(red)\\
+=\frac{\beta}{\beta+\gamma}\frac{\beta+\gamma}{\alpha+\beta+\gamma+\delta}=\frac{\beta}{\alpha+\beta}\frac{\alpha+\beta}{\alpha+\beta+\gamma+\delta}\text{.}
+\end{split}\]</div>
+<p><em>Extended form of Bayes’ theorem</em> when <span class="math notranslate nohighlight">\(\Omega\)</span> is divided into sub-regions <span class="math notranslate nohighlight">\(\Omega_i\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+P_B(b)=\sum_i P(b|\Omega_i)P(\Omega_i)\text{.}
+\]</div>
+<p>We can pick <span class="math notranslate nohighlight">\(\Omega_1=A\)</span> and <span class="math notranslate nohighlight">\(\Omega_2=\overline{A}\)</span>. Then we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(a|b)=\frac{P(b|a)P_A(a)}{P_B(b)}=\frac{P(b|a)P_A(a)}{P(b|a)P_A(a)+P(b|\overline{a})P_{\overline{A}}(\overline{a})}\\
+\xrightarrow{i.e.}
+P(red|odd)=\frac{P(odd|red)P_{color}(red)}{P(odd|red)P_{color}(red)+P(odd|\text{not red})P_{color}(\text{not red})}
+\end{split}\]</div>
+</section>
+</section>
+<section id="independent-variables">
+<h3>Independent variables<a class="headerlink" href="#independent-variables" title="Permalink to this headline"></a></h3>
+<p>If <span class="math notranslate nohighlight">\(P(a,b)=P_A(a)P_B(b)\)</span>, we said <span class="math notranslate nohighlight">\(a,b\)</span> are independent variables.</p>
+<p>This is because the conditional probability is <span class="math notranslate nohighlight">\(P(a|b)=\frac{P(a,b)}{P_B(b)}\xrightarrow{independent}\frac{P_A(a)P_B(b)}{P_B(b)}=P_A(a)\)</span> is independent of <span class="math notranslate nohighlight">\(b\)</span>!</p>
+</section>
+<section id="mean-variance-and-standard-deviation">
+<h3>Mean, variance and standard deviation<a class="headerlink" href="#mean-variance-and-standard-deviation" title="Permalink to this headline"></a></h3>
+<p>For a random variable <span class="math notranslate nohighlight">\(a\)</span> and the function <span class="math notranslate nohighlight">\(F\)</span> will map it to another random variable <span class="math notranslate nohighlight">\(F(a)\)</span>.</p>
+<ol class="simple">
+<li><p>Mean: <span class="math notranslate nohighlight">\(\langle F\rangle \equiv \sum_a F(a) P_A(a)\)</span>.</p></li>
+<li><p>n-th moment:<span class="math notranslate nohighlight">\(\langle F^n\rangle \equiv \sum_a [F(a)]^n P_A(a)\)</span>.</p></li>
+<li><p>variance <span class="math notranslate nohighlight">\(\sigma^2=\langle (F-\langle F\rangle)^2\rangle=\sum_a \left(F(a)-\langle F\rangle\right)^2P_A(a)=\langle F^2\rangle-\langle F\rangle^2\)</span></p></li>
+<li><p>correlation function between <span class="math notranslate nohighlight">\(F,G\)</span> is <span class="math notranslate nohighlight">\(f_{FG}=\langle FG\rangle-\langle F\rangle \langle G\rangle\)</span>.
+That is,
+<span class="math notranslate nohighlight">\( f_{FG}\equiv \sum_a\sum_b F(a)G(b)P(a,b)-\left(\sum_a F(a)P_A(a)\right)\left(\sum_bG(b)P_B(b)\right)\)</span></p></li>
+</ol>
+</section>
+<section id="gaussian-integral">
+<h3>Gaussian integral<a class="headerlink" href="#gaussian-integral" title="Permalink to this headline"></a></h3>
+<section id="one-dimensional-gaussian-integral">
+<h4>One-dimensional Gaussian integral.<a class="headerlink" href="#one-dimensional-gaussian-integral" title="Permalink to this headline"></a></h4>
+<div class="math notranslate nohighlight">
+\[
+G_1=\int_{\infty}^{\infty}e^{-ax^2}dx\text{.}
+\]</div>
+<p>The trick is to square this expression, we found</p>
+<div class="math notranslate nohighlight">
+\[
+(G_1)^2=\int_{\infty}^{\infty}\int_{\infty}^{\infty}e^{-ax^2}e^{-ay^2}dxdy\text{.}
+\]</div>
+<p>This integral is over a two-dimensional space; we can change the variables into polar coordinates <span class="math notranslate nohighlight">\((r,\theta)\)</span>. The angular integral and the radial integral will become trivial.</p>
+<div class="math notranslate nohighlight">
+\[
+(G_1)^2=\int_{0}^{2\pi}\int_0^{\infty} e^{-ar^2}rdrd\theta=\frac{2\pi}{2}\int_0^\infty e^{-ar^2}2rdr=\frac{\pi}{a}\text{.}
+\]</div>
+<p>Once this expression is known, we can simply generalize it into the case with a linear term</p>
+<div class="math notranslate nohighlight">
+\[
+G_1'=\int_{\infty}^{\infty}e^{-ax^2+bx}dx\text{.}
+\]</div>
+<p>The result will be left as an exercise.</p>
+</section>
+<section id="multidimensional-gaussian-integral">
+<h4>Multidimensional Gaussian integral<a class="headerlink" href="#multidimensional-gaussian-integral" title="Permalink to this headline"></a></h4>
+<p>The multidimensional Gaussian integral is</p>
+<div class="math notranslate nohighlight">
+\[
+G_N=\int_{\infty}^{\infty}dx_1\int_{-\infty}^{\infty}dx_2...\int_{-\infty}^{\infty}dx_N \exp\left[-\frac{1}{2} x_iA_{ij}x_j+b_ix_i\right]=\sqrt{\frac{(2\pi)^n}{\text{det} A}} \left[-\frac{b_i(A)^{-1}_{ij}b_j}{2}\right]\text{.}
+\]</div>
+<p>This expression can be derived by diagonalizing <span class="math notranslate nohighlight">\(A\)</span> and using the new basis to perform the independent one-dimensional integrals.</p>
+</section>
+</section>
+<section id="stirling-s-approximation">
+<h3>Stirling’s approximation<a class="headerlink" href="#stirling-s-approximation" title="Permalink to this headline"></a></h3>
+<p>By definition</p>
+<div class="math notranslate nohighlight">
+\[
+N!=\int_0^{\infty}e^{-x}x^Ndx=\int_0^{\infty} e^{-x}e^{N\ln x} dx=\int_0^{\infty}e^{f(x)}dx\text{.}
+\]</div>
+<p>This expression is exact. However, we want to have a good approximation of the <span class="math notranslate nohighlight">\(N!\)</span> which means we want to approximate the integral at the right-hand side when <span class="math notranslate nohighlight">\(N\)</span> is large.</p>
+<p>We are going to introduce the idea of the steepest descent method (a.k.a. saddle point approximation) to derive Stirling’s approximation. We will do it first and then explain why this method makes sense. Let’s find the point <span class="math notranslate nohighlight">\(x^{*}\)</span> such that <span class="math notranslate nohighlight">\(f'(x^*)=0\)</span> and expand <span class="math notranslate nohighlight">\(f(x)\)</span> around <span class="math notranslate nohighlight">\(x^{*}\)</span>.</p>
+<p>We have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x)= N\ln x-x=f(x^*)+f'(x^*)(x-x^*)+\frac{f''(x^*)}{2}(x-x^*)^2+...\\
+f'(x)=\frac{N}{x}-1\rightarrow x^{*}=N\\
+f''(x)=-\frac{N}{x^2}\rightarrow f''(x^{*})=-\frac{1}{N}\text{.}
+\end{split}\]</div>
+<p>Next, we can ask: does it make sense to expand around <span class="math notranslate nohighlight">\(x^*=N\)</span>? To answer that we would like to know how the error looks like? The leading order error is proportional with <span class="math notranslate nohighlight">\(f''(x^*)=-N^{-1}\)</span>. That means, when <span class="math notranslate nohighlight">\(N\)</span> is large, this error gets suppressed! The method of steepest descent is very general. However, one should analyze the error carefully. In this case, the form of <span class="math notranslate nohighlight">\(f(x)\)</span> works in our favor to suppress the leading order error! So we can approximate <span class="math notranslate nohighlight">\(N!\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+N!\approx \int_0^{\infty}e^{f(N)-\frac{(x-N)^2}{2N}} dx=e^{N\ln N-N} \sqrt{2\pi N}\text{.}
+\]</div>
+<p>This is Stirling’s approximation</p>
+<div class="math notranslate nohighlight">
+\[
+\ln N!=N\ln N-N+\frac{1}{2}\ln(2\pi N)\text{.}
+\]</div>
+<p>One can insert <span class="math notranslate nohighlight">\(N=10^{23}\)</span> and see how important is each term. One can easily see the first two terms plays the dominant role in this expression.</p>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>The method of steepest descent is a very powerful method to approximate integrals. Most of the time, we cannot evaluate integral exactly. Therefore, how to approximate the integral analytically is an important technique for analytic progress. We will refer our reader to <span id="id1">[<a class="reference internal" href="biblio.html#id5" title="Carl M Bender and Steven A Orszag. Advanced mathematical methods for scientists and engineers I: Asymptotic methods and perturbation theory. Volume 1. Springer Science &amp; Business Media, 1999.">BO99</a>]</span> for detailed discussions.</p>
+</div>
+</section>
+</section>
+<section id="sets-of-independent-random-numbers">
+<h2>Sets of independent random numbers<a class="headerlink" href="#sets-of-independent-random-numbers" title="Permalink to this headline"></a></h2>
+<p>Suppose we have a vector <span class="math notranslate nohighlight">\(\{F_1,F_2,...,F_N\}\)</span> where <span class="math notranslate nohighlight">\(F_j\)</span> are independent random variables. In general, <span class="math notranslate nohighlight">\(F_j\)</span> is chosen from the probability distribution function <span class="math notranslate nohighlight">\(P_j(F_j)\)</span>. (Mathematically, we allow <span class="math notranslate nohighlight">\(P_j(F_j)\)</span> to be arbitrary distribution functions. However, in physical settings, usually <span class="math notranslate nohighlight">\(P_j(F_j)\)</span> is a fixed function.) This is almost equivalent to our random walk problem. Let’s try to evaluate the sum of this vector.</p>
+<div class="math notranslate nohighlight">
+\[
+S_N=\sum_{j=1}^N F_j
+\]</div>
+<p>The mean of <span class="math notranslate nohighlight">\(S_N\)</span> can be expressed easily</p>
+<div class="math notranslate nohighlight">
+\[
+\langle S_N\rangle=\sum_{j=1}^N \langle F_j\rangle \text{ (Here, we use the property that the mean is a linear operator).}
+\]</div>
+<p>The variance of <span class="math notranslate nohighlight">\(S_N\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sigma_{S_N}=\langle S_N^2\rangle-\langle S_N\rangle^2=\sum_{j=1,k=1}^{N}\langle F_jF_k\rangle-\left(\sum_{j=1}^N F_j\right)\left(\sum_{k=1}^N F_k\right)\\
+=\sum_{j=1}^{N}\sum_{k\neq j}^{N}\langle F_jF_k\rangle+\sum_{j=1}^{N}\sum_{k=j}^{N}\langle F_jF_k\rangle-\left(\sum_{j=1}^N F_j\right)\left(\sum_{k=1}^N F_k\right)\\
+=\sum_{j=1}^{N}\sum_{k\neq j}^{N}\langle F_j\rangle\langle F_k\rangle+\sum_{j=1}^{N}\langle F_j^2\rangle-\left(\sum_{j=1}^N F_j\right)\left(\sum_{k=1}^N F_k\right)\\
+=\sum_{j=1}^{N}\left[\langle F_j^2\rangle-\langle F_j\rangle^2\right]=\sum_{j=1}^{N}\sigma_j^2\text{.}
+\end{split}\]</div>
+<p>In the third line of the equation, we use the condition that <span class="math notranslate nohighlight">\(F_j\)</span> are independent variables. That is, <span class="math notranslate nohighlight">\(\langle F_jF_k\rangle=\langle F_j\rangle\langle F_k\rangle\)</span>.</p>
+<p>The above expression is for a general distribution function <span class="math notranslate nohighlight">\(P_j(F_j)\)</span>. If we are analyzing a specific physical system where <span class="math notranslate nohighlight">\(P_j(F_j)=P(F)\)</span>, we can further simplify our result to have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle S_N\rangle= N \langle F\rangle\\
+\sigma_{S_N}=N \left[\langle F^2\rangle -\langle F\rangle^2 \right]=N\sigma^2\text{.}
+\end{split}\]</div>
+<p>The <em>relative standard deviation</em> is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\sigma_{S_N}}{\langle S_N\rangle}=\frac{1}{\sqrt{N}}\frac{\sigma}{\langle F\rangle}\text{.}
+\]</div>
+<p><strong>This is the most crucial result of probability theory for statistical mechanics. What does it tell us?</strong></p>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(N\)</span> is large (say <span class="math notranslate nohighlight">\(N\approx 10^{23}\)</span>), the fluctuation (estimated by <span class="math notranslate nohighlight">\(\sigma_{S_N}\)</span>) is barely noticeable compared with its mean value <span class="math notranslate nohighlight">\(\langle F\rangle\)</span> since this ratio goes as <span class="math notranslate nohighlight">\(N^{-1/2}\)</span>.</p></li>
+<li><p>The result is quite general; we only require the mean and the variance to be well defined. Not specific detail is required for <span class="math notranslate nohighlight">\(P(F)\)</span>.</p></li>
+<li><p>We can see that the problem actually gets simpler when <span class="math notranslate nohighlight">\(N\to\infty\)</span>!</p></li>
+</ul>
+</section>
+<section id="before-we-enter-statistical-mechanics">
+<h2>Before we enter statistical mechanics<a class="headerlink" href="#before-we-enter-statistical-mechanics" title="Permalink to this headline"></a></h2>
+<p>Why do we spend lectures talking about statistics?</p>
+<ul class="simple">
+<li><p>The trivial reason: We need to those ideas for the future lectures.</p></li>
+<li><p>The non-trivial reasons: it is related to two fundamental ideas of statistical mechanics.</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(N\approx 10^{23}\)</span> could lead to regular behavior! The reason is simple; the relative deviations could be suppressed by large <span class="math notranslate nohighlight">\(N\)</span>. Initially, it looks like large <span class="math notranslate nohighlight">\(N\)</span> gives us a formidable obstacle to understanding our system. However, now we realize that it could work in our favor to suppress the fluctuation.</p></li>
+<li><p>The logical jump from microscopic detail description to statistical description: When <span class="math notranslate nohighlight">\(N\)</span> is large, the precise knowledge of microscopic components (<em>e.g.</em>, molecules) is inessential to understand the system as a whole. We jump from the deterministic laws of physics from the microscopic physics to a pure probability description. This postulate is bold and is not obviously true. However, instead of proving this postulate, we will see the benefits of making this postulate in the following lectures.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./MD_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
