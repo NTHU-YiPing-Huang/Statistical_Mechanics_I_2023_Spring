@@ -1,0 +1,64 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: syllabus
+parts:
+  - caption: fundamentals
+    chapters:
+    - file: introduction
+      sections:
+        - file: thermodynamics
+        - file: motivation
+        - file: scope
+    - file: numerical_tools
+      sections:
+        - file: Python_tutorial_0
+        - file: Python_tutorial_1
+          #    - file: math_background 
+          #      sections:
+          #        - file: Fourier
+          #        - file: Legendre
+          #        - file: Gaussian_integral
+          #    - file: quantum_mechanics
+          #      sections:
+          #        - file: axiom_QM
+          #        - file: PinB
+          #        - file: SHO
+    - file: random_walk_and_emergent_properties
+      sections:
+        - file: 1DRW
+        - file: drunkards_walk
+        - file: scale_invariance
+        - file: diffusion_eq
+        - file: basic_prob
+  - caption: Statistical Mechanics
+    chapters:
+      - file: Rev_thermodynamics
+        sections:
+          - file: a_simple_example
+          - file: rev_thermodyn
+      - file: Postulates_SM
+        sections:
+          - file: phase_space_observables
+          - file: entropy_exp
+          - file: Liouville_theorem
+          - file: ergodicity
+          - file: mc_ensemble
+          - file: c_ensemble
+          - file: g_gc_ensemble
+  - caption: Application of statistical mechanics
+    chapters:
+      - file: free_systems
+        sections:
+          - file: oscillators
+          - file: phonon_photon
+          - file: Fermion_Boson
+      - file: phases_transitions
+        sections:
+          - file: phase_diagram
+          - file: Ising_models
+          - file: Ising_models_2
+          - file: MFT
+          - file: GL
+      - file: biblio
