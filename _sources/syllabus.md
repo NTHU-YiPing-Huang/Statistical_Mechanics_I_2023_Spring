@@ -113,7 +113,7 @@ A good reference is the one that you are willing to read.
 | 06.01    | Phases and phase transitions <br /> ( The heuristic arguments of the phase diagram of Ising model, spontaneous symmetry breaking(II: Analytic property of free energy for finite and thermodynamic system).)                                                                                                                    |
 | 06.08    | Phases and phase transitions <br /> ( Spontaneous symmetry breaking(III: Ergodicity breaking), the one-dimensional Ising model and the transfer matrix method, The Weiss mean field theory and the universality class, comparing Ising model and Van der Waals gas model, symmetry and the Ginsburg-Landau theory. **HW6 due**) |
 | 06.15  | **Final exam(online)**                                                                                                                                                                                                                                                                                                          |
-| 06.<++> | **Take-home project due**                                                                                                                                                                                                                                                                                                       |
+
 ## How to benefit from the course? 
 
 The correct mindset: to pass the course is not difficult; to learn something requires hard work!
