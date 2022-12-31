@@ -39,7 +39,9 @@ const thebe_selector_output = ".output, .cell_output"
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Basic numerics and plot" href="Python_tutorial_1.html" />
+    <link rel="prev" title="Numerical tools" href="numerical_tools.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,69 +59,17 @@ const thebe_selector_output = ".output, .cell_output"
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Basic introduction of python</a><ul>
-<li><a class="reference internal" href="#setting-the-environment-for-python">Setting the environment for Python</a></li>
-<li><a class="reference internal" href="#why-numerical-approach">Why numerical approach?</a><ul>
-<li><a class="reference internal" href="#need-to-confirm-the-mechanism-of-your-idea">Need to confirm the mechanism of your idea</a></li>
-<li><a class="reference internal" href="#need-to-connect-with-real-experiments">Need to connect with real experiments</a></li>
-<li><a class="reference internal" href="#numerics-for-many-body-physics-is-non-trivial">Numerics for many body physics is non-trivial!</a></li>
-<li><a class="reference internal" href="#generate-data-to-convey-what-you-mean">Generate data to convey what you mean</a></li>
+              <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Basic introduction of python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_1.html">Basic numerics and plot</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#my-point-of-view-of-numerical-approaches">My point of view of numerical approaches</a><ul>
-<li><a class="reference internal" href="#level-of-numerical-loading">Level of numerical loading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#why-python">Why Python?</a><ul>
-<li><a class="reference internal" href="#simple-well-structured-general-purpose-language">Simple, well-structured, general-purpose language</a></li>
-<li><a class="reference internal" href="#high-level">High-level</a></li>
-<li><a class="reference internal" href="#interactive">Interactive</a></li>
-<li><a class="reference internal" href="#speed">Speed</a></li>
-<li><a class="reference internal" href="#vibrant-community">Vibrant community</a></li>
-<li><a class="reference internal" href="#rich-scientific-computing-libraries">Rich scientific computing libraries</a></li>
-<li><a class="reference internal" href="#accessible-for-everyone-no-need-to-pay-money">Accessible for everyone. No need to pay money</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#scientific-python-key-components">Scientific Python Key Components</a></li>
-<li><a class="reference internal" href="#jupyter-workflow">Jupyter Workflow</a><ul>
-<li><a class="reference internal" href="#two-primary-workflows">Two primary workflows:</a></li>
-<li><a class="reference internal" href="#notebook-usage">Notebook Usage</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#variables-and-objects">Variables and Objects</a><ul>
-<li><a class="reference internal" href="#overloading">Overloading</a></li>
-<li><a class="reference internal" href="#variables-as-references">Variables as References</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#types-of-objects">Types of Objects</a><ul>
-<li><a class="reference internal" href="#basic-types">Basic Types</a></li>
-<li><a class="reference internal" href="#common-scientific-types">Common Scientific Types</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#basic-types-numeric">Basic Types: Numeric</a><ul>
-<li><a class="reference internal" href="#careful-with-integer-division">Careful with integer division!</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#basic-types-strings">Basic Types: Strings</a></li>
-<li><a class="reference internal" href="#basic-types-lists">Basic Types: Lists</a></li>
-<li><a class="reference internal" href="#basic-types-dictionaries">Basic Types: Dictionaries</a></li>
-<li><a class="reference internal" href="#basic-types-tuples">Basic Types: Tuples</a></li>
-<li><a class="reference internal" href="#control-flow">Control Flow</a><ul>
-<li><a class="reference internal" href="#if-elif-else">If/elif/else</a></li>
-<li><a class="reference internal" href="#for-loops">For Loops</a></li>
-<li><a class="reference internal" href="#while-loops">While Loops</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#functions">Functions</a><ul>
-<li><a class="reference internal" href="#functions-are-objects">Functions are Objects</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>
@@ -134,6 +84,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="syllabus.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="numerical_tools.html">Numerical tools</a></li>
       <li class="breadcrumb-item active">Basic introduction of python</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Python_tutorial_0.ipynb" rel="nofollow"> View page source</a>
@@ -1700,7 +1651,10 @@ In Test!
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="numerical_tools.html" class="btn btn-neutral float-left" title="Numerical tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Python_tutorial_1.html" class="btn btn-neutral float-right" title="Basic numerics and plot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

@@ -5,39 +5,41 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Random walk and emergent properties &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
+    <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-        <script src="../_static/design-tabs.js"></script>
+        <script src="_static/design-tabs.js"></script>
         <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-        <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="One dimensional random walk" href="1DRW.html" />
+    <link rel="prev" title="Basic numerics and plot" href="Python_tutorial_1.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,38 +47,45 @@ const thebe_selector_output = ".output, .cell_output"
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../syllabus.html" class="icon icon-home"> Python
+            <a href="syllabus.html" class="icon icon-home"> Python
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Random walk and emergent properties</a></li>
+              <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_tools.html">Numerical tools</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Random walk and emergent properties</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
 </ul>
-</div>
+</li>
+</ul>
+
         </div>
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../syllabus.html">Python</a>
+          <a href="syllabus.html">Python</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li><a href="syllabus.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Random walk and emergent properties</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/MD_files/random_walk_and_emergent_properties.md" rel="nofollow"> View page source</a>
+            <a href="_sources/random_walk_and_emergent_properties.md" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -86,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
              
   <section class="tex2jax_ignore mathjax_ignore" id="random-walk-and-emergent-properties">
 <h1>Random walk and emergent properties<a class="headerlink" href="#random-walk-and-emergent-properties" title="Permalink to this headline"></a></h1>
-<p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id3" title="James Sethna. Statistical mechanics: entropy, order parameters, and complexity. Volume 14. Oxford University Press, USA, 2021.">Set21</a>]</span> Chap. 2</em></p>
+<p><em>Reference: <span id="id1">[<a class="reference internal" href="MD_files/biblio.html#id3" title="James Sethna. Statistical mechanics: entropy, order parameters, and complexity. Volume 14. Oxford University Press, USA, 2021.">Set21</a>]</span> Chap. 2</em></p>
 <div class="tip admonition">
 <p class="admonition-title">Summary</p>
 <ul class="simple">
@@ -97,6 +106,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <p>Before we enter the discussion of statistical mechanics theory, let’s start with the simplest non-trivial example to learn what statistics could tell us. We will start from the one-dimensional random walk problem and the two-dimensional random drunkard’s walk. From the two examples, we introduce the idea of scale invariance and universality class. The simple calculation is also a warm-up for the basic calculations of statistical properties. Then, we will discuss the idea of irrelevant microscopic details and the relevant details using our simple examples. Once we understand the microscopic models in detail, we will try to develop an effective theory to describe the macroscopic property of the system. We will solve the macroscopic theory and bridge the macroscopic picture and the microscopic understandings.</p>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -112,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./MD_files"
+            path: "./."
         },
         predefinedOutput: true
     }
@@ -121,7 +132,10 @@ const thebe_selector_output = ".output, .cell_output"
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Python_tutorial_1.html" class="btn btn-neutral float-left" title="Basic numerics and plot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="1DRW.html" class="btn btn-neutral float-right" title="One dimensional random walk" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

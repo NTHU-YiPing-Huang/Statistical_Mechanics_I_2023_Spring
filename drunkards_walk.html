@@ -5,41 +5,43 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Drunkard’s walk &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
+    <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-        <script src="../_static/design-tabs.js"></script>
+        <script src="_static/design-tabs.js"></script>
         <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script async="async" src="_static/sphinx-thebe.js"></script>
         <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The diffusion equation" href="diffusion_eq.html" />
+    <link rel="prev" title="One dimensional random walk" href="1DRW.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,38 +49,46 @@ const thebe_selector_output = ".output, .cell_output"
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../syllabus.html" class="icon icon-home"> Python
+            <a href="syllabus.html" class="icon icon-home"> Python
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Drunkard’s walk</a></li>
+              <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_tools.html">Numerical tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
 </ul>
-</div>
+</li>
+</ul>
+
         </div>
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../syllabus.html">Python</a>
+          <a href="syllabus.html">Python</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li><a href="syllabus.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
       <li class="breadcrumb-item active">Drunkard’s walk</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/MD_files/drunkards_walk.md" rel="nofollow"> View page source</a>
+            <a href="_sources/drunkards_walk.md" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -90,9 +100,9 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Drunkard’s walk<a class="headerlink" href="#drunkard-s-walk" title="Permalink to this headline"></a></h1>
 <p>We can generalize the idea a little bit into the two-dimensional case. Suppose we have a drunk guy leaving a bar. The guy is drunk to the suitable level that he can keep the size of each step but lose the ability to be oriented. So the direction of each step is random. We can use a randomly oriented vector of length <span class="math notranslate nohighlight">\(L\)</span>, <span class="math notranslate nohighlight">\(\textbf{l}_j=L(\cos\theta_j,\sin\theta_j)\)</span>, to denote the <span class="math notranslate nohighlight">\(j\)</span>-th step of the drunk guy. By definition, we also have <span class="math notranslate nohighlight">\(\langle \textbf{l}_m\cdot\textbf{l}_n\rangle=L^2\langle\cos(\theta_m-\theta_n)\rangle=0\)</span> since <span class="math notranslate nohighlight">\(\theta_m\)</span> and <span class="math notranslate nohighlight">\(\theta_n\)</span> are random angles.</p>
 <figure class="align-default" id="d-rw-fig">
-<a class="reference internal image-reference" href="../_images/2D_RW_4.png"><img alt="../_images/2D_RW_4.png" src="../_images/2D_RW_4.png" style="width: 750px;" /></a>
+<a class="reference internal image-reference" href="_images/2D_RW_4.png"><img alt="_images/2D_RW_4.png" src="_images/2D_RW_4.png" style="width: 750px;" /></a>
 <figcaption>
-<p><span class="caption-text">Two-dimensional drunkard’s walk.</span><a class="headerlink" href="#d-rw-fig" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Two-dimensional drunkard’s walk.</span><a class="headerlink" href="#d-rw-fig" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -137,7 +147,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./MD_files"
+            path: "./."
         },
         predefinedOutput: true
     }
@@ -146,7 +156,10 @@ const thebe_selector_output = ".output, .cell_output"
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="1DRW.html" class="btn btn-neutral float-left" title="One dimensional random walk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="diffusion_eq.html" class="btn btn-neutral float-right" title="The diffusion equation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

@@ -39,7 +39,9 @@ const thebe_selector_output = ".output, .cell_output"
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Random walk and emergent properties" href="random_walk_and_emergent_properties.html" />
+    <link rel="prev" title="Basic introduction of python" href="Python_tutorial_0.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,22 +59,17 @@ const thebe_selector_output = ".output, .cell_output"
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Basic numerics and plot</a><ul>
-<li><a class="reference internal" href="#numpy-arrays">Numpy Arrays</a></li>
-<li><a class="reference internal" href="#basic-linear-algebra">Basic Linear Algebra</a></li>
-<li><a class="reference internal" href="#basic-plotting">Basic Plotting</a><ul>
-<li><a class="reference internal" href="#speed">Speed</a></li>
+              <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_0.html">Basic introduction of python</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Basic numerics and plot</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#some-common-arrays">Some Common Arrays</a></li>
-<li><a class="reference internal" href="#array-dtypes">Array DTypes</a></li>
-<li><a class="reference internal" href="#basic-operations-and-visualization">Basic Operations and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
 </ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>
@@ -87,6 +84,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="syllabus.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="numerical_tools.html">Numerical tools</a></li>
       <li class="breadcrumb-item active">Basic numerics and plot</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Python_tutorial_1.ipynb" rel="nofollow"> View page source</a>
@@ -109,69 +107,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># For interactive plot, please use </span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># %pylab notebook</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;pylab&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/book/lib/python3.9/site-packages/IPython/core/interactiveshell.py:2364,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2362</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2363</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2364</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2365</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/book/lib/python3.9/site-packages/IPython/core/magics/pylab.py:155,</span> in <span class="ni">PylabMagics.pylab</span><span class="nt">(self, line)</span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="c1"># invert no-import flag</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span>     <span class="n">import_all</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">no_import_all</span>
-<span class="ne">--&gt; </span><span class="mi">155</span> <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">clobbered</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">enable_pylab</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="n">import_all</span><span class="o">=</span><span class="n">import_all</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span> <span class="bp">self</span><span class="o">.</span><span class="n">_show_matplotlib_backend</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="nb">print</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="s2">&quot;%pylab is deprecated, use %matplotlib inline and import the required libraries.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/book/lib/python3.9/site-packages/IPython/core/interactiveshell.py:3567,</span> in <span class="ni">InteractiveShell.enable_pylab</span><span class="nt">(self, gui, import_all, welcome_message)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3540</span> <span class="sd">&quot;&quot;&quot;Activate pylab support at runtime.</span>
-<span class="g g-Whitespace">   </span><span class="mi">3541</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">3542</span><span class="sd"> This turns on support for matplotlib, preloads into the interactive</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3563</span><span class="sd">     This argument is ignored, no welcome message will be displayed.</span>
-<span class="g g-Whitespace">   </span><span class="mi">3564</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">3565</span> <span class="kn">from</span> <span class="nn">IPython.core.pylabtools</span> <span class="kn">import</span> <span class="n">import_pylab</span>
-<span class="ne">-&gt; </span><span class="mi">3567</span> <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">enable_matplotlib</span><span class="p">(</span><span class="n">gui</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3569</span> <span class="c1"># We want to prevent the loading of pylab to pollute the user&#39;s</span>
-<span class="g g-Whitespace">   </span><span class="mi">3570</span> <span class="c1"># namespace as shown by the %who* magics, so we execute the activation</span>
-<span class="g g-Whitespace">   </span><span class="mi">3571</span> <span class="c1"># code in an empty namespace, and we update *both* user_ns and</span>
-<span class="g g-Whitespace">   </span><span class="mi">3572</span> <span class="c1"># user_ns_hidden with this information.</span>
-<span class="g g-Whitespace">   </span><span class="mi">3573</span> <span class="n">ns</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/book/lib/python3.9/site-packages/IPython/core/interactiveshell.py:3513,</span> in <span class="ni">InteractiveShell.enable_matplotlib</span><span class="nt">(self, gui)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3492</span> <span class="k">def</span> <span class="nf">enable_matplotlib</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gui</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">3493</span>     <span class="sd">&quot;&quot;&quot;Enable interactive matplotlib and inline figure support.</span>
-<span class="g g-Whitespace">   </span><span class="mi">3494</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">3495</span><span class="sd">     This takes the following steps:</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3511</span><span class="sd">         display figures inline.</span>
-<span class="g g-Whitespace">   </span><span class="mi">3512</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">3513</span>     <span class="kn">from</span> <span class="nn">matplotlib_inline.backend_inline</span> <span class="kn">import</span> <span class="n">configure_inline_support</span>
-<span class="g g-Whitespace">   </span><span class="mi">3515</span>     <span class="kn">from</span> <span class="nn">IPython.core</span> <span class="kn">import</span> <span class="n">pylabtools</span> <span class="k">as</span> <span class="n">pt</span>
-<span class="g g-Whitespace">   </span><span class="mi">3516</span>     <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">find_gui_and_backend</span><span class="p">(</span><span class="n">gui</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pylab_gui_select</span><span class="p">)</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib_inline</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">backend_inline</span><span class="p">,</span> <span class="n">config</span>  <span class="c1"># noqa</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.1.6&quot;</span>  <span class="c1"># noqa</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib_inline</span><span class="o">/</span><span class="n">backend_inline</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="sd">&quot;&quot;&quot;A matplotlib backend for publishing figures via display_data&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Copyright (c) IPython Development Team.</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Distributed under the terms of the BSD 3-Clause License.</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colors</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">matplotlib.backends</span> <span class="kn">import</span> <span class="n">backend_agg</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%pylab is deprecated, use %matplotlib inline and import the required libraries.
+Populating the interactive namespace from numpy and matplotlib
 </pre></div>
 </div>
 </div>
@@ -473,7 +410,7 @@ norm(a)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.2371143170757382e-17
 </pre></div>
 </div>
 </div>
@@ -527,7 +464,7 @@ show()
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>279 µs ± 4.72 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>189 µs ± 129 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -540,7 +477,7 @@ show()
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>806 ns ± 35.5 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>581 ns ± 6.85 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -685,8 +622,8 @@ r_[2:10:5j]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.80947482, 0.89261187],
-       [0.021396  , 0.07445528]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.57043517, 0.6945447 ],
+       [0.4685112 , 0.18656813]])
 </pre></div>
 </div>
 </div>
@@ -698,9 +635,9 @@ r_[2:10:5j]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.72812182, 11.29459947,  4.62183267],
-       [ 2.47499787,  2.67545379,  3.34511434],
-       [ 0.75359228,  3.57557972,  0.46732403]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.09269403, 3.66448636, 0.69025498],
+       [1.10439219, 5.86819316, 0.42072491],
+       [1.32102197, 1.75747344, 0.07952338]])
 </pre></div>
 </div>
 </div>
@@ -814,7 +751,10 @@ show()
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Python_tutorial_0.html" class="btn btn-neutral float-left" title="Basic introduction of python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="random_walk_and_emergent_properties.html" class="btn btn-neutral float-right" title="Random walk and emergent properties" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

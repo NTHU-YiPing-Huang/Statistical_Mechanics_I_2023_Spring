@@ -5,41 +5,42 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The diffusion equation &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
+    <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-        <script src="../_static/design-tabs.js"></script>
+        <script src="_static/design-tabs.js"></script>
         <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script async="async" src="_static/sphinx-thebe.js"></script>
         <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Drunkard’s walk" href="drunkards_walk.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,57 +48,46 @@ const thebe_selector_output = ".output, .cell_output"
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../syllabus.html" class="icon icon-home"> Python
+            <a href="syllabus.html" class="icon icon-home"> Python
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">The diffusion equation</a><ul>
-<li><a class="reference internal" href="#the-microscopic-model">The microscopic model</a></li>
-<li><a class="reference internal" href="#the-macroscopic-question">The macroscopic question</a></li>
-<li><a class="reference internal" href="#the-currents-and-the-locally-conserved-particle-number">The currents and the locally conserved particle number</a></li>
-<li><a class="reference internal" href="#the-effect-of-external-forces">The effect of external forces</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#the-solution-of-the-diffusion-equation">The solution of the diffusion equation</a><ul>
-<li><a class="reference internal" href="#the-equilibrium-solution">The equilibrium solution</a></li>
-<li><a class="reference internal" href="#the-general-solution-of-the-diffusion-equation">The general solution of the diffusion equation</a><ul>
-<li><a class="reference internal" href="#the-fourier-method">The Fourier method</a><ul>
-<li><a class="reference internal" href="#why-the-fourier-method">Why the Fourier method?</a></li>
-<li><a class="reference internal" href="#the-solution-according-to-the-fourier-method">The solution according to the Fourier method</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#green-s-function">Green’s function</a></li>
+              <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_tools.html">Numerical tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The diffusion equation</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../syllabus.html">Python</a>
+          <a href="syllabus.html">Python</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li><a href="syllabus.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
       <li class="breadcrumb-item active">The diffusion equation</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/MD_files/diffusion_eq.md" rel="nofollow"> View page source</a>
+            <a href="_sources/diffusion_eq.md" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -130,9 +120,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s try to think more carefully about how this field is constructed. As we know, the microscopic particles fluctuate at the microscopic length scale. When we define our density field, we evaluate the density at <span class="math notranslate nohighlight">\(r\)</span> by average the particle number over a length scale <span class="math notranslate nohighlight">\(\delta r\)</span>. That is, <span class="math notranslate nohighlight">\(\rho(r,t)=\frac{N_{\delta_r}}{\delta r}\)</span> where <span class="math notranslate nohighlight">\(N_{\delta_r}\)</span> represent the number of particles in <span class="math notranslate nohighlight">\([r-\frac{\delta r}{2},r+\frac{\delta r}{2}]\)</span>. How to choose <span class="math notranslate nohighlight">\(\delta r\)</span>? We hope we can choose <span class="math notranslate nohighlight">\(\delta r\)</span> large enough such that <span class="math notranslate nohighlight">\(\rho(r,t)\)</span> is not fluctuating too much. Why should we expect the fluctuation to become small when <span class="math notranslate nohighlight">\(\delta r\)</span> is large enough? Small compared with what? What happens if <span class="math notranslate nohighlight">\(\delta r\)</span> is too small? What do we mean by “not fluctuating too much”? If we perform a similar analysis in time, what does that mean?</p>
 </div>
 <figure class="align-default" id="density-evolution">
-<a class="reference internal image-reference" href="../_images/diff_den_6.png"><img alt="../_images/diff_den_6.png" src="../_images/diff_den_6.png" style="width: 750px;" /></a>
+<a class="reference internal image-reference" href="_images/diff_den_6.png"><img alt="_images/diff_den_6.png" src="_images/diff_den_6.png" style="width: 750px;" /></a>
 <figcaption>
-<p><span class="caption-text">Evolution of the density field.</span><a class="headerlink" href="#density-evolution" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Evolution of the density field.</span><a class="headerlink" href="#density-evolution" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The question we would like to understand at the macroscopic level is: how does the density field change as a function of time if the microscopic components are doing the random walk we proposed at the microscopic model?</p>
@@ -225,16 +215,15 @@ With similar arguments, we can derive the diffusion equation and the current und
 J=\gamma F\rho-D\frac{\partial \rho}{\partial x}\text{.}
 \]</div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="the-solution-of-the-diffusion-equation">
-<h1>The solution of the diffusion equation<a class="headerlink" href="#the-solution-of-the-diffusion-equation" title="Permalink to this headline"></a></h1>
+<section id="the-solution-of-the-diffusion-equation">
+<h2>The solution of the diffusion equation<a class="headerlink" href="#the-solution-of-the-diffusion-equation" title="Permalink to this headline"></a></h2>
 <p>We would like to understand how the density profile <span class="math notranslate nohighlight">\(\rho(r,t)\)</span> evolve in time and space. It will give us a rough picture of how a system reaches <em>equilibrium</em>. The evolution process toward equilibrium is a complicated process in both classical and quantum systems. The random walk process is the simplest one that can give us a rough picture. We will start from the equilibrium solution, <span class="math notranslate nohighlight">\(\frac{\partial \rho^*(r)}{\partial t}=0\)</span>. Then, we will discuss the general solution <span class="math notranslate nohighlight">\(\rho(r,t)\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">What?</p>
 <p>We also learn a similar concept, the steady-state. How the idea of equilibrium differs from the idea of steady-state? In this section of the lecture note, I did not distinguish the concept clearly. However, the two ideas are subtlely different.</p>
 </div>
 <section id="the-equilibrium-solution">
-<h2>The equilibrium solution<a class="headerlink" href="#the-equilibrium-solution" title="Permalink to this headline"></a></h2>
+<h3>The equilibrium solution<a class="headerlink" href="#the-equilibrium-solution" title="Permalink to this headline"></a></h3>
 <p>There are two cases for the equilibrium solution–the case without an external field and the case with an external field. I will discuss both cases.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(F=0\)</span>: <span class="math notranslate nohighlight">\(\frac{\partial {\rho^*}\,^2}{\partial x^2}=D^{-1}\frac{\partial \rho}{\partial t}=0\rightarrow \rho^*=\rho_0+Bx\)</span>. Here, <span class="math notranslate nohighlight">\(\rho_0\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are the constants to be determined. Suppose we study a system of particles confined by a solid container. At the boundary, the current needs to be 0. This leads to the boundary condition <span class="math notranslate nohighlight">\(J=0=-D\frac{\partial \rho^*}{\partial x_{boundary}}=-DB\)</span>. That is, <span class="math notranslate nohighlight">\(B=0\)</span>. So the equilibrium solution, in this case, is the homogeneous distribution, <span class="math notranslate nohighlight">\(\rho^*=\rho_0\)</span> is constant.</p></li>
@@ -243,16 +232,16 @@ J=\gamma F\rho-D\frac{\partial \rho}{\partial x}\text{.}
 <p>Now we know the behavior of the equilibrium solution, we will further tackle the evolution of the density profile for arbitrary time <span class="math notranslate nohighlight">\(t\)</span>.</p>
 </section>
 <section id="the-general-solution-of-the-diffusion-equation">
-<h2>The general solution of the diffusion equation<a class="headerlink" href="#the-general-solution-of-the-diffusion-equation" title="Permalink to this headline"></a></h2>
+<h3>The general solution of the diffusion equation<a class="headerlink" href="#the-general-solution-of-the-diffusion-equation" title="Permalink to this headline"></a></h3>
 <p>We will introduce two methods to solve the diffusion equation. The “solution” of the diffusion equation means we know the density profile for arbitrary space-time once an initial condition, <span class="math notranslate nohighlight">\(\rho_i(x,t=t_i=0)\)</span>, is given. In general, this process is quite complicated. However, the fact that the diffusion equation is a linear equation simplifies the analysis a lot. The key question we should ask is: are there quantities that are kept fixed during the time evolution? We have learned several conserved quantities in the past. Usually, they are related to the symmetry of the system. The important symmetry for later analysis is the translational symmetry in space. That’s why we will start the analysis from the Fourier method. Once we know how the Fourier method works in general, we will apply that to a special initial condition, the Dirac delta function. We will see the property of Dirac delta function provides a convenient structure to define Green’s function of the diffusion equation. Using the Green’s function, we can construct the evolution of the density profile for arbitrary space-time.</p>
 <div class="tip admonition">
 <p class="admonition-title">What?</p>
 <p>Are the energy and momentum conserved quantities in the microscopic random walk model? In a physical system, should they be conserved?</p>
 </div>
 <section id="the-fourier-method">
-<h3>The Fourier method<a class="headerlink" href="#the-fourier-method" title="Permalink to this headline"></a></h3>
+<h4>The Fourier method<a class="headerlink" href="#the-fourier-method" title="Permalink to this headline"></a></h4>
 <section id="why-the-fourier-method">
-<h4>Why the Fourier method?<a class="headerlink" href="#why-the-fourier-method" title="Permalink to this headline"></a></h4>
+<h5>Why the Fourier method?<a class="headerlink" href="#why-the-fourier-method" title="Permalink to this headline"></a></h5>
 <p>Our system has translation symmetry. We would like to use that property to simplify our analysis. Let <span class="math notranslate nohighlight">\(T_{\Delta}\)</span> denote the translation operator that shifts the system by displacement <span class="math notranslate nohighlight">\(\Delta\)</span>. We want to analyze the time evolution of our system; we can use <span class="math notranslate nohighlight">\(U_t\)</span> to express the time evolution of the density profile formally. By definition, we have <span class="math notranslate nohighlight">\(\rho_{k}(x,t)=U_t[\rho_k(x,0)]\)</span>. Here, <span class="math notranslate nohighlight">\(k\)</span> is the conserved quantity that is invariant under the time evolution. If such <span class="math notranslate nohighlight">\(k\)</span> exist, it will be helpful for us to analyze the problem. The translational symmetry of our system is equivalent to the following formal expression.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -280,11 +269,11 @@ T_{\Delta}\left[\rho_k(x,0)\right]=\lambda_k \rho_k(x,0)=\rho_k(x-\Delta,0).
 <div class="tip admonition">
 <p class="admonition-title">What?</p>
 <p>Symmetry plays an important role in physics. Especially, the representation of the symmetry operator helps us to formulate and analyze the problem. In this case, the translation operator forms an abelian group(Which means the order of applying the translation operator is not important). The irreducible representation of the abelian group is one-dimensional. So we can use <span class="math notranslate nohighlight">\(e^{-ik\Delta}\)</span> to represent the translational operator. From the representation theory of the group, we can rationalize where this solution came from.
-<span id="id1">[<a class="reference internal" href="biblio.html#id4" title="Michael Tinkham. Group theory and quantum mechanics. Courier Corporation, 2003.">Tin03</a>]</span></p>
+<span id="id1">[<a class="reference internal" href="MD_files/biblio.html#id4" title="Michael Tinkham. Group theory and quantum mechanics. Courier Corporation, 2003.">Tin03</a>]</span></p>
 </div>
 </section>
 <section id="the-solution-according-to-the-fourier-method">
-<h4>The solution according to the Fourier method<a class="headerlink" href="#the-solution-according-to-the-fourier-method" title="Permalink to this headline"></a></h4>
+<h5>The solution according to the Fourier method<a class="headerlink" href="#the-solution-according-to-the-fourier-method" title="Permalink to this headline"></a></h5>
 <p>Now, we know why we want to use the Fourier method to simplify our result. The diffusion equation is a linear equation. In other words, if <span class="math notranslate nohighlight">\(\rho_1\)</span> and <span class="math notranslate nohighlight">\(\rho_2\)</span> are both the solution of the diffusion equation, the linear combination <span class="math notranslate nohighlight">\(c_1\rho_1+c_2\rho_2\)</span> for arbitrary <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> will also be a solution. So if we can use the eigenvectors to expand our general solution, all we need to do is to find the solution for each <span class="math notranslate nohighlight">\(k\)</span> component. The following steps show how the Fourier method works.</p>
 <ul class="simple">
 <li><p>We can expand the density profile as <span class="math notranslate nohighlight">\(\rho(x,t)=\sum_k\widetilde{\rho_k}(t)e^{ikx}\)</span>.</p></li>
@@ -319,7 +308,7 @@ T_{\Delta}\left[\rho_k(x,0)\right]=\lambda_k \rho_k(x,0)=\rho_k(x-\Delta,0).
 </section>
 </section>
 <section id="green-s-function">
-<h3>Green’s function<a class="headerlink" href="#green-s-function" title="Permalink to this headline"></a></h3>
+<h4>Green’s function<a class="headerlink" href="#green-s-function" title="Permalink to this headline"></a></h4>
 <p>The method of Green’s function is based on a property of Dirac delta function. That is, we can express an arbitrary function using the Dirac delta function.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -338,7 +327,8 @@ F(x)=\int F(x-y)\delta(y)dy\text{.}
 \]</div>
 <p>To get the time evolution of a density profile, all we need to do is to input the density profile at time <span class="math notranslate nohighlight">\(t=0\)</span> into the above expression.</p>
 <p>Now let’s look at the Green’s function; we found it is a Gaussian function with standard deviation <span class="math notranslate nohighlight">\(\sigma(t)=\sqrt{2Dt}\)</span>. From our previous simple model, we know <span class="math notranslate nohighlight">\(D=\frac{a^2}{2\Delta t}\)</span>. Then we got <span class="math notranslate nohighlight">\(\sigma(t)=\sqrt{2\frac{a^2}{2\Delta t}t}=a\sqrt{t/\Delta t}=a\sqrt{N}\)</span> which is equivalent with the <span class="math notranslate nohighlight">\(N\)</span>-steps random walk with step size <span class="math notranslate nohighlight">\(a\)</span>. To some extent, Green’s function having a function form of a Gaussian is closely related to the central limit theorem.  The central limit theorem suggests the sum of independent variables has a probability distribution function that converges to a Gaussian. We will prove the central limit theorem in our homework 1.</p>
-<p>Now we know how to solve a diffusion equation and how it reaches equilibrium. However, for generic closed classical or quantum systems, how the system reaches equilibrium is still an open question. We will not elaborate more on this fascinating research problem. Instead, we will refer our readers to other sources that discuss these interesting topics ( see, <em>e.g.</em> Thermalization and many-body localization, see <span id="id2">[<a class="reference internal" href="biblio.html#id7" title="Mark Srednicki. Chaos and quantum thermalization. arXiv preprint cond-mat/9403051, 1994.">Sre94</a>]</span> and <span id="id3">[<a class="reference internal" href="biblio.html#id6" title="Rahul Nandkishore and David A Huse. Many body localization and thermalization in quantum statistical mechanics. arXiv preprint arXiv:1404.0686, 2014.">NH14</a>]</span> )</p>
+<p>Now we know how to solve a diffusion equation and how it reaches equilibrium. However, for generic closed classical or quantum systems, how the system reaches equilibrium is still an open question. We will not elaborate more on this fascinating research problem. Instead, we will refer our readers to other sources that discuss these interesting topics ( see, <em>e.g.</em> Thermalization and many-body localization, see <span id="id2">[<a class="reference internal" href="MD_files/biblio.html#id7" title="Mark Srednicki. Chaos and quantum thermalization. arXiv preprint cond-mat/9403051, 1994.">Sre94</a>]</span> and <span id="id3">[<a class="reference internal" href="MD_files/biblio.html#id6" title="Rahul Nandkishore and David A Huse. Many body localization and thermalization in quantum statistical mechanics. arXiv preprint arXiv:1404.0686, 2014.">NH14</a>]</span> )</p>
+</section>
 </section>
 </section>
 </section>
@@ -356,7 +346,7 @@ F(x)=\int F(x-y)\delta(y)dy\text{.}
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./MD_files"
+            path: "./."
         },
         predefinedOutput: true
     }
@@ -365,7 +355,9 @@ F(x)=\int F(x-y)\delta(y)dy\text{.}
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="drunkards_walk.html" class="btn btn-neutral float-left" title="Drunkard’s walk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

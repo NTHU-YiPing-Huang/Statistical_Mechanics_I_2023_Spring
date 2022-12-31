@@ -140,7 +140,7 @@ $$
 J=\gamma F\rho-D\frac{\partial \rho}{\partial x}\text{.}
 $$
 
-# The solution of the diffusion equation
+## The solution of the diffusion equation
 
 We would like to understand how the density profile $\rho(r,t)$ evolve in time and space. It will give us a rough picture of how a system reaches *equilibrium*. The evolution process toward equilibrium is a complicated process in both classical and quantum systems. The random walk process is the simplest one that can give us a rough picture. We will start from the equilibrium solution, $\frac{\partial \rho^*(r)}{\partial t}=0$. Then, we will discuss the general solution $\rho(r,t)$.
 
@@ -148,7 +148,7 @@ We would like to understand how the density profile $\rho(r,t)$ evolve in time a
 :class: tip
 We also learn a similar concept, the steady-state. How the idea of equilibrium differs from the idea of steady-state? In this section of the lecture note, I did not distinguish the concept clearly. However, the two ideas are subtlely different.
 ```
-## The equilibrium solution
+### The equilibrium solution
 
 There are two cases for the equilibrium solution--the case without an external field and the case with an external field. I will discuss both cases.
 
@@ -157,7 +157,7 @@ There are two cases for the equilibrium solution--the case without an external f
 
 Now we know the behavior of the equilibrium solution, we will further tackle the evolution of the density profile for arbitrary time $t$.
 
-## The general solution of the diffusion equation
+### The general solution of the diffusion equation
 
 We will introduce two methods to solve the diffusion equation. The "solution" of the diffusion equation means we know the density profile for arbitrary space-time once an initial condition, $\rho_i(x,t=t_i=0)$, is given. In general, this process is quite complicated. However, the fact that the diffusion equation is a linear equation simplifies the analysis a lot. The key question we should ask is: are there quantities that are kept fixed during the time evolution? We have learned several conserved quantities in the past. Usually, they are related to the symmetry of the system. The important symmetry for later analysis is the translational symmetry in space. That's why we will start the analysis from the Fourier method. Once we know how the Fourier method works in general, we will apply that to a special initial condition, the Dirac delta function. We will see the property of Dirac delta function provides a convenient structure to define Green's function of the diffusion equation. Using the Green's function, we can construct the evolution of the density profile for arbitrary space-time.
 
@@ -166,9 +166,9 @@ We will introduce two methods to solve the diffusion equation. The "solution" of
 Are the energy and momentum conserved quantities in the microscopic random walk model? In a physical system, should they be conserved?
 ```
 
-### The Fourier method
+#### The Fourier method
 
-#### Why the Fourier method?
+##### Why the Fourier method?
 
 Our system has translation symmetry. We would like to use that property to simplify our analysis. Let $T_{\Delta}$ denote the translation operator that shifts the system by displacement $\Delta$. We want to analyze the time evolution of our system; we can use $U_t$ to express the time evolution of the density profile formally. By definition, we have $\rho_{k}(x,t)=U_t[\rho_k(x,0)]$. Here, $k$ is the conserved quantity that is invariant under the time evolution. If such $k$ exist, it will be helpful for us to analyze the problem. The translational symmetry of our system is equivalent to the following formal expression.
 
@@ -206,7 +206,7 @@ Symmetry plays an important role in physics. Especially, the representation of t
 {cite:p}`tinkham2003group` 
 ```
 
-#### The solution according to the Fourier method
+##### The solution according to the Fourier method
 
 Now, we know why we want to use the Fourier method to simplify our result. The diffusion equation is a linear equation. In other words, if $\rho_1$ and $\rho_2$ are both the solution of the diffusion equation, the linear combination $c_1\rho_1+c_2\rho_2$ for arbitrary $c_1$ and $c_2$ will also be a solution. So if we can use the eigenvectors to expand our general solution, all we need to do is to find the solution for each $k$ component. The following steps show how the Fourier method works.
 
@@ -236,7 +236,7 @@ We can see the solution suggests the high wave vector modes will decay exponenti
 
 The above steps suggest that we need to get $\widetilde{\rho_k}(t=0)$ by performing Fourier analysis of the density profile at $t=0$, $\rho(x,t=0)$. Then, we reconstruct the evolution of the density profile by integration over $k$. The process can be carried out. However, it will be better if, for an arbitrary given initial condition, we can derive the density profile at an arbitrary space-time point. We will introduce the idea of Green's function, which serves this purpose.
 
-### Green's function
+#### Green's function
 
 The method of Green's function is based on a property of Dirac delta function. That is, we can express an arbitrary function using the Dirac delta function.
 
