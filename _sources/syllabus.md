@@ -91,7 +91,7 @@ A good reference is the one that you are willing to read.
 	* non-interacting boson/fermion
 6. Interacting systems and mean-field theory
 
-### Course plan (2022-spring)
+### Course plan (2023-spring)
 
 | Date    | Contents                                                                                                                                                                                                                                                                                                                        |
 | :-----  | :-------                                                                                                                                                                                                                                                                                                                        |
