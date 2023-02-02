@@ -5,6 +5,9 @@
 * Thermodynamics is a phenomenological theory -- it is based on experimental observations.
 * In addition, thermodynamics is an effective theory of the microscopic theory. The microscopic theory could describe a solid-state system, classical liquid, quantum liquids, black holes, neutron stars, *etc.* . Statistical mechanics provides a framework to justify this effective theory.
 * Statistical mechanics has a broader impact than thermodynamics. Statistical mechanics studies emergent behavior when the number of degrees of freedom is large. It is naturally connected with information theory, dynamical systems, and complexity theory which might not have a direct relation to thermodynamics.
+* Reading materials:
+	1. {cite}`callen1998thermodynamics`: Chapter 21 is a very interesting approach to discuss the symmetry and the conceptual foundation of thermostatistics.
+	2. {cite}`fermi2012thermodynamics`: A very concise introduction of thermostatistics.
 ```
 
 ## A little bit of history of me learning thermodynamics and statistical mechanics
