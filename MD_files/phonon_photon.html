@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phonon and photon &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="../_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -89,13 +90,13 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="phonon-and-photon">
-<h1>Phonon and photon<a class="headerlink" href="#phonon-and-photon" title="Permalink to this headline"></a></h1>
+<h1>Phonon and photon<a class="headerlink" href="#phonon-and-photon" title="Permalink to this heading"></a></h1>
 <p>We are going to discuss the statistical mechanics for phonon and photon. Here, we will brief discuss the origin of phonon and photon. The discussion will just focus on the physics and the relevant formalism to derive statistical mechanics descriptions. For readers who want to review details of the derivation, we will refer to the nice reference <span id="id1">[<a class="reference internal" href="biblio.html#id10" title="Steven H Simon. The Oxford solid state basics. OUP Oxford, 2013.">Sim13</a>]</span>.</p>
 <section id="phonon">
-<h2>Phonon<a class="headerlink" href="#phonon" title="Permalink to this headline"></a></h2>
+<h2>Phonon<a class="headerlink" href="#phonon" title="Permalink to this heading"></a></h2>
 <p>Phonons are the quantum of sound wave. Therefore, in order to understand it, we need to have a rough picture of sound wave in solid. To get the core concept, we will focus on the simplest type of phonon: phonon in simple lattice system.</p>
 <section id="the-phonon-band-structure">
-<h3>The phonon band structure<a class="headerlink" href="#the-phonon-band-structure" title="Permalink to this headline"></a></h3>
+<h3>The phonon band structure<a class="headerlink" href="#the-phonon-band-structure" title="Permalink to this heading"></a></h3>
 <p>Symmetries usually help us simplify the analysis the problems. The lattice system has a <em>discrete</em> translational symmetry. How to use this symmetry to simplify the analysis of our problem?</p>
 <p>In a system with <em>continuous</em> translation symmetry, the momentum is conserved. So we usually use momentum to label the eigen states of our system.</p>
 <p>For system with <em>discrete</em> translation symmetry, we can similarly use the crystal momentum vector <span class="math notranslate nohighlight">\(\textbf{k}\)</span> to label the eigen states.</p>
@@ -115,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>In the last section, we discussed <span class="math notranslate nohighlight">\(N\)</span> decoupled quantum harmonic oscillator. They can be considered as a good approximation to the optical phonon if the gapped modes are approximately <span class="math notranslate nohighlight">\(q\)</span> independent. In fact, that is the Einstein’s phonon model<span id="id2">[<a class="reference internal" href="biblio.html#id11" title="Albert Einstein. Die plancksche theorie der strahlung und die theorie der spezifischen wärme. Annalen der Physik, 327(1):180–190, 1907.">Ein07</a>]</span>.</p>
 </section>
 <section id="classical-1d-sound-wave">
-<h3>Classical 1D sound wave<a class="headerlink" href="#classical-1d-sound-wave" title="Permalink to this headline"></a></h3>
+<h3>Classical 1D sound wave<a class="headerlink" href="#classical-1d-sound-wave" title="Permalink to this heading"></a></h3>
 <p>Here, we are going to discuss a simple example which is an one-dimensional coupled oscillators. The example is a model that is analytically tractable. However, as all the simple models, we should care about the generic feature of such systems instead of focusing on the artifact due to its simplicity. I will explain what do I mean by that later.</p>
 <p>We will focus on the classical system first. Then we can derive the energy as a function of <span class="math notranslate nohighlight">\(q\)</span>. Then, we will take the short cut to perform the classical-quantum replacement <span class="math notranslate nohighlight">\(E(q)=\hbar\omega(q)\to\hbar\omega(q)\left(\frac{1}{2}+\hat{n}_q\right)\)</span>. Here <span class="math notranslate nohighlight">\(\hat{n}_q\)</span> is the quanta of a quantum oscillator with wave vector <span class="math notranslate nohighlight">\(q\)</span>.</p>
 <p>Let’s start our analysis. Consider <span class="math notranslate nohighlight">\(N\)</span> particles with mass <span class="math notranslate nohighlight">\(m\)</span> coupled through spring with elastic potential <span class="math notranslate nohighlight">\(\frac{\kappa}{2}\Delta x^2\)</span>. Here <span class="math notranslate nohighlight">\(\kappa\)</span> is the force constant and <span class="math notranslate nohighlight">\(\Delta x\)</span> is the displacement from the equilibrium position. We assume the equilibrium position of the particles form a lattice with lattice constant <span class="math notranslate nohighlight">\(a\)</span>.</p>
@@ -145,7 +146,7 @@ Z=\sum_{\left\{n_{q,\alpha}\right\}} \exp\left[-\beta \sum_{q,\alpha} \hbar\omeg
 <p>To focus on the point, we assume the dispersion is isotropic and replace the discrete sum by integral in the later discussion.</p>
 </section>
 <section id="debye-model">
-<h3>Debye model<a class="headerlink" href="#debye-model" title="Permalink to this headline"></a></h3>
+<h3>Debye model<a class="headerlink" href="#debye-model" title="Permalink to this heading"></a></h3>
 <p>As we mentioned previously, <span class="math notranslate nohighlight">\(\omega(q)\)</span> depends on the system detail. The generic feature due to the Goldstone theorem is <span class="math notranslate nohighlight">\(\omega(q)\sim vq\)</span> as <span class="math notranslate nohighlight">\(q\to0\)</span>. Another constraint is the classical limit of the quantum model should leads to specific heat <span class="math notranslate nohighlight">\(3Nk_B\)</span> for a 3D system. To incorporate the two generic feature into one model, Debye propose to linearize the whole spectrum and put in a frequency cutoff by hand. Let’s see how it is done.</p>
 <ol>
 <li><p>The linear dispersive mode: Let’s assume <span class="math notranslate nohighlight">\(\omega(q)=vq\)</span> and <span class="math notranslate nohighlight">\(dq=v^{-1}d\omega\)</span>. Then we have the energy expectation value described as</p>
@@ -187,7 +188,7 @@ After some algebra, we found</p>
 </section>
 </section>
 <section id="photon">
-<h2>Photon<a class="headerlink" href="#photon" title="Permalink to this headline"></a></h2>
+<h2>Photon<a class="headerlink" href="#photon" title="Permalink to this heading"></a></h2>
 <p>The calculation of phonon is very similar with the photon case. Here I just list some of the key difference and the derivation will be left as an exercise.</p>
 <ol class="simple">
 <li><p>Completely linear dispersive mode.</p></li>

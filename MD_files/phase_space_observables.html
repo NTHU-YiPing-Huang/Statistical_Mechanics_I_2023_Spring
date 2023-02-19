@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phase space and Observables &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="../_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -89,16 +90,16 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="phase-space-and-observables">
-<h1>Phase space and Observables<a class="headerlink" href="#phase-space-and-observables" title="Permalink to this headline"></a></h1>
+<h1>Phase space and Observables<a class="headerlink" href="#phase-space-and-observables" title="Permalink to this heading"></a></h1>
 <p>The right hand side of the Boltzmann’s postulate is related to the concept of accessible phase space. So we will start our discussion from what is a phase space and how it could related to the thermodynamic extensive variables. After that, we can ask: why choosing the phase space? What’s so special about phase space? The answer is related to the Liouville’s theorem.</p>
 <section id="phase-space">
-<h2>Phase space<a class="headerlink" href="#phase-space" title="Permalink to this headline"></a></h2>
+<h2>Phase space<a class="headerlink" href="#phase-space" title="Permalink to this heading"></a></h2>
 <p>As we mentioned, we care about the canonical evolution of a Hamiltonian system where the energy is conserved. For one particle, we need to specify its position, <span class="math notranslate nohighlight">\(\textbf{R}_1\)</span>, and momentum, <span class="math notranslate nohighlight">\(\textbf{P}_1\)</span>, to uniquely define its status. For <span class="math notranslate nohighlight">\(N\)</span> particles, we will need <span class="math notranslate nohighlight">\(N\)</span> position vectors and <span class="math notranslate nohighlight">\(N\)</span> momentum vectors to describe them.</p>
 <p>We can use <span class="math notranslate nohighlight">\(\xi\equiv\{\textbf{R}_1,\textbf{R}_2,...,\textbf{R}_N;\textbf{P}_1,\textbf{P}_2,...,\textbf{P}_N\}\)</span> to describe the status of the <span class="math notranslate nohighlight">\(N\)</span> particle system. The space spanned by <span class="math notranslate nohighlight">\(\xi\)</span> is the phase space.</p>
 <p>The phase space is a space with <span class="math notranslate nohighlight">\(6N\)</span> degrees of freedom if we consider a three-dimensional system. Since <span class="math notranslate nohighlight">\(N\sim 10^{23}\)</span>, we actually have a high-dimensional system!</p>
 <p>When we consider the evolution where energy is conserved, we therefore has <span class="math notranslate nohighlight">\(6N-1\)</span> independent degrees of freedom. The evolution of the system therefore is described by a path parameterized by the evolution time <span class="math notranslate nohighlight">\(t\)</span> in the <span class="math notranslate nohighlight">\(6N\)</span> dimensional phase space.</p>
 <section id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h3>
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h3>
 <ol class="simple">
 <li><p>Single free particle in one-dimensional space:
 The phase space trajectory for a single free particle is easy. We know the momentum is a fixed value <span class="math notranslate nohighlight">\(p_0\)</span> and the position just grows linearly with time <span class="math notranslate nohighlight">\(t\)</span>. That trajectory is a straight line in the phase space.</p></li>
@@ -110,12 +111,12 @@ In this case, we have a 4 dimensional phase space. Even this simplest non-trivia
 </section>
 </section>
 <section id="observables-definition-of-accessible">
-<h2>Observables (Definition of “accessible”)<a class="headerlink" href="#observables-definition-of-accessible" title="Permalink to this headline"></a></h2>
+<h2>Observables (Definition of “accessible”)<a class="headerlink" href="#observables-definition-of-accessible" title="Permalink to this heading"></a></h2>
 <p>The path <span class="math notranslate nohighlight">\(\xi(t)\)</span> can be quite complicated in the high dimensional space. However, as we know the thermodynamic extensive variables such as energy and volume can fluctuates at the microscopic level, but they are relative smooth functions of the microscopic coordinates at the macroscopic scale.</p>
 <p>Therefore it is reasonable to define a family of function that take the rather complicated microscopic configurations <span class="math notranslate nohighlight">\(\xi(t)\)</span> as input, but output a relative smooth value as a function of time. We call such functions observables.</p>
 <p>It is quite reasonable to postulate that the extensive variables in thermodynamics are all observables. (We can measure them!) The accessible volume of the phase space is therefore specified by the thermodynamics extensive variables.</p>
 <section id="id1">
-<h3>Examples<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3>Examples<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Observable:</p>
 <ul>
@@ -144,7 +145,7 @@ x&lt;0, 0
 \end{split}\]</div>
 </section>
 <section id="example-of-accessible-phase-space">
-<h3>Example of “accessible” phase space<a class="headerlink" href="#example-of-accessible-phase-space" title="Permalink to this headline"></a></h3>
+<h3>Example of “accessible” phase space<a class="headerlink" href="#example-of-accessible-phase-space" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>The piston: The volume of the chamber for a piston is a variable. When we discuss the accessible phase space for the gas inside the chamber, we need to discuss the real space part and the momentum part. We will discuss the space part first since it is relative straight forward. The gas in the chamber cannot escape. Therefore, the volume of the chamber is the accessible volume for the gas inside the chamber.</p></li>
 </ul>

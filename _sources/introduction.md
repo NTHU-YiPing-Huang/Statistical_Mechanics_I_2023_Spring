@@ -8,6 +8,7 @@
 * Reading materials:
 	1. {cite}`callen1998thermodynamics`: Chapter 21 is a very interesting approach to discuss the symmetry and the conceptual foundation of thermostatistics.
 	2. {cite}`fermi2012thermodynamics`: A very concise introduction of thermostatistics.
+	3. {cite}`wolfram2023thermodynamics`: How complexity emerges? What is the second law of thermodynamics from the computational point of view.
 ```
 
 ## A little bit of history of me learning thermodynamics and statistical mechanics

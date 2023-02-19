@@ -166,7 +166,7 @@ We will introduce two methods to solve the diffusion equation. The "solution" of
 Are the energy and momentum conserved quantities in the microscopic random walk model? In a physical system, should they be conserved?
 ```
 
-#### The Fourier method
+#### Approach 1: The Fourier method
 
 ##### Why the Fourier method?
 
@@ -199,6 +199,8 @@ T_{\Delta}\left[\rho_k(x,0)\right]=\lambda_k \rho_k(x,0)=\rho_k(x-\Delta,0).
 $$
 
 We can just stare at it, and find a simple solution, $\rho_{k}(x,0)=e^{ikx}$ and $\lambda_k=e^{-ik\Delta}$. So if we expand the initial condition using the eigenvector, $\rho_k(x,t)$, the evolution of each component will be labeled by $k$.
+
+
 
 ```{admonition} What?
 :class: tip
@@ -236,7 +238,7 @@ We can see the solution suggests the high wave vector modes will decay exponenti
 
 The above steps suggest that we need to get $\widetilde{\rho_k}(t=0)$ by performing Fourier analysis of the density profile at $t=0$, $\rho(x,t=0)$. Then, we reconstruct the evolution of the density profile by integration over $k$. The process can be carried out. However, it will be better if, for an arbitrary given initial condition, we can derive the density profile at an arbitrary space-time point. We will introduce the idea of Green's function, which serves this purpose.
 
-#### Green's function
+#### Approach 2: Green's function
 
 The method of Green's function is based on a property of Dirac delta function. That is, we can express an arbitrary function using the Dirac delta function.
 

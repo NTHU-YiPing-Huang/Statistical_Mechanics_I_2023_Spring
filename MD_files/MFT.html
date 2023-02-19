@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mean-field theory &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="../_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -89,14 +90,14 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="mean-field-theory">
-<h1>Mean-field theory<a class="headerlink" href="#mean-field-theory" title="Permalink to this headline"></a></h1>
+<h1>Mean-field theory<a class="headerlink" href="#mean-field-theory" title="Permalink to this heading"></a></h1>
 <section id="why-mean-field-theory">
-<h2>Why mean field theory?<a class="headerlink" href="#why-mean-field-theory" title="Permalink to this headline"></a></h2>
+<h2>Why mean field theory?<a class="headerlink" href="#why-mean-field-theory" title="Permalink to this heading"></a></h2>
 <p>Unfortunately, the transfer matrix method does not work beyond one-dimensional system. We will need some other methods to study the interacting systems. Here, we are going to introduce a versatile and simple approach – mean field theory. Mean field theory is probably the simplest self-consistent way to study interacting problems. It is also a powerful tool to describe ones “guess” about the physics. However, due to its generality and the simplicity, the result from this approach might not be robust or it may be <strong>qualitatively</strong> wrong. We will introduce the ideal of mean field theory first via a concrete example using the direct approach and the more formal variational approach. After that, we will discuss the structure of it and understand why it could give us qualitatively wrong answers. At the end of the section, we will discuss the relation between mean field theory and the Landau theory.</p>
 <p>We will focus on the <span class="math notranslate nohighlight">\(D\)</span> dimensional Ising model on hypercubic lattice. The coordinate number <span class="math notranslate nohighlight">\(z=2D\)</span> since we can move forward or backward on the lattice in any of the orthogonal directions.</p>
 </section>
 <section id="the-weiss-mean-field-theory">
-<h2>The Weiss mean field theory<a class="headerlink" href="#the-weiss-mean-field-theory" title="Permalink to this headline"></a></h2>
+<h2>The Weiss mean field theory<a class="headerlink" href="#the-weiss-mean-field-theory" title="Permalink to this heading"></a></h2>
 <p>From the previous study of Ising model, we know how to solve the <span class="math notranslate nohighlight">\(J=0\)</span> model where the spins are non-interacting two-level systems under external field, <span class="math notranslate nohighlight">\(H\)</span>, described by <span class="math notranslate nohighlight">\(H_0=-H\sum_{i}S_i\)</span> on hypercubic lattice sites <span class="math notranslate nohighlight">\(i\)</span>. The corresponding magnetization density <span class="math notranslate nohighlight">\(M=\tanh\left(\beta H\right)\)</span>.</p>
 <p>The question we are facing is: how to solve the interacting case <span class="math notranslate nohighlight">\(H_{\Omega}=-J\sum_{\langle i,j\rangle} S_iS_j-H\sum_i S_i\)</span> with <span class="math notranslate nohighlight">\(J&gt;0\)</span>? If we stare at the trouble maker term, we might see it is actually kind of similar to the effect introduced by magnetic field term. <em>i.e.</em></p>
 <div class="math notranslate nohighlight">
@@ -133,7 +134,7 @@ m=\tanh\left[\beta(H+zJm)\right]\text{.}
 <p>So the mean-field theory is a versatile and simple approach to formulate the physical picture. However, it also is limited by above mentioned reasons.</p>
 </section>
 <section id="the-variational-mean-field-theory">
-<h2>The variational mean field theory<a class="headerlink" href="#the-variational-mean-field-theory" title="Permalink to this headline"></a></h2>
+<h2>The variational mean field theory<a class="headerlink" href="#the-variational-mean-field-theory" title="Permalink to this heading"></a></h2>
 <p>The physical picture of the Weiss mean field theory is clear. However, the general structure behind the mean field theory might not be so clear. Here, I will discuss another approach to formulate the mean field theory, the variational mean field theory approach.</p>
 <p>The approach relies on the following inequality</p>
 <div class="math notranslate nohighlight" id="equation-exp-convex">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interacting free systems &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="../_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -89,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="interacting-free-systems">
-<h1>Interacting free systems<a class="headerlink" href="#interacting-free-systems" title="Permalink to this headline"></a></h1>
+<h1>Interacting free systems<a class="headerlink" href="#interacting-free-systems" title="Permalink to this heading"></a></h1>
 <p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id2" title="Luca Peliti. Statistical mechanics in a nutshell. Princeton University Press, 2011.">Pel11</a>]</span> Chap. 4</em></p>
 <div class="tip admonition">
 <p class="admonition-title">Summary</p>
@@ -112,15 +113,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <section id="what-we-have-learned-so-far">
-<h2>What we have learned so far…<a class="headerlink" href="#what-we-have-learned-so-far" title="Permalink to this headline"></a></h2>
+<h2>What we have learned so far…<a class="headerlink" href="#what-we-have-learned-so-far" title="Permalink to this heading"></a></h2>
 <p>We spend half of our semester discussing about the fundamentals of statistical mechanics. Starting from the Boltzmann’s postulate, we bridge the microscopic phase space volume and macroscopic thermodynamics function entropy. The postulate encapsulate key information for the theoretical framework such that we can build ensemble theory on top of that. The ensemble theory teaches us how to construct probability description of our system. On the one hand, the probability description bridges to the old thermodynamics description. On the other hand, the probability description provides a microscopic statistical picture and allows us to make finer predictions of the microscopic behavior of the system.</p>
 <p>The above framework is constructed from a sequence of formal discussion. The two examples that we rely on is the ideal gas model and the paramagnetic phase of Ising spin model. In the following lectures, we will apply  the idea of statistical mechanics on various systems. Before we start the discussion of individual models, we will first describe the logic flow of how to use statistical mechanics to study a physical system.</p>
 </section>
 <section id="how-to-apply-statistical-mechanics">
-<h2>How to apply statistical mechanics…<a class="headerlink" href="#how-to-apply-statistical-mechanics" title="Permalink to this headline"></a></h2>
+<h2>How to apply statistical mechanics…<a class="headerlink" href="#how-to-apply-statistical-mechanics" title="Permalink to this heading"></a></h2>
 <p>Here, we made a table to demonstrate the rough idea of how statistical mechanics is applied to a physical system.</p>
 <section id="the-flow-chart">
-<h3>The flow chart<a class="headerlink" href="#the-flow-chart" title="Permalink to this headline"></a></h3>
+<h3>The flow chart<a class="headerlink" href="#the-flow-chart" title="Permalink to this heading"></a></h3>
 <style>
 table th:first-of-type {
     width: 10%;
@@ -132,11 +133,11 @@ table th:nth-of-type(3) {
     width: 60%;
 }
 </style>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Stage</p></th>
-<th class="text-align:center head"><p>Statistical mechanics idea</p></th>
-<th class="text-align:center head"><p>Example using physical system</p></th>
+<tr class="row-odd"><th class="head text-align:center"><p>Stage</p></th>
+<th class="head text-align:center"><p>Statistical mechanics idea</p></th>
+<th class="head text-align:center"><p>Example using physical system</p></th>
 </tr>
 </thead>
 <tbody>
@@ -164,7 +165,7 @@ table th:nth-of-type(3) {
 </table>
 </section>
 <section id="potential-obstacles">
-<h3>Potential obstacles<a class="headerlink" href="#potential-obstacles" title="Permalink to this headline"></a></h3>
+<h3>Potential obstacles<a class="headerlink" href="#potential-obstacles" title="Permalink to this heading"></a></h3>
 <p>There are several potential obstacles:</p>
 <ol class="simple">
 <li><p>Modeling (stage 2 and stage 3) : There is no standard protocol to identify the relevant degrees of freedom or construct the model.</p></li>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Generalized ensemble and grand canonical ensemble &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="../_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -89,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="generalized-ensemble-and-grand-canonical-ensemble">
-<h1>Generalized ensemble and grand canonical ensemble<a class="headerlink" href="#generalized-ensemble-and-grand-canonical-ensemble" title="Permalink to this headline"></a></h1>
+<h1>Generalized ensemble and grand canonical ensemble<a class="headerlink" href="#generalized-ensemble-and-grand-canonical-ensemble" title="Permalink to this heading"></a></h1>
 <p>We can dial back to the derivation of canonical ensemble from micro canonical ensemble. We follow the logical structure below.</p>
 <ol class="simple">
 <li><p>We start by consider the system and the reservoir as a composite system. And we assume this composite system is isolated from the rest of the world. So we can use the micro canonical ensemble to describe this composite system.</p></li>
@@ -118,7 +119,7 @@ const thebe_selector_output = ".output, .cell_output"
 \langle X_i^2\rangle-\langle X_i\rangle^2=\frac{\partial \langle X_i\rangle}{\partial (\beta f_i)}\text{.}
 \]</div>
 <section id="the-grand-canonical-ensemble">
-<h2>The grand canonical ensemble<a class="headerlink" href="#the-grand-canonical-ensemble" title="Permalink to this headline"></a></h2>
+<h2>The grand canonical ensemble<a class="headerlink" href="#the-grand-canonical-ensemble" title="Permalink to this heading"></a></h2>
 <p>The system is allowed to exchange particle with the reservoir. That also implicitly suggest the system can exchange energy with the system.</p>
 <p>Therefore, we have the probability of microscopic state,</p>
 <div class="math notranslate nohighlight">
@@ -136,7 +137,7 @@ Z_{GC}=\sum_{N_s=0}^{\infty}\int d\xi_s\exp\left[\beta((-1)H^{(s)}(\xi_s)+\mu N_
 \end{split}\]</div>
 <p>Here, we use <span class="math notranslate nohighlight">\(\hat{N}\)</span> to represent the observable of number of particle and distinguish this observable with the average of the number of particle which is represented by <span class="math notranslate nohighlight">\(N\)</span>.</p>
 <section id="the-ideal-gas-model-grand-canonical-ensemble">
-<h3>The ideal gas model (Grand canonical ensemble)<a class="headerlink" href="#the-ideal-gas-model-grand-canonical-ensemble" title="Permalink to this headline"></a></h3>
+<h3>The ideal gas model (Grand canonical ensemble)<a class="headerlink" href="#the-ideal-gas-model-grand-canonical-ensemble" title="Permalink to this heading"></a></h3>
 <p>For the ideal gas model, we usually have fixed <span class="math notranslate nohighlight">\(N\)</span>. If we want to use the grand canonical formalism to describe the system, we can use the following steps to get reid of the chemical potential.</p>
 <ol class="simple">
 <li><p>Construct <span class="math notranslate nohighlight">\(Z_{GC}(T,\mu,V)\)</span>.</p></li>

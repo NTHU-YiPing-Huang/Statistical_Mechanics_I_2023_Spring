@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Basic numerics and plot &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -96,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="basic-numerics-and-plot">
-<h1>Basic numerics and plot<a class="headerlink" href="#basic-numerics-and-plot" title="Permalink to this headline"></a></h1>
+<h1>Basic numerics and plot<a class="headerlink" href="#basic-numerics-and-plot" title="Permalink to this heading"></a></h1>
 <p>pylab notebook just like namespace</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -129,7 +130,7 @@ import matplotlib.pyplot as plt
 </div>
 <p>which will make all of the numpy functions, such as array() and sin(), available as np.array(), np.sin(), and the plotting functions such as plot() and xlabel() as plt.plot() and plt.xlabel().</p>
 <section id="numpy-arrays">
-<h2>Numpy Arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline"></a></h2>
+<h2>Numpy Arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this heading"></a></h2>
 <p>Numpy arrays store <strong>multidimensional arrays</strong> of objects of a fixed type. The type of an array is a <strong>dtype</strong>, which is a more refined typing system than Python provides. They are efficient maps <strong>from indices (i,j) to values</strong>. They have <strong>minimal memory overhead</strong>.</p>
 <p>Arrays are <strong>mutable</strong>: their contents can be changed after they are created. However, their size and dtype, once created cannot be efficiently changed (requires a copy).</p>
 <p>Arrays are good for:</p>
@@ -298,7 +299,7 @@ B
 <p><strong>Warning!</strong> There is also a type called ‘matrix’ instead of ‘array’ in numpy. This is specially for 2-index arrays but is being removed from Numpy over the next two years because it leads to bugs. <strong>Never use matrix(), only array()</strong></p>
 </section>
 <section id="basic-linear-algebra">
-<h2>Basic Linear Algebra<a class="headerlink" href="#basic-linear-algebra" title="Permalink to this headline"></a></h2>
+<h2>Basic Linear Algebra<a class="headerlink" href="#basic-linear-algebra" title="Permalink to this heading"></a></h2>
 <p>There are two basic kinds of multiplication of arrays in Python:</p>
 <ol class="simple">
 <li><p><strong>Element-wise multiplication:</strong> a*b multiplies arrays of the same shape element by element.</p></li>
@@ -418,7 +419,7 @@ norm(a)
 <p>There are many, many more functions for doing linear algebra operations numerically provided by numpy and scipy. We will use some of them as we go.</p>
 </section>
 <section id="basic-plotting">
-<h2>Basic Plotting<a class="headerlink" href="#basic-plotting" title="Permalink to this headline"></a></h2>
+<h2>Basic Plotting<a class="headerlink" href="#basic-plotting" title="Permalink to this heading"></a></h2>
 <p>The second primary use of numpy array’s is to hold grids of numbers for analyzing and plotting. In this case, we consider a long 1D array with length N as representing the values of the x and y axis of a plot, for example.</p>
 <p>Let’s plot a sine wave:</p>
 <div class="cell docutils container">
@@ -455,7 +456,7 @@ show()
 <li><p>The ‘notebook’ backend (which we turned on at the beginning of the notebook) provides basic interactive plotting inside the notebook. Try it out. There are other backends which provide somewhat better interaction if you setup jupyter on your local computer.</p></li>
 </ol>
 <section id="speed">
-<h3>Speed<a class="headerlink" href="#speed" title="Permalink to this headline"></a></h3>
+<h3>Speed<a class="headerlink" href="#speed" title="Permalink to this heading"></a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>L = range(1000)
@@ -464,7 +465,7 @@ show()
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>186 µs ± 636 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>205 µs ± 1.91 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -477,7 +478,7 @@ show()
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>579 ns ± 7.58 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>631 ns ± 4.09 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -507,7 +508,7 @@ show()
 </section>
 </section>
 <section id="some-common-arrays">
-<h2>Some Common Arrays<a class="headerlink" href="#some-common-arrays" title="Permalink to this headline"></a></h2>
+<h2>Some Common Arrays<a class="headerlink" href="#some-common-arrays" title="Permalink to this heading"></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>arange(2,10,2)
@@ -622,8 +623,8 @@ r_[2:10:5j]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.55487809, 0.38355479],
-       [0.48066096, 0.63252685]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.56022274, 0.43842223],
+       [0.17995709, 0.75858916]])
 </pre></div>
 </div>
 </div>
@@ -635,16 +636,16 @@ r_[2:10:5j]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.60683634, 2.39974397, 4.39380535],
-       [1.43101108, 5.1234573 , 9.33865289],
-       [1.5817222 , 0.25169979, 0.38281997]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 2.56285698, 14.93758641,  4.09949286],
+       [ 0.58954216,  3.00295957,  3.21494602],
+       [ 4.1424808 ,  0.12562088,  2.76612936]])
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="array-dtypes">
-<h2>Array DTypes<a class="headerlink" href="#array-dtypes" title="Permalink to this headline"></a></h2>
+<h2>Array DTypes<a class="headerlink" href="#array-dtypes" title="Permalink to this heading"></a></h2>
 <p>Numpy has its own set of data types for the elements of arrays. These <strong>dtypes</strong> are more specific than ‘int’ or ‘str’ so that you can control the number of bytes used.</p>
 <ol class="simple">
 <li><p>Integers: int16 (‘i2’), int32 (‘i4’), int64 (‘i8’), …</p></li>
@@ -703,7 +704,7 @@ r_[2:10:5j]
 </div>
 </section>
 <section id="basic-operations-and-visualization">
-<h2>Basic Operations and Visualization<a class="headerlink" href="#basic-operations-and-visualization" title="Permalink to this headline"></a></h2>
+<h2>Basic Operations and Visualization<a class="headerlink" href="#basic-operations-and-visualization" title="Permalink to this heading"></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = linspace(-pi, pi, 100)

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The diffusion equation &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -96,9 +97,9 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="the-diffusion-equation">
-<h1>The diffusion equation<a class="headerlink" href="#the-diffusion-equation" title="Permalink to this headline"></a></h1>
+<h1>The diffusion equation<a class="headerlink" href="#the-diffusion-equation" title="Permalink to this heading"></a></h1>
 <section id="the-microscopic-model">
-<h2>The microscopic model<a class="headerlink" href="#the-microscopic-model" title="Permalink to this headline"></a></h2>
+<h2>The microscopic model<a class="headerlink" href="#the-microscopic-model" title="Permalink to this heading"></a></h2>
 <p>The above-mentioned microscopic models give us exact results without approximations. We can ask: if we relax the fixed step size condition, what could be changed? Let’s start with the one-dimensional case. We use <span class="math notranslate nohighlight">\(r\)</span> to denote the displacement of the random walk with a random step size. The microscopic model can be described as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -113,7 +114,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 </section>
 <section id="the-macroscopic-question">
-<h2>The macroscopic question<a class="headerlink" href="#the-macroscopic-question" title="Permalink to this headline"></a></h2>
+<h2>The macroscopic question<a class="headerlink" href="#the-macroscopic-question" title="Permalink to this heading"></a></h2>
 <p>In the macroscopic world, we rarely keep track of the microscopic motion of the molecules. Instead, it is more convenient to describe the little particles using a function, <span class="math notranslate nohighlight">\(\rho(r,t)\)</span>, that describes the density field.</p>
 <div class="tip admonition">
 <p class="admonition-title">What?</p>
@@ -164,7 +165,7 @@ RHS\approx \rho(x,t)+\frac{a^2}{2}\left.\frac{\partial^2 \rho}{\partial z^2}\rig
 \]</div>
 </section>
 <section id="the-currents-and-the-locally-conserved-particle-number">
-<h2>The currents and the locally conserved particle number<a class="headerlink" href="#the-currents-and-the-locally-conserved-particle-number" title="Permalink to this headline"></a></h2>
+<h2>The currents and the locally conserved particle number<a class="headerlink" href="#the-currents-and-the-locally-conserved-particle-number" title="Permalink to this heading"></a></h2>
 <p>Consider a one-dimensional system where we pick a segment of length <span class="math notranslate nohighlight">\(\Delta x\)</span>. We can ask: what is the change in the number of particles in this segment? A simple derivation gives</p>
 <div class="math notranslate nohighlight">
 \[
@@ -187,7 +188,7 @@ d \rho(x) \Delta x=\left[J(x)-J(x+\Delta x)\right]dt.
 </div>
 </section>
 <section id="the-effect-of-external-forces">
-<h2>The effect of external forces<a class="headerlink" href="#the-effect-of-external-forces" title="Permalink to this headline"></a></h2>
+<h2>The effect of external forces<a class="headerlink" href="#the-effect-of-external-forces" title="Permalink to this heading"></a></h2>
 <p>When we have external force, we modify our microscopic model as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -216,14 +217,14 @@ J=\gamma F\rho-D\frac{\partial \rho}{\partial x}\text{.}
 \]</div>
 </section>
 <section id="the-solution-of-the-diffusion-equation">
-<h2>The solution of the diffusion equation<a class="headerlink" href="#the-solution-of-the-diffusion-equation" title="Permalink to this headline"></a></h2>
+<h2>The solution of the diffusion equation<a class="headerlink" href="#the-solution-of-the-diffusion-equation" title="Permalink to this heading"></a></h2>
 <p>We would like to understand how the density profile <span class="math notranslate nohighlight">\(\rho(r,t)\)</span> evolve in time and space. It will give us a rough picture of how a system reaches <em>equilibrium</em>. The evolution process toward equilibrium is a complicated process in both classical and quantum systems. The random walk process is the simplest one that can give us a rough picture. We will start from the equilibrium solution, <span class="math notranslate nohighlight">\(\frac{\partial \rho^*(r)}{\partial t}=0\)</span>. Then, we will discuss the general solution <span class="math notranslate nohighlight">\(\rho(r,t)\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">What?</p>
 <p>We also learn a similar concept, the steady-state. How the idea of equilibrium differs from the idea of steady-state? In this section of the lecture note, I did not distinguish the concept clearly. However, the two ideas are subtlely different.</p>
 </div>
 <section id="the-equilibrium-solution">
-<h3>The equilibrium solution<a class="headerlink" href="#the-equilibrium-solution" title="Permalink to this headline"></a></h3>
+<h3>The equilibrium solution<a class="headerlink" href="#the-equilibrium-solution" title="Permalink to this heading"></a></h3>
 <p>There are two cases for the equilibrium solution–the case without an external field and the case with an external field. I will discuss both cases.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(F=0\)</span>: <span class="math notranslate nohighlight">\(\frac{\partial {\rho^*}\,^2}{\partial x^2}=D^{-1}\frac{\partial \rho}{\partial t}=0\rightarrow \rho^*=\rho_0+Bx\)</span>. Here, <span class="math notranslate nohighlight">\(\rho_0\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are the constants to be determined. Suppose we study a system of particles confined by a solid container. At the boundary, the current needs to be 0. This leads to the boundary condition <span class="math notranslate nohighlight">\(J=0=-D\frac{\partial \rho^*}{\partial x_{boundary}}=-DB\)</span>. That is, <span class="math notranslate nohighlight">\(B=0\)</span>. So the equilibrium solution, in this case, is the homogeneous distribution, <span class="math notranslate nohighlight">\(\rho^*=\rho_0\)</span> is constant.</p></li>
@@ -232,16 +233,16 @@ J=\gamma F\rho-D\frac{\partial \rho}{\partial x}\text{.}
 <p>Now we know the behavior of the equilibrium solution, we will further tackle the evolution of the density profile for arbitrary time <span class="math notranslate nohighlight">\(t\)</span>.</p>
 </section>
 <section id="the-general-solution-of-the-diffusion-equation">
-<h3>The general solution of the diffusion equation<a class="headerlink" href="#the-general-solution-of-the-diffusion-equation" title="Permalink to this headline"></a></h3>
+<h3>The general solution of the diffusion equation<a class="headerlink" href="#the-general-solution-of-the-diffusion-equation" title="Permalink to this heading"></a></h3>
 <p>We will introduce two methods to solve the diffusion equation. The “solution” of the diffusion equation means we know the density profile for arbitrary space-time once an initial condition, <span class="math notranslate nohighlight">\(\rho_i(x,t=t_i=0)\)</span>, is given. In general, this process is quite complicated. However, the fact that the diffusion equation is a linear equation simplifies the analysis a lot. The key question we should ask is: are there quantities that are kept fixed during the time evolution? We have learned several conserved quantities in the past. Usually, they are related to the symmetry of the system. The important symmetry for later analysis is the translational symmetry in space. That’s why we will start the analysis from the Fourier method. Once we know how the Fourier method works in general, we will apply that to a special initial condition, the Dirac delta function. We will see the property of Dirac delta function provides a convenient structure to define Green’s function of the diffusion equation. Using the Green’s function, we can construct the evolution of the density profile for arbitrary space-time.</p>
 <div class="tip admonition">
 <p class="admonition-title">What?</p>
 <p>Are the energy and momentum conserved quantities in the microscopic random walk model? In a physical system, should they be conserved?</p>
 </div>
-<section id="the-fourier-method">
-<h4>The Fourier method<a class="headerlink" href="#the-fourier-method" title="Permalink to this headline"></a></h4>
+<section id="approach-1-the-fourier-method">
+<h4>Approach 1: The Fourier method<a class="headerlink" href="#approach-1-the-fourier-method" title="Permalink to this heading"></a></h4>
 <section id="why-the-fourier-method">
-<h5>Why the Fourier method?<a class="headerlink" href="#why-the-fourier-method" title="Permalink to this headline"></a></h5>
+<h5>Why the Fourier method?<a class="headerlink" href="#why-the-fourier-method" title="Permalink to this heading"></a></h5>
 <p>Our system has translation symmetry. We would like to use that property to simplify our analysis. Let <span class="math notranslate nohighlight">\(T_{\Delta}\)</span> denote the translation operator that shifts the system by displacement <span class="math notranslate nohighlight">\(\Delta\)</span>. We want to analyze the time evolution of our system; we can use <span class="math notranslate nohighlight">\(U_t\)</span> to express the time evolution of the density profile formally. By definition, we have <span class="math notranslate nohighlight">\(\rho_{k}(x,t)=U_t[\rho_k(x,0)]\)</span>. Here, <span class="math notranslate nohighlight">\(k\)</span> is the conserved quantity that is invariant under the time evolution. If such <span class="math notranslate nohighlight">\(k\)</span> exist, it will be helpful for us to analyze the problem. The translational symmetry of our system is equivalent to the following formal expression.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -273,7 +274,7 @@ T_{\Delta}\left[\rho_k(x,0)\right]=\lambda_k \rho_k(x,0)=\rho_k(x-\Delta,0).
 </div>
 </section>
 <section id="the-solution-according-to-the-fourier-method">
-<h5>The solution according to the Fourier method<a class="headerlink" href="#the-solution-according-to-the-fourier-method" title="Permalink to this headline"></a></h5>
+<h5>The solution according to the Fourier method<a class="headerlink" href="#the-solution-according-to-the-fourier-method" title="Permalink to this heading"></a></h5>
 <p>Now, we know why we want to use the Fourier method to simplify our result. The diffusion equation is a linear equation. In other words, if <span class="math notranslate nohighlight">\(\rho_1\)</span> and <span class="math notranslate nohighlight">\(\rho_2\)</span> are both the solution of the diffusion equation, the linear combination <span class="math notranslate nohighlight">\(c_1\rho_1+c_2\rho_2\)</span> for arbitrary <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> will also be a solution. So if we can use the eigenvectors to expand our general solution, all we need to do is to find the solution for each <span class="math notranslate nohighlight">\(k\)</span> component. The following steps show how the Fourier method works.</p>
 <ul class="simple">
 <li><p>We can expand the density profile as <span class="math notranslate nohighlight">\(\rho(x,t)=\sum_k\widetilde{\rho_k}(t)e^{ikx}\)</span>.</p></li>
@@ -307,8 +308,8 @@ T_{\Delta}\left[\rho_k(x,0)\right]=\lambda_k \rho_k(x,0)=\rho_k(x-\Delta,0).
 <p>The above steps suggest that we need to get <span class="math notranslate nohighlight">\(\widetilde{\rho_k}(t=0)\)</span> by performing Fourier analysis of the density profile at <span class="math notranslate nohighlight">\(t=0\)</span>, <span class="math notranslate nohighlight">\(\rho(x,t=0)\)</span>. Then, we reconstruct the evolution of the density profile by integration over <span class="math notranslate nohighlight">\(k\)</span>. The process can be carried out. However, it will be better if, for an arbitrary given initial condition, we can derive the density profile at an arbitrary space-time point. We will introduce the idea of Green’s function, which serves this purpose.</p>
 </section>
 </section>
-<section id="green-s-function">
-<h4>Green’s function<a class="headerlink" href="#green-s-function" title="Permalink to this headline"></a></h4>
+<section id="approach-2-green-s-function">
+<h4>Approach 2: Green’s function<a class="headerlink" href="#approach-2-green-s-function" title="Permalink to this heading"></a></h4>
 <p>The method of Green’s function is based on a property of Dirac delta function. That is, we can express an arbitrary function using the Dirac delta function.</p>
 <div class="math notranslate nohighlight">
 \[

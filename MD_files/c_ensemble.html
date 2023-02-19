@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Canonical ensemble &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="../_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -89,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="canonical-ensemble">
-<h1>Canonical ensemble<a class="headerlink" href="#canonical-ensemble" title="Permalink to this headline"></a></h1>
+<h1>Canonical ensemble<a class="headerlink" href="#canonical-ensemble" title="Permalink to this heading"></a></h1>
 <p>We have introduce the micro canonical ensemble which has fixed total energy. However, we usually did not have control over the energy. Instead, we can control the temperature of the system. One question is: can we form ensemble theory under the fixed temperature constraint instead of the fixed energy constraint? It turns out the corresponding ensemble with fixed temperature is the canonical ensemble. To go from the micro canonical ensemble where the probability of microscopic state <span class="math notranslate nohighlight">\(\xi\)</span> is <span class="math notranslate nohighlight">\(P(\xi)=\frac{1}{|\Gamma_E|}\)</span>, to canonical ensemble, the modification we need to make is to modify the probability such that it is proportional with the Boltzmann factor, <em>i.e.</em>, <span class="math notranslate nohighlight">\(P(\xi)\propto \exp\left[-\frac{H(\xi)}{k_BT}\right]\)</span>.</p>
 <p>To derive this conclusion, we put our system into thermal contact with a reservoir at fixed temperature <span class="math notranslate nohighlight">\(T\)</span>. Now our composite system (contains the system that we are interested in and the reservoir) is considered as an isolated system with fixed total energy, <span class="math notranslate nohighlight">\(E_t\)</span>, so we can use the micro canonical ensemble to describe the composite system. Let’s use <span class="math notranslate nohighlight">\(\xi_s\)</span> and <span class="math notranslate nohighlight">\(\xi_R\)</span> to represent the microscopic configurations of our system and the reservoir. The expectation value of observable <span class="math notranslate nohighlight">\(A\)</span> defined on the system is</p>
 <div class="math notranslate nohighlight">
@@ -152,7 +153,7 @@ F=-k_BT\ln Z\text{.}
 \]</div>
 <p>So statistical mechanics can bridge the microscopic picture with thermodynamics! Even more, it provides the probability for each microscopic configuration <span class="math notranslate nohighlight">\(P(\xi)\)</span>. To some extend, we have finer information so we can make further predictions about our system beyond conventional thermodynamics! Here we use the following calculation to show this point.</p>
 <section id="the-energy-fluctuation">
-<h2>The energy fluctuation<a class="headerlink" href="#the-energy-fluctuation" title="Permalink to this headline"></a></h2>
+<h2>The energy fluctuation<a class="headerlink" href="#the-energy-fluctuation" title="Permalink to this heading"></a></h2>
 <p>The expectation value of the energy for continuous <span class="math notranslate nohighlight">\(\xi\)</span> can be expressed as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -172,7 +173,7 @@ F=-k_BT\ln Z\text{.}
 <p>Through statistical mechanics, we found the specific heat(macroscopic quantity) is related to the fluctuation(microscopic picture) in energy!</p>
 </section>
 <section id="the-ideal-gas-model-canonical-ensemble">
-<h2>The ideal gas model (canonical ensemble)<a class="headerlink" href="#the-ideal-gas-model-canonical-ensemble" title="Permalink to this headline"></a></h2>
+<h2>The ideal gas model (canonical ensemble)<a class="headerlink" href="#the-ideal-gas-model-canonical-ensemble" title="Permalink to this heading"></a></h2>
 <p>The partition function is</p>
 <div class="math notranslate nohighlight">
 \[

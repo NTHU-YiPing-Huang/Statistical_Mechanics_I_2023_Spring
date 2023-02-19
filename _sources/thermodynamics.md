@@ -20,7 +20,7 @@ The microscopic physics and connection with macroscopic physics.
 
 ## How to go from microscopic to macroscopic?
 
-Different systems might have very different microscopic descriptions. Therefore, going from microscopic physics to macroscopic physics also varies. It is usually challenging to derive the macroscopic expressions from microscopic theories. The challenge lies in the microscopic degrees of freedom that interact with each other.
+Different systems might have very different microscopic descriptions. Therefore, going from microscopic physics to macroscopic physics also varies. It is usually challenging to derive the macroscopic expressions from microscopic theories. The challenge lies in the microscopic degrees of freedom that interact with each other {numref}`micro_macro_1`.
 
 In this course, as many textbooks did, we will start from the idealized limit where the microscopic theory is "simple" in the sense that they do not have interaction. Those models are usually too naive to describe real physical systems. However, the non-interacting limit allows us to go pretty far and make an explicit connection with the macroscopic observables. In that sense, they are very useful for us to formulate abstract ideas in statistical mechanics. We will formally describe the idea of statistical mechanics and use those non-interacting systems to build some intuition about the meaning of the system.
 
@@ -48,14 +48,16 @@ name: micro_macro_logic_2
 How statistical mechanics helps us understanding the physics at microscopic level.
 ```
 
-That means statistical mechanics provides a way to extract finer information about what happened at the microscopic scale. That is very helpful for us to develop a picture that can bridge the macroscopic behavior using microscopic pictures.
+That means statistical mechanics provides a way to extract finer information about what happened at the microscopic scale. That is very helpful for us to develop a picture that can bridge the macroscopic behavior using microscopic pictures {numref}`micro_macro_logic_2`.
 
-The astonishing part of thermodynamics is that we can describe the macroscopic system using relatively few physical quantities. Regularity emerges out of a macroscopic number of degrees of freedom. It is not obvious that we could find a way to describe the essential information of the macroscopic system with $10^{23}$ degrees of freedom. A theory that captures the essential physics of the system with relatively small sets of physical observables is the **effective theory** of our complex system. It means we can understand the complex system effectively using our effective theory. **Effective theory** and the concept of **emergent phenomena** form the backbone of modern condensed matter physics and have profoundly influence other research fields. We will discuss the concept of emergent phenomena in the next section.
+The astonishing part of thermodynamics is that we can describe the macroscopic system using relatively few physical quantities. **Regularity emerges out of a macroscopic number of degrees of freedom.** It is not obvious that we could find a way to describe the essential information of the macroscopic system with $10^{23}$ degrees of freedom. A theory that captures the essential physics of the system with relatively small sets of physical observables is the **effective theory** of our complex system. It means we can understand the complex system effectively using our effective theory. **Effective theory** and the concept of **emergent phenomena** form the backbone of modern condensed matter physics and have profoundly influence other research fields. We will discuss the concept of emergent phenomena in the next section. 
 
 ```{figure} /images/StatMech_roadmap.png
 ---
 width: 750px
-name: directive-fig
+name: StatMech_roadmap 
 ---
 The roadmap of the course!
 ```
+
+The road map of the course is described in {numref}`StatMech_roadmap`.

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phases and phase diagram &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="../_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -89,16 +90,16 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="phases-and-phase-diagram">
-<h1>Phases and phase diagram<a class="headerlink" href="#phases-and-phase-diagram" title="Permalink to this headline"></a></h1>
+<h1>Phases and phase diagram<a class="headerlink" href="#phases-and-phase-diagram" title="Permalink to this heading"></a></h1>
 <p>We start the discussion from the general public understanding of what is a phase and phase transitions. Then, we will discuss why we are doing the model studying from a logical point of view. After that, we will introduce some formal definition of thermodynamic limit that is crucial for our later discussion. In the next section, we will use Ising model as a concrete examples to discuss what is the physical meaning of those concepts.</p>
 <section id="what-is-a-phase-what-is-a-phase-diagram">
-<h2>What is a phase? What is a phase diagram?<a class="headerlink" href="#what-is-a-phase-what-is-a-phase-diagram" title="Permalink to this headline"></a></h2>
+<h2>What is a phase? What is a phase diagram?<a class="headerlink" href="#what-is-a-phase-what-is-a-phase-diagram" title="Permalink to this heading"></a></h2>
 <p>We learn the concept of phases before we enter the university. We were told that there are three phases for water. The solid phase(ice), the liquid phase(water) and the gas phase(vapor).</p>
 <p>Those phases can be achieve via different physical condition. For example, we can have ice when we are below 0<span class="math notranslate nohighlight">\(^\circ\)</span>C. When we are at room temperature, we can observe phase transition from solid to liquid phase–the ice melts. The diagram that tells us what are the stable phase under different physical parameters is the phase diagram. In an abstract sense, the phases are different pattern of collective behavior. The phase diagram is the diagram that describe what are the physical parameters such that specific pattern of collective behavior is stable and how the system changes their collective behavior when the physical parameters are adjusted.</p>
 <p>In fact, there are more than three phases for a many-body system. We could have ferromagnetic for magnetic systems, we could have insulator as plastic, we could have plasma as our sun. There are so many phases out there. How to understand them? How to characterize the transition between different phases? Why the transition between different phases could be an interesting subject to understand? We will try to elaborate this part.</p>
 </section>
 <section id="the-spirit-of-model-studying">
-<h2>The spirit of model studying<a class="headerlink" href="#the-spirit-of-model-studying" title="Permalink to this headline"></a></h2>
+<h2>The spirit of model studying<a class="headerlink" href="#the-spirit-of-model-studying" title="Permalink to this heading"></a></h2>
 <p>In the study of phases or phase transitions, one will encounter various models. Ising model, Heisnberg model, Potts model, dimer models, height models, etc. They are related to various interesting concepts including topology and gauge theories. However, why should we study those models? What can we learn from studying of those models?</p>
 <p>We will discuss one of the important models – the Ising model. After we study the Ising model, one will soon realize that the model are quite ``simple’’. It is so simple that it is not clear why such a simple model would be relevant to describe our nature. Other above mentioned models also share similar features that they seem to be ad hoc models for special purposes. There should be some physical arguments about why we should study such models and how such ad hoc models could help us understand certain physical phenomena.</p>
 <p>Conceptually, it is tied with the idea that we are looking for a simplest nontrivial model to help us understand specific physical phenomena.
@@ -119,7 +120,7 @@ Comparing with the idealistic models which can be solved exactly, one might reac
 <p>From this point of view, studying those simple but nontrivial models actually is quite valuable to understand the general behavior without the microscopic details. However, how to get the simplest non-trivial model as a starting point is an art. The theoretical framework that address this question is the concept of renormalization group(RG) and effective theory. One can use RG to identify the relevant ingredients for constructing a simplest non-trivial model. The two approach has their pros and cons, one should keep that in mind and use them according to different purposes.</p>
 </section>
 <section id="the-formal-description-of-our-system">
-<h2>The formal description of our system<a class="headerlink" href="#the-formal-description-of-our-system" title="Permalink to this headline"></a></h2>
+<h2>The formal description of our system<a class="headerlink" href="#the-formal-description-of-our-system" title="Permalink to this heading"></a></h2>
 <p>To set the stage, we will formulate our problem formally and use the specific example–Ising model to demonstrate the point of view.</p>
 <p>Consider a sample region <span class="math notranslate nohighlight">\(\Omega\)</span> the Hamiltonian of the system is <span class="math notranslate nohighlight">\(H_{\Omega}\)</span>. The surface and the volume of <span class="math notranslate nohighlight">\(\Omega\)</span> is <span class="math notranslate nohighlight">\(S(\Omega)\)</span> and <span class="math notranslate nohighlight">\(V(\Omega)\)</span>. For the sample with linear dimension <span class="math notranslate nohighlight">\(L\)</span>. In <span class="math notranslate nohighlight">\(D\)</span> dimensional system, we know <span class="math notranslate nohighlight">\(V(\Omega)\propto L^D\)</span> and <span class="math notranslate nohighlight">\(S(\Omega)\propto L^{D-1}\)</span>.</p>
 <p>We will use <span class="math notranslate nohighlight">\(H_{\Omega}\)</span> to define our system</p>
@@ -146,7 +147,7 @@ F_{\Omega}[\{K_n\}]= \underbrace{V(\Omega)}_{\sim L^D} \underbrace{f_b[\{K_n\}]}
 \]</div>
 </section>
 <section id="the-thermodynamic-limit">
-<h2>The thermodynamic limit<a class="headerlink" href="#the-thermodynamic-limit" title="Permalink to this headline"></a></h2>
+<h2>The thermodynamic limit<a class="headerlink" href="#the-thermodynamic-limit" title="Permalink to this heading"></a></h2>
 <p>The thermodynamic limit of the system is well defined if the bulk free energy density is well defined and is independent of the system size <span class="math notranslate nohighlight">\(\Omega\)</span> at the following limit.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -171,7 +172,7 @@ E(R)=\int_0^R \left( \rho \frac{4\pi}{3}r^3 \right)\frac{A}{r}\left(\rho 4\pi r^
 </div>
 </section>
 <section id="the-continuous-and-discontinuous-phase-transition-formal-definition">
-<h2>The continuous and discontinuous phase transition ( formal definition)<a class="headerlink" href="#the-continuous-and-discontinuous-phase-transition-formal-definition" title="Permalink to this headline"></a></h2>
+<h2>The continuous and discontinuous phase transition ( formal definition)<a class="headerlink" href="#the-continuous-and-discontinuous-phase-transition-formal-definition" title="Permalink to this heading"></a></h2>
 <p>From the expression</p>
 <div class="math notranslate nohighlight">
 \[

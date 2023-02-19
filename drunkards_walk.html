@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Drunkard’s walk &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -97,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="drunkard-s-walk">
-<h1>Drunkard’s walk<a class="headerlink" href="#drunkard-s-walk" title="Permalink to this headline"></a></h1>
+<h1>Drunkard’s walk<a class="headerlink" href="#drunkard-s-walk" title="Permalink to this heading"></a></h1>
 <p>We can generalize the idea a little bit into the two-dimensional case. Suppose we have a drunk guy leaving a bar. The guy is drunk to the suitable level that he can keep the size of each step but lose the ability to be oriented. So the direction of each step is random. We can use a randomly oriented vector of length <span class="math notranslate nohighlight">\(L\)</span>, <span class="math notranslate nohighlight">\(\textbf{l}_j=L(\cos\theta_j,\sin\theta_j)\)</span>, to denote the <span class="math notranslate nohighlight">\(j\)</span>-th step of the drunk guy. By definition, we also have <span class="math notranslate nohighlight">\(\langle \textbf{l}_m\cdot\textbf{l}_n\rangle=L^2\langle\cos(\theta_m-\theta_n)\rangle=0\)</span> since <span class="math notranslate nohighlight">\(\theta_m\)</span> and <span class="math notranslate nohighlight">\(\theta_n\)</span> are random angles.</p>
 <figure class="align-default" id="d-rw-fig">
 <a class="reference internal image-reference" href="_images/2D_RW_4.png"><img alt="_images/2D_RW_4.png" src="_images/2D_RW_4.png" style="width: 750px;" /></a>

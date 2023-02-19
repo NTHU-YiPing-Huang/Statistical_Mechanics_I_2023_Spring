@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Introduction &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -38,7 +39,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Thermodynamics as an effective theory" href="thermodynamics.html" />
+    <link rel="next" title="How to ask a question?" href="How_to_ask.html" />
     <link rel="prev" title="Syllabus for Statistical Mechanics (I) – (2023)PHYS521000" href="syllabus.html" /> 
 </head>
 
@@ -60,6 +61,8 @@ const thebe_selector_output = ".output, .cell_output"
               <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
@@ -95,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h1>
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Summary</p>
 <ul class="simple">
@@ -106,17 +109,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ol class="simple">
 <li><p><span id="id1">[<a class="reference internal" href="MD_files/biblio.html#id18" title="Herbert B Callen. Thermodynamics and an Introduction to Thermostatistics. American Association of Physics Teachers, 1998.">Cal98</a>]</span>: Chapter 21 is a very interesting approach to discuss the symmetry and the conceptual foundation of thermostatistics.</p></li>
 <li><p><span id="id2">[<a class="reference internal" href="MD_files/biblio.html#id19" title="Enrico Fermi. Thermodynamics. Courier Corporation, 2012.">Fer12</a>]</span>: A very concise introduction of thermostatistics.</p></li>
+<li><p><span id="id3">[<a class="reference internal" href="MD_files/biblio.html#id20" title="Stephen Wolfram. Second law of Thermodynamics(https://writings.stephenwolfram.com/2023/02/computational-foundations-for-the-second-law-of-thermodynamics/). Stephen Wolfram Writings, 2023.">Wol23</a>]</span>: How complexity emerges? What is the second law of thermodynamics from the computational point of view.</p></li>
 </ol>
 </li>
 </ul>
 </div>
 <section id="a-little-bit-of-history-of-me-learning-thermodynamics-and-statistical-mechanics">
-<h2>A little bit of history of me learning thermodynamics and statistical mechanics<a class="headerlink" href="#a-little-bit-of-history-of-me-learning-thermodynamics-and-statistical-mechanics" title="Permalink to this headline"></a></h2>
+<h2>A little bit of history of me learning thermodynamics and statistical mechanics<a class="headerlink" href="#a-little-bit-of-history-of-me-learning-thermodynamics-and-statistical-mechanics" title="Permalink to this heading"></a></h2>
 <p>When I was an undergraduate student, it was very challenging for me to understand thermodynamics. To some extent, I can follow the equations. However, it is difficult for me to make physical sense out of it. Luckily, the undergrad textbook we use is <em>Thermal Physics</em> by C. Kittel and Herbert Kroemer. The book contains some of the principles of statistical mechanics. The concepts related to statistical mechanics somehow make lots of sense to me. I felt I could understand what’s going on from the statistical physics point of view, and thermodynamics seems like a very different beast that I have no way to understand. So I just did the homework, prepared for the exams, and passed the course without really thinking about the logical structure between the two subjects. After that, I tried to explore other subjects, and I kept my confusion about thermodynamics in my “unsolved” question book for the future me.</p>
 <p>I found it is okay to keep an “unsolved” question book during my research journey. The “unsolved” questions will keep coming back at you with different forms to force you to relearn them. My experience is that as long as one keeps an open mind and is honest with oneself, the re-education process is usually very fruitful. Now, I am teaching thermodynamics and statistical mechanics, which forces me to learn the subject again with a crew of fresh minds. I believe it will be a fun journey for all of us.</p>
 </section>
 <section id="course-motivation">
-<h2>Course motivation<a class="headerlink" href="#course-motivation" title="Permalink to this headline"></a></h2>
+<h2>Course motivation<a class="headerlink" href="#course-motivation" title="Permalink to this heading"></a></h2>
 <p>I will introduce the course from three angles in the following sections:</p>
 <ol class="simple">
 <li><p>The thermodynamics as an effective theory: how to understand thermodynamics from the conceptual point of view?</p></li>
@@ -153,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="syllabus.html" class="btn btn-neutral float-left" title="Syllabus for Statistical Mechanics (I) – (2023)PHYS521000" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="thermodynamics.html" class="btn btn-neutral float-right" title="Thermodynamics as an effective theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="How_to_ask.html" class="btn btn-neutral float-right" title="How to ask a question?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Fermions and Bosons &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="../_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -89,9 +90,9 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="free-fermions-and-bosons">
-<h1>Free Fermions and Bosons<a class="headerlink" href="#free-fermions-and-bosons" title="Permalink to this headline"></a></h1>
+<h1>Free Fermions and Bosons<a class="headerlink" href="#free-fermions-and-bosons" title="Permalink to this heading"></a></h1>
 <section id="quantum-statistics">
-<h2>Quantum statistics<a class="headerlink" href="#quantum-statistics" title="Permalink to this headline"></a></h2>
+<h2>Quantum statistics<a class="headerlink" href="#quantum-statistics" title="Permalink to this heading"></a></h2>
 <p>The most important difference between a classical and a quantum system is now the status of the system is described by a wave function. What qualitative new structure will be given by this difference? The wave function description will lead to a striking effect when we consider the many-particle systems since we loose the ability to distinguish identical particles by their “path”.</p>
 <p>Identical particles are the particles with identical intrinsic properties such as mass, charge, spin, <em>etc.</em>. For classical systems, we can always use the path to track individual particles in principle. However, this becomes impossible when the wave functions between two particles has overlap with each other. The difficulty came from the uncertainty of the positions of those particles.</p>
 <p>Because of that, when the two wave function has measurable overlap, the probability description of the two particles should be indistinguishable, <em>i.e.</em> <span class="math notranslate nohighlight">\(P(\textbf{x}_1,\textbf{x}_2)=P(\textbf{x}_1,\textbf{x}_2)\)</span>. Because the probability of the quantum system is related to the norm square of the wave function. That automatically leads to the fact that the corresponding two particle wave function is equal up to a phase factor. <em>i.e.</em> <span class="math notranslate nohighlight">\(\phi(\textbf{x}_1,\textbf{x}_2)=e^{i\theta}\phi(\textbf{x}_2,\textbf{x}_1)\)</span>. Let’s consider this effect as we swap the particle 1 and particle 2 of our original wave function. We immediately notice that swapping twice will return to the original wave function. That is, <span class="math notranslate nohighlight">\((e^{i \theta})^2=1\)</span>. So we have <span class="math notranslate nohighlight">\(e^{i\theta}=\pm 1\)</span>. For bosons, we have <span class="math notranslate nohighlight">\(e^{i\theta}= +1\)</span>. For fermions, we have <span class="math notranslate nohighlight">\(e^{i\theta}= -1\)</span>. This is the starting point to discuss quantum statistics.</p>
@@ -109,10 +110,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </section>
 <section id="quantum-many-body-system-non-interacting-limit">
-<h2>Quantum many-body system (non-interacting limit)<a class="headerlink" href="#quantum-many-body-system-non-interacting-limit" title="Permalink to this headline"></a></h2>
+<h2>Quantum many-body system (non-interacting limit)<a class="headerlink" href="#quantum-many-body-system-non-interacting-limit" title="Permalink to this heading"></a></h2>
 <p>Now we know we have Fermions and Bosons. How to describe such a quantum system? To define a quantum system, we need to specify the Hamiltonian, <span class="math notranslate nohighlight">\(H\)</span>, and the corresponding Hilbert space,<span class="math notranslate nohighlight">\(\mathcal{H}\)</span>. Here, I will give a quick overview of the general description of quantum many-body systems with <span class="math notranslate nohighlight">\(N\)</span> particles.</p>
 <section id="the-hilbert-space">
-<h3>The Hilbert space<a class="headerlink" href="#the-hilbert-space" title="Permalink to this headline"></a></h3>
+<h3>The Hilbert space<a class="headerlink" href="#the-hilbert-space" title="Permalink to this heading"></a></h3>
 <p>Let’s consider the wave function of distinguishable many-body system first. Since the particles are distinguishable, we can label the Hilbert space accordingly. The total Hilbert space is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -147,7 +148,7 @@ P_{S/AS}\left[ \vert \phi_{\gamma_1}\rangle_1 \otimes\vert \phi_{\gamma_2}\rangl
 <p>We start from something simple and derive the generalized form for the many-body wave function when the indistinguishable nature of quantum particles are considered.</p>
 </section>
 <section id="the-many-body-hamiltonian">
-<h3>The many-body Hamiltonian<a class="headerlink" href="#the-many-body-hamiltonian" title="Permalink to this headline"></a></h3>
+<h3>The many-body Hamiltonian<a class="headerlink" href="#the-many-body-hamiltonian" title="Permalink to this heading"></a></h3>
 <div class="math notranslate nohighlight">
 \[
 H=\sum_i H_i+\underbrace{\sum_{i,j} H_{i,j}+...}_{=0,\text{for non-interacting systems}}\text{.}
@@ -164,7 +165,7 @@ H_i=\textbf{1}_1\otimes\textbf{1}_2\otimes\cdots\textbf{1}_{i-1}\otimes H_i\otim
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="partition-function-for-free-fermions-and-bosons">
-<h1>Partition function for free fermions and bosons<a class="headerlink" href="#partition-function-for-free-fermions-and-bosons" title="Permalink to this headline"></a></h1>
+<h1>Partition function for free fermions and bosons<a class="headerlink" href="#partition-function-for-free-fermions-and-bosons" title="Permalink to this heading"></a></h1>
 <p>In principle, the <span class="math notranslate nohighlight">\(\gamma_j\)</span> in the above expression of the many-body wave function can be any quantum number. For example, for a free particle, <span class="math notranslate nohighlight">\(\gamma_j\)</span> can be the index of momentum <span class="math notranslate nohighlight">\(p_j\)</span>. We can describe our system as the <span class="math notranslate nohighlight">\(j\)</span>-th particle has momentum <span class="math notranslate nohighlight">\(p_j\)</span> then symmetrize/anti-symmetrize the whole wave function as we did currently. However, one can also use another representation to describe the state. That is, we know don’t have the concept of <span class="math notranslate nohighlight">\(j\)</span>-th particle, maybe we can just count how many particles have a specific momentum <span class="math notranslate nohighlight">\(p_a\)</span>. Then, we can describe our system using those numbers <span class="math notranslate nohighlight">\(\{n_{p_1},n_{p_2},\cdots, n_{p_a},\cdots\}\)</span>. If we did so for our <span class="math notranslate nohighlight">\(N\)</span> particle system, the representation must satisfy the constraint that <span class="math notranslate nohighlight">\(\sum_a n_{p_a}=N\)</span>. Here, we use <span class="math notranslate nohighlight">\(a\)</span>, which is the index for the quantum number (momentum in this case), as a distinct label with the index of the particle <span class="math notranslate nohighlight">\(j\)</span>.</p>
 <p>Let’s start from here to construct the canonical ensemble of quantum gases with internal degree of freedom <span class="math notranslate nohighlight">\(\alpha\)</span> using the occupation number representation.</p>
 <div class="math notranslate nohighlight">
@@ -247,7 +248,7 @@ Z_{GC}=\sum_{N=0}^\infty Z_N e^{\beta \mu N}=\sum_{\alpha}\sum_{\{n_{\textbf{p}_
 \]</div>
 <p>Here we use the relation <span class="math notranslate nohighlight">\(z\frac{\partial}{\partial z} \phi_{\alpha}(cz)=\phi_{\alpha-1}(cz)\)</span>.</p>
 <section id="classical-limit-of-the-quantum-gases">
-<h2>Classical limit of the quantum gases<a class="headerlink" href="#classical-limit-of-the-quantum-gases" title="Permalink to this headline"></a></h2>
+<h2>Classical limit of the quantum gases<a class="headerlink" href="#classical-limit-of-the-quantum-gases" title="Permalink to this heading"></a></h2>
 <p>When <span class="math notranslate nohighlight">\(z\ll 1\)</span>, we can approximate <span class="math notranslate nohighlight">\(\phi_{\alpha}(\eta z)\sim \eta z\)</span>. In that limit, we can solve <span class="math notranslate nohighlight">\(z\)</span> as a function of <span class="math notranslate nohighlight">\(N\)</span>. We have</p>
 <div class="math notranslate nohighlight">
 \[
@@ -258,7 +259,7 @@ z\approx \frac{1}{2S+1}\frac{N\lambda^3}{L^3}\equiv \frac{1}{2S+1} \xi\text{.}
 <p>This derivation suggest that we can use <span class="math notranslate nohighlight">\(\xi\)</span> to tell whether we are in the <em>quantum degenerate</em> region which means we need to consider the quantum statistics of our system. If <span class="math notranslate nohighlight">\(\xi\ll1\)</span>, we expect the quantum statistics can be neglected and we reach the classical limit. When <span class="math notranslate nohighlight">\(\xi\sim \mathcal{O}(1)\)</span>, we consider the system to be quantum degenerate.</p>
 </section>
 <section id="degenerate-fermi-gases">
-<h2>Degenerate Fermi gases<a class="headerlink" href="#degenerate-fermi-gases" title="Permalink to this headline"></a></h2>
+<h2>Degenerate Fermi gases<a class="headerlink" href="#degenerate-fermi-gases" title="Permalink to this heading"></a></h2>
 <p>Now let’s think about the quantum limit and if the system is formed by fermions. As we have discussed, the Pauli exclusion principle will play an important role for the statistical behavior of the system. Let’s take the Fermi-Dirac distribution function and think about the meaning of this result. When <span class="math notranslate nohighlight">\(\eta=-1\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \[
@@ -282,7 +283,7 @@ N=V\int_0^{\mu(T=0)=E_F} dE g(E)
 <p>To have a more detailed calculation of electrons in metal. We can apply the <a class="reference external" href="https://en.wikipedia.org/wiki/Sommerfeld_expansion">Sommerfeld expansion</a> to the Fermi-Dirac distribution. I will leave it as an exercise for the readers.</p>
 </section>
 <section id="degenerated-bose-gases">
-<h2>Degenerated Bose gases<a class="headerlink" href="#degenerated-bose-gases" title="Permalink to this headline"></a></h2>
+<h2>Degenerated Bose gases<a class="headerlink" href="#degenerated-bose-gases" title="Permalink to this heading"></a></h2>
 <p>Let’s focuse on the <span class="math notranslate nohighlight">\(\eta=+1\)</span> case for bosons.</p>
 <div class="math notranslate nohighlight">
 \[

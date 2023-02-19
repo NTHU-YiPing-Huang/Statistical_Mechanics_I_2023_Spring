@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Basic introduction of python &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -96,18 +97,18 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="basic-introduction-of-python">
-<h1>Basic introduction of python<a class="headerlink" href="#basic-introduction-of-python" title="Permalink to this headline"></a></h1>
+<h1>Basic introduction of python<a class="headerlink" href="#basic-introduction-of-python" title="Permalink to this heading"></a></h1>
 <section id="setting-the-environment-for-python">
-<h2>Setting the environment for Python<a class="headerlink" href="#setting-the-environment-for-python" title="Permalink to this headline"></a></h2>
+<h2>Setting the environment for Python<a class="headerlink" href="#setting-the-environment-for-python" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> : Include essential packages for basic scientific computation. It is easy to install it just follow the instruction.</p></li>
 <li><p>Not required, but easy to use for beginners.</p></li>
 </ul>
 </section>
 <section id="why-numerical-approach">
-<h2>Why numerical approach?<a class="headerlink" href="#why-numerical-approach" title="Permalink to this headline"></a></h2>
+<h2>Why numerical approach?<a class="headerlink" href="#why-numerical-approach" title="Permalink to this heading"></a></h2>
 <section id="need-to-confirm-the-mechanism-of-your-idea">
-<h3>Need to confirm the mechanism of your idea<a class="headerlink" href="#need-to-confirm-the-mechanism-of-your-idea" title="Permalink to this headline"></a></h3>
+<h3>Need to confirm the mechanism of your idea<a class="headerlink" href="#need-to-confirm-the-mechanism-of-your-idea" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>An idea for the novel physics</p></li>
 <li><p>Numerical experiments driven by scientific ideas</p></li>
@@ -115,21 +116,21 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </section>
 <section id="need-to-connect-with-real-experiments">
-<h3>Need to connect with real experiments<a class="headerlink" href="#need-to-connect-with-real-experiments" title="Permalink to this headline"></a></h3>
+<h3>Need to connect with real experiments<a class="headerlink" href="#need-to-connect-with-real-experiments" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>To strenthen the abstract idea and connect with real world</p></li>
 <li><p>Get additional information that is difficult to access in experiments and make prediction that is accessible for experiments</p></li>
 </ul>
 </section>
 <section id="numerics-for-many-body-physics-is-non-trivial">
-<h3>Numerics for many body physics is non-trivial!<a class="headerlink" href="#numerics-for-many-body-physics-is-non-trivial" title="Permalink to this headline"></a></h3>
+<h3>Numerics for many body physics is non-trivial!<a class="headerlink" href="#numerics-for-many-body-physics-is-non-trivial" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>The problem itself is a intelletral challenging and interesting discrete mathmetical problems.</p></li>
 <li><p>Hardware limitation force one to think in a smart way</p></li>
 </ul>
 </section>
 <section id="generate-data-to-convey-what-you-mean">
-<h3>Generate data to convey what you mean<a class="headerlink" href="#generate-data-to-convey-what-you-mean" title="Permalink to this headline"></a></h3>
+<h3>Generate data to convey what you mean<a class="headerlink" href="#generate-data-to-convey-what-you-mean" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Statistics</p></li>
 <li><p>Plots</p></li>
@@ -137,9 +138,9 @@ const thebe_selector_output = ".output, .cell_output"
 </section>
 </section>
 <section id="my-point-of-view-of-numerical-approaches">
-<h2>My point of view of numerical approaches<a class="headerlink" href="#my-point-of-view-of-numerical-approaches" title="Permalink to this headline"></a></h2>
+<h2>My point of view of numerical approaches<a class="headerlink" href="#my-point-of-view-of-numerical-approaches" title="Permalink to this heading"></a></h2>
 <section id="level-of-numerical-loading">
-<h3>Level of numerical loading<a class="headerlink" href="#level-of-numerical-loading" title="Permalink to this headline"></a></h3>
+<h3>Level of numerical loading<a class="headerlink" href="#level-of-numerical-loading" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Light: Mathematica, Python, matlab (For quick checking and benchmark. Once the simple concept passes, use the medium or heavy numerical approach)</p></li>
 <li><p>Heavy: C/C++, Fortran</p></li>
@@ -147,23 +148,23 @@ const thebe_selector_output = ".output, .cell_output"
 </section>
 </section>
 <section id="why-python">
-<h2>Why Python?<a class="headerlink" href="#why-python" title="Permalink to this headline"></a></h2>
+<h2>Why Python?<a class="headerlink" href="#why-python" title="Permalink to this heading"></a></h2>
 <section id="simple-well-structured-general-purpose-language">
-<h3>Simple, well-structured, general-purpose language<a class="headerlink" href="#simple-well-structured-general-purpose-language" title="Permalink to this headline"></a></h3>
+<h3>Simple, well-structured, general-purpose language<a class="headerlink" href="#simple-well-structured-general-purpose-language" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Readability great for quality control and collaboration</p></li>
 <li><p>Code how you think: many books now use python as pseudocode</p></li>
 </ul>
 </section>
 <section id="high-level">
-<h3>High-level<a class="headerlink" href="#high-level" title="Permalink to this headline"></a></h3>
+<h3>High-level<a class="headerlink" href="#high-level" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Rapid development</p></li>
 <li><p>Do complicated things in few lines</p></li>
 </ul>
 </section>
 <section id="interactive">
-<h3>Interactive<a class="headerlink" href="#interactive" title="Permalink to this headline"></a></h3>
+<h3>Interactive<a class="headerlink" href="#interactive" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Rapid development and exploration</p></li>
 <li><p>No need to compile, run, debug, revise, compile</p></li>
@@ -171,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </section>
 <section id="speed">
-<h3>Speed<a class="headerlink" href="#speed" title="Permalink to this headline"></a></h3>
+<h3>Speed<a class="headerlink" href="#speed" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Usually plenty fast – will discuss more</p></li>
 <li><p>Your development time is more important than CPU time</p></li>
@@ -179,24 +180,24 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </section>
 <section id="vibrant-community">
-<h3>Vibrant community<a class="headerlink" href="#vibrant-community" title="Permalink to this headline"></a></h3>
+<h3>Vibrant community<a class="headerlink" href="#vibrant-community" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Great online documentation / help available</p></li>
 <li><p>Open source</p></li>
 </ul>
 </section>
 <section id="rich-scientific-computing-libraries">
-<h3>Rich scientific computing libraries<a class="headerlink" href="#rich-scientific-computing-libraries" title="Permalink to this headline"></a></h3>
+<h3>Rich scientific computing libraries<a class="headerlink" href="#rich-scientific-computing-libraries" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Don’t reinvent the wheel. Only reinvent important wheels!</p></li>
 </ul>
 </section>
 <section id="accessible-for-everyone-no-need-to-pay-money">
-<h3>Accessible for everyone. No need to pay money<a class="headerlink" href="#accessible-for-everyone-no-need-to-pay-money" title="Permalink to this headline"></a></h3>
+<h3>Accessible for everyone. No need to pay money<a class="headerlink" href="#accessible-for-everyone-no-need-to-pay-money" title="Permalink to this heading"></a></h3>
 </section>
 </section>
 <section id="scientific-python-key-components">
-<h2>Scientific Python Key Components<a class="headerlink" href="#scientific-python-key-components" title="Permalink to this headline"></a></h2>
+<h2>Scientific Python Key Components<a class="headerlink" href="#scientific-python-key-components" title="Permalink to this heading"></a></h2>
 <p>The core pieces of the scientific Python platform are:</p>
 <p><strong><a class="reference external" href="http://www.python.org">Python</a></strong>, the language interpreter</p>
 <ul class="simple">
@@ -242,9 +243,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </section>
 <section id="jupyter-workflow">
-<h2>Jupyter Workflow<a class="headerlink" href="#jupyter-workflow" title="Permalink to this headline"></a></h2>
+<h2>Jupyter Workflow<a class="headerlink" href="#jupyter-workflow" title="Permalink to this heading"></a></h2>
 <section id="two-primary-workflows">
-<h3>Two primary workflows:<a class="headerlink" href="#two-primary-workflows" title="Permalink to this headline"></a></h3>
+<h3>Two primary workflows:<a class="headerlink" href="#two-primary-workflows" title="Permalink to this heading"></a></h3>
 <ol class="simple">
 <li><p>Work in a Jupyter/IPython notebook. Write code in cells, analyze, plot, etc. Everything stored in <strong>.ipynb</strong> file.</p></li>
 <li><p>Write code in <strong>.py</strong> files using a text editor and run those within the IPython notebook or from the shell.</p></li>
@@ -254,7 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p><em>Note:</em> .py files are called <strong>scripts</strong> if they consist primarily of a sequence of commands to be run and <strong>modules</strong> if they consist primarily of function definitions for import into other scripts/notebooks.</p>
 </section>
 <section id="notebook-usage">
-<h3>Notebook Usage<a class="headerlink" href="#notebook-usage" title="Permalink to this headline"></a></h3>
+<h3>Notebook Usage<a class="headerlink" href="#notebook-usage" title="Permalink to this heading"></a></h3>
 <p>Two modes: editing and command mode.</p>
 <p>Press escape to go to command mode.
 Press return to go into editing mode on selected cell.</p>
@@ -377,7 +378,7 @@ Press return to go into editing mode on selected cell.</p>
 </section>
 </section>
 <section id="variables-and-objects">
-<h2>Variables and Objects<a class="headerlink" href="#variables-and-objects" title="Permalink to this headline"></a></h2>
+<h2>Variables and Objects<a class="headerlink" href="#variables-and-objects" title="Permalink to this heading"></a></h2>
 <p>Everything in memory in Python is an object. Every object has a type such as int (for integer), str (for strings) or ndarray (for numpy arrays). Variables can reference objects of any type and that type can change.</p>
 <p>The equals sign in programming does not mean ‘is equal to’ as in math. It means <strong>‘assign the object on the right to the variable on the left’</strong>.</p>
 <div class="cell docutils container">
@@ -571,11 +572,11 @@ a.shape
 </div>
 </div>
 <section id="overloading">
-<h3>Overloading<a class="headerlink" href="#overloading" title="Permalink to this headline"></a></h3>
+<h3>Overloading<a class="headerlink" href="#overloading" title="Permalink to this heading"></a></h3>
 <p>Operators and functions will try to execute no matter what type of objects are passed to them, but they may do different things depending on the type. + adds numbers and concatenates strings.</p>
 </section>
 <section id="variables-as-references">
-<h3>Variables as References<a class="headerlink" href="#variables-as-references" title="Permalink to this headline"></a></h3>
+<h3>Variables as References<a class="headerlink" href="#variables-as-references" title="Permalink to this heading"></a></h3>
 <p>All variables are <strong>references</strong> to the objects they contain. Assignment does not make copies of objects.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -631,9 +632,9 @@ b
 </section>
 </section>
 <section id="types-of-objects">
-<h2>Types of Objects<a class="headerlink" href="#types-of-objects" title="Permalink to this headline"></a></h2>
+<h2>Types of Objects<a class="headerlink" href="#types-of-objects" title="Permalink to this heading"></a></h2>
 <section id="basic-types">
-<h3>Basic Types<a class="headerlink" href="#basic-types" title="Permalink to this headline"></a></h3>
+<h3>Basic Types<a class="headerlink" href="#basic-types" title="Permalink to this heading"></a></h3>
 <ol class="simple">
 <li><p>Numeric, Immutable</p></li>
 <li><p>Integer: -1, 0, 1, 2, …</p></li>
@@ -660,7 +661,7 @@ b
 </ol>
 </section>
 <section id="common-scientific-types">
-<h3>Common Scientific Types<a class="headerlink" href="#common-scientific-types" title="Permalink to this headline"></a></h3>
+<h3>Common Scientific Types<a class="headerlink" href="#common-scientific-types" title="Permalink to this heading"></a></h3>
 <ol class="simple">
 <li><p>NumPy arrays, array([1,2,3])</p></li>
 </ol>
@@ -674,7 +675,7 @@ b
 </section>
 </section>
 <section id="basic-types-numeric">
-<h2>Basic Types: Numeric<a class="headerlink" href="#basic-types-numeric" title="Permalink to this headline"></a></h2>
+<h2>Basic Types: Numeric<a class="headerlink" href="#basic-types-numeric" title="Permalink to this heading"></a></h2>
 <p>There are 4 numeric types:</p>
 <ul class="simple">
 <li><p>int: positive or negative integer</p></li>
@@ -796,7 +797,7 @@ float(1)
 </div>
 </div>
 <section id="careful-with-integer-division">
-<h3>Careful with integer division!<a class="headerlink" href="#careful-with-integer-division" title="Permalink to this headline"></a></h3>
+<h3>Careful with integer division!<a class="headerlink" href="#careful-with-integer-division" title="Permalink to this heading"></a></h3>
 <p>In Python 3, dividing integers promotes to a float. Use // for integer division.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -838,7 +839,7 @@ float(1)
 </section>
 </section>
 <section id="basic-types-strings">
-<h2>Basic Types: Strings<a class="headerlink" href="#basic-types-strings" title="Permalink to this headline"></a></h2>
+<h2>Basic Types: Strings<a class="headerlink" href="#basic-types-strings" title="Permalink to this heading"></a></h2>
 <p>Strings are <strong>immutable</strong> sequences of characters. This means you can’t change a character in the middle of a string, you have to create a new string.</p>
 <p>Literal strings can be written with single or double-quotes. Multi-line strings with triple quotes. ‘Raw’ strings are useful for embedding LaTeX because they treat backslashes differently.</p>
 <div class="cell docutils container">
@@ -945,7 +946,7 @@ Nifty, huh?&quot;&quot;&quot;
 </div>
 </section>
 <section id="basic-types-lists">
-<h2>Basic Types: Lists<a class="headerlink" href="#basic-types-lists" title="Permalink to this headline"></a></h2>
+<h2>Basic Types: Lists<a class="headerlink" href="#basic-types-lists" title="Permalink to this heading"></a></h2>
 <p>Python lists store <strong>ordered</strong> collections of arbitrary objects. They are efficient maps <strong>from index to values</strong>. Lists are represented by square brackets [ ].</p>
 <p>Lists are <strong>mutable</strong>: their contents can be changed after they are created.</p>
 <p>It takes time O(1) to:</p>
@@ -1168,7 +1169,7 @@ aList
 </div>
 </section>
 <section id="basic-types-dictionaries">
-<h2>Basic Types: Dictionaries<a class="headerlink" href="#basic-types-dictionaries" title="Permalink to this headline"></a></h2>
+<h2>Basic Types: Dictionaries<a class="headerlink" href="#basic-types-dictionaries" title="Permalink to this heading"></a></h2>
 <p>A dictionary is an efficient map <strong>from keys to values</strong>. They are represented by curly brackets {}.</p>
 <p>Dictionaries are <strong>mutable</strong> but all <strong>keys must be immutable</strong>. IE. keys can be strings, numbers, or tuples thereof but not lists or other dictionaries. Values can be anything.</p>
 <p>It is unordered but takes time O(1) to:</p>
@@ -1280,7 +1281,7 @@ tel[&#39;francis&#39;] = 5915
 </div>
 </section>
 <section id="basic-types-tuples">
-<h2>Basic Types: Tuples<a class="headerlink" href="#basic-types-tuples" title="Permalink to this headline"></a></h2>
+<h2>Basic Types: Tuples<a class="headerlink" href="#basic-types-tuples" title="Permalink to this heading"></a></h2>
 <p>A tuple is an <strong>ordered</strong> collection of objects. They are represented by round parantheses ().</p>
 <p>Tuples are almost like lists but they are <strong>immutable</strong>. This means that they cannot be changed once they are created.</p>
 <div class="cell docutils container">
@@ -1369,12 +1370,12 @@ notLengthOne
 </div>
 </section>
 <section id="control-flow">
-<h2>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline"></a></h2>
+<h2>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this heading"></a></h2>
 <p>The flow of a program is the order in which the computer executes the statements in the code. Typically, this is in order from top to bottom. However, there are many cases where we want to change the flow in some way. For example, we might want to divide two numbers but only if the divisor is not zero. Or we might want to iterate: repeat a block of code many times for each value in some list. The commands which allow these are called control flow commands.</p>
 <p><strong>WARNING</strong>: Python cares about <strong>white space</strong>! You must <strong>INDENT CORRECTLY</strong> because that’s how Python knows when a block of code ends.</p>
 <p>Typically, people indent with 4 spaces per block but 2 spaces or tabs are okay. They must be consistent in any block.</p>
 <section id="if-elif-else">
-<h3>If/elif/else<a class="headerlink" href="#if-elif-else" title="Permalink to this headline"></a></h3>
+<h3>If/elif/else<a class="headerlink" href="#if-elif-else" title="Permalink to this heading"></a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>if 2&gt;3:
@@ -1399,7 +1400,7 @@ At all
 </div>
 </section>
 <section id="for-loops">
-<h3>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline"></a></h3>
+<h3>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this heading"></a></h3>
 <p>For loops <em>iterate</em> through elements in a collection. This can be a list, tuple, dictionary, array or any other such collection.</p>
 <p>These are the most <em>Pythonic</em> way to think about iterations.</p>
 <div class="cell docutils container">
@@ -1474,7 +1475,7 @@ for (i, word) in enumerate(words):
 </div>
 </section>
 <section id="while-loops">
-<h3>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline"></a></h3>
+<h3>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this heading"></a></h3>
 <p>Repeats a block of code while a condition holds true.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1499,7 +1500,7 @@ Bark 1
 </section>
 </section>
 <section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h2>
 <p>Any code that you call multiple times with different values should be wrapped up in a function. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1563,7 +1564,7 @@ Bark 1
 </div>
 </div>
 <section id="functions-are-objects">
-<h3>Functions are Objects<a class="headerlink" href="#functions-are-objects" title="Permalink to this headline"></a></h3>
+<h3>Functions are Objects<a class="headerlink" href="#functions-are-objects" title="Permalink to this heading"></a></h3>
 <p>Functions are just like any object in Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

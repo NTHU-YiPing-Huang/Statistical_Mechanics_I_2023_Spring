@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ising models and spontaneous symmetry breaking &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="../_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -89,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="ising-models-and-spontaneous-symmetry-breaking">
-<h1>Ising models and spontaneous symmetry breaking<a class="headerlink" href="#ising-models-and-spontaneous-symmetry-breaking" title="Permalink to this headline"></a></h1>
+<h1>Ising models and spontaneous symmetry breaking<a class="headerlink" href="#ising-models-and-spontaneous-symmetry-breaking" title="Permalink to this heading"></a></h1>
 <p>The notion of spontaneous symmetry breaking is probably the most important non-trivial concept of statistical mechanics (I). It is related to various important phenomena in condensed matter physics, <em>e.g.</em> magnetism, liquid crystal, superconductivity, superfluidity, etc. Also, it plays important rule in the particle physics, <em>e.g.</em> Higgs mechanism, chiral symmetry breaking, etc. Once we grasp the idea of spontaneous symmetry breaking, we can not only understand above-mentioned phenomena but also the important Elitzur’s theorem which states “gauge symmetry” cannot be spontaneously broken.</p>
 <p>The important concepts can be demonstrated by using Ising models, so let’s start from the introduction of the Ising model.
 The formal definition of Ising model is</p>
@@ -117,7 +118,7 @@ H=\sum_{\langle i,j\rangle} J S_iS_j-\sum_i H S_i; J&lt;0 \text{.}
 \]</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">
-<h1>The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)<a class="headerlink" href="#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments" title="Permalink to this headline"></a></h1>
+<h1>The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)<a class="headerlink" href="#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments" title="Permalink to this heading"></a></h1>
 <p>We want to use the Ising model to study phases and phase transition. Could we argue that the model should show at least two phases?
 We can derive the partition function as</p>
 <div class="math notranslate nohighlight">
@@ -139,7 +140,7 @@ Z[{K,h}]=Tr\left[e^{-\beta H(K,h)}\right]=Tr\left[e^{\sum_{\langle i,j\rangle} K
 </div>
 <p>How is it possible? How the symmetry is broken? We will address this issue several times later. We will take two approaches to understand this phenomena. First approach is from the analytic behavior of the free energy density at the thermodynamic limit. The second approach is from the non-trivial structure of phase space at the thermodynamic limit. Both approach demonstrate the importance of thermodynamic limit. Before discussing these approach. We will circle back to the question on how phase transition happened in the Ising model.</p>
 <section id="how-can-phase-transition-happened">
-<h2>How can phase transition happened?<a class="headerlink" href="#how-can-phase-transition-happened" title="Permalink to this headline"></a></h2>
+<h2>How can phase transition happened?<a class="headerlink" href="#how-can-phase-transition-happened" title="Permalink to this heading"></a></h2>
 <p>The zeroth order question: can we understand why the system decide to change the pattern of their collective behavior in principle?</p>
 <p>When <span class="math notranslate nohighlight">\(h=0\)</span>, we have</p>
 <div class="math notranslate nohighlight" id="equation-isingh">
@@ -149,7 +150,7 @@ Z_{\Omega}[K]=\sum_{i=1}^{2^{N(\Omega)}} e^{-\beta \underbrace{H_{\Omega}(K;\{S_
 <p>Here, <span class="math notranslate nohighlight">\(\{E_i(K)\}\)</span> is the spectrum of the Hamiltonian at coupling constant <span class="math notranslate nohighlight">\(K\)</span>.
 For finite <span class="math notranslate nohighlight">\(N(\Omega)\)</span>, every Boltzmann factor is analytic function in <span class="math notranslate nohighlight">\(K\)</span>. Sum over finite analytic functions will give us an analytic function. Therefore, we expect the partition function and the free energy for finite system to be analytic in <span class="math notranslate nohighlight">\(K\)</span>. The collective behavior at different <span class="math notranslate nohighlight">\(K\)</span> should be qualitatively the same, and there is no phase transition at finite system. From this observation, we should conclude that phase transition can only happen when <span class="math notranslate nohighlight">\(N(\Omega)\to\infty\)</span>. To get non-analytic function from the sum of analytic functions, the summation must be an infinite series. The argument is almost correct. We will use more detailed calculation to show that later. Before doing the more involved calculation, let’s develop a heuristic argument about the phase diagram of the Ising model.</p>
 <section id="the-zero-temperature-phase-diagram">
-<h3>The zero temperature phase diagram<a class="headerlink" href="#the-zero-temperature-phase-diagram" title="Permalink to this headline"></a></h3>
+<h3>The zero temperature phase diagram<a class="headerlink" href="#the-zero-temperature-phase-diagram" title="Permalink to this heading"></a></h3>
 <p>There is actually another possibility that we can create non-analytic behavior from the partition function of a finite system. The price we paid is to go to the quite special <span class="math notranslate nohighlight">\(T=0\)</span> limit.</p>
 <p>When <span class="math notranslate nohighlight">\(\beta\to\infty\)</span>, we know only the configuration with minimum energy will dominate the partition function.</p>
 <div class="math notranslate nohighlight">
@@ -165,10 +166,10 @@ For finite <span class="math notranslate nohighlight">\(N(\Omega)\)</span>, ever
 <p>How the above picture changes when we are at non-zero but low temperature region? We will further discuss the stability of the corresponding <span class="math notranslate nohighlight">\(M&gt;0\)</span> and <span class="math notranslate nohighlight">\(M&lt;0\)</span> configurations. Withou loosing generality, we will focus on the physics with <span class="math notranslate nohighlight">\(M&gt;0\)</span>.</p>
 </section>
 <section id="the-finite-temperature-phase-diagram">
-<h3>The finite temperature phase diagram<a class="headerlink" href="#the-finite-temperature-phase-diagram" title="Permalink to this headline"></a></h3>
+<h3>The finite temperature phase diagram<a class="headerlink" href="#the-finite-temperature-phase-diagram" title="Permalink to this heading"></a></h3>
 <p>Now we know the zero temperature phase diagram. We want to ask the effect of finite temperature. Or, sometimes, we refer to the thermal fluctuation. It turns out the strength of thermal fluctuation is closely related to the dimensionality of the system. Here we will use to simple estimation to demonstrate this fact.</p>
 <section id="one-dimensional-case">
-<h4>One-dimensional case<a class="headerlink" href="#one-dimensional-case" title="Permalink to this headline"></a></h4>
+<h4>One-dimensional case<a class="headerlink" href="#one-dimensional-case" title="Permalink to this heading"></a></h4>
 <p>We first notice that the magnetization at the thermodynamic limit is defined as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -193,7 +194,7 @@ F_1=(N_b-1) J+(-J)-k_BT \ln(N_b)=N_bJ
 <p>Now we can see the entropy estimation is simple because it is a one-dimensional system. We can try to generalize the argument to the two-dimensional system. Let’s see what will be different.</p>
 </section>
 <section id="two-dimensional-case">
-<h4>Two-dimensional case<a class="headerlink" href="#two-dimensional-case" title="Permalink to this headline"></a></h4>
+<h4>Two-dimensional case<a class="headerlink" href="#two-dimensional-case" title="Permalink to this heading"></a></h4>
 <p>Similarly, we start from an ordered phase and ask what is the free energy for the system to have a domain wall with length <span class="math notranslate nohighlight">\(n\)</span>. Now we cannot have a exact result, since the domain wall with length <span class="math notranslate nohighlight">\(n\)</span> could have different shape. Here, we try to formulate an approximation that will over count the effect of entropy. But even for such an overcounting scheme, we can see the energy and the entropy scales in a way that the ordered phase could survive under the thermal fluctuation due to the domain walls.</p>
 <p>The free energy for a system with domain wall with circumferences <span class="math notranslate nohighlight">\(n\)</span> is approximately</p>
 <div class="math notranslate nohighlight">
@@ -225,9 +226,9 @@ F_1=(N_b-1) J+(-J)-k_BT \ln(N_b)=N_bJ
 </section>
 </section>
 <section id="symmetry-and-symmetry-breaking">
-<h3>Symmetry and symmetry breaking<a class="headerlink" href="#symmetry-and-symmetry-breaking" title="Permalink to this headline"></a></h3>
+<h3>Symmetry and symmetry breaking<a class="headerlink" href="#symmetry-and-symmetry-breaking" title="Permalink to this heading"></a></h3>
 <section id="symmetry-of-the-system">
-<h4>Symmetry of the system<a class="headerlink" href="#symmetry-of-the-system" title="Permalink to this headline"></a></h4>
+<h4>Symmetry of the system<a class="headerlink" href="#symmetry-of-the-system" title="Permalink to this heading"></a></h4>
 <p>Let’s consider the Hamiltonian</p>
 <div class="math notranslate nohighlight">
 \[
@@ -241,7 +242,7 @@ F_1=(N_b-1) J+(-J)-k_BT \ln(N_b)=N_bJ
 <p>We can notice there is a operation(a thought experiment) that keep the Hamiltonian invariant, <em>i.e.</em> we can globally perform the time reversal symmetry such that we flip the orientation of the microscopic and the macroscopic current. That leads to <span class="math notranslate nohighlight">\(\{S_i\}\to\{-S_i\},h\to-h\)</span>.</p>
 </section>
 <section id="arguments-that-the-spontaneous-symmetry-breaking-is-impossible">
-<h4>Arguments that the spontaneous symmetry breaking is impossible<a class="headerlink" href="#arguments-that-the-spontaneous-symmetry-breaking-is-impossible" title="Permalink to this headline"></a></h4>
+<h4>Arguments that the spontaneous symmetry breaking is impossible<a class="headerlink" href="#arguments-that-the-spontaneous-symmetry-breaking-is-impossible" title="Permalink to this heading"></a></h4>
 <p>We have already point out the symmetry at <span class="math notranslate nohighlight">\(h=0\)</span> will be spontaneously broken. Let’s try to see if it is possible for a finite system using the following two arguments.</p>
 <p><strong>Argument 1</strong></p>
 <p>Starting from a sample <span class="math notranslate nohighlight">\(\Omega\)</span>, we know the Hamiltonian has the property that <span class="math notranslate nohighlight">\(H_{\Omega}(h,K,\{S_i\})=H_{\Omega}(-h,K,\{-S_i\})\)</span>. So we can derive the following relation</p>
@@ -271,7 +272,7 @@ M_{\Omega}(h) N(\Omega)=\sum_{ \{S_i\} } \left[\left.\left(\sum_j S_j\right)\rig
 <p>Now the idea of spontaneous symmetry looks more and more suspecious. Can symmetry really be broken spontaneously? If yes, what is wrong with the previous arguments?</p>
 </section>
 <section id="justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density">
-<h4>Justification of spontaneous symmetry breaking (I)–the analytic property of the free energy density<a class="headerlink" href="#justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density" title="Permalink to this headline"></a></h4>
+<h4>Justification of spontaneous symmetry breaking (I)–the analytic property of the free energy density<a class="headerlink" href="#justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density" title="Permalink to this heading"></a></h4>
 <p>The problem of the argument 1 is at the “<span class="math notranslate nohighlight">\(\stackrel{?}{=}\)</span>” when we calculate the magnetization. The implicity assumption that is used to get this equality is we assume the free energy is a <strong>smooth</strong> function of <span class="math notranslate nohighlight">\(h\)</span>, which is stronger than requireing the free energy is a <strong>continuous</strong> function of <span class="math notranslate nohighlight">\(h\)</span>. In fact, as we mentioned previously, when we have an infinite series, even though every term is analytic, the series could be non-analytic. Therefore, the additional requirement that the free energy is smooth in <span class="math notranslate nohighlight">\(h\)</span> only holds when the system is finite, not in the thermodynamic limit.</p>
 <p>In the mathematical expression, it means the two limit, <span class="math notranslate nohighlight">\(h\to0\)</span> and <span class="math notranslate nohighlight">\(N(\Omega)\to\infty\)</span> does not commute. This is a rare example that the ordering of the limit actually matters.</p>
 <p>We can define the spontaneous magnetization, <span class="math notranslate nohighlight">\(M_s\)</span>, as</p>
@@ -291,7 +292,7 @@ M(h=0)=\lim_{N(\Omega)\to\infty}\lim_{h\to0}-\frac{\partial }{\partial h} \frac{
 \]</div>
 </section>
 <section id="justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking">
-<h4>Justification of spontaneous symmetry breaking (II)–the ergodicity breaking<a class="headerlink" href="#justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking" title="Permalink to this headline"></a></h4>
+<h4>Justification of spontaneous symmetry breaking (II)–the ergodicity breaking<a class="headerlink" href="#justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking" title="Permalink to this heading"></a></h4>
 <p>The problem of the argument 2 is about the ergodicity. We assume the system is ergodic and the system can explore any two symmetry related configurations. Let’s see how this picture breaks down at the thermodynamic limit.</p>
 <p>Suppose we have a finite field <span class="math notranslate nohighlight">\(h\)</span> that breaks the Ising symmetry. Let’s consider a specific spin configuration. The magnetic field induced energy of configuration is <span class="math notranslate nohighlight">\(N(\Omega)\epsilon(h)\)</span>. The Ising partner of this configuration will have the magnetic field induced energy <span class="math notranslate nohighlight">\(-N(\Omega)\epsilon(h)\)</span>. Without loosing generality, we call the configuration with <span class="math notranslate nohighlight">\(\epsilon(h)&gt;0\)</span> the configuration <span class="math notranslate nohighlight">\(A\)</span> and its Ising partner <span class="math notranslate nohighlight">\(\overline{A}\)</span>.</p>
 <p>The ratio of the probabilities of these two configurations is</p>

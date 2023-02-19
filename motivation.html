@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Motivation: Why learn statistical mechanics? &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -62,6 +63,8 @@ const thebe_selector_output = ".output, .cell_output"
               <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="introduction.html">Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Motivation: Why learn statistical mechanics?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
@@ -98,10 +101,11 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="motivation-why-learn-statistical-mechanics">
-<h1>Motivation: Why learn statistical mechanics?<a class="headerlink" href="#motivation-why-learn-statistical-mechanics" title="Permalink to this headline"></a></h1>
+<h1>Motivation: Why learn statistical mechanics?<a class="headerlink" href="#motivation-why-learn-statistical-mechanics" title="Permalink to this heading"></a></h1>
+<p>In the discussion of the development of physics, <span class="xref std std-ref">development of physics</span>, we have seen the path of the four fundamental subjects. The connection between the theoretical framework and the phenomenological theory is clear in the development of mechanics, electromagnetic theory and quantum mechanics. One can derive the phenomenological theory explicitly from the theoretical framework. The possibility to have these explicit derivation rely on the assumption that similar description works for both the theoretical framework and the phenomenological theory even if they are in the different length and time scales. On the other hand, the case for statistical mechanics and thermodynamics is different. Thermodynamics is described using a relative small sets of thermodynamic variables. But the microscopic model contains <span class="math notranslate nohighlight">\(O(N)\sim 10^{23}\)</span> degrees of freedom. The description of the both ends cannot be assumed to have similar form for the phenomenological theory to be useful. When <span class="math notranslate nohighlight">\(N\)</span> is large, we need to have a new principle to bridge them! That is what statistical mechanics is about.</p>
 <section id="the-large-number-of-degrees-of-freedom">
-<h2>The large number of degrees of freedom<a class="headerlink" href="#the-large-number-of-degrees-of-freedom" title="Permalink to this headline"></a></h2>
-<p>The above process, developing a microscopic model, making macroscopic predictions, and comparing with experiments, seems identical for all scientific research areas. What is so special about statistical mechanics? The key feature is: statistical mechanics deals with a <strong>macroscopic number</strong> of degrees of freedom. What we meant by macroscopic number is a number of order <span class="math notranslate nohighlight">\(N\approx 10^{23}\)</span>. Because this number is <em>huge</em>, we are allowed to use statistics and make statistical statements that can help us to make some predictions.</p>
+<h2>The large number of degrees of freedom<a class="headerlink" href="#the-large-number-of-degrees-of-freedom" title="Permalink to this heading"></a></h2>
+<p>The previous process, developing a microscopic model, making macroscopic predictions, and comparing with experiments, seems identical for all scientific research areas. What is so special about statistical mechanics? The key feature is: statistical mechanics deals with a <strong>macroscopic number</strong> of degrees of freedom. What we meant by macroscopic number is a number of order <span class="math notranslate nohighlight">\(N\approx 10^{23}\)</span>. Because this number is <em>huge</em>, we are allowed to use statistics and make statistical statements that can help us to make some predictions.</p>
 <p>That is, the system we are studying has a <em>big</em> parameter, <span class="math notranslate nohighlight">\(N\approx 10^{23}\)</span>, and we want to analyze it. It seems the problem is getting so complicated that it is hopeless to understand. Let’s take classical coins as an example. A classical coin has <span class="math notranslate nohighlight">\(2\)</span> possibilities, head or tail. For <span class="math notranslate nohighlight">\(N\)</span> coins, we have <span class="math notranslate nohighlight">\(2^N\approx 2^{10^{23}}\)</span> possible outcomes to keep track with. How is it possible?
 However, if we think the opposite way, our problem has a natural <em>small</em> parameter, <span class="math notranslate nohighlight">\(N^{-1}\)</span>. If we can use this small parameter wisely, we might be able to use it to simplify our analysis.</p>
 <p>Basically, that’s the spirit of statistical mechanics.</p>
@@ -111,10 +115,10 @@ However, if we think the opposite way, our problem has a natural <em>small</em> 
 </div>
 </section>
 <section id="emergent-phenomena">
-<h2>Emergent phenomena<a class="headerlink" href="#emergent-phenomena" title="Permalink to this headline"></a></h2>
+<h2>Emergent phenomena<a class="headerlink" href="#emergent-phenomena" title="Permalink to this heading"></a></h2>
 <p>In the previous discussion, we described how statistical mechanics is developed initially. It is developed to complete our understanding of thermodynamics. However, after it was developed, people found this concept very powerful and could be applied to various circumstances. It is useful, in general, when the number of degrees of freedom is huge.</p>
 <p>From this point of view, learning statistical mechanics by connecting with thermodynamics is just a tool or a process to rationalize an idea: when the number of degrees of freedom is huge, it is possible that another relative tiny set of observables can describe the macroscopic properties. Those observables are related to each other in certain ways that are not obvious how they are related to microscopic physics. One might be able to find those observables and their relations using approaches that similar to statistical mechanics.</p>
-<p>This is the idea of emergent phenomena. However, the detailed definition of emergence is beyond the scope of this course. So I will list some references and use simple examples to describe the idea. <a class="reference external" href="https://www.nature.com/articles/npjquantmats201624">Here is one reference by S. Kivelson</a></p>
+<p>This is the idea of emergent phenomena. However, the detailed definition of emergence is beyond the scope of this course. So I will list some references and use simple examples to describe the idea. <a class="reference external" href="https://www.nature.com/articles/npjquantmats201624">Here is one reference by S. Kivelson</a>. In short, <strong>an emergent behavior of a physical system is a qualitative property that can only occur in the limit that the number of microscopic constituents tends to infinity</strong>. For example, microscopic physics laws are reversible. However, an increase in entropy is an irreversible process that is emergent.</p>
 <p>Let’s take a group of people as an example. Suppose we have <span class="math notranslate nohighlight">\(10\times M\)</span> people. They interact in some fashion. In system A, we have <span class="math notranslate nohighlight">\(M\)</span> basketball games. In system B, we run an election for the president of a fictitious country. Let’s assume <span class="math notranslate nohighlight">\(M\)</span> is a large number.</p>
 <p>To understand the behavior of our system A. It is quite simple; we know they are playing basketball games. Once we know the rules of a basketball game, system A will be described accurately by the rule of basketball games. We might have different scores and rebound numbers for each player, but we understand it more or less. They are just basketball games. No emergent phenomena.</p>
 <p>To understand the behavior of system B. It is much more challenging. The citizens in system B will exchange their opinion with each other.

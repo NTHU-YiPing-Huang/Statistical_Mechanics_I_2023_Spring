@@ -8,7 +8,7 @@ The quotes above are very elegant descriptions about the attitude of learning. I
 
 ## Basic information
 * Time: Thursday 13:20-16:20
-* Classroom: Physics building, Room <+124+> 
+* Classroom: Physics building, Room 124 
 * Instructor: Yi-Ping Huang
 * Office hours: After the course or by appointment (Online or at Room 517)
 * Teaching assistant: **<+TBA+>**, **<+TBA+>**, and **<+TBA+>**
@@ -78,6 +78,7 @@ A good reference is the one that you are willing to read.
 
 ## Acknowledgement:
 
+* Prof. Christopher Laumann : for allowing us to use the python tutorial scripts.
 
 ## Outline of the course
 
@@ -98,21 +99,21 @@ A good reference is the one that you are willing to read.
 | 02.16   | Course overview -- Basic information, course description, and survey of the background.                                                                                                                                                                                                                                         |
 | 02.23   | Introduction -- Thermodynamics, statistical mechanics and the concept of emergence. (**Due: HW0**) <br /> (**Random walks**, concept of the **scaling invariance**, and the **universality class**.)                                                                                                                                           |
 | 03.02   | Introduction -- (Continue) Thermodynamics, statistical mechanics and the concept of emergence. <br /> (the **diffusion equation**: microscopic picture and the effective theory.)                                                                                                                                                              |
-| 03.09   | Introduction -- (Continue) Thermodynamics, statistical mechanics and the concept of emergence. <br /> (Solution of the **diffusion equation** and **basic probability theory**.)                                                                                                                                                               |
-| 03.16    | Statistical postulates and review of thermodynamics. <br /> (The ideal gas example and the formal structure of thermodynamics.)                                                                                                                                                                                                 |
-| 03.23    | Statistical postulates and review of thermodynamics. <br /> ( (Continue) the formal structure of thermodynamics--Key properties of entropy. **HW1 due**)                                                                                                                                                                        |
-| 03.30    | The fundamental postulates of statistical mechanics <br /> (The idea of phase space, observables, Boltzmann's entropy formula, the idea of Liouville's theorem )                                                                                                                                                                |
-| 04.06    | The fundamental postulates of statistical mechanics <br /> (Proof of Liouville's theorem, variational principle of the entropy, quantum version of the Boltzmann's postulate, the phase space of ideal gas, the **microcanonical ensemble**. **HW2 due**)                                                                       |
-| 04.13    | The fundamental postulates of statistical mechanics <br /> (The **canonical ensemble**, **generalized ensemble**, **Grand canonical ensemble**.)                                                                                                                                                                                |
-| 04.20    | **The midterm exam** (**HW3 due**)                                                                                                                                                                                                                                                                                              |
-| 04.27    | The interacting free systems <br /> (Single mode harmonic oscillator, midterm exam discussion)                                                                                                                                                                                                                                  |
-| 05.04    | The interacting free systems <br /> (Concept of Brillouin zone, Phonon and Debye model, photon)                                                                                                                                                                                                                                 |
-| 05.11    | The interacting free systems <br /> (Fermions and bosons, quantum statistics, Hamiltonian and Hilbert space of many-particle systems.  **HW4 due**)                                                                                                                                                                             |
-| 05.18    | The interacting free systems <br /> (Fermi sea and Bose-Einstein condensation) <br /> Phases and phase transitions <br /> (Motivation of the study of phases and phase transitions.)                                                                                                                                            |
-| 05.25    | Phases and phase transitions <br /> (Phases and phase diagram, thermodynamic limit, phase transitions, symmetry and spontaneous symmetry braking (I:Introduction), classical Ising model and the phase diagram **HW5 due**)                                                                                                     |
-| 06.01    | Phases and phase transitions <br /> ( The heuristic arguments of the phase diagram of Ising model, spontaneous symmetry breaking(II: Analytic property of free energy for finite and thermodynamic system).)                                                                                                                    |
-| 06.08    | Phases and phase transitions <br /> ( Spontaneous symmetry breaking(III: Ergodicity breaking), the one-dimensional Ising model and the transfer matrix method, The Weiss mean field theory and the universality class, comparing Ising model and Van der Waals gas model, symmetry and the Ginsburg-Landau theory. **HW6 due**) |
-| 06.15  | **Final exam(online)**                                                                                                                                                                                                                                                                                                          |
+| 03.09   | Introduction -- (Continue) Thermodynamics, statistical mechanics and the concept of emergence. <br /> (Solution of the **diffusion equation** and **basic probability theory**. )                                                                                                                                                              |
+| 03.16   | Statistical postulates and review of thermodynamics. <br /> (The ideal gas example and the formal structure of thermodynamics. **HW1 due**)                                                                                                                                                                                                    |
+| 03.23   | Statistical postulates and review of thermodynamics. <br /> ( (Continue) the formal structure of thermodynamics--Key properties of entropy. )                                                                                                                                                                                       |
+| 03.30   | The fundamental postulates of statistical mechanics <br /> (The idea of phase space, observables, Boltzmann's entropy formula, the idea of Liouville's theorem **HW2 due**)                                                                                                                                                                               |
+| 04.06   | The fundamental postulates of statistical mechanics <br /> (Proof of Liouville's theorem, variational principle of the entropy, quantum version of the Boltzmann's postulate, the phase space of ideal gas, the **microcanonical ensemble**. )                                                                                                            |
+| 04.13   | The fundamental postulates of statistical mechanics <br /> (The **canonical ensemble**, **generalized ensemble**, **Grand canonical ensemble**. **HW3 due**)                                                                                                                                                                                              |
+| 04.20   | **The midterm exam**                                                                                                                                                                                                                                                                                                                                      |
+| 04.27   | The interacting free systems <br /> (Single mode harmonic oscillator, midterm exam discussion)                                                                                                                                                                                                                                                            |
+| 05.04   | The interacting free systems <br /> (Concept of Brillouin zone, Phonon and Debye model, photon) **HW4 due**                                                                                                                                                                                                                                               |
+| 05.11   | The interacting free systems <br /> (Fermions and bosons, quantum statistics, Hamiltonian and Hilbert space of many-particle systems.  )                                                                                                                                                                                                                  |
+| 05.18   | The interacting free systems <br /> (Fermi sea and Bose-Einstein condensation) <br /> Phases and phase transitions <br /> (Motivation of the study of phases and phase transitions.) **HW5 due**                                                                                                                                                          |
+| 05.25   | Phases and phase transitions <br /> (Phases and phase diagram, thermodynamic limit, phase transitions, symmetry and spontaneous symmetry braking (I:Introduction), classical Ising model and the phase diagram )                                                                                                                                          |
+| 06.01   | Phases and phase transitions <br /> ( The heuristic arguments of the phase diagram of Ising model, spontaneous symmetry breaking(II: Analytic property of free energy for finite and thermodynamic system).) **HW6 due**                                                                                                                                  |
+| 06.08    | Phases and phase transitions <br /> ( Spontaneous symmetry breaking(III: Ergodicity breaking), the one-dimensional Ising model and the transfer matrix method, The Weiss mean field theory and the universality class, comparing Ising model and Van der Waals gas model, symmetry and the Ginsburg-Landau theory. ) |
+| 06.15  | **Final exam**                                                                                                                                                                                                                                                                                                          |
 
 ## How to benefit from the course? 
 
@@ -140,6 +141,19 @@ The correct mindset: to pass the course is not difficult; to learn something req
 	Proof $a^2+b^2=c^2$ for a right triangle using dimensional analysis.
 	```
 4. Some of the material will be in the jupyter notebook format. That means you can download the jupyter notebook and run your own simulation.
+
+5. We can use tabs to understand the conclusion from different scopes. For example, the Pythagorean theorem is
+
+	````{tab} Mathematics
+	```math
+	A result for right triangle.
+	```
+	````
+	````{tab} Physics
+	```phys
+	A result for dimensional analysis.
+	```
+	````
 
 
 

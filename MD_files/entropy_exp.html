@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The fundamental postulate &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="../_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -89,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="the-fundamental-postulate">
-<h1>The fundamental postulate<a class="headerlink" href="#the-fundamental-postulate" title="Permalink to this headline"></a></h1>
+<h1>The fundamental postulate<a class="headerlink" href="#the-fundamental-postulate" title="Permalink to this heading"></a></h1>
 <p>The fundamental postulate is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -97,7 +98,7 @@ S=k_B\ln(|\Gamma|)\text{.}
 \]</div>
 <p>After we know what is the meaning of accessible phase space, we would like to discuss the meaning of the equality sign. Because the equality should be interpreted at the thermodynamic limit where <span class="math notranslate nohighlight">\(N\to\infty\)</span>, we have to some flexibility to define entropy using different expressions.</p>
 <section id="accessible-phase-space-is-specified-by-the-extensive-variables">
-<h2>Accessible phase space is specified by the extensive variables<a class="headerlink" href="#accessible-phase-space-is-specified-by-the-extensive-variables" title="Permalink to this headline"></a></h2>
+<h2>Accessible phase space is specified by the extensive variables<a class="headerlink" href="#accessible-phase-space-is-specified-by-the-extensive-variables" title="Permalink to this heading"></a></h2>
 <p>The system’s microscopic configuration leads to different extensive thermodynamics properties. Therefore, the extensive variables actually restrict the accessible region in the phase space.</p>
 <p>Since we assume the thermodynamic state of the system can be specified by extensive variables <span class="math notranslate nohighlight">\(X_1,X_2,\cdots, X_r\)</span>. Suppose we have uncertainties <span class="math notranslate nohighlight">\(\Delta X_i\)</span> for each extensive variable. The accessible phase space of the system and entropy can be expressed as</p>
 <div class="math notranslate nohighlight">
@@ -119,7 +120,7 @@ S_1(E)=k_B\ln\left[\int d\xi \theta(H(\xi)-(E-\Delta E))\theta(E-H(\xi))
 \]</div>
 </section>
 <section id="different-expressions-of-entropy">
-<h2>Different expressions of entropy<a class="headerlink" href="#different-expressions-of-entropy" title="Permalink to this headline"></a></h2>
+<h2>Different expressions of entropy<a class="headerlink" href="#different-expressions-of-entropy" title="Permalink to this heading"></a></h2>
 <p>To understand the behavior of <span class="math notranslate nohighlight">\(S(\left\{X_i\right\})\)</span>, we need to understand the behavior of the phase space volume with this expression. One of the key property of this expression is due to the high dimensionality of phase space. <span class="math notranslate nohighlight">\(\xi\)</span> is a vector in the <span class="math notranslate nohighlight">\(6N\)</span> dimensional space with <span class="math notranslate nohighlight">\(N\sim \mathcal{O}(10^{23})\)</span>. In the homework 2, we observe <strong>the volume integral of high-dimensional space has the property that the volume is dominated by the outermost shell</strong>. That is, if we define the phase space volume differently as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -134,7 +135,7 @@ S_1(E)=k_B\ln\left[\int d\xi \theta(H(\xi)-(E-\Delta E))\theta(E-H(\xi))
 <p><strong>We can use <span class="math notranslate nohighlight">\(S_2(E)\)</span> to see that it is a monotonic increasing function with <span class="math notranslate nohighlight">\(E\)</span></strong>. Can we see <span class="math notranslate nohighlight">\(S(E)\)</span> is also extensive?</p>
 </section>
 <section id="the-variation-principle-of-entropy">
-<h2>The variation principle of entropy<a class="headerlink" href="#the-variation-principle-of-entropy" title="Permalink to this headline"></a></h2>
+<h2>The variation principle of entropy<a class="headerlink" href="#the-variation-principle-of-entropy" title="Permalink to this heading"></a></h2>
 <p>Consider system <span class="math notranslate nohighlight">\(A\)</span> and system <span class="math notranslate nohighlight">\(B\)</span> are both isolated systems. (Energies of system <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are independently conserved) The microscopic confiugration for system <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are represented by <span class="math notranslate nohighlight">\(\xi_A\)</span> and <span class="math notranslate nohighlight">\(\xi_B\)</span>. Now if we consider the two system as a whole, the microscopic configuration of the composite system is <span class="math notranslate nohighlight">\(\xi=\left\{\xi_A,\xi_B\right\}\)</span>. Since the two system are isolated from each other, the microscopic configuration <span class="math notranslate nohighlight">\(\xi_A\)</span> is completely independent of <span class="math notranslate nohighlight">\(\xi_B\)</span>. That means the phase space volume is simiply the product of the two, <em>i.e.</em></p>
 <div class="math notranslate nohighlight">
 \[
@@ -173,7 +174,7 @@ k\equiv \frac{\partial }{\partial E} \underbrace{\frac{\partial S}{\partial E} }
 </div>
 </section>
 <section id="the-fundamental-postulate-quantum-version">
-<h2>The fundamental postulate, quantum version<a class="headerlink" href="#the-fundamental-postulate-quantum-version" title="Permalink to this headline"></a></h2>
+<h2>The fundamental postulate, quantum version<a class="headerlink" href="#the-fundamental-postulate-quantum-version" title="Permalink to this heading"></a></h2>
 <p>There is no fundamental unit of the phase space in classical mechanics. However, the quantum mechanics provide a natural unit for the phase space according to the uncertainty principle <span class="math notranslate nohighlight">\(\Delta x\Delta p\sim h\)</span>. A nature generalization of the Boltzman’s postulate is</p>
 <div class="math notranslate nohighlight">
 \[

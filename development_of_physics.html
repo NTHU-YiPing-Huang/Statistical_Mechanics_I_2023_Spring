@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The applications of statistical mechanics &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+  <title>The development of physics &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
@@ -36,13 +36,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
         <script async="async" src="_static/sphinx-thebe.js"></script>
-        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Basic concepts in probability theory" href="basic_prob.html" />
-    <link rel="prev" title="Motivation: Why learn statistical mechanics?" href="motivation.html" /> 
+    <link rel="next" title="Thermodynamics as an effective theory" href="thermodynamics.html" />
+    <link rel="prev" title="How to ask a question?" href="How_to_ask.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -64,10 +62,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="introduction.html">Introduction</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The development of physics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The applications of statistical mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
 </ul>
 </li>
@@ -90,9 +88,9 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="wy-breadcrumbs">
       <li><a href="syllabus.html" class="icon icon-home"></a></li>
           <li class="breadcrumb-item"><a href="introduction.html">Introduction</a></li>
-      <li class="breadcrumb-item active">The applications of statistical mechanics</li>
+      <li class="breadcrumb-item active">The development of physics</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/scope.md" rel="nofollow"> View page source</a>
+            <a href="_sources/development_of_physics.md" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -100,54 +98,48 @@ const thebe_selector_output = ".output, .cell_output"
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="the-applications-of-statistical-mechanics">
-<h1>The applications of statistical mechanics<a class="headerlink" href="#the-applications-of-statistical-mechanics" title="Permalink to this heading"></a></h1>
-<section id="difference-between-statistical-mechanics-with-classical-mechanics-electrodynamics-and-quantum-mechanics">
-<h2>Difference between statistical mechanics with classical mechanics, electrodynamics, and quantum mechanics<a class="headerlink" href="#difference-between-statistical-mechanics-with-classical-mechanics-electrodynamics-and-quantum-mechanics" title="Permalink to this heading"></a></h2>
-<p>Here, we are going to make a comparison between statistical mechanics and other fundamental subjects that we encountered in physics.</p>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Subject</p></th>
-<th class="head text-align:left"><p>Status of the system</p></th>
-<th class="head text-align:left"><p>Evolution in time</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Classical mechanics</p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\{\textbf{x}_{j}(t)\}, \left\{\frac{d \textbf{x}_{j}(t)}{d t}\right\}\)</span></p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\mathcal{L\left(\{\textbf{x}_{j}(t)\}, \{\frac{d \textbf{x}_{j}(t)}{d t}\},t\right)}\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p>Electrodynamics</p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\textbf{A}(\textbf{x},t), V(\textbf{x},t)\)</span></p></td>
-<td class="text-align:left"><p>Maxwell’s equations</p></td>
-</tr>
-<tr class="row-even"><td><p>Quantum mechanics</p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\vert \psi(t)\rangle\)</span></p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(i\hbar\frac{\partial \vert \psi(t)\rangle}{\partial t}=\widehat{H}\vert \psi(t)\rangle\)</span></p></td>
-</tr>
-</tbody>
-</table>
-<p>In the above table, we found the structure of the theory of classical mechanics, electrodynamics, and quantum mechanics all describes the system’s status by some functions and determines the evolution of the system in time through the equation of motion.</p>
-<p>Statistical mechanics is different. It is a theory for a large number of degrees of freedom. We don’t have the full information on the status of the system. Therefore, it is impossible and impractical to track the full evolution of our system. To make progress, we need to adjust the approach. Instead of the precise initial information, we focus on the <strong>statistical properties</strong> of the initial conditions. We will be satisfied if we can make predictions about the system’s statistical properties.</p>
-</section>
-<section id="effective-theory-beyond-the-microscopic-understanding-of-thermodynamics">
-<h2>Effective theory beyond the microscopic understanding of thermodynamics<a class="headerlink" href="#effective-theory-beyond-the-microscopic-understanding-of-thermodynamics" title="Permalink to this heading"></a></h2>
-<p>As we stressed in the previous discussions, the idea of effective theory and emergent phenomena is beyond the connection between microscopic physics and macroscopic physics. Also, since the framework is not tied with microscopic physics, the application of statistical mechanics covers a huge range of physics. Here, we just show some exciting applications and leave our readers to explore the beautiful connection between statistical mechanics and X!</p>
-<ul class="simple">
-<li><p>Machine learning:<a class="reference external" href="https://arxiv.org/abs/2106.10165?fbclid=IwAR1yLJrpo-XZKgfGpmtXwnQVDCiqj6-FCUi58YfzsLjwwEqcotLcUGmGLns">Deep learning theory</a></p></li>
-<li><p>Complex systems</p>
-<ul>
-<li><p>Forest fires: <a class="reference external" href="https://www.pnas.org/content/pnas/112/3/669.full.pdf">percolation problems</a></p></li>
-<li><p>Spin glasses and optimization problems of complex systems: <a class="reference external" href="http://wexler.free.fr/library/files/kirkpatrick%20(1983)%20optimization%20by%20simulated%20annealing.pdf">Simulated annealing</a></p></li>
-</ul>
-</li>
-<li><p>black hole</p>
-<ul>
-<li><p><a class="reference external" href="https://physicstoday.scitation.org/doi/pdf/10.1063/1.2913906">Black hole thermodynamics</a></p></li>
-</ul>
-</li>
-</ul>
-</section>
+  <p>(development of physics)=</p>
+<section class="tex2jax_ignore mathjax_ignore" id="the-development-of-physics">
+<h1>The development of physics<a class="headerlink" href="#the-development-of-physics" title="Permalink to this heading"></a></h1>
+<p>Reference: <a class="reference external" href="https://www.youtube.com/watch?v=qnX489DkpWw">20150319 物理大師楊振寧院士 科普講座 美與物理學</a></p>
+<p>The above online video is given by Prof. Chen-Ning Yang. It is a worth watching video. Unfortunately, it is only offered in Mandarin. One of the interesting discussion is about the structure for physics development.</p>
+<p>There are usually four steps</p>
+<ol class="simple">
+<li><p>Experiments</p></li>
+<li><p>Phenomenological theory</p></li>
+<li><p>Theoretical framework</p></li>
+<li><p>Mathematics</p></li>
+</ol>
+<p>Each parts are iterated between each other several times and eventually they are established in a self-consistent way.</p>
+<p>For example,</p>
+<p>In classical mechanics, we study the dynamics of <strong>particles</strong> acted by forces.</p>
+<ol class="simple">
+<li><p>Experiment: Observation of the orbits from earth- <a class="reference external" href="https://en.wikipedia.org/wiki/Tycho_Brahe">Tycho Brahe</a></p></li>
+<li><p>Phenomenological theory: Kepler’s laws of planetary motion- <a class="reference external" href="https://en.wikipedia.org/wiki/Johannes_Kepler">Johannes Kepler</a></p></li>
+<li><p>Theoretical framework: Newton’s law of motion- <a class="reference external" href="https://en.wikipedia.org/wiki/Isaac_Newton">Isaac Newton</a></p></li>
+<li><p>Mathematics: <a class="reference external" href="https://en.wikipedia.org/wiki/Calculus">Calculus</a></p></li>
+</ol>
+<p>In electromagnetic theory, we study the dynamics of <strong>fields</strong> that mediated the forces. The simplest <strong>gauge structure</strong> in nature.</p>
+<ol class="simple">
+<li><p>Experiment:  <a class="reference external" href="https://en.wikipedia.org/wiki/Coulomb">Coulomb</a> et. al.</p></li>
+<li><p>Phenomenological theory: <a class="reference external" href="https://en.wikipedia.org/wiki/Michael_Faraday">Michael Faraday</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Andr%C3%A9-Marie_Amp%C3%A8re">Andre-Marie Ampere</a></p></li>
+<li><p>Theoretical framework: <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell%27s_equations">Maxwell’s equations</a></p></li>
+<li><p>Mathematics: <a class="reference external" href="https://en.wikipedia.org/wiki/Fiber_bundle">Fibre bundle?</a></p></li>
+</ol>
+<p>In quantum mechanics, we study objects that has the dynamics that has the <strong>particle</strong> and <strong>wave</strong>  nature. A little bit of the mixture of the previous two…</p>
+<ol class="simple">
+<li><p>Experiments: Black-body radiation- <a class="reference external" href="https://en.wikipedia.org/wiki/Gustav_Kirchhoff">Gustav Kirchhoff</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Josef_Stefan">Josef Stefan</a></p></li>
+<li><p>Phenomenological theory: Planck’s law- <a class="reference external" href="https://en.wikipedia.org/wiki/Max_Planck">Max Planck</a></p></li>
+<li><p>Theoretical framework: Quantum Mechanics- <a class="reference external" href="https://en.wikipedia.org/wiki/Werner_Heisenberg">Werner Heisenberg</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger">Erwin Schödinger</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Paul_Dirac">Paul Dira</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Max_Born">Max Born</a>, etc.</p></li>
+<li><p>Mathematics: <a class="reference external" href="https://en.wikipedia.org/wiki/Hilbert_space">Hilbert space</a></p></li>
+</ol>
+<p>In thermodynamics, we study a <strong>system with macroscopic number of degrees of freedom</strong>.</p>
+<ol class="simple">
+<li><p>Experiments: ??</p></li>
+<li><p>Phenomenological theory: Thermodynamics- <a class="reference external" href="https://en.wikipedia.org/wiki/Nicolas_L%C3%A9onard_Sadi_Carnot">Carnot</a>,<a class="reference external" href="https://en.wikipedia.org/wiki/James_Prescott_Joule">James Prescott Joule</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Rudolf_Clausius">Rudolf Clausius</a></p></li>
+<li><p>Theoretical framework: Statistical Mechanics -<a class="reference external" href="https://en.wikipedia.org/wiki/Ludwig_Boltzmann">Ludwig Boltzmann</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/James_Clerk_Maxwell">James Clerk Maxwell</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Josiah_Willard_Gibbs">Josiah Willard Gibbs</a></p></li>
+<li><p>Mathematics: ? or simply too many…</p></li>
+</ol>
 </section>
 
     <script type="text/x-thebe-config">
@@ -173,8 +165,8 @@ const thebe_selector_output = ".output, .cell_output"
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="motivation.html" class="btn btn-neutral float-left" title="Motivation: Why learn statistical mechanics?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="basic_prob.html" class="btn btn-neutral float-right" title="Basic concepts in probability theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="How_to_ask.html" class="btn btn-neutral float-left" title="How to ask a question?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="thermodynamics.html" class="btn btn-neutral float-right" title="Thermodynamics as an effective theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

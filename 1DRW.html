@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>One dimensional random walk &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -97,9 +98,9 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="one-dimensional-random-walk">
-<h1>One dimensional random walk<a class="headerlink" href="#one-dimensional-random-walk" title="Permalink to this headline"></a></h1>
+<h1>One dimensional random walk<a class="headerlink" href="#one-dimensional-random-walk" title="Permalink to this heading"></a></h1>
 <section id="the-coin-flipping-game">
-<h2>The coin-flipping game<a class="headerlink" href="#the-coin-flipping-game" title="Permalink to this headline"></a></h2>
+<h2>The coin-flipping game<a class="headerlink" href="#the-coin-flipping-game" title="Permalink to this heading"></a></h2>
 <p>Let’s start our discussion by understanding the results of successive coin flipping sequences. Suppose we have an unbiased coin that has an equal probability of <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> to have heads or tails. To simplify our mathematical analysis, we can use a variable <span class="math notranslate nohighlight">\(l_j=+1,-1\)</span> to denote the outcome, heads or tails, of the <span class="math notranslate nohighlight">\(j\)</span>-th flip.
 In each trial, we flip the coin <span class="math notranslate nohighlight">\(N\)</span> times. So we can use a binary sequence, <span class="math notranslate nohighlight">\(\{l_1,l_2,\cdots, l_N\}\)</span> to represent the result of the trial. So the first question we can ask is: how many different results could we get? The answer is simple; we will have <span class="math notranslate nohighlight">\(\underbrace{2\times2\times\cdots\times2}_{N\text{ of them}}=2^N\)</span>.</p>
 <p>The binary sequence is not very informative. We can ask a further question: what quantity should we calculate to know something about those results? One quantity is</p>
@@ -124,7 +125,7 @@ We will use the notation <span class="math notranslate nohighlight">\(\langle A 
 <p>Immediately we can notice <span class="math notranslate nohighlight">\(\langle S_N\rangle=0\)</span> even when <span class="math notranslate nohighlight">\(N\neq1\)</span> because we have equal probability for <span class="math notranslate nohighlight">\(S_N&gt;0\)</span> and <span class="math notranslate nohighlight">\(S_N&lt;0\)</span>. <span class="math notranslate nohighlight">\(S_N\)</span> gives us the information whether we have more heads or tails. <span class="math notranslate nohighlight">\(\langle S_N\rangle=0\)</span> tells us that the probability to have more heads is equal to the probability to have more tails.</p>
 </section>
 <section id="walking-back-and-forth">
-<h2>Walking back and forth<a class="headerlink" href="#walking-back-and-forth" title="Permalink to this headline"></a></h2>
+<h2>Walking back and forth<a class="headerlink" href="#walking-back-and-forth" title="Permalink to this heading"></a></h2>
 <p>Now, let’s try to twist the coin-flipping game a little bit. Suppose we hold a coin and move on a one-dimensional line starting from the origin. We decide our move according to the result of the coin-flipping game. When we got heads, we moved forward; when we got tails, we moved backward. Here we define <span class="math notranslate nohighlight">\(X_N=S_N=\sum_{j=1}^N l_j\)</span> just to remind ourselves that we are discussing the position after <span class="math notranslate nohighlight">\(N\)</span> steps.</p>
 <figure class="align-default" id="drw-fig">
 <a class="reference internal image-reference" href="_images/1D_RW_3.png"><img alt="_images/1D_RW_3.png" src="_images/1D_RW_3.png" style="width: 750px;" /></a>

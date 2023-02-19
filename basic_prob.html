@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Basic concepts in probability theory &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
@@ -11,18 +11,19 @@
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
@@ -62,6 +63,8 @@ const thebe_selector_output = ".output, .cell_output"
               <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="introduction.html">Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
@@ -98,11 +101,11 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="basic-concepts-in-probability-theory">
-<h1>Basic concepts in probability theory<a class="headerlink" href="#basic-concepts-in-probability-theory" title="Permalink to this headline"></a></h1>
+<h1>Basic concepts in probability theory<a class="headerlink" href="#basic-concepts-in-probability-theory" title="Permalink to this heading"></a></h1>
 <section id="simple-notions">
-<h2>Simple notions<a class="headerlink" href="#simple-notions" title="Permalink to this headline"></a></h2>
+<h2>Simple notions<a class="headerlink" href="#simple-notions" title="Permalink to this heading"></a></h2>
 <section id="what-is-probability">
-<h3>What is probability?<a class="headerlink" href="#what-is-probability" title="Permalink to this headline"></a></h3>
+<h3>What is probability?<a class="headerlink" href="#what-is-probability" title="Permalink to this heading"></a></h3>
 <p>Suppose we have a set <span class="math notranslate nohighlight">\(\Omega\)</span> and we have several events <span class="math notranslate nohighlight">\(\omega\in\Omega\)</span>. If we randomly pick an event <span class="math notranslate nohighlight">\(\omega\)</span>, we can ask: how frequently we will get an event satisfy certain criteria <span class="math notranslate nohighlight">\(\Lambda\)</span>? The probability to have event <span class="math notranslate nohighlight">\(\lambda\in\Lambda\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -110,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
 \]</div>
 </section>
 <section id="probability-of-multiple-variables">
-<h3>Probability of multiple variables<a class="headerlink" href="#probability-of-multiple-variables" title="Permalink to this headline"></a></h3>
+<h3>Probability of multiple variables<a class="headerlink" href="#probability-of-multiple-variables" title="Permalink to this heading"></a></h3>
 <p>In statistical mechanics, usually we need to face probability descriptions of multiple variables. We will use a simple example to demonstrate the following concepts.</p>
 <p>Suppose we have <span class="math notranslate nohighlight">\(\Omega\)</span> formed by integers with color red, green and blue.</p>
 <div class="math notranslate nohighlight">
@@ -126,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
 </figcaption>
 </figure>
 <section id="joint-probability">
-<h4>Joint probability<a class="headerlink" href="#joint-probability" title="Permalink to this headline"></a></h4>
+<h4>Joint probability<a class="headerlink" href="#joint-probability" title="Permalink to this heading"></a></h4>
 <p>The joint probability ask what is the probability of two conditions to be true at the same time.
 For example, we can ask what is the probability that we have red odd integers? <span class="math notranslate nohighlight">\(P(red,odd)=\frac{\beta}{\alpha+\beta+\gamma+\delta}=\frac{2}{9}\)</span>.</p>
 <p>We have <span class="math notranslate nohighlight">\(P(a,b)=P(b,a)\)</span> in general.</p>
@@ -137,7 +140,7 @@ For example, we can ask what is the probability that we have red odd integers? <
 \]</div>
 </section>
 <section id="margin-probability">
-<h4>Margin probability<a class="headerlink" href="#margin-probability" title="Permalink to this headline"></a></h4>
+<h4>Margin probability<a class="headerlink" href="#margin-probability" title="Permalink to this heading"></a></h4>
 <p>The margin probability means we sum over all the possibilities of one condition. For example, we can ask what is the probability to have red integer in this case. We can derive that from the joint probability and sum over the even and odd cases with color red.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -145,7 +148,7 @@ P_A(a)=\sum_{b\in B}P(a,b)\xrightarrow{i.e.} P_{color}(Red)=\sum_{parity}P(Red,p
 \]</div>
 </section>
 <section id="conditional-probability">
-<h4>Conditional probability<a class="headerlink" href="#conditional-probability" title="Permalink to this headline"></a></h4>
+<h4>Conditional probability<a class="headerlink" href="#conditional-probability" title="Permalink to this heading"></a></h4>
 <p>Conditional probability of <span class="math notranslate nohighlight">\(b\)</span> given <span class="math notranslate nohighlight">\(a\)</span> is denoted as <span class="math notranslate nohighlight">\(P(b|a)\)</span>. For example, we can ask what is the conditional probability of we pick a red integer given the integers are odd.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -178,12 +181,12 @@ P(red|odd)=\frac{P(odd|red)P_{color}(red)}{P(odd|red)P_{color}(red)+P(odd|\text{
 </section>
 </section>
 <section id="independent-variables">
-<h3>Independent variables<a class="headerlink" href="#independent-variables" title="Permalink to this headline"></a></h3>
+<h3>Independent variables<a class="headerlink" href="#independent-variables" title="Permalink to this heading"></a></h3>
 <p>If <span class="math notranslate nohighlight">\(P(a,b)=P_A(a)P_B(b)\)</span>, we said <span class="math notranslate nohighlight">\(a,b\)</span> are independent variables.</p>
 <p>This is because the conditional probability is <span class="math notranslate nohighlight">\(P(a|b)=\frac{P(a,b)}{P_B(b)}\xrightarrow{independent}\frac{P_A(a)P_B(b)}{P_B(b)}=P_A(a)\)</span> is independent of <span class="math notranslate nohighlight">\(b\)</span>!</p>
 </section>
 <section id="mean-variance-and-standard-deviation">
-<h3>Mean, variance and standard deviation<a class="headerlink" href="#mean-variance-and-standard-deviation" title="Permalink to this headline"></a></h3>
+<h3>Mean, variance and standard deviation<a class="headerlink" href="#mean-variance-and-standard-deviation" title="Permalink to this heading"></a></h3>
 <p>For a random variable <span class="math notranslate nohighlight">\(a\)</span> and the function <span class="math notranslate nohighlight">\(F\)</span> will map it to another random variable <span class="math notranslate nohighlight">\(F(a)\)</span>.</p>
 <ol class="simple">
 <li><p>Mean: <span class="math notranslate nohighlight">\(\langle F\rangle \equiv \sum_a F(a) P_A(a)\)</span>.</p></li>
@@ -195,9 +198,9 @@ That is,
 </ol>
 </section>
 <section id="gaussian-integral">
-<h3>Gaussian integral<a class="headerlink" href="#gaussian-integral" title="Permalink to this headline"></a></h3>
+<h3>Gaussian integral<a class="headerlink" href="#gaussian-integral" title="Permalink to this heading"></a></h3>
 <section id="one-dimensional-gaussian-integral">
-<h4>One-dimensional Gaussian integral.<a class="headerlink" href="#one-dimensional-gaussian-integral" title="Permalink to this headline"></a></h4>
+<h4>One-dimensional Gaussian integral.<a class="headerlink" href="#one-dimensional-gaussian-integral" title="Permalink to this heading"></a></h4>
 <div class="math notranslate nohighlight">
 \[
 G_1=\int_{\infty}^{\infty}e^{-ax^2}dx\text{.}
@@ -220,7 +223,7 @@ G_1'=\int_{\infty}^{\infty}e^{-ax^2+bx}dx\text{.}
 <p>The result will be left as an exercise.</p>
 </section>
 <section id="multidimensional-gaussian-integral">
-<h4>Multidimensional Gaussian integral<a class="headerlink" href="#multidimensional-gaussian-integral" title="Permalink to this headline"></a></h4>
+<h4>Multidimensional Gaussian integral<a class="headerlink" href="#multidimensional-gaussian-integral" title="Permalink to this heading"></a></h4>
 <p>The multidimensional Gaussian integral is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -230,7 +233,7 @@ G_N=\int_{\infty}^{\infty}dx_1\int_{-\infty}^{\infty}dx_2...\int_{-\infty}^{\inf
 </section>
 </section>
 <section id="stirling-s-approximation">
-<h3>Stirling’s approximation<a class="headerlink" href="#stirling-s-approximation" title="Permalink to this headline"></a></h3>
+<h3>Stirling’s approximation<a class="headerlink" href="#stirling-s-approximation" title="Permalink to this heading"></a></h3>
 <p>By definition</p>
 <div class="math notranslate nohighlight">
 \[
@@ -263,7 +266,7 @@ N!\approx \int_0^{\infty}e^{f(N)-\frac{(x-N)^2}{2N}} dx=e^{N\ln N-N} \sqrt{2\pi 
 </section>
 </section>
 <section id="sets-of-independent-random-numbers">
-<h2>Sets of independent random numbers<a class="headerlink" href="#sets-of-independent-random-numbers" title="Permalink to this headline"></a></h2>
+<h2>Sets of independent random numbers<a class="headerlink" href="#sets-of-independent-random-numbers" title="Permalink to this heading"></a></h2>
 <p>Suppose we have a vector <span class="math notranslate nohighlight">\(\{F_1,F_2,...,F_N\}\)</span> where <span class="math notranslate nohighlight">\(F_j\)</span> are independent random variables. In general, <span class="math notranslate nohighlight">\(F_j\)</span> is chosen from the probability distribution function <span class="math notranslate nohighlight">\(P_j(F_j)\)</span>. (Mathematically, we allow <span class="math notranslate nohighlight">\(P_j(F_j)\)</span> to be arbitrary distribution functions. However, in physical settings, usually <span class="math notranslate nohighlight">\(P_j(F_j)\)</span> is a fixed function.) This is almost equivalent to our random walk problem. Let’s try to evaluate the sum of this vector.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -302,7 +305,7 @@ S_N=\sum_{j=1}^N F_j
 </ul>
 </section>
 <section id="before-we-enter-statistical-mechanics">
-<h2>Before we enter statistical mechanics<a class="headerlink" href="#before-we-enter-statistical-mechanics" title="Permalink to this headline"></a></h2>
+<h2>Before we enter statistical mechanics<a class="headerlink" href="#before-we-enter-statistical-mechanics" title="Permalink to this heading"></a></h2>
 <p>Why do we spend lectures talking about statistics?</p>
 <ul class="simple">
 <li><p>The trivial reason: We need to those ideas for the future lectures.</p></li>
