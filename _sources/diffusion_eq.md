@@ -262,5 +262,61 @@ To get the time evolution of a density profile, all we need to do is to input th
 
 Now let's look at the Green's function; we found it is a Gaussian function with standard deviation $\sigma(t)=\sqrt{2Dt}$. From our previous simple model, we know $D=\frac{a^2}{2\Delta t}$. Then we got $\sigma(t)=\sqrt{2\frac{a^2}{2\Delta t}t}=a\sqrt{t/\Delta t}=a\sqrt{N}$ which is equivalent with the $N$-steps random walk with step size $a$. To some extent, Green's function having a function form of a Gaussian is closely related to the central limit theorem.  The central limit theorem suggests the sum of independent variables has a probability distribution function that converges to a Gaussian. We will prove the central limit theorem in our homework 1.
 
+
+#### Approach 3: Dimensional analysis
+
+Solving the diffusion equation means we want to know the time evolution for an arbitrary initial condition. Let's assume that there is a length scale, $l$, for the initial condition. For example, one can consider a Gaussian with width $l$. \emph{i.e.}, $\rho(x,t=0)=\frac{A_0}{\sqrt{2\pi l^2}} e^{-x^2/2l^2}$.
+
+Let's develop the dimensional analysis and see how it helps us to solve the diffusion equation. Let's use the notation $\left[ O \right]$ to denote the dimension of $O$. We immediately realize
+
+$$
+[\rho]=\rho; [x]=[l]=L; [t]=T; [A_0]=\rho L; [D]=L^2T^{-1}.
+$$
+
+We can use the above parameters to form dimensionless parameters
+
+$$
+\Pi=\frac{\rho}{A_0}\sqrt{Dt};\Pi_1=\frac{x}{\sqrt{Dt}};\Pi_2=\frac{l}{\sqrt{Dt}}.
+$$
+
+In principle, we should have the relation
+$$
+\Pi=f(\Pi_1,\Pi_2).
+$$
+
+Here, we try to develop the so called **similarity solution**. That is, we assume the length scale of the initial condition $l\to0$. The similarity solution corresponds to the case that the limit has no non-trivial effects and the above relation can be replaced by
+
+$$
+\Pi=f_s(\Pi_1).
+$$
+
+The power of similarity solution is: we eliminate one dimensionless parameter immediately.
+With the powerful but bruit force assumption, we can immediately have the relation that
+
+$$
+\rho(x,t)=\frac{A_0}{\sqrt{Dt}}fs(\xi); \xi\equiv\frac{x}{\sqrt{Dt}}.
+$$
+
+At this moment, we don't know what is $f_s(\xi)$. We can insert it into the diffusion equation. Then we have
+
+$$
+f_s''+\xi f_s'+f_s=0=\frac{d}{d\xi}\left(f_s'+\xi f_s \right)
+$$
+
+with the boundary condition that $\lim_{|x|\to\infty}f_s(x)\to0$.
+
+From the conservation law, we know 
+
+$$
+\int_{-\infty}^{\infty}f_s(\xi)d\xi=1.
+$$
+
+Also, the differential equation of $f_s(\xi)$ suggest it is an even function, which means $f_s'(0)=0$.
+
+
+
+
+#### What we know and what we don't know...
+
 Now we know how to solve a diffusion equation and how it reaches equilibrium. However, for generic closed classical or quantum systems, how the system reaches equilibrium is still an open question. We will not elaborate more on this fascinating research problem. Instead, we will refer our readers to other sources that discuss these interesting topics ( see, *e.g.* Thermalization and many-body localization, see {cite:p}`srednicki1994chaos` and {cite:p}`nandkishore2014many` )
 
