@@ -313,7 +313,13 @@ $$
 
 Also, the differential equation of $f_s(\xi)$ suggest it is an even function, which means $f_s'(0)=0$.
 
+This suggests
 
+$$
+f_s(\xi)=B e^{-\xi^2/2}\text{.}
+$$
+
+Some coefficients in the above derivation is wrong for educational purpose. Please went through the derivation and fix the coefficients for your own. 
 
 
 #### What we know and what we don't know...
