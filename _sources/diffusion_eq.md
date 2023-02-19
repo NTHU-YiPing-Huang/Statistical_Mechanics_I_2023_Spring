@@ -294,7 +294,7 @@ The power of similarity solution is: we eliminate one dimensionless parameter im
 With the powerful but bruit force assumption, we can immediately have the relation that
 
 $$
-\rho(x,t)=\frac{A_0}{\sqrt{Dt}}fs(\xi); \xi\equiv\frac{x}{\sqrt{Dt}}.
+\rho(x,t)=\frac{A_0}{\sqrt{Dt}}f_s(\xi); \xi\equiv\frac{x}{\sqrt{Dt}}.
 $$
 
 At this moment, we don't know what is $f_s(\xi)$. We can insert it into the diffusion equation. Then we have
