@@ -1,4 +1,4 @@
-(development of physics)=
+(development-of-physics)=
 # The development of physics
 
 

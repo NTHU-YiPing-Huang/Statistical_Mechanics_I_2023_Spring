@@ -113,13 +113,13 @@ $ f_{FG}\equiv \sum_a\sum_b F(a)G(b)P(a,b)-\left(\sum_a F(a)P_A(a)\right)\left(\
 #### One-dimensional Gaussian integral.
 
 $$
-G_1=\int_{\infty}^{\infty}e^{-ax^2}dx\text{.}
+G_1=\int_{-\infty}^{\infty}e^{-ax^2}dx\text{.}
 $$
 
 The trick is to square this expression, we found
 
 $$
-(G_1)^2=\int_{\infty}^{\infty}\int_{\infty}^{\infty}e^{-ax^2}e^{-ay^2}dxdy\text{.}
+(G_1)^2=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}e^{-ax^2}e^{-ay^2}dxdy\text{.}
 $$
 
 This integral is over a two-dimensional space; we can change the variables into polar coordinates $(r,\theta)$. The angular integral and the radial integral will become trivial.
@@ -131,7 +131,7 @@ $$
 Once this expression is known, we can simply generalize it into the case with a linear term
 
 $$
-G_1'=\int_{\infty}^{\infty}e^{-ax^2+bx}dx\text{.}
+G_1'=\int_{-\infty}^{\infty}e^{-ax^2+bx}dx\text{.}
 $$
 
 The result will be left as an exercise.
@@ -141,7 +141,7 @@ The result will be left as an exercise.
 The multidimensional Gaussian integral is
 
 $$
-G_N=\int_{\infty}^{\infty}dx_1\int_{-\infty}^{\infty}dx_2...\int_{-\infty}^{\infty}dx_N \exp\left[-\frac{1}{2} x_iA_{ij}x_j+b_ix_i\right]=\sqrt{\frac{(2\pi)^n}{\text{det} A}} \left[-\frac{b_i(A)^{-1}_{ij}b_j}{2}\right]\text{.}
+G_N=\int_{-\infty}^{\infty}dx_1\int_{-\infty}^{\infty}dx_2...\int_{-\infty}^{\infty}dx_N \exp\left[-\frac{1}{2} x_iA_{ij}x_j+b_ix_i\right]=\sqrt{\frac{(2\pi)^n}{\text{det} A}} \left[-\frac{b_i(A)^{-1}_{ij}b_j}{2}\right]\text{.}
 $$
 
 This expression can be derived by diagonalizing $A$ and using the new basis to perform the independent one-dimensional integrals. 
@@ -162,9 +162,9 @@ We are going to introduce the idea of the steepest descent method (a.k.a. saddle
 We have
 
 $$
-f(x)= N\ln x-x=f(x^*)+f'(x^*)(x-x^*)+\frac{f''(x^*)}{2}(x-x^*)^2+...\\
-f'(x)=\frac{N}{x}-1\rightarrow x^{*}=N\\
-f''(x)=-\frac{N}{x^2}\rightarrow f''(x^{*})=-\frac{1}{N}\text{.}
+f(x)&= N\ln x-x=f(x^*)+f'(x^*)(x-x^*)+\frac{f''(x^*)}{2}(x-x^*)^2+...\\
+f'(x)&=\frac{N}{x}-1\rightarrow x^{*}=N\\
+f''(x)&=-\frac{N}{x^2}\rightarrow f''(x^{*})=-\frac{1}{N}\text{.}
 $$
 
 Next, we can ask: does it make sense to expand around $x^*=N$? To answer that we would like to know how the error looks like? The leading order error is proportional with $f''(x^*)=-N^{-1}$. That means, when $N$ is large, this error gets suppressed! The method of steepest descent is very general. However, one should analyze the error carefully. In this case, the form of $f(x)$ works in our favor to suppress the leading order error! So we can approximate $N!$ as

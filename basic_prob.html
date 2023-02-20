@@ -208,12 +208,12 @@ That is,
 <h4>One-dimensional Gaussian integral.<a class="headerlink" href="#one-dimensional-gaussian-integral" title="Permalink to this heading"></a></h4>
 <div class="math notranslate nohighlight">
 \[
-G_1=\int_{\infty}^{\infty}e^{-ax^2}dx\text{.}
+G_1=\int_{-\infty}^{\infty}e^{-ax^2}dx\text{.}
 \]</div>
 <p>The trick is to square this expression, we found</p>
 <div class="math notranslate nohighlight">
 \[
-(G_1)^2=\int_{\infty}^{\infty}\int_{\infty}^{\infty}e^{-ax^2}e^{-ay^2}dxdy\text{.}
+(G_1)^2=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}e^{-ax^2}e^{-ay^2}dxdy\text{.}
 \]</div>
 <p>This integral is over a two-dimensional space; we can change the variables into polar coordinates <span class="math notranslate nohighlight">\((r,\theta)\)</span>. The angular integral and the radial integral will become trivial.</p>
 <div class="math notranslate nohighlight">
@@ -223,7 +223,7 @@ G_1=\int_{\infty}^{\infty}e^{-ax^2}dx\text{.}
 <p>Once this expression is known, we can simply generalize it into the case with a linear term</p>
 <div class="math notranslate nohighlight">
 \[
-G_1'=\int_{\infty}^{\infty}e^{-ax^2+bx}dx\text{.}
+G_1'=\int_{-\infty}^{\infty}e^{-ax^2+bx}dx\text{.}
 \]</div>
 <p>The result will be left as an exercise.</p>
 </section>
@@ -232,7 +232,7 @@ G_1'=\int_{\infty}^{\infty}e^{-ax^2+bx}dx\text{.}
 <p>The multidimensional Gaussian integral is</p>
 <div class="math notranslate nohighlight">
 \[
-G_N=\int_{\infty}^{\infty}dx_1\int_{-\infty}^{\infty}dx_2...\int_{-\infty}^{\infty}dx_N \exp\left[-\frac{1}{2} x_iA_{ij}x_j+b_ix_i\right]=\sqrt{\frac{(2\pi)^n}{\text{det} A}} \left[-\frac{b_i(A)^{-1}_{ij}b_j}{2}\right]\text{.}
+G_N=\int_{-\infty}^{\infty}dx_1\int_{-\infty}^{\infty}dx_2...\int_{-\infty}^{\infty}dx_N \exp\left[-\frac{1}{2} x_iA_{ij}x_j+b_ix_i\right]=\sqrt{\frac{(2\pi)^n}{\text{det} A}} \left[-\frac{b_i(A)^{-1}_{ij}b_j}{2}\right]\text{.}
 \]</div>
 <p>This expression can be derived by diagonalizing <span class="math notranslate nohighlight">\(A\)</span> and using the new basis to perform the independent one-dimensional integrals.</p>
 </section>
@@ -249,9 +249,9 @@ N!=\int_0^{\infty}e^{-x}x^Ndx=\int_0^{\infty} e^{-x}e^{N\ln x} dx=\int_0^{\infty
 <p>We have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-f(x)= N\ln x-x=f(x^*)+f'(x^*)(x-x^*)+\frac{f''(x^*)}{2}(x-x^*)^2+...\\
-f'(x)=\frac{N}{x}-1\rightarrow x^{*}=N\\
-f''(x)=-\frac{N}{x^2}\rightarrow f''(x^{*})=-\frac{1}{N}\text{.}
+f(x)&amp;= N\ln x-x=f(x^*)+f'(x^*)(x-x^*)+\frac{f''(x^*)}{2}(x-x^*)^2+...\\
+f'(x)&amp;=\frac{N}{x}-1\rightarrow x^{*}=N\\
+f''(x)&amp;=-\frac{N}{x^2}\rightarrow f''(x^{*})=-\frac{1}{N}\text{.}
 \end{split}\]</div>
 <p>Next, we can ask: does it make sense to expand around <span class="math notranslate nohighlight">\(x^*=N\)</span>? To answer that we would like to know how the error looks like? The leading order error is proportional with <span class="math notranslate nohighlight">\(f''(x^*)=-N^{-1}\)</span>. That means, when <span class="math notranslate nohighlight">\(N\)</span> is large, this error gets suppressed! The method of steepest descent is very general. However, one should analyze the error carefully. In this case, the form of <span class="math notranslate nohighlight">\(f(x)\)</span> works in our favor to suppress the leading order error! So we can approximate <span class="math notranslate nohighlight">\(N!\)</span> as</p>
 <div class="math notranslate nohighlight">
