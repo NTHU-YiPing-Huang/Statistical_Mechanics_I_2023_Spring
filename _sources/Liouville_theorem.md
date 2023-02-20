@@ -5,8 +5,8 @@ The Liouville's theorem tells us why phase space is special and how it helps us 
 The Liouville's theorem is a theorem based on canonical time-evolution. The time-evolution satisfies the Hamilton's equation
 
 $$
-\frac{d \textbf{R}}{dt}= \frac{\partial H}{\partial \textbf{P}}\\
-\frac{d \textbf{P}}{dt}= -\frac{\partial H}{\partial \textbf{R}}\text{.}
+\frac{d \textbf{R}}{dt}&= \frac{\partial H}{\partial \textbf{P}}\\
+\frac{d \textbf{P}}{dt}&= -\frac{\partial H}{\partial \textbf{R}}\text{.}
 $$
 
 We want to understand the evolution of the probability density in phase space. The probability density in phase space is defined as

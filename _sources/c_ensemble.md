@@ -5,9 +5,10 @@ We have introduce the micro canonical ensemble which has fixed total energy. How
 To derive this conclusion, we put our system into thermal contact with a reservoir at fixed temperature $T$. Now our composite system (contains the system that we are interested in and the reservoir) is considered as an isolated system with fixed total energy, $E_t$, so we can use the micro canonical ensemble to describe the composite system. Let's use $\xi_s$ and $\xi_R$ to represent the microscopic configurations of our system and the reservoir. The expectation value of observable $A$ defined on the system is
 
 $$
-\langle A\rangle=\frac{1}{|\Gamma_{E_t}|}\int d\xi_R\int d\xi_s A(\xi_s) \delta(H^{(s)}(\xi_s)+H^{(R)}(\xi_R)-E_t)\\
-=\frac{1}{|\Gamma_{E_t}|}\int d\xi_s A(\xi_s) \underbrace{\int d\xi_R\delta(H^{(s)}(\xi_s)+H^{(R)}(\xi_R)-E_t)}_{|\Gamma_R(E_t-H^{(s)}(\xi_s))|=\exp\left[k_B^{-1} S_R(E_t-H^{(s)}(\xi_s))\right]}\\
-\approx \frac{1}{|\Gamma_{E_t}|}\int d\xi_s A(\xi_s) \exp\left[k_B^{-1} \left( S_R(E_t)-\underbrace{\left.\frac{\partial S_R}{\partial E}\right|_{E_t}}_{T^{-1}} H^{(s)}(\xi_s)+\cdots \right)\right]
+\langle A\rangle 
+&=\frac{1}{|\Gamma_{E_t}|}\int d\xi_R\int d\xi_s A(\xi_s) \delta(H^{(s)}(\xi_s)+H^{(R)}(\xi_R)-E_t)\\
+&=\frac{1}{|\Gamma_{E_t}|}\int d\xi_s A(\xi_s) \underbrace{\int d\xi_R\delta(H^{(s)}(\xi_s)+H^{(R)}(\xi_R)-E_t)}_{|\Gamma_R(E_t-H^{(s)}(\xi_s))|=\exp\left[k_B^{-1} S_R(E_t-H^{(s)}(\xi_s))\right]}\\
+&\approx \frac{1}{|\Gamma_{E_t}|}\int d\xi_s A(\xi_s) \exp\left[k_B^{-1} \left( S_R(E_t)-\underbrace{\left.\frac{\partial S_R}{\partial E}\right|_{E_t}}_{T^{-1}} H^{(s)}(\xi_s)+\cdots \right)\right]
 $$
 In the last line, we expand the entropy $S_R$ around the total energy $E_t$. Since the reservoir is huge comparing with our target system. So we can expand the expression around $E_t$ By definition, $\langle A \rangle=\int d\xi_s A(\xi_s) P(\xi_s)$. From the above expression, we have shown
 
@@ -86,8 +87,10 @@ $$
 Here, we follow the convention to denote $(k_BT)^{-1}$ as $\beta$.
 
 $$
-\frac{\partial \ln Z(\beta)}{\partial \beta}=-\int d\xi H(\xi) \frac{e^{-\beta H(\xi)}}{Z} =-\langle H\rangle =-E\propto N\\
-\frac{\partial^2 \ln Z(\beta)}{\partial \beta^2}= \langle H^2\rangle-\langle H\rangle^2=\frac{\partial (-E)}{\partial \beta}=k_BT^2\frac{\partial E}{\partial T}=k_BT^2C\propto N\ge0\text{.}
+\frac{\partial \ln Z(\beta)}{\partial \beta}
+&=-\int d\xi H(\xi) \frac{e^{-\beta H(\xi)}}{Z} =-\langle H\rangle =-E\propto N\\
+\frac{\partial^2 \ln Z(\beta)}{\partial \beta^2}
+&= \langle H^2\rangle-\langle H\rangle^2=\frac{\partial (-E)}{\partial \beta}=k_BT^2\frac{\partial E}{\partial T}=k_BT^2C\propto N\ge0\text{.}
 $$
 
 So we have the very important result of the *Fluctuation-dissipation theorem*!

@@ -70,9 +70,11 @@ Because the constraint is more relaxed, there are more possible configurations c
 It turns out $|\Gamma_{eq}|\lesssim|\Gamma_{(A|B)}|$! That is, even though it is smaller than $|\Gamma_{(A|B)}|$, it is almost identical with $|\Gamma_{(A|B)}|$! Why? Let's use the Boltzman's postulate to express $|\Gamma_{(A|B)}|$ again. We have
 
 $$
-|\Gamma_{(A|B)}|=\sum_{E^{(A)}}|\Gamma_A(E^{(A)})||\Gamma_B(E_{total}-E^{(A)})|=\sum_{E^{(A)}} \exp\left[\frac{1}{k_B}\left(S_A(E^{(A)})+S_B(E_{total}-E^{(A)})\right)\right]\\
-\approx \int \frac{d E^{(A)}}{\Delta E} \exp\left\{\frac{1}{k_B}\left[\left(S_A(E^{(A)}_{eq})+S_B(E^{(B)}_{eq})\right)+\underbrace{\left.\frac{\partial (S^{(A)}(E^{(A)})+S^{(B)}(E^{(B)}))}{\partial E^{(A)}}\right|_{E^{(A)}_{eq}}}_{=0, \text{extrema condition}}\left(E^{(A)}-E^{(A)}_{eq}\right)\\
-+\frac{1}{2}\left(\left. \frac{\partial^2 S^{(A)}(E^{(A)})}{ \partial E^{(A)} \,^2}\right|_{E^{(A)}_{eq}}+\left. \frac{\partial^2 S^{(B)}(E^{(B)})}{ \partial E^{(B)} \,^2}\right|_{E^{(B)}_{eq}}\right)\left(E^{(A)}-E^{(A)}_{eq}\right)^2 \right]\right\}
+|\Gamma_{(A|B)}|&=\sum_{E^{(A)}}|\Gamma_A(E^{(A)})||\Gamma_B(E_{total}-E^{(A)})|\\
+&=\sum_{E^{(A)}} \exp\left[\frac{1}{k_B}\left(S_A(E^{(A)})+S_B(E_{total}-E^{(A)})\right)\right]\\
+&\approx \int \frac{d E^{(A)}}{\Delta E} \exp\Big\{\frac{1}{k_B}\Big[\left(S_A(E^{(A)}_{eq})+S_B(E^{(B)}_{eq})\right)\\
+&+\underbrace{\left.\frac{\partial (S^{(A)}(E^{(A)})+S^{(B)}(E^{(B)}))}{\partial E^{(A)}}\right|_{E^{(A)}_{eq}}}_{=0, \text{extrema condition}}\left(E^{(A)}-E^{(A)}_{eq}\right)\\
+&+\frac{1}{2}\left(\left. \frac{\partial^2 S^{(A)}(E^{(A)})}{ \partial E^{(A)} \,^2}\right|_{E^{(A)}_{eq}}+\left. \frac{\partial^2 S^{(B)}(E^{(B)})}{ \partial E^{(B)} \,^2}\right|_{E^{(B)}_{eq}}\right)\left(E^{(A)}-E^{(A)}_{eq}\right)^2 \Big]\Big\}
 $$
 
 In the second line, we approximate the summation as integral to make further approximation. Since we know that entropy is maximized at equilibrium, we can expand the entropy around the equilibrium energy configuration. Here, the linear order correction is zero since we expand around the extrema. We stop the expansion at the quadratic order which is the leading non-trivial order.

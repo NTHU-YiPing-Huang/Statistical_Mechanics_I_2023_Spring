@@ -18,15 +18,15 @@ Here $X$ represent the rest of the extensive variables. Here $a$ is the possible
 The corresponding expression using the Boltzmann's postulate is
 
 $$
-S(X;a)=k_B\ln\left[\int d\xi \delta(A(\xi)-a)\right]=k_B\ln(|\Gamma_a|)\\
-S(X;a^*)=k_B\ln\left[\int d\xi \delta(A(\xi)-a^*)\right]=k_B\ln(|\Gamma_{a^*}|)\text{.}
+S(X;a) &=k_B\ln\left[\int d\xi \delta(A(\xi)-a)\right]=k_B\ln(|\Gamma_a|)\\
+S(X;a^*) &=k_B\ln\left[\int d\xi \delta(A(\xi)-a^*)\right]=k_B\ln(|\Gamma_{a^*}|)\text{.}
 $$
 
 We can immediately see
 
 $$
-\frac{|\Gamma_a|}{|\Gamma_{a^*}|}=\exp\left[\frac{1}{k_B}\left(S(X;a)-S(X;a^*)\right)\right]\\
-\approx \exp\left[\frac{1}{2k_B}\left(\underbrace{\left.\frac{\partial^2 S}{\partial A^2}\right|_{a^*}}_{<0, \sim \mathcal{O}(N^{-1})}\right)\underbrace{(a-a^*)^2}_{\sim\mathcal{O}(N^2)}\right]\sim e^{-N}\text{.}
+\frac{|\Gamma_a|}{|\Gamma_{a^*}|} &=\exp\left[\frac{1}{k_B}\left(S(X;a)-S(X;a^*)\right)\right]\\
+&\approx \exp\left[\frac{1}{2k_B}\left(\underbrace{\left.\frac{\partial^2 S}{\partial A^2}\right|_{a^*}}_{<0, \sim \mathcal{O}(N^{-1})}\right)\underbrace{(a-a^*)^2}_{\sim\mathcal{O}(N^2)}\right]\sim e^{-N}\text{.}
 $$
 
 In the approximation, we expand the entropy around the equilibrium value $a^*$. We can see the phase space corresponds to observable $a\neq a^*$ is exponentially small in system size. At thermodynamic limit, we found the phase space volume is dominated by the equilibrium phase space, $|\Gamma_{a^*}|$.
@@ -83,8 +83,8 @@ At this point, we can see that statistical mechanics can let us calculate the th
 $$
 \langle O \rangle=\left\{
 \begin{array}{c}
-\sum_{\xi} P(\xi)O(\xi); \text{discrete }\xi\\
-\int d\xi P(\xi)O(\xi); \text{continuous }\xi
+&\sum_{\xi} P(\xi)O(\xi); &\text{discrete }\xi\\
+&\int d\xi P(\xi)O(\xi); &\text{continuous }\xi
 \end{array}
 \right.
 $$

@@ -71,8 +71,8 @@ We can discuss systems under thermal contact and leave the other cases for the r
    Consider two systems in thermal contact that are isolated from the environment. The total energy of the two systems is conserved (This is the thermodynamic constraint of this simple system). The equilibrium state of this system is postulated to be the thermodynamic state such that the entropy is maximized. *i.e.*
    
    $$
-   \left.\frac{\partial S^{(A\cup B)}}{\partial E^{(A)}}\right|_{eq}=\left.\frac{\partial }{\partial E^{(A)}}\left[S^{(A)}(E^{(A)},X^{(A)}_1,...,X^{(A)}_r)+S^{(B)}(E^{(B)},X^{(B)}_1,...,X^{(B)}_r)\right]\right|_{eq}\\
-   =\left.\frac{\partial S^{(A)}}{\partial E^{(A)}}\right|_{E^{(A)}_{eq}}
+   \left.\frac{\partial S^{(A\cup B)}}{\partial E^{(A)}}\right|_{eq}&=\left.\frac{\partial }{\partial E^{(A)}}\left[S^{(A)}(E^{(A)},X^{(A)}_1,...,X^{(A)}_r)+S^{(B)}(E^{(B)},X^{(B)}_1,...,X^{(B)}_r)\right]\right|_{eq}\\
+  &=\left.\frac{\partial S^{(A)}}{\partial E^{(A)}}\right|_{E^{(A)}_{eq}}
    -\left.\frac{\partial S^{(B)}}{\partial E^{(B)}}\right|_{E-E^{(A)}_{eq}}=0\text{.}
    $$
    Therefore, we find the quantity, $\frac{\partial S}{\partial E}=\frac{1}{T}$, for system $A$ and $B$ must be equal with each other at equilibrium. At this moment, we don't know what is this quantity. But according to previous definition, we know $T^{(A)}=T^{(B)}$ at equilibrium. 

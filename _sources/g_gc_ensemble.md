@@ -43,12 +43,16 @@ P(\xi_s)\propto \exp\left[\beta((-1)H^{(s)}(\xi_s)+\mu N_s)\right]
 $$
 
 $$
-Z_{GC}=\sum_{N_s=0}^{\infty}\int d\xi_s\exp\left[\beta((-1)H^{(s)}(\xi_s)+\mu N_s)\right] \approx \exp\left[-\beta(\langle H^{(s)}\rangle -TS-\mu\langle N\rangle)\right]=\exp\left[-\beta \Omega\right]\text{.}
+Z_{GC}
+&=\sum_{N_s=0}^{\infty}\int d\xi_s\exp\left[\beta((-1)H^{(s)}(\xi_s)+\mu N_s)\right] \\
+&\approx \exp\left[-\beta(\langle H^{(s)}\rangle -TS-\mu\langle N\rangle)\right]=\exp\left[-\beta \Omega\right]\text{.}
 $$
 
 $$
-\langle H\rangle=E=-\frac{\partial \ln Z_{GC}}{\partial \beta}\\
-\langle \hat{N}\rangle=N=\frac{\partial \ln Z_{GC}}{\partial \beta \mu}\text{.}
+\langle H\rangle
+&=E=-\frac{\partial \ln Z_{GC}}{\partial \beta}\\
+\langle \hat{N}\rangle 
+&=N=\frac{\partial \ln Z_{GC}}{\partial \beta \mu}\text{.}
 $$
 Here, we use $\hat{N}$ to represent the observable of number of particle and distinguish this observable with the average of the number of particle which is represented by $N$.
 
@@ -60,7 +64,8 @@ For the ideal gas model, we usually have fixed $N$. If we want to use the grand 
 3. Insert $\mu(N,T,V)$ into $\ln Z_{GC}$ so we can calculate all the thermodynamic quantity and express them using $N,T,V$.
 
 $$
-Z_{GC}=\sum_{N=0}^{\infty} e^{\beta\mu N}\left\{\frac{1}{N!}\int \left(\prod_{i=1}^{N}\frac{d \textbf{R}d\textbf{P}}{h^3}\right) \exp\left[-\beta \sum_{j=1}^N\frac{\textbf{P}_j^2}{2m}\right]\right\}=\sum_{N=0}^{\infty} z^NZ_N=\sum_{N=0}^{\infty}\frac{1}{N!}\left(\frac{zV}{\lambda^3}\right)^N=\exp[\frac{zV}{\lambda^3}]
+Z_{GC}&=\sum_{N=0}^{\infty} e^{\beta\mu N}\left\{\frac{1}{N!}\int \left(\prod_{i=1}^{N}\frac{d \textbf{R}d\textbf{P}}{h^3}\right) \exp\left[-\beta \sum_{j=1}^N\frac{\textbf{P}_j^2}{2m}\right]\right\}=\sum_{N=0}^{\infty} z^NZ_N\\
+&=\sum_{N=0}^{\infty}\frac{1}{N!}\left(\frac{zV}{\lambda^3}\right)^N=\exp[\frac{zV}{\lambda^3}]
 $$
 
 $$

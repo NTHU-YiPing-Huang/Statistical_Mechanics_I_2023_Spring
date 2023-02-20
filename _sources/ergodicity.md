@@ -13,8 +13,8 @@ $$
 If $O$ is well behaved, we expect $\overline{O(t=0)}=\overline{O(t=t')}$. That is, the long time average should not depends on the value of $O$ during the time interval $(0,t')$.
 
 $$
-\overline{O(t=0)}\equiv \lim_{T\to\infty} \frac{1}{T}\int_{0}^{T} dt O(\xi(t))\\
-\overline{O(t=t')}\equiv \lim_{T\to\infty} \frac{1}{T}\int_{t'}^{T} dt O(\xi(t))\text{.}
+\overline{O(t=0)} &\equiv \lim_{T\to\infty} \frac{1}{T}\int_{0}^{T} dt O(\xi(t))\\
+\overline{O(t=t')} &\equiv \lim_{T\to\infty} \frac{1}{T}\int_{t'}^{T} dt O(\xi(t))\text{.}
 $$
 
 Therefore, we found the long time averages are constant on trajectories.

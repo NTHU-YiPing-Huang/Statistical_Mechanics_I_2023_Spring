@@ -5,42 +5,44 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Microcanonical ensemble &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
+    <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-        <script src="../_static/tabs.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-        <script src="../_static/design-tabs.js"></script>
+        <script src="_static/design-tabs.js"></script>
         <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script async="async" src="_static/sphinx-thebe.js"></script>
         <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Canonical ensemble" href="c_ensemble.html" />
+    <link rel="prev" title="Ergodicity" href="ergodicity.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,10 +50,10 @@ const thebe_selector_output = ".output, .cell_output"
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../syllabus.html" class="icon icon-home"> Statistical Mechanics (I)
+            <a href="syllabus.html" class="icon icon-home"> Statistical Mechanics (I)
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -60,9 +62,23 @@ const thebe_selector_output = ".output, .cell_output"
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../numerical_tools.html">Numerical tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_tools.html">Numerical tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -71,17 +87,18 @@ const thebe_selector_output = ".output, .cell_output"
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../syllabus.html">Statistical Mechanics (I)</a>
+          <a href="syllabus.html">Statistical Mechanics (I)</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li><a href="syllabus.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="Postulates_SM.html">Postulates of statistical mechanics</a></li>
       <li class="breadcrumb-item active">Microcanonical ensemble</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/MD_files/mc_ensemble.md" rel="nofollow"> View page source</a>
+            <a href="_sources/mc_ensemble.md" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -106,14 +123,14 @@ S(X;a)\le S(X;a^*)\text{.}
 <p>The corresponding expression using the Boltzmann’s postulate is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-S(X;a)=k_B\ln\left[\int d\xi \delta(A(\xi)-a)\right]=k_B\ln(|\Gamma_a|)\\
-S(X;a^*)=k_B\ln\left[\int d\xi \delta(A(\xi)-a^*)\right]=k_B\ln(|\Gamma_{a^*}|)\text{.}
+S(X;a) &amp;=k_B\ln\left[\int d\xi \delta(A(\xi)-a)\right]=k_B\ln(|\Gamma_a|)\\
+S(X;a^*) &amp;=k_B\ln\left[\int d\xi \delta(A(\xi)-a^*)\right]=k_B\ln(|\Gamma_{a^*}|)\text{.}
 \end{split}\]</div>
 <p>We can immediately see</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\frac{|\Gamma_a|}{|\Gamma_{a^*}|}=\exp\left[\frac{1}{k_B}\left(S(X;a)-S(X;a^*)\right)\right]\\
-\approx \exp\left[\frac{1}{2k_B}\left(\underbrace{\left.\frac{\partial^2 S}{\partial A^2}\right|_{a^*}}_{&lt;0, \sim \mathcal{O}(N^{-1})}\right)\underbrace{(a-a^*)^2}_{\sim\mathcal{O}(N^2)}\right]\sim e^{-N}\text{.}
+\frac{|\Gamma_a|}{|\Gamma_{a^*}|} &amp;=\exp\left[\frac{1}{k_B}\left(S(X;a)-S(X;a^*)\right)\right]\\
+&amp;\approx \exp\left[\frac{1}{2k_B}\left(\underbrace{\left.\frac{\partial^2 S}{\partial A^2}\right|_{a^*}}_{&lt;0, \sim \mathcal{O}(N^{-1})}\right)\underbrace{(a-a^*)^2}_{\sim\mathcal{O}(N^2)}\right]\sim e^{-N}\text{.}
 \end{split}\]</div>
 <p>In the approximation, we expand the entropy around the equilibrium value <span class="math notranslate nohighlight">\(a^*\)</span>. We can see the phase space corresponds to observable <span class="math notranslate nohighlight">\(a\neq a^*\)</span> is exponentially small in system size. At thermodynamic limit, we found the phase space volume is dominated by the equilibrium phase space, <span class="math notranslate nohighlight">\(|\Gamma_{a^*}|\)</span>.</p>
 <p>Therefore,</p>
@@ -142,7 +159,7 @@ H=\sum_{i=1}^{N}\frac{\textbf{P}_i^2}{2m} +U(\textbf{R}_i)\text{.}
 \end{split}\]</div>
 <div class="tip admonition">
 <p class="admonition-title">What?</p>
-<p>We are studying the classical ideal gas model. Why indistinguishable is important? (Indistinguishiability is a subtle concept in quantum mechanics. How can “identical” particles to be “distniguishable” or “un-distinguishable”? Here, a good reference is <span id="id1">[<a class="reference internal" href="biblio.html#id8" title="Ramamurti Shankar. Principles of quantum mechanics. Springer Science &amp; Business Media, 2012.">Sha12</a>]</span>. The question is whether the concept of path is still applicable. For quantum particles, the wave function interpretation will ruin the concept of path.) If we consider a lattice system with quantum spins, do we have the <span class="math notranslate nohighlight">\((N!)^{-1}\)</span> factor in the partition function?</p>
+<p>We are studying the classical ideal gas model. Why indistinguishable is important? (Indistinguishiability is a subtle concept in quantum mechanics. How can “identical” particles to be “distniguishable” or “un-distinguishable”? Here, a good reference is <span id="id1">[<a class="reference internal" href="MD_files/biblio.html#id8" title="Ramamurti Shankar. Principles of quantum mechanics. Springer Science &amp; Business Media, 2012.">Sha12</a>]</span>. The question is whether the concept of path is still applicable. For quantum particles, the wave function interpretation will ruin the concept of path.) If we consider a lattice system with quantum spins, do we have the <span class="math notranslate nohighlight">\((N!)^{-1}\)</span> factor in the partition function?</p>
 </div>
 <p>The integration over <span class="math notranslate nohighlight">\(\textbf{R}_i\)</span> is simple, it just gives the volume <span class="math notranslate nohighlight">\(V\)</span>. We can use the property of delta function <span class="math notranslate nohighlight">\(\delta( Ax)=A^{-1}\delta(x)\)</span> to proceed. We will have</p>
 <div class="math notranslate nohighlight">
@@ -160,8 +177,8 @@ At this point, we can see that statistical mechanics can let us calculate the th
 \[\begin{split}
 \langle O \rangle=\left\{
 \begin{array}{c}
-\sum_{\xi} P(\xi)O(\xi); \text{discrete }\xi\\
-\int d\xi P(\xi)O(\xi); \text{continuous }\xi
+&amp;\sum_{\xi} P(\xi)O(\xi); &amp;\text{discrete }\xi\\
+&amp;\int d\xi P(\xi)O(\xi); &amp;\text{continuous }\xi
 \end{array}
 \right.
 \end{split}\]</div>
@@ -210,7 +227,7 @@ S=k_B\ln(|\Gamma_E|)\xrightarrow{\text{Stirling's approximation}} S(M) \text{.}
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./MD_files"
+            path: "./."
         },
         predefinedOutput: true
     }
@@ -219,7 +236,10 @@ S=k_B\ln(|\Gamma_E|)\xrightarrow{\text{Stirling's approximation}} S(M) \text{.}
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ergodicity.html" class="btn btn-neutral float-left" title="Ergodicity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="c_ensemble.html" class="btn btn-neutral float-right" title="Canonical ensemble" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

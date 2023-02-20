@@ -265,7 +265,7 @@ Now let's look at the Green's function; we found it is a Gaussian function with 
 
 #### Approach 3: Dimensional analysis
 
-Solving the diffusion equation means we want to know the time evolution for an arbitrary initial condition. Let's assume that there is a length scale, $l$, for the initial condition. For example, one can consider a Gaussian with width $l$. \emph{i.e.}, $\rho(x,t=0)=\frac{A_0}{\sqrt{2\pi l^2}} e^{-x^2/2l^2}$.
+Solving the diffusion equation means we want to know the time evolution for an arbitrary initial condition. Let's assume that there is a length scale, $l$, for the initial condition. For example, one can consider a Gaussian with width $l$. *i.e.*, $\rho(x,t=0)=\frac{A_0}{\sqrt{2\pi l^2}} e^{-x^2/2l^2}$.
 
 Let's develop the dimensional analysis and see how it helps us to solve the diffusion equation. Let's use the notation $\left[ O \right]$ to denote the dimension of $O$. We immediately realize
 
