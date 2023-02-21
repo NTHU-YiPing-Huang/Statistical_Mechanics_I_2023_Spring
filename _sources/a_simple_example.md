@@ -25,24 +25,34 @@ This intuition motivates us to make some postulation about the initial condition
 1. $\{\textbf{R}_i,\textbf{V}_i\}$ and $\{\textbf{R}_j,\textbf{V}_j\}$ are independent variables for different $i,j$. Let's use $f(\textbf{r},\textbf{v})$ to denote the density of particles in the space at $\textbf{r},\textbf{v}$. The number of particles in this volume is $dN=f(\textbf{r},\textbf{v})d\textbf{r}d\textbf{v}$.
 2. $\textbf{r}$ and $\textbf{v}$ are independent variables. So we expect $f(\textbf{r},\textbf{v})=f_r(\textbf{r})f_v(\textbf{v})$.
 3. The density is unifor in the space. So we know $f_r(\textbf{r})=N/V$.
-4. The velocity components, the $x,y,z$ components, are mutually independent. So we have $f_v(\textbf{v}=f_x(v_x)f_y(v_y)f_z(v_z)$
-5. The distribution of the velocity only depends on the magnitude of the velocity. That is, $f_v(\textbf{v})=f_v(|\textbf{v}|)=f_v((v_x^2+v_y^2+v_z^2)^{\frac{1}{2}})$.
+4. The velocity components, the $x,y,z$ components, are mutually independent. So we have $f_v(\textbf{v})=f_x(v_x)f_y(v_y)f_z(v_z)$
+5. The distribution of the velocity only depends on the magnitude of the velocity. Also, the system is isotropic. That is, $f_v(\textbf{v})=F(|\textbf{v}|^2)=F(v_x^2+v_y^2+v_z^2)$. Similarly, we expect $f_x(v_x)=\phi(v_x^2), f_y(v_y)=\phi(v_y^2),f_z(v_z)=\phi(v_z^2)$. The isotropic assumption suggest $f_x,f_y,f_z$ should have the same functional form $\phi$.
 
 From 4 and 5, we have
 
 $$
-\ln f_v(\textbf{v})=\ln f_v((v_x^2+v_y^2+v_z^2)^{\frac{1}{2}})= \ln f_x(v_x)+\ln f_y(v_y)+\ln f_z(v_z)\text{.}
+F(v_{x}^2+0+0)&=\phi(v_{x}^2)\phi(0)\phi(0)\\
+F(v_{x}^2+v_y^2+0)&=\phi(v_{x}^2)\phi(v_y^2)\phi(0)
+\text{.}
 $$
 
-Since the system is isotropic, there is no reason that $f_x(u), f_y(u), f_z(u)$ has different expression, we can simply assume $f_x(u), f_y(u), f_z(u)=g(u)$. Similar argument suggests $f_v(u)=g(u)$ also. So we are looking for a functional from of $g(u)$ such that 
+Here, we choose the normalization $\phi(0)=1$ for simplicity. Once we make such a choice, we have $F(v_x^2)=\phi(v_x^2)$ and $F(v_x^2+v_y^2)=\phi(v_x^2)\phi(v_y^2)=F(v_x^2)+F(v_y^2)$.
+
+Let $G(x)=\ln[F(x)]$, we have
 
 $$
-\ln\left[ g(v_x)g(v_y)g(v_z)\right]=\ln\left[ g\left( (v_x^2+v_y^2+v_z^2)^{\frac{1}{2}}\right)\right]\text{.}
+G(x+y)=G(x)+G(y)\text{.}
 $$
 
-We can try some form of the $g(u)$. Say $g(u)\propto u^m$, $g(u)\propto e^{B u}$, ... After some trial functions, we can convince ourselves that the function $g(u)\propto e^{-\lambda u^2}$ with $\lambda>0$. ($\lambda>0$ since it should be a distribution function that is normalizable).
+This is the *Cauchy functional equation*.
+If we assume $G(x)$ is continuous, the general solution is $G(x)=cx$.
+This implies $F(x)\propto e^{cx}$ where $c$ is a normalization constant to be determined. To have a normalizable distribution function, we can choose $c=-|c|<0$. So we have
 
-Once we figure out the form of the density function, we know the normalization condition is
+$$
+f_v(\textbf{v})\propto e^{-|c|\textbf{v}^2}\text{.}
+$$
+
+Once we figure out the form of the probability density function, we know the normalization condition is
 
 $$
 N=\int f(\textbf{r},\textbf{v})d\textbf{r}d\textbf{v}=\int f_r(\textbf{r})d\textbf{r}\int f_x(v_x)f_y(v_y)f_z(v_z) dv_xdv_ydv_z\text{.}
@@ -51,12 +61,12 @@ $$
 So we have the normalization condition
 
 $$
-\int du g(u)=1\text{.}
+\int du f_{\mu}(u)=1;\mu=x,y,z\text{.}
 $$
 
-Performing the Gaussian integral, we have $g(u)=\sqrt{\frac{\lambda}{\pi}}\exp[-\lambda u^2]$.
+Performing the Gaussian integral, we have $f_{\mu}(u)=\sqrt{\frac{\lambda}{\pi}}\exp[-\lambda u^2]$.
 
-At this point, we don't know what is $\lambda$. But we can already evaluate the expectation value, $\langle v^2\rangle=\langle v_x^2+v_y^2+v_z^2\rangle=3\int v_x^2 g(v_x)dv_x=\frac{3}{2\lambda}$.
+At this point, we don't know what is $\lambda$. But we can already evaluate the expectation value, $\langle v^2\rangle=\langle v_x^2+v_y^2+v_z^2\rangle=3\int v_x^2 f_{\mu}(v_x)dv_x=\frac{3}{2\lambda}$.
 
 To figure out the expression of $\lambda$ using the microscopic modeling, we can consider the ideal gas equation $PV=Nk_BT$ and the microscopic expression of the concept of pressure, $P$.
 

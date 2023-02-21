@@ -123,21 +123,30 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><span class="math notranslate nohighlight">\(\{\textbf{R}_i,\textbf{V}_i\}\)</span> and <span class="math notranslate nohighlight">\(\{\textbf{R}_j,\textbf{V}_j\}\)</span> are independent variables for different <span class="math notranslate nohighlight">\(i,j\)</span>. Let’s use <span class="math notranslate nohighlight">\(f(\textbf{r},\textbf{v})\)</span> to denote the density of particles in the space at <span class="math notranslate nohighlight">\(\textbf{r},\textbf{v}\)</span>. The number of particles in this volume is <span class="math notranslate nohighlight">\(dN=f(\textbf{r},\textbf{v})d\textbf{r}d\textbf{v}\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\textbf{r}\)</span> and <span class="math notranslate nohighlight">\(\textbf{v}\)</span> are independent variables. So we expect <span class="math notranslate nohighlight">\(f(\textbf{r},\textbf{v})=f_r(\textbf{r})f_v(\textbf{v})\)</span>.</p></li>
 <li><p>The density is unifor in the space. So we know <span class="math notranslate nohighlight">\(f_r(\textbf{r})=N/V\)</span>.</p></li>
-<li><p>The velocity components, the <span class="math notranslate nohighlight">\(x,y,z\)</span> components, are mutually independent. So we have <span class="math notranslate nohighlight">\(f_v(\textbf{v}=f_x(v_x)f_y(v_y)f_z(v_z)\)</span></p></li>
-<li><p>The distribution of the velocity only depends on the magnitude of the velocity. That is, <span class="math notranslate nohighlight">\(f_v(\textbf{v})=f_v(|\textbf{v}|)=f_v((v_x^2+v_y^2+v_z^2)^{\frac{1}{2}})\)</span>.</p></li>
+<li><p>The velocity components, the <span class="math notranslate nohighlight">\(x,y,z\)</span> components, are mutually independent. So we have <span class="math notranslate nohighlight">\(f_v(\textbf{v})=f_x(v_x)f_y(v_y)f_z(v_z)\)</span></p></li>
+<li><p>The distribution of the velocity only depends on the magnitude of the velocity. Also, the system is isotropic. That is, <span class="math notranslate nohighlight">\(f_v(\textbf{v})=F(|\textbf{v}|^2)=F(v_x^2+v_y^2+v_z^2)\)</span>. Similarly, we expect <span class="math notranslate nohighlight">\(f_x(v_x)=\phi(v_x^2), f_y(v_y)=\phi(v_y^2),f_z(v_z)=\phi(v_z^2)\)</span>. The isotropic assumption suggest <span class="math notranslate nohighlight">\(f_x,f_y,f_z\)</span> should have the same functional form <span class="math notranslate nohighlight">\(\phi\)</span>.</p></li>
 </ol>
 <p>From 4 and 5, we have</p>
 <div class="math notranslate nohighlight">
-\[
-\ln f_v(\textbf{v})=\ln f_v((v_x^2+v_y^2+v_z^2)^{\frac{1}{2}})= \ln f_x(v_x)+\ln f_y(v_y)+\ln f_z(v_z)\text{.}
-\]</div>
-<p>Since the system is isotropic, there is no reason that <span class="math notranslate nohighlight">\(f_x(u), f_y(u), f_z(u)\)</span> has different expression, we can simply assume <span class="math notranslate nohighlight">\(f_x(u), f_y(u), f_z(u)=g(u)\)</span>. Similar argument suggests <span class="math notranslate nohighlight">\(f_v(u)=g(u)\)</span> also. So we are looking for a functional from of <span class="math notranslate nohighlight">\(g(u)\)</span> such that</p>
+\[\begin{split}
+F(v_{x}^2+0+0)&amp;=\phi(v_{x}^2)\phi(0)\phi(0)\\
+F(v_{x}^2+v_y^2+0)&amp;=\phi(v_{x}^2)\phi(v_y^2)\phi(0)
+\text{.}
+\end{split}\]</div>
+<p>Here, we choose the normalization <span class="math notranslate nohighlight">\(\phi(0)=1\)</span> for simplicity. Once we make such a choice, we have <span class="math notranslate nohighlight">\(F(v_x^2)=\phi(v_x^2)\)</span> and <span class="math notranslate nohighlight">\(F(v_x^2+v_y^2)=\phi(v_x^2)\phi(v_y^2)=F(v_x^2)+F(v_y^2)\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(G(x)=\ln[F(x)]\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \[
-\ln\left[ g(v_x)g(v_y)g(v_z)\right]=\ln\left[ g\left( (v_x^2+v_y^2+v_z^2)^{\frac{1}{2}}\right)\right]\text{.}
+G(x+y)=G(x)+G(y)\text{.}
 \]</div>
-<p>We can try some form of the <span class="math notranslate nohighlight">\(g(u)\)</span>. Say <span class="math notranslate nohighlight">\(g(u)\propto u^m\)</span>, <span class="math notranslate nohighlight">\(g(u)\propto e^{B u}\)</span>, … After some trial functions, we can convince ourselves that the function <span class="math notranslate nohighlight">\(g(u)\propto e^{-\lambda u^2}\)</span> with <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span>. (<span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> since it should be a distribution function that is normalizable).</p>
-<p>Once we figure out the form of the density function, we know the normalization condition is</p>
+<p>This is the <em>Cauchy functional equation</em>.
+If we assume <span class="math notranslate nohighlight">\(G(x)\)</span> is continuous, the general solution is <span class="math notranslate nohighlight">\(G(x)=cx\)</span>.
+This implies <span class="math notranslate nohighlight">\(F(x)\propto e^{cx}\)</span> where <span class="math notranslate nohighlight">\(c\)</span> is a normalization constant to be determined. To have a normalizable distribution function, we can choose <span class="math notranslate nohighlight">\(c=-|c|&lt;0\)</span>. So we have</p>
+<div class="math notranslate nohighlight">
+\[
+f_v(\textbf{v})\propto e^{-|c|\textbf{v}^2}\text{.}
+\]</div>
+<p>Once we figure out the form of the probability density function, we know the normalization condition is</p>
 <div class="math notranslate nohighlight">
 \[
 N=\int f(\textbf{r},\textbf{v})d\textbf{r}d\textbf{v}=\int f_r(\textbf{r})d\textbf{r}\int f_x(v_x)f_y(v_y)f_z(v_z) dv_xdv_ydv_z\text{.}
@@ -145,10 +154,10 @@ N=\int f(\textbf{r},\textbf{v})d\textbf{r}d\textbf{v}=\int f_r(\textbf{r})d\text
 <p>So we have the normalization condition</p>
 <div class="math notranslate nohighlight">
 \[
-\int du g(u)=1\text{.}
+\int du f_{\mu}(u)=1;\mu=x,y,z\text{.}
 \]</div>
-<p>Performing the Gaussian integral, we have <span class="math notranslate nohighlight">\(g(u)=\sqrt{\frac{\lambda}{\pi}}\exp[-\lambda u^2]\)</span>.</p>
-<p>At this point, we don’t know what is <span class="math notranslate nohighlight">\(\lambda\)</span>. But we can already evaluate the expectation value, <span class="math notranslate nohighlight">\(\langle v^2\rangle=\langle v_x^2+v_y^2+v_z^2\rangle=3\int v_x^2 g(v_x)dv_x=\frac{3}{2\lambda}\)</span>.</p>
+<p>Performing the Gaussian integral, we have <span class="math notranslate nohighlight">\(f_{\mu}(u)=\sqrt{\frac{\lambda}{\pi}}\exp[-\lambda u^2]\)</span>.</p>
+<p>At this point, we don’t know what is <span class="math notranslate nohighlight">\(\lambda\)</span>. But we can already evaluate the expectation value, <span class="math notranslate nohighlight">\(\langle v^2\rangle=\langle v_x^2+v_y^2+v_z^2\rangle=3\int v_x^2 f_{\mu}(v_x)dv_x=\frac{3}{2\lambda}\)</span>.</p>
 <p>To figure out the expression of <span class="math notranslate nohighlight">\(\lambda\)</span> using the microscopic modeling, we can consider the ideal gas equation <span class="math notranslate nohighlight">\(PV=Nk_BT\)</span> and the microscopic expression of the concept of pressure, <span class="math notranslate nohighlight">\(P\)</span>.</p>
 <p>Consider the surface expand in the <span class="math notranslate nohighlight">\(y-z\)</span> plan, the particles collide with the container without energy lost, so we have the momentum transfer to be</p>
 <div class="math notranslate nohighlight">
