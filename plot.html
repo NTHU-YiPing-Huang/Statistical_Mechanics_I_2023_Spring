@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+  <title>Basic numerics and plot &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
@@ -12,7 +13,6 @@
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
       <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
-    
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -37,10 +37,8 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
         <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="_static/js/theme.js"></script>
-    <script src="_static/searchtools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,7 +49,7 @@ const thebe_selector_output = ".output, .cell_output"
             <a href="syllabus.html" class="icon icon-home"> Statistical Mechanics (I)
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -88,8 +86,9 @@ const thebe_selector_output = ".output, .cell_output"
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="syllabus.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Search</li>
+      <li class="breadcrumb-item active">Basic numerics and plot</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/plot.ipynb" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -97,18 +96,147 @@ const thebe_selector_output = ".output, .cell_output"
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search functionality.
-    </p>
-  </div>
-  </noscript>
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-numerics-and-plot">
+<h1>Basic numerics and plot<a class="headerlink" href="#basic-numerics-and-plot" title="Permalink to this heading"></a></h1>
+<p>pylab notebook just like namespace</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># For interactive plot, please use 
+# %pylab notebook
+%pylab inline
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%pylab is deprecated, use %matplotlib inline and import the required libraries.
+Populating the interactive namespace from numpy and matplotlib
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#%matplotlib notebook
+import numpy as np
+import matplotlib as mpl
+#mpl.rcParams[&#39;figure.dpi&#39;]= 150
+%config InlineBackend.figure_format = &#39;svg&#39;
+import matplotlib.pyplot as plt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>Np=20
+## 
+x1 = np.linspace(-4, -2, Np)
+y1 = np.zeros(Np)
+## 
+x2 = np.linspace(-2, 0, Np)
+y2 = (2+x2)/4.
+## 
+x3 = np.linspace(0, 2, Np)
+y3 = (2-x3)/4.
+##
+x4 = np.linspace(2, 4, Np)
+y4 = np.zeros(Np)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>figure()
+plot(np.concatenate((x1,x2,x3,x4)),np.concatenate((y1,y2,y3,y4)), label=r&#39;$P_2(S_2)$&#39;,marker=&quot;.&quot;)
+sigma=np.sqrt(2/3)
+mu=0.0
+x=np.concatenate((x1,x2,x3,x4))
+plot(x,1/(sigma * np.sqrt(2 * np.pi)) * np.exp( - (x - mu)**2 / (2 * sigma**2)), label=r&#39;$G(\sigma_2,\langle S_2 \rangle)$&#39;,marker=&quot;+&quot;)
 
-  
-  <div id="search-results">
-  
-  </div>
+plot(x,1/(sigma * np.sqrt(2 * np.pi)) * np.exp( - (x - mu)**2 / (2 * sigma**2))-np.concatenate((y1,y2,y3,y4)), label=r&#39;$\delta$&#39;,marker=&quot;x&quot;)
+
+ylim([-0.1,0.6])
+xlim([-4,4])
+
+legend(loc=&#39;upper left&#39;)
+savefig(&#39;S_2.pdf&#39;)
+show()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/plot_5_0.svg" src="_images/plot_5_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>Np=20
+## 
+x1 = np.linspace(-4, -3, Np)
+y1 = np.zeros(Np)
+## 
+x2 = np.linspace(-3, -1, Np)
+y2 = ( 2*(3+x2)+((1+x2)**2-4)/2)/8.
+## 
+x3 = np.linspace(-1, 0, Np)
+y3 = (3-x3**2)/8.
+##
+x4 = np.linspace(0, 1, Np)
+y4 = (3-x4**2)/8.
+##
+x5 = np.linspace(1, 3, Np)
+y5 = ( 2*(3-x5)+((1-x5)**2-4)/2)/8.
+##
+x6 = np.linspace(3, 4, Np)
+y6 = np.zeros(Np)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>figure()
+plot(np.concatenate((x1,x2,x3,x4,x5,x6)),np.concatenate((y1,y2,y3,y4,y5,y6)), label=r&#39;$P_3(S_3)$&#39;,marker=&quot;.&quot;)
+sigma=np.sqrt(1)
+mu=0.0
+x=np.concatenate((x1,x2,x3,x4,x5,x6))
+plot(x,1/(sigma * np.sqrt(2 * np.pi)) * np.exp( - (x - mu)**2 / (2 * sigma**2)), label=r&#39;$G(\sigma_3,\langle S_3 \rangle)$&#39;,marker=&quot;+&quot;)
+
+plot(x,1/(sigma * np.sqrt(2 * np.pi)) * np.exp( - (x - mu)**2 / (2 * sigma**2))-np.concatenate((y1,y2,y3,y4,y5,y6)), label=r&#39;$\delta$&#39;,marker=&quot;x&quot;)
+
+ylim([-0.1,0.6])
+xlim([-4,4])
+
+legend(loc=&#39;upper left&#39;)
+savefig(&#39;S_3.pdf&#39;)
+show()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/plot_7_0.svg" src="_images/plot_7_0.svg" /></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
            </div>
           </div>
@@ -134,14 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-  <script>
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script id="searchindexloader"></script>
-   
-
+  </script> 
 
 </body>
 </html>

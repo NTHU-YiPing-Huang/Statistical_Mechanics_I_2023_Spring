@@ -86,7 +86,7 @@ That is, the operator $H_i$ only acts non-trivially on the Hilbert space of the 
 
 Suppose the kets $\vert \phi_{\gamma'}\rangle_j$ are the eigenstates of the Hamiltonian $H_j$, *i.e.* $H_j|\phi_{\gamma'}\rangle_j=E_{\gamma'}|\phi_{\gamma'}\rangle_j$. The corresponding eigenstates with many-body energy $E_{\gamma}$ is $H\vert \phi ^{B/F}_N\rangle=\left(\sum_j E_{\gamma_j}\right) \vert \phi^{B/F}_N\rangle=E_{\gamma}\vert \phi^{B/F}_N\rangle$. The big difference of boson and fermion is the Pauli exclusion principle, we can have all the bosons sitting on the same state to lower the total energy; for fermions, they need to be stacked one by one. That corresponds to the two very important concepts, the Bose-Einstein condensation and the concept of fermi sea.
 
-# Partition function for free fermions and bosons
+## Partition function for free fermions and bosons
 
 In principle, the $\gamma_j$ in the above expression of the many-body wave function can be any quantum number. For example, for a free particle, $\gamma_j$ can be the index of momentum $p_j$. We can describe our system as the $j$-th particle has momentum $p_j$ then symmetrize/anti-symmetrize the whole wave function as we did currently. However, one can also use another representation to describe the state. That is, we know don't have the concept of $j$-th particle, maybe we can just count how many particles have a specific momentum $p_a$. Then, we can describe our system using those numbers $\{n_{p_1},n_{p_2},\cdots, n_{p_a},\cdots\}$. If we did so for our $N$ particle system, the representation must satisfy the constraint that $\sum_a n_{p_a}=N$. Here, we use $a$, which is the index for the quantum number (momentum in this case), as a distinct label with the index of the particle $j$.
 

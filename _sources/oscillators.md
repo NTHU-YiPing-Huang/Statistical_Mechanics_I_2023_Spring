@@ -149,7 +149,7 @@ One interesting question is: are there qualitative difference when we try to mov
 ```
 
 
-# Key points to learn from the two example
+## Key points to learn from the two example
 
 The two examples demonstrate several important ideas:
 1. How to construct partition functions when the energy is quantized or continuous? Integral and summation!

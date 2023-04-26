@@ -5,42 +5,43 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Fermions and Bosons &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
   <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
+    <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-        <script src="../_static/tabs.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-        <script src="../_static/design-tabs.js"></script>
+        <script src="_static/design-tabs.js"></script>
         <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script async="async" src="_static/sphinx-thebe.js"></script>
         <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Phonon and photon" href="phonon_photon.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,10 +49,10 @@ const thebe_selector_output = ".output, .cell_output"
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../syllabus.html" class="icon icon-home"> Statistical Mechanics (I)
+            <a href="syllabus.html" class="icon icon-home"> Statistical Mechanics (I)
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -60,14 +61,23 @@ const thebe_selector_output = ".output, .cell_output"
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../numerical_tools.html">Numerical tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_tools.html">Numerical tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Postulates_SM.html">Postulates of statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Free Fermions and Bosons</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -76,17 +86,18 @@ const thebe_selector_output = ".output, .cell_output"
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../syllabus.html">Statistical Mechanics (I)</a>
+          <a href="syllabus.html">Statistical Mechanics (I)</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li><a href="syllabus.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="free_systems.html">Other interacting free systems</a></li>
       <li class="breadcrumb-item active">Free Fermions and Bosons</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/MD_files/Fermion_Boson.md" rel="nofollow"> View page source</a>
+            <a href="_sources/Fermion_Boson.md" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -111,7 +122,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>For example, photon and phonon are bosons. Electron and neutron are fermions.</p>
 <div class="tip admonition">
 <p class="admonition-title">What?</p>
-<p>It seems above argument is quite general. However, something sutble will happen in two-dimensional space. There, the swapping operation is not so trivial. Therefore, a different quantum statistical behavior other than fermion or boson is possible. Such a particle is called ‘anyon’. One of the simplest model demonstrate anyon physics is the <a class="reference external" href="https://topocondmat.org/index.html">toric code model</a>. Anyons could be used in quantum computation and therefore has attract lots of attention recently. Some recent breakthrough on related subjects including <span id="id1">[<a class="reference internal" href="biblio.html#id12" title="Giulia Semeghini, Harry Levine, Alexander Keesling, Sepehr Ebadi, Tout T Wang, Dolev Bluvstein, Ruben Verresen, Hannes Pichler, Marcin Kalinowski, Rhine Samajdar, and others. Probing topological spin liquids on a programmable quantum simulator. Science, 374(6572):1242–1247, 2021.">SLK+21</a>]</span> and <span id="id2">[<a class="reference internal" href="biblio.html#id13" title="KJ Satzinger, Y-J Liu, A Smith, C Knapp, M Newman, C Jones, Z Chen, C Quintana, X Mi, A Dunsworth, and others. Realizing topologically ordered states on a quantum processor. Science, 374(6572):1237–1241, 2021.">SLS+21</a>]</span>.</p>
+<p>It seems above argument is quite general. However, something sutble will happen in two-dimensional space. There, the swapping operation is not so trivial. Therefore, a different quantum statistical behavior other than fermion or boson is possible. Such a particle is called ‘anyon’. One of the simplest model demonstrate anyon physics is the <a class="reference external" href="https://topocondmat.org/index.html">toric code model</a>. Anyons could be used in quantum computation and therefore has attract lots of attention recently. Some recent breakthrough on related subjects including <span id="id1">[<a class="reference internal" href="MD_files/biblio.html#id12" title="Giulia Semeghini, Harry Levine, Alexander Keesling, Sepehr Ebadi, Tout T Wang, Dolev Bluvstein, Ruben Verresen, Hannes Pichler, Marcin Kalinowski, Rhine Samajdar, and others. Probing topological spin liquids on a programmable quantum simulator. Science, 374(6572):1242–1247, 2021.">SLK+21</a>]</span> and <span id="id2">[<a class="reference internal" href="MD_files/biblio.html#id13" title="KJ Satzinger, Y-J Liu, A Smith, C Knapp, M Newman, C Jones, Z Chen, C Quintana, X Mi, A Dunsworth, and others. Realizing topologically ordered states on a quantum processor. Science, 374(6572):1237–1241, 2021.">SLS+21</a>]</span>.</p>
 </div>
 </section>
 <section id="quantum-many-body-system-non-interacting-limit">
@@ -168,9 +179,8 @@ H_i=\textbf{1}_1\otimes\textbf{1}_2\otimes\cdots\textbf{1}_{i-1}\otimes H_i\otim
 <p>Suppose the kets <span class="math notranslate nohighlight">\(\vert \phi_{\gamma'}\rangle_j\)</span> are the eigenstates of the Hamiltonian <span class="math notranslate nohighlight">\(H_j\)</span>, <em>i.e.</em> <span class="math notranslate nohighlight">\(H_j|\phi_{\gamma'}\rangle_j=E_{\gamma'}|\phi_{\gamma'}\rangle_j\)</span>. The corresponding eigenstates with many-body energy <span class="math notranslate nohighlight">\(E_{\gamma}\)</span> is <span class="math notranslate nohighlight">\(H\vert \phi ^{B/F}_N\rangle=\left(\sum_j E_{\gamma_j}\right) \vert \phi^{B/F}_N\rangle=E_{\gamma}\vert \phi^{B/F}_N\rangle\)</span>. The big difference of boson and fermion is the Pauli exclusion principle, we can have all the bosons sitting on the same state to lower the total energy; for fermions, they need to be stacked one by one. That corresponds to the two very important concepts, the Bose-Einstein condensation and the concept of fermi sea.</p>
 </section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="partition-function-for-free-fermions-and-bosons">
-<h1>Partition function for free fermions and bosons<a class="headerlink" href="#partition-function-for-free-fermions-and-bosons" title="Permalink to this heading"></a></h1>
+<section id="partition-function-for-free-fermions-and-bosons">
+<h2>Partition function for free fermions and bosons<a class="headerlink" href="#partition-function-for-free-fermions-and-bosons" title="Permalink to this heading"></a></h2>
 <p>In principle, the <span class="math notranslate nohighlight">\(\gamma_j\)</span> in the above expression of the many-body wave function can be any quantum number. For example, for a free particle, <span class="math notranslate nohighlight">\(\gamma_j\)</span> can be the index of momentum <span class="math notranslate nohighlight">\(p_j\)</span>. We can describe our system as the <span class="math notranslate nohighlight">\(j\)</span>-th particle has momentum <span class="math notranslate nohighlight">\(p_j\)</span> then symmetrize/anti-symmetrize the whole wave function as we did currently. However, one can also use another representation to describe the state. That is, we know don’t have the concept of <span class="math notranslate nohighlight">\(j\)</span>-th particle, maybe we can just count how many particles have a specific momentum <span class="math notranslate nohighlight">\(p_a\)</span>. Then, we can describe our system using those numbers <span class="math notranslate nohighlight">\(\{n_{p_1},n_{p_2},\cdots, n_{p_a},\cdots\}\)</span>. If we did so for our <span class="math notranslate nohighlight">\(N\)</span> particle system, the representation must satisfy the constraint that <span class="math notranslate nohighlight">\(\sum_a n_{p_a}=N\)</span>. Here, we use <span class="math notranslate nohighlight">\(a\)</span>, which is the index for the quantum number (momentum in this case), as a distinct label with the index of the particle <span class="math notranslate nohighlight">\(j\)</span>.</p>
 <p>Let’s start from here to construct the canonical ensemble of quantum gases with internal degree of freedom <span class="math notranslate nohighlight">\(\alpha\)</span> using the occupation number representation.</p>
 <div class="math notranslate nohighlight">
@@ -210,7 +220,7 @@ Z_{GC}=\sum_{N=0}^\infty Z_N e^{\beta \mu N}=\sum_{\alpha}\sum_{\{n_{\textbf{p}_
 (2S+1)\sum_{\textbf{p}_a}\ln \zeta_{\eta}(\epsilon(\textbf{p}_a)-\mu)=(2S+1)\sum_{\textbf{p}_a}\left(-\frac{\Omega_{\textbf{p}_a}}{k_BT}\right)
 \text{.}
 \end{split}\]</div>
-<p>In the last line, if we assume the energy <span class="math notranslate nohighlight">\(\epsilon(\textbf{p}_a,\alpha)\)</span> is independent of the internal degree of freedome <span class="math notranslate nohighlight">\(\alpha\)</span> (such as spin), we expect the summation over <span class="math notranslate nohighlight">\(\alpha\)</span> only provides a trivial factor. In the simple cases such as interacting free fermi/bose gases, we expect this relation to hold. Therefore, <span class="math notranslate nohighlight">\(\sum_{\alpha}\to (2S+1)\)</span>. Here, we assume we are discussing particles that are not gauge particles, so the internal degrees of freedom is related to the spin value <span class="math notranslate nohighlight">\(S\)</span>. ( <em>e.g.</em> Spin <span class="math notranslate nohighlight">\(1/2\)</span> has two possible internal states, spin up or spin down. It turns out, there is a <strong>spin-statistics theorem</strong> for Lorentz invariant systems. We will leave the readers to check the quantum field theory textbooks. <span id="id3">[<a class="reference internal" href="biblio.html#id7" title="Mark Srednicki. Chaos and quantum thermalization. arXiv preprint cond-mat/9403051, 1994.">Sre94</a>]</span> )</p>
+<p>In the last line, if we assume the energy <span class="math notranslate nohighlight">\(\epsilon(\textbf{p}_a,\alpha)\)</span> is independent of the internal degree of freedome <span class="math notranslate nohighlight">\(\alpha\)</span> (such as spin), we expect the summation over <span class="math notranslate nohighlight">\(\alpha\)</span> only provides a trivial factor. In the simple cases such as interacting free fermi/bose gases, we expect this relation to hold. Therefore, <span class="math notranslate nohighlight">\(\sum_{\alpha}\to (2S+1)\)</span>. Here, we assume we are discussing particles that are not gauge particles, so the internal degrees of freedom is related to the spin value <span class="math notranslate nohighlight">\(S\)</span>. ( <em>e.g.</em> Spin <span class="math notranslate nohighlight">\(1/2\)</span> has two possible internal states, spin up or spin down. It turns out, there is a <strong>spin-statistics theorem</strong> for Lorentz invariant systems. We will leave the readers to check the quantum field theory textbooks. <span id="id3">[<a class="reference internal" href="MD_files/biblio.html#id7" title="Mark Srednicki. Chaos and quantum thermalization. arXiv preprint cond-mat/9403051, 1994.">Sre94</a>]</span> )</p>
 <p>Once we take the log, the product over <span class="math notranslate nohighlight">\(\textbf{p}_a\)</span> turns into a summation. So we can ask the question. What is the expectation value of particles sitting at the particular momentum <span class="math notranslate nohighlight">\(\textbf{p}_a\)</span>? We can again see the influence of the interacting free assumption and the advantage of using grand canonical ensemble, the modes are basically decoupled! So when we ask the average value of the occupation number, we can simply evaluate it using <span class="math notranslate nohighlight">\(\langle n_{\textbf{p}_a}\rangle= -\frac{\partial \Omega_{\textbf{p}_a}}{\partial \mu}\)</span>. That is,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -252,6 +262,7 @@ Z_{GC}=\sum_{N=0}^\infty Z_N e^{\beta \mu N}=\sum_{\alpha}\sum_{\{n_{\textbf{p}_
 \langle \hat{N}\rangle=N= z\frac{\partial }{\partial z}\ln Z_{GC}= \eta (2S+1) \left(\frac{L}{\lambda}\right)^3 \phi_{\frac{3}{2}}(\eta z)\text{.}
 \]</div>
 <p>Here we use the relation <span class="math notranslate nohighlight">\(z\frac{\partial}{\partial z} \phi_{\alpha}(cz)=\phi_{\alpha-1}(cz)\)</span>.</p>
+</section>
 <section id="classical-limit-of-the-quantum-gases">
 <h2>Classical limit of the quantum gases<a class="headerlink" href="#classical-limit-of-the-quantum-gases" title="Permalink to this heading"></a></h2>
 <p>When <span class="math notranslate nohighlight">\(z\ll 1\)</span>, we can approximate <span class="math notranslate nohighlight">\(\phi_{\alpha}(\eta z)\sim \eta z\)</span>. In that limit, we can solve <span class="math notranslate nohighlight">\(z\)</span> as a function of <span class="math notranslate nohighlight">\(N\)</span>. We have</p>
@@ -345,7 +356,7 @@ From the Bose-Einstein distribution, we have <span class="math notranslate nohig
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./MD_files"
+            path: "./."
         },
         predefinedOutput: true
     }
@@ -354,7 +365,9 @@ From the Bose-Einstein distribution, we have <span class="math notranslate nohig
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="phonon_photon.html" class="btn btn-neutral float-left" title="Phonon and photon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

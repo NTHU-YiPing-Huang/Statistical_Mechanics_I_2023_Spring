@@ -3,6 +3,8 @@
 > 盡信書不如無書。--孟子 
 >
 > 道可道，非常道。--老子
+> 
+> *Keep throwing out the inessential until the problem becomes trivial. Then go back one step. -- Sam Edwards*
 
 The quotes above are very elegant descriptions about the attitude of learning. If one completely believe what a book says, it is better not to read any books. Any books should not become an obstacles for thinking. The second quote says: if a principle can be explicitly described by words, such a principle will not be the eternal principle. Somehow they describe how our understanding evolves as a function of time.
 
@@ -11,8 +13,8 @@ The quotes above are very elegant descriptions about the attitude of learning. I
 * Classroom: Physics building, Room 124 
 * Instructor: Yi-Ping Huang
 * Office hours: After the course or by appointment (Online or at Room 517)
-* Teaching assistant: **<+TBA+>**, **<+TBA+>**, and **<+TBA+>**
-* TA Office hours: <+19:00+> <+Monday+>:**<+TBA+>**, <+Tuesday+>:**<+TBA+>**, <+Wednesday+>:**<+TBA+>** at Room <+TBA+>( Starting from <+Feb. 24th+> )
+* Teaching assistant: **Shih-Hsuan Lin**, **Chia-Hau Wei**, and **Yi-Jhun Chen**
+* TA Office hours: 19:00 Monday:**R313**, Tuesday:**R504**, Friday+>:**R501**
 * **Midterm exam date: 2023, April, 20**
 * **Final exam date: 2023, June, 15**
 * The course will be offered in English.

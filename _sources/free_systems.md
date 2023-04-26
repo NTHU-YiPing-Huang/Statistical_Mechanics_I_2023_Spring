@@ -1,4 +1,4 @@
-# Interacting free systems
+# Other interacting free systems
 
 *Reference: {cite:p}`peliti2011statistical` Chap. 4*
 

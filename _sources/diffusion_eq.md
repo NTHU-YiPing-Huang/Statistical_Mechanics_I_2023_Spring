@@ -280,6 +280,7 @@ $$
 $$
 
 In principle, we should have the relation
+
 $$
 \Pi=f(\Pi_1,\Pi_2).
 $$
