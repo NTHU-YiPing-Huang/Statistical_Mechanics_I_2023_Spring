@@ -41,7 +41,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Phonon and photon" href="phonon_photon.html" /> 
+    <link rel="next" title="Phonon and photon" href="phonon_photon.html" />
+    <link rel="prev" title="Oscillators" href="oscillators.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -74,8 +75,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2nd_quantization.html">Second quantization</a></li>
 </ul>
 </li>
 </ul>
@@ -138,30 +140,129 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The state in this Hilbert space can be represented by</p>
 <div class="math notranslate nohighlight">
 \[
-\vert \psi\rangle=\vert\phi _{\gamma_1}\rangle_1\otimes\vert\phi _{\gamma_2}\rangle_2\otimes\cdots\vert\phi _{\gamma_N}\rangle_N\text{.}
+\vert \psi)=\vert\phi _{\gamma_1}\}\otimes\vert\phi _{\gamma_2}\}_2\otimes\cdots\vert\phi _{\gamma_N}\}_N\text{.}
 \]</div>
-<p>Here, <span class="math notranslate nohighlight">\(\vert\phi_{\gamma_i}\rangle_j\)</span> is the complete set in <span class="math notranslate nohighlight">\(\mathcal{H}_j\)</span> with quantum number <span class="math notranslate nohighlight">\(\gamma_i\)</span>.
-Next, we can ask how a wave function is represented as ket vectors in our simple two particle example above.</p>
+<p>Here, <span class="math notranslate nohighlight">\(\vert\phi_{\gamma_i}\}_j\)</span> is the complete set in <span class="math notranslate nohighlight">\(\mathcal{H}_j\)</span> with quantum number <span class="math notranslate nohighlight">\(\gamma_i\)</span>. Here we use <span class="math notranslate nohighlight">\(\vert \psi\}\)</span> to represent the single particle wave function and <span class="math notranslate nohighlight">\(\vert \psi )\)</span> to represent the many-body wave function before considering the indistinguishability. The expression is still quite abstract, let’s take the simplest non-trivial example and build our understanding accordingly.</p>
+<section id="the-two-level-system-with-two-particles">
+<h4>The two-level system with two particles<a class="headerlink" href="#the-two-level-system-with-two-particles" title="Permalink to this heading"></a></h4>
+<p>Next, we can ask how a wave function is represented as ket vectors in our simple two-particle example above? Once we know how things work in the case with two particles, we should know how to generalize it into the more complicated cases.</p>
+<p>Here, we consider the case that the single particle system is just a two-level system. That is, <span class="math notranslate nohighlight">\(\gamma_1,\gamma_2\in \{a,b\}\)</span>. To discuss all the possible configurations, we consider the case when <span class="math notranslate nohighlight">\(\gamma_1\neq \gamma_2\)</span> and when <span class="math notranslate nohighlight">\(\gamma_1=\gamma_2\)</span>.</p>
+<p><em>Case 1</em>, <span class="math notranslate nohighlight">\(\gamma_1\neq \gamma_2\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\phi^{B/F}(\textbf{x}_1,\textbf{x}_2)=\sqrt{2}^{-1}\left[\phi_{\gamma_1}(\textbf{x}_1)\phi_{\gamma_2}(\textbf{x}_2)\pm \phi_{\gamma_1}(\textbf{x}_2)\phi_{\gamma_2}(\textbf{x}_1)\right]=\langle \textbf{x}_1,\textbf{x}_2\vert \phi^{B/F}\rangle\\
-\vert \phi^{B/F}\rangle = \frac{1}{\sqrt{2}}\left[\vert\phi_{\gamma_1}\rangle_1\otimes \vert\phi_{\gamma_2}\rangle_2\pm \vert\phi_{\gamma_1}\rangle_2\otimes \vert \phi_{\gamma_2}\rangle_1\right] \text{.}
+\phi^{B/F}(\textbf{x}_1,\textbf{x}_2)&amp;=\sqrt{2}^{-1}\left[\phi_{a}(\textbf{x}_1)\phi_{b}(\textbf{x}_2)\pm \phi_{a}(\textbf{x}_2)\phi_{b}(\textbf{x}_1)\right]=\langle \textbf{x}_1,\textbf{x}_2\vert \phi^{B/F}\rangle\\
+\vert \phi^{B/F}_{\{a,b\}}\rangle &amp;= \frac{1}{\sqrt{2}}\left[\vert\phi_{a}\}_1\otimes \vert\phi_{b}\}_2\pm \vert \phi_{b}\}_1\otimes\vert\phi_{a}\}_2 \right]= \frac{1}{\sqrt{2}}\left[\vert\phi_{a}\}_1\otimes \vert\phi_{b}\}_2\pm \vert\phi_{a}\}_2\otimes\vert \phi_{b}\}_1 \right] \text{.}
 \end{split}\]</div>
-<p>Comparing the simple two particle wave function and the wave function of distinguishable particles, we can get some hint about how should we proceed for a general <span class="math notranslate nohighlight">\(N\)</span> particle system – symmetric summation or anti-symmetric summation.</p>
-<p>The generalization for <span class="math notranslate nohighlight">\(N\)</span> particle system should be</p>
+<p>In the last two equality, we can interpret the curly kets as the permutation of the quantum number <span class="math notranslate nohighlight">\(a,b\)</span> with the ordering of the Hilbert space fixed or we can consider the quantum number to have the fixed ordering but permuting the Hilbert space index. Here, we use the angle ket <span class="math notranslate nohighlight">\(\vert \phi\rangle\)</span> to represent the many-body wave function with indistinguishability considered.</p>
+<p><em>Case 2</em>, <span class="math notranslate nohighlight">\(\gamma_1= \gamma_2\in\{a,b\}\)</span>:</p>
+<p>We can see it is impossible to form such a wave function for fermionic system because of the Pauli exclusive principle. However, we can have two states for the bosonic case</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\vert \phi^B_N\rangle =\sqrt{N!}^{-1}P_{S}\left[ \vert \phi_{\gamma_1}\rangle_1 \otimes\vert \phi_{\gamma_2}\rangle_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\rangle_N\right]\\
-\vert \phi^F_N\rangle =\sqrt{N!}^{-1}P_{AS}\left[ \vert \phi_{\gamma_1}\rangle_1 \otimes\vert \phi_{\gamma_2}\rangle_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\rangle_N\right]
+\vert \phi^B_{\{a,a\}}\rangle &amp;=|\phi_a\}_1|\phi_a\}_2\nonumber\\
+\vert \phi^B_{\{b,b\}}\rangle &amp;=|\phi_b\}_1|\phi_b\}_2\text{.}
+\end{split}\]</div>
+<p>We can try to ask the same question from a different angle: what are we doing exactly? The dimensionality of the space <span class="math notranslate nohighlight">\(\mathcal{H}_1\otimes\mathcal{H}_2\)</span> is 4 if the two Hilbert spaces are distinguishable. The above process construct the corresponding basis when indistinguishability is considered. If so, what is the relation between the fermionic Hilbert space and the Bosonic Hilbert space and the original space, <span class="math notranslate nohighlight">\(\mathcal{H}_1\otimes\mathcal{H}_2\)</span>? Let’s try to use the simple example to explore the related structure before we make the generalization.</p>
+<p>The four basis of <span class="math notranslate nohighlight">\(\mathcal{H}_1\otimes\mathcal{H}_2\)</span> are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vert \phi_{ (a,a)}\}&amp;= \vert\phi_a\}_1\vert\phi_a\}_2\nonumber\\
+\vert \phi_{ (a,b)}\}&amp;= \vert\phi_a\}_1\vert\phi_b\}_2\nonumber\\
+\vert \phi_{ (b,a)}\}&amp;= \vert\phi_b\}_1\vert\phi_a\}_2\nonumber\\
+\vert \phi_{ (b,b)}\}&amp;= \vert\phi_b\}_1\vert\phi_b\}_2\text{.}
+\end{split}\]</div>
+<p>Here, we use <span class="math notranslate nohighlight">\((a,b)\)</span> to remind ourselves that the ordering is important.</p>
+<p>Now we can ask: How to use the fermionic or bosonic basis (with indistinguishability considered, the ordering is not important, so we use <span class="math notranslate nohighlight">\(\{\gamma_1,\gamma_2\}\)</span>) to reconstruct the basis in <span class="math notranslate nohighlight">\(\mathcal{H}_1\otimes\mathcal{H}_2\)</span>?</p>
+<p>Staring at the structure of the wave functions, we immediately realize that <span class="math notranslate nohighlight">\(\mathcal{H}_1\otimes\mathcal{H}_2=\mathcal{H}^B\oplus\mathcal{H}^F\)</span>. The original Hilbert space where indistinguishability is not considered can be constructed from the Bosonic Hilbert space direct sum with the Fermionic Hilbert space. That is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vert \phi_{ (a,a)}\}&amp;= \vert \phi^B_{\{a,a\}}\rangle\nonumber\\
+\vert \phi_{ (a,b)}\}&amp;= (\vert \phi^B_{\{a,b\}}\rangle+\vert \phi^F_{\{a,b\}}\rangle)/\sqrt{2}\nonumber\\
+\vert \phi_{ (b,a)}\}&amp;= (\vert \phi^B_{\{a,b\}}\rangle-\vert \phi^F_{\{a,b\}}\rangle)/\sqrt{2}\nonumber\\
+\vert \phi_{ (b,b)}\}&amp;= \vert\phi^B_{\{b,b\}}\rangle\text{.}
+\end{split}\]</div>
+<p>So we can see what’s the mathematical structure. However, of course we know that fermions will always be fermions. So it does not make sense to have a superposition between bosonic wave function with the fermionic wave function. Readers who are familiar with how symmetry is applied to a quantum system might thought the structure is very similar with the irreducible representation when certain symmetry is considered. That is also why sometimes we call the space <span class="math notranslate nohighlight">\(\mathcal{H}^B\)</span> the bosonic sector and <span class="math notranslate nohighlight">\(\mathcal{H}^F\)</span> the fermionic sector. The sectors that has no superposition principles are called the superselection sectors.</p>
+</section>
+<section id="the-general-fermionic-and-bosonic-wave-function">
+<h4>The general fermionic and bosonic wave function<a class="headerlink" href="#the-general-fermionic-and-bosonic-wave-function" title="Permalink to this heading"></a></h4>
+<p>Comparing the simple two particle wave function and the wave function of distinguishable particles, we can get some hint about how should we proceed for a general <span class="math notranslate nohighlight">\(N\)</span> particle system – symmetric summation or anti-symmetric summation.</p>
+<p>We basically has <span class="math notranslate nohighlight">\(N\)</span> particles and each particle has its own quantum number <span class="math notranslate nohighlight">\(\gamma_i\)</span>. From previous discussion, we know whether <span class="math notranslate nohighlight">\(\gamma_i\)</span> equals to <span class="math notranslate nohighlight">\(\gamma_j\)</span> will give us different structure. Therefore, it is very tempting to group identical <span class="math notranslate nohighlight">\(\gamma_i\)</span> together to simplify the analysis. Furthermore, we can also notice the key information we need is: how many identical states for each <span class="math notranslate nohighlight">\(\gamma_i\)</span>. Therefore, it is very tempting to use the occupation number representation, instead of the quantum number representation to express the many-body wave function.</p>
+<p>The specific definition of occupation number representation is</p>
+<div class="math notranslate nohighlight">
+\[
+\{\underbrace{\gamma_1,\gamma_2,\cdots ,\gamma_{n_1}}_{n_1\text{ states in } \phi_{\mu=1}}; \underbrace{\gamma_{n_1+1},\gamma_{n_1+2},\cdots,\gamma_{n_1+n_2}}_{n_2 \text{ states in } \phi_{\mu=2}};\cdots;\underbrace{\gamma_{\sum_{\mu=1}^{M-1}+1},\gamma_{\sum_{\mu=1}^{M-1}+2},\cdots,\gamma_{\sum_{\mu=1}^{M}n_{\mu}}}_{n_M\text{ states in } \phi_{\mu=M}}\}\text{.}
+\]</div>
+<p>The generalized wave function for <span class="math notranslate nohighlight">\(N\)</span> particle system should be</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vert \phi^B_N\rangle =\sqrt{\frac{N!}{\prod_{\mu}n_{\mu}!}}^{-1}P_{S}\left[ \vert \phi_{\gamma_1}\}_1 \otimes\vert \phi_{\gamma_2}\}_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_N\right]\\
+\vert \phi^F_N\rangle =\sqrt{\frac{N!}{\prod_{\mu}n_{\mu}!}}^{-1}P_{AS}\left[ \vert \phi_{\gamma_1}\}_1 \otimes\vert \phi_{\gamma_2}\}_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_N\right]
 \end{split}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
-\[
-P_{S/AS}\left[ \vert \phi_{\gamma_1}\rangle_1 \otimes\vert \phi_{\gamma_2}\rangle_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\rangle_N\right]=\sum_{p}\eta^{\overline{p}}\vert \phi_{\gamma_1}\rangle_{p(1)} \otimes\vert \phi_{\gamma_2}\rangle_{p(2)} \otimes\cdots\otimes\vert \phi_{\gamma_N}\rangle_{p(N)}\text{.}
-\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(\eta=\pm1\)</span> for symmetric or anti-symmetric summation, <span class="math notranslate nohighlight">\(p\)</span> is an element of the <span class="math notranslate nohighlight">\(N\)</span> object permutation. <span class="math notranslate nohighlight">\(p(j)\)</span> is the <span class="math notranslate nohighlight">\(j\)</span>-th object of this permutation. <span class="math notranslate nohighlight">\(\overline{p}\)</span> represent an integer which is the number required to swap nearby elements in the permutation <span class="math notranslate nohighlight">\(p\)</span> such that it gets back to an ordered permutation. For example, for a 3 object permutation <span class="math notranslate nohighlight">\(p=[231]\)</span>, <span class="math notranslate nohighlight">\(\overline{p}=2\)</span> since we need to swap 31 then swap 21 to get to the permutation <span class="math notranslate nohighlight">\([123]\)</span>.  The summation contains <span class="math notranslate nohighlight">\(N!\)</span> terms. That’s why the normalization factor is <span class="math notranslate nohighlight">\(\sqrt{N!}^{-1}\)</span>.</p>
+\[\begin{split}
+P_{S/AS}\left[ \vert \phi_{\gamma_1}\}_1 \otimes\vert \phi_{\gamma_2}\}_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_N\right]&amp;=\sum_p P^{\eta}_p\left[ \vert \phi_{\gamma_1}\}_1 \otimes\vert \phi_{\gamma_2}\}_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_N\right]\nonumber\\
+&amp;=\sum_{p}\eta^{\overline{p}}\vert \phi_{\gamma_1}\}_{p(1)} \otimes\vert \phi_{\gamma_2}\}_{p(2)} \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_{p(N)}\text{.}
+\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\eta=\pm1\)</span> for symmetric or anti-symmetric summation, <span class="math notranslate nohighlight">\(p\)</span> is an element of the <span class="math notranslate nohighlight">\(N\)</span> object permutation. <span class="math notranslate nohighlight">\(p(j)\)</span> is the <span class="math notranslate nohighlight">\(j\)</span>-th object of this permutation. <span class="math notranslate nohighlight">\(\overline{p}\)</span> represent an integer which is the number required to swap nearby elements in the permutation <span class="math notranslate nohighlight">\(p\)</span> such that it gets back to an ordered permutation. For example, for a 3 object permutation <span class="math notranslate nohighlight">\(p=[231]\)</span>, <span class="math notranslate nohighlight">\(\overline{p}=2\)</span> since we need to swap 31 then swap 21 to get to the permutation <span class="math notranslate nohighlight">\([123]\)</span>.  The summation contains <span class="math notranslate nohighlight">\(\frac{N!}{\prod_{\mu}n_{\mu}!}\)</span> terms. That’s why the normalization factor is <span class="math notranslate nohighlight">\(\sqrt{\frac{N!}{\prod_{\mu}n_{\mu}!}}^{-1}\)</span>.</p>
 <p>From this construction, we can also see the Pauli exclusion principle. When <span class="math notranslate nohighlight">\(\gamma_i=\gamma_j\)</span>, the pairs of permutations related by a swap between <span class="math notranslate nohighlight">\(p(i)\)</span> and <span class="math notranslate nohighlight">\(p(j)\)</span> will differ by a minus sign. All such pairs therefore cancels with each other and leads to the Pauli exclusion principle.</p>
-<p>We start from something simple and derive the generalized form for the many-body wave function when the indistinguishable nature of quantum particles are considered.</p>
+<p>We start from something simple and derive the generalized form for the many-body wave function when the indistinguishable nature of quantum particles are considered from the formal intuition. But what exactly are we doing here? Essentially, we are trying to construct the basis to describe the total Hilbert space <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>! Especially, we want to have the basis that satisfy the quantum statistics. To really check our understanding is correct, let’s try to ask ourselves: what’s the simplest non-trivial example that we can construct to build our intuition?</p>
+<div class="tip admonition">
+<p class="admonition-title">Exercise</p>
+<p>Consider the simplest nontrivial case: the three particle system.
+The permutation of 3 particles has 6 different configurations. Let’s list them explicitly:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	p_6: (123)\quad 
+	p_1: (132)\nonumber\\
+	p_2: (231)\quad
+	p_3: (213)\nonumber\\
+	p_4: (312)\quad
+	p_5: (321)\nonumber
+\end{split}\]</div>
+<p>According to the definition above we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	P^{\eta}_{p_2}\left[ \vert\psi_{\alpha}\}_1\otimes\vert\psi_{\beta}\}_2\otimes\vert\psi_{\gamma}\}_3 \right]
+	&amp;= \eta^{\overline{p_2}}\left( \vert\psi_{\alpha}\}_{p_2(1)}\otimes\vert\psi_{\beta}\}_{p_2(2)}\otimes\vert\psi_{\gamma}\}_{p_2(3)}\right)\nonumber\\
+	&amp;=  \eta^{2}\left( \vert\psi_{\alpha}\}_2\otimes\vert\psi_{\beta}\}_3\otimes\vert\psi_{\gamma}\}_1\right)
+\end{split}\]</div>
+<p>At this point, we don’t have any restriction on <span class="math notranslate nohighlight">\(\alpha,\beta,\gamma\)</span> and treat them as if they are all distinct and the many-body wave function for the 3 identical particles can be constructed by summing over all possible permutations. In fact, if <span class="math notranslate nohighlight">\(\alpha,\beta,\gamma\)</span> are all distinct quantum numbers, we know there will be 6 of such terms and the normalization should be <span class="math notranslate nohighlight">\(\sqrt{3!}^{-1}\)</span>. To be more specific, when <span class="math notranslate nohighlight">\(\alpha\neq\beta\neq\gamma\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	\vert\phi_{N=3}\rangle&amp; = \frac{1}{\sqrt{6}}
+	\Big\{ 
+		\left( \vert\psi_{\alpha}\}_1\otimes\vert\psi_{\beta}\}_2\otimes\vert\psi_{\gamma}\}_3\right)+
+		\eta\left( \vert\psi_{\alpha}\}_1\otimes\vert\psi_{\beta}\}_3\otimes\vert\psi_{\gamma}\}_2\right)+\nonumber\\
+		&amp;\left( \vert\psi_{\alpha}\}_2\otimes\vert\psi_{\beta}\}_3\otimes\vert\psi_{\gamma}\}_1\right)+
+		\eta\left( \vert\psi_{\alpha}\}_2\otimes\vert\psi_{\beta}\}_1\otimes\vert\psi_{\gamma}\}_3\right)+\nonumber\\
+		&amp;\left( \vert\psi_{\alpha}\}_3\otimes\vert\psi_{\beta}\}_1\otimes\vert\psi_{\gamma}\}_2\right)+
+		\eta\left( \vert\psi_{\alpha}\}_3\otimes\vert\psi_{\beta}\}_2\otimes\vert\psi_{\gamma}\}_1\right)
+	\Big\}\nonumber\\
+	&amp;= \Big\vert\left\{ \alpha,\beta,\gamma \right\}\Big\rangle
+\end{split}\]</div>
+<p>Next, let’s assume <span class="math notranslate nohighlight">\(\alpha=\beta=x\)</span>. Following the same protocol, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	P^{\eta}_{p_2}\left[ \vert\psi_{\alpha}\}_1\otimes\vert\psi_{\beta}\}_2\otimes\vert\psi_{\gamma}\}_3 \right]
+	&amp;=  \left[ \eta \right]^{2}\left( \vert\psi_{x}\}_2\otimes\vert\psi_{x}\}_3\otimes\vert\psi_{\gamma}\}_1\right)\nonumber\\
+	P^{\eta}_{p_5}\left[ \vert\psi_{\alpha}\}_1\otimes\vert\psi_{\beta}\}_2\otimes\vert\psi_{\gamma}\}_3 \right]
+	&amp;=  \left[ \eta \right]^{3}\left( \vert\psi_{x}\}_3\otimes\vert\psi_{x}\}_2\otimes\vert\psi_{\gamma}\}_1\right)
+\end{split}\]</div>
+<p>If we have <span class="math notranslate nohighlight">\(\eta=-1\)</span>, for fermions, the two terms canceled. We can convince ourselves easily that all the terms canceled with each other precisely. This is the Pauli exclusion principle.</p>
+<p>If we have <span class="math notranslate nohighlight">\(\eta=+1\)</span>, for bosons, the two terms adds up. However, one tricky fact is, the tensor product is actually abelian and the two basis are actually identical. Therefore, instead of using 6 basis states to construct a wave function with indistinguishability as in the case where <span class="math notranslate nohighlight">\(\alpha,\beta,\gamma\)</span> are all distinct, we only 3 basis to achieve our goal when two of the quantum numbers are identical!</p>
+<p>To be more specific, when <span class="math notranslate nohighlight">\(\alpha=\beta=x,\gamma\neq x\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	\vert\phi_{N=3}\rangle&amp;= \frac{
+		\vert\psi_{x}\}_1\vert\psi_{x}\}_2\vert\psi_{\gamma}\}_3+
+		\vert\psi_{x}\}_2\vert\psi_{x}\}_3\vert\psi_{\gamma}\}_1+
+		\vert\psi_{x}\}_3\vert\psi_{x}\}_1\vert\psi_{\gamma}\}_2
+	}{\sqrt{\frac{3!}{2!1!}}}\nonumber\\
+	&amp;= \Big\vert\left\{ x,x,\gamma \right\}\Big\rangle
+\end{split}\]</div>
+<p>With the above explicit expression, we can try to swap any of the particle index and show that the wave function is indeed symmetric or anti-symmetric wave functions for bosons/fermions.</p>
+</div>
+</section>
 </section>
 <section id="the-many-body-hamiltonian">
 <h3>The many-body Hamiltonian<a class="headerlink" href="#the-many-body-hamiltonian" title="Permalink to this heading"></a></h3>
@@ -366,7 +467,8 @@ From the Bose-Einstein distribution, we have <span class="math notranslate nohig
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="phonon_photon.html" class="btn btn-neutral float-left" title="Phonon and photon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="oscillators.html" class="btn btn-neutral float-left" title="Oscillators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="phonon_photon.html" class="btn btn-neutral float-right" title="Phonon and photon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

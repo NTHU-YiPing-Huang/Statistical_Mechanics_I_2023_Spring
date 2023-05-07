@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Second quantization &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="_static/tabs.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="_static/design-tabs.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Phonon and photon" href="phonon_photon.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="syllabus.html" class="icon icon-home"> Statistical Mechanics (I)
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_tools.html">Numerical tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Second quantization</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="syllabus.html">Statistical Mechanics (I)</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="syllabus.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="free_systems.html">Other interacting free systems</a></li>
+      <li class="breadcrumb-item active">Second quantization</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/2nd_quantization.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="second-quantization">
+<h1>Second quantization<a class="headerlink" href="#second-quantization" title="Permalink to this heading"></a></h1>
+<section id="qualitative-difference-between-non-interacting-quantum-many-particle-system-and-the-interacting-many-body-system">
+<h2>Qualitative difference between non-interacting quantum many-particle system and the interacting many-body system<a class="headerlink" href="#qualitative-difference-between-non-interacting-quantum-many-particle-system-and-the-interacting-many-body-system" title="Permalink to this heading"></a></h2>
+<p>To deal with quantum many-body systems, it is important to keep the structure of its quantum statistics. <em>i.e.</em> whether the system is formed by fermions or bosons. In the previous section, we work in the basis that forming the partition function and related calculations are almost trivial.</p>
+<p>The reason that the related calculation is trivial is because we work in the eigen basis of the system. However, it is usually very challenging to get the eigen basis for the many-body quantum systems. Let’s try to understand the qualitative difference between the non-interacting many-particle systems and the interacting many-body systems.</p>
+<p>We can start from the simplest quantum system: a system formed by quantum bits (two-level system). The dimension of the Hilbert space for a quantum bit is 2. This is the simplest non-trivial case where we can have the non-trivial structure due to the superposition principle. (If there is only one basis in the space, we cannot show the superposition structure). Let’s use <span class="math notranslate nohighlight">\(\mathcal{H}_b\)</span> to represent the Hilbert space of the quantum bit. To be more specific, we can assign the two basis in the Hilbert space to be <span class="math notranslate nohighlight">\(\left\{ |\uparrow\rangle,|\downarrow\rangle \right\}\)</span>. The most general state in this space is given by <span class="math notranslate nohighlight">\(c_{\uparrow}|\uparrow\rangle+c_{\downarrow}|\downarrow\rangle\)</span>.</p>
+<p>Now, let’s consider the non-interacting quantum many-particle system. In our simple example above, we have lots of quantum bits that does not talk with each other. So to understand the system, essentially all we need to do is to understand what a single quantum bit is doing. So even though we have many particles (in this case, many quantum bits), the problem is essentially a one-body problem. So the eigen specturm of the system is simple, all we need to do is to diagonalize the <span class="math notranslate nohighlight">\(2\times2\)</span> matrix. The full spectrum will simple accumulation of the 2 eigne energies for the <span class="math notranslate nohighlight">\(2\times2\)</span> Hamiltonian.</p>
+<p>Next, we can try to see what happened if we start to couple the quantum bits. When the quantum bits start to talk with each other, the system will be described by a state in the Hilbert space formed by the tensor product of individual Hilbert space for each quantum bit. That is, <span class="math notranslate nohighlight">\(\mathcal{H}=\otimes_{j=1}^{N_s}\mathcal{H}_{b,j}\)</span>. This is a space that the dimensionality grows exponentially as a function of the system size (in this case, the number of quantum bits, <span class="math notranslate nohighlight">\(N_s\)</span>).</p>
+<p>Now we can see the qualitative difference. In the non-interacting case, we need to diagonalize a <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix. We know how to do that. For the interacting case, we need to diagonalize a <span class="math notranslate nohighlight">\(2^{N_s}\times 2^{N_s}\)</span> matrix. Which you can try to run that on your computer by choosing <span class="math notranslate nohighlight">\(N_s=10,20,40\)</span>. Usual desktop can get the full spectrum of the <span class="math notranslate nohighlight">\(N_s=10\)</span> case easily, <span class="math notranslate nohighlight">\(N_s=20\)</span> and <span class="math notranslate nohighlight">\(N_s=40\)</span> case is beyond the ability for the usual desktop. That’s why we call such problem a <em>many-body</em> problem, because we need to consider the system as a whole and cannot factorize our system and reduce the problem to a one-body problem.</p>
+<p>Of course, we are not going to stop there. We will try to see if we can still make some progress to understand the many-body problem. Now we have several choices:</p>
+<ul class="simple">
+<li><p>Start from the non-interacting limit and try to develop some kind of perturbation theory.</p></li>
+<li><p>Using some non-perturbative methods, such as mean-field theory or variational method to get the relevant states of our problem. We will introduce the idea of mean field theory which is a versatile method for interacting problem.</p></li>
+</ul>
+<p>Here, we will introduce a notation, <em>second quantization</em>, which is convenient to develop a perturbation analysis for the quantum many-body system. We have learned the single particle perturbation theory in quantum mechanics. The challenge here is how to develop the corresponding theory when we consider the quantum statistics(fermions or bosons) of our problem. To do that, we need to find a convenient representation for the many-body wave function and the many-body Hamiltonian. That representation is the <em>second quantization</em> formulation that we are going to introduce.</p>
+</section>
+<section id="the-many-body-states-and-operators-in-the-second-quantization-representation">
+<h2>The many-body states and operators in the second quantization representation<a class="headerlink" href="#the-many-body-states-and-operators-in-the-second-quantization-representation" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="phonon_photon.html" class="btn btn-neutral float-left" title="Phonon and photon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

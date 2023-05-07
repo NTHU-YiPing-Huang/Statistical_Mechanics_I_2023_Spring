@@ -38,37 +38,155 @@ $$
 The state in this Hilbert space can be represented by 
 
 $$
-\vert \psi\rangle=\vert\phi _{\gamma_1}\rangle_1\otimes\vert\phi _{\gamma_2}\rangle_2\otimes\cdots\vert\phi _{\gamma_N}\rangle_N\text{.}
+\vert \psi)=\vert\phi _{\gamma_1}\}\otimes\vert\phi _{\gamma_2}\}_2\otimes\cdots\vert\phi _{\gamma_N}\}_N\text{.}
 $$
 
-Here, $\vert\phi_{\gamma_i}\rangle_j$ is the complete set in $\mathcal{H}_j$ with quantum number $\gamma_i$.
-Next, we can ask how a wave function is represented as ket vectors in our simple two particle example above.
+Here, $\vert\phi_{\gamma_i}\}_j$ is the complete set in $\mathcal{H}_j$ with quantum number $\gamma_i$. Here we use $\vert \psi\}$ to represent the single particle wave function and $\vert \psi )$ to represent the many-body wave function before considering the indistinguishability. The expression is still quite abstract, let's take the simplest non-trivial example and build our understanding accordingly.
+
+#### The two-level system with two particles
+
+Next, we can ask how a wave function is represented as ket vectors in our simple two-particle example above? Once we know how things work in the case with two particles, we should know how to generalize it into the more complicated cases.
+
+Here, we consider the case that the single particle system is just a two-level system. That is, $\gamma_1,\gamma_2\in \{a,b\}$. To discuss all the possible configurations, we consider the case when $\gamma_1\neq \gamma_2$ and when $\gamma_1=\gamma_2$.
+
+*Case 1*, $\gamma_1\neq \gamma_2$:
 
 $$
-\phi^{B/F}(\textbf{x}_1,\textbf{x}_2)=\sqrt{2}^{-1}\left[\phi_{\gamma_1}(\textbf{x}_1)\phi_{\gamma_2}(\textbf{x}_2)\pm \phi_{\gamma_1}(\textbf{x}_2)\phi_{\gamma_2}(\textbf{x}_1)\right]=\langle \textbf{x}_1,\textbf{x}_2\vert \phi^{B/F}\rangle\\
-\vert \phi^{B/F}\rangle = \frac{1}{\sqrt{2}}\left[\vert\phi_{\gamma_1}\rangle_1\otimes \vert\phi_{\gamma_2}\rangle_2\pm \vert\phi_{\gamma_1}\rangle_2\otimes \vert \phi_{\gamma_2}\rangle_1\right] \text{.}
+\phi^{B/F}(\textbf{x}_1,\textbf{x}_2)&=\sqrt{2}^{-1}\left[\phi_{a}(\textbf{x}_1)\phi_{b}(\textbf{x}_2)\pm \phi_{a}(\textbf{x}_2)\phi_{b}(\textbf{x}_1)\right]=\langle \textbf{x}_1,\textbf{x}_2\vert \phi^{B/F}\rangle\\
+\vert \phi^{B/F}_{\{a,b\}}\rangle &= \frac{1}{\sqrt{2}}\left[\vert\phi_{a}\}_1\otimes \vert\phi_{b}\}_2\pm \vert \phi_{b}\}_1\otimes\vert\phi_{a}\}_2 \right]= \frac{1}{\sqrt{2}}\left[\vert\phi_{a}\}_1\otimes \vert\phi_{b}\}_2\pm \vert\phi_{a}\}_2\otimes\vert \phi_{b}\}_1 \right] \text{.}
 $$
+In the last two equality, we can interpret the curly kets as the permutation of the quantum number $a,b$ with the ordering of the Hilbert space fixed or we can consider the quantum number to have the fixed ordering but permuting the Hilbert space index. Here, we use the angle ket $\vert \phi\rangle$ to represent the many-body wave function with indistinguishability considered. 
+
+*Case 2*, $\gamma_1= \gamma_2\in\{a,b\}$:
+
+We can see it is impossible to form such a wave function for fermionic system because of the Pauli exclusive principle. However, we can have two states for the bosonic case
+
+$$
+\vert \phi^B_{\{a,a\}}\rangle &=|\phi_a\}_1|\phi_a\}_2\nonumber\\
+\vert \phi^B_{\{b,b\}}\rangle &=|\phi_b\}_1|\phi_b\}_2\text{.}
+$$
+
+We can try to ask the same question from a different angle: what are we doing exactly? The dimensionality of the space $\mathcal{H}_1\otimes\mathcal{H}_2$ is 4 if the two Hilbert spaces are distinguishable. The above process construct the corresponding basis when indistinguishability is considered. If so, what is the relation between the fermionic Hilbert space and the Bosonic Hilbert space and the original space, $\mathcal{H}_1\otimes\mathcal{H}_2$? Let's try to use the simple example to explore the related structure before we make the generalization.
+
+The four basis of $\mathcal{H}_1\otimes\mathcal{H}_2$ are:
+
+$$
+\vert \phi_{ (a,a)}\}&= \vert\phi_a\}_1\vert\phi_a\}_2\nonumber\\
+\vert \phi_{ (a,b)}\}&= \vert\phi_a\}_1\vert\phi_b\}_2\nonumber\\
+\vert \phi_{ (b,a)}\}&= \vert\phi_b\}_1\vert\phi_a\}_2\nonumber\\
+\vert \phi_{ (b,b)}\}&= \vert\phi_b\}_1\vert\phi_b\}_2\text{.}
+$$
+
+Here, we use $(a,b)$ to remind ourselves that the ordering is important.
+
+Now we can ask: How to use the fermionic or bosonic basis (with indistinguishability considered, the ordering is not important, so we use $\{\gamma_1,\gamma_2\}$) to reconstruct the basis in $\mathcal{H}_1\otimes\mathcal{H}_2$?
+
+Staring at the structure of the wave functions, we immediately realize that $\mathcal{H}_1\otimes\mathcal{H}_2=\mathcal{H}^B\oplus\mathcal{H}^F$. The original Hilbert space where indistinguishability is not considered can be constructed from the Bosonic Hilbert space direct sum with the Fermionic Hilbert space. That is,
+
+$$
+\vert \phi_{ (a,a)}\}&= \vert \phi^B_{\{a,a\}}\rangle\nonumber\\
+\vert \phi_{ (a,b)}\}&= (\vert \phi^B_{\{a,b\}}\rangle+\vert \phi^F_{\{a,b\}}\rangle)/\sqrt{2}\nonumber\\
+\vert \phi_{ (b,a)}\}&= (\vert \phi^B_{\{a,b\}}\rangle-\vert \phi^F_{\{a,b\}}\rangle)/\sqrt{2}\nonumber\\
+\vert \phi_{ (b,b)}\}&= \vert\phi^B_{\{b,b\}}\rangle\text{.}
+$$
+
+So we can see what's the mathematical structure. However, of course we know that fermions will always be fermions. So it does not make sense to have a superposition between bosonic wave function with the fermionic wave function. Readers who are familiar with how symmetry is applied to a quantum system might thought the structure is very similar with the irreducible representation when certain symmetry is considered. That is also why sometimes we call the space $\mathcal{H}^B$ the bosonic sector and $\mathcal{H}^F$ the fermionic sector. The sectors that has no superposition principles are called the superselection sectors.
+
+#### The general fermionic and bosonic wave function
 
 Comparing the simple two particle wave function and the wave function of distinguishable particles, we can get some hint about how should we proceed for a general $N$ particle system -- symmetric summation or anti-symmetric summation.
 
-The generalization for $N$ particle system should be
+We basically has $N$ particles and each particle has its own quantum number $\gamma_i$. From previous discussion, we know whether $\gamma_i$ equals to $\gamma_j$ will give us different structure. Therefore, it is very tempting to group identical $\gamma_i$ together to simplify the analysis. Furthermore, we can also notice the key information we need is: how many identical states for each $\gamma_i$. Therefore, it is very tempting to use the occupation number representation, instead of the quantum number representation to express the many-body wave function.
+
+The specific definition of occupation number representation is
 
 $$
-\vert \phi^B_N\rangle =\sqrt{N!}^{-1}P_{S}\left[ \vert \phi_{\gamma_1}\rangle_1 \otimes\vert \phi_{\gamma_2}\rangle_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\rangle_N\right]\\
-\vert \phi^F_N\rangle =\sqrt{N!}^{-1}P_{AS}\left[ \vert \phi_{\gamma_1}\rangle_1 \otimes\vert \phi_{\gamma_2}\rangle_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\rangle_N\right]
+\{\underbrace{\gamma_1,\gamma_2,\cdots ,\gamma_{n_1}}_{n_1\text{ states in } \phi_{\mu=1}}; \underbrace{\gamma_{n_1+1},\gamma_{n_1+2},\cdots,\gamma_{n_1+n_2}}_{n_2 \text{ states in } \phi_{\mu=2}};\cdots;\underbrace{\gamma_{\sum_{\mu=1}^{M-1}+1},\gamma_{\sum_{\mu=1}^{M-1}+2},\cdots,\gamma_{\sum_{\mu=1}^{M}n_{\mu}}}_{n_M\text{ states in } \phi_{\mu=M}}\}\text{.}
+$$
+
+The generalized wave function for $N$ particle system should be
+
+$$
+\vert \phi^B_N\rangle =\sqrt{\frac{N!}{\prod_{\mu}n_{\mu}!}}^{-1}P_{S}\left[ \vert \phi_{\gamma_1}\}_1 \otimes\vert \phi_{\gamma_2}\}_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_N\right]\\
+\vert \phi^F_N\rangle =\sqrt{\frac{N!}{\prod_{\mu}n_{\mu}!}}^{-1}P_{AS}\left[ \vert \phi_{\gamma_1}\}_1 \otimes\vert \phi_{\gamma_2}\}_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_N\right]
 $$
 where
 
 $$
-P_{S/AS}\left[ \vert \phi_{\gamma_1}\rangle_1 \otimes\vert \phi_{\gamma_2}\rangle_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\rangle_N\right]=\sum_{p}\eta^{\overline{p}}\vert \phi_{\gamma_1}\rangle_{p(1)} \otimes\vert \phi_{\gamma_2}\rangle_{p(2)} \otimes\cdots\otimes\vert \phi_{\gamma_N}\rangle_{p(N)}\text{.}
+P_{S/AS}\left[ \vert \phi_{\gamma_1}\}_1 \otimes\vert \phi_{\gamma_2}\}_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_N\right]&=\sum_p P^{\eta}_p\left[ \vert \phi_{\gamma_1}\}_1 \otimes\vert \phi_{\gamma_2}\}_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_N\right]\nonumber\\
+&=\sum_{p}\eta^{\overline{p}}\vert \phi_{\gamma_1}\}_{p(1)} \otimes\vert \phi_{\gamma_2}\}_{p(2)} \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_{p(N)}\text{.}
 $$
 
-Here, $\eta=\pm1$ for symmetric or anti-symmetric summation, $p$ is an element of the $N$ object permutation. $p(j)$ is the $j$-th object of this permutation. $\overline{p}$ represent an integer which is the number required to swap nearby elements in the permutation $p$ such that it gets back to an ordered permutation. For example, for a 3 object permutation $p=[231]$, $\overline{p}=2$ since we need to swap 31 then swap 21 to get to the permutation $[123]$.  The summation contains $N!$ terms. That's why the normalization factor is $\sqrt{N!}^{-1}$.
+Here, $\eta=\pm1$ for symmetric or anti-symmetric summation, $p$ is an element of the $N$ object permutation. $p(j)$ is the $j$-th object of this permutation. $\overline{p}$ represent an integer which is the number required to swap nearby elements in the permutation $p$ such that it gets back to an ordered permutation. For example, for a 3 object permutation $p=[231]$, $\overline{p}=2$ since we need to swap 31 then swap 21 to get to the permutation $[123]$.  The summation contains $\frac{N!}{\prod_{\mu}n_{\mu}!}$ terms. That's why the normalization factor is $\sqrt{\frac{N!}{\prod_{\mu}n_{\mu}!}}^{-1}$.
 
 From this construction, we can also see the Pauli exclusion principle. When $\gamma_i=\gamma_j$, the pairs of permutations related by a swap between $p(i)$ and $p(j)$ will differ by a minus sign. All such pairs therefore cancels with each other and leads to the Pauli exclusion principle.
 
-We start from something simple and derive the generalized form for the many-body wave function when the indistinguishable nature of quantum particles are considered.
+We start from something simple and derive the generalized form for the many-body wave function when the indistinguishable nature of quantum particles are considered from the formal intuition. But what exactly are we doing here? Essentially, we are trying to construct the basis to describe the total Hilbert space $\mathcal{H}$! Especially, we want to have the basis that satisfy the quantum statistics. To really check our understanding is correct, let's try to ask ourselves: what's the simplest non-trivial example that we can construct to build our intuition?
 
+```{admonition} Exercise
+:class: tip
+Consider the simplest nontrivial case: the three particle system.
+The permutation of 3 particles has 6 different configurations. Let's list them explicitly:
+
+$$
+	p_6: (123)\quad 
+	p_1: (132)\nonumber\\
+	p_2: (231)\quad
+	p_3: (213)\nonumber\\
+	p_4: (312)\quad
+	p_5: (321)\nonumber
+$$
+
+According to the definition above we have
+
+$$
+	P^{\eta}_{p_2}\left[ \vert\psi_{\alpha}\}_1\otimes\vert\psi_{\beta}\}_2\otimes\vert\psi_{\gamma}\}_3 \right]
+	&= \eta^{\overline{p_2}}\left( \vert\psi_{\alpha}\}_{p_2(1)}\otimes\vert\psi_{\beta}\}_{p_2(2)}\otimes\vert\psi_{\gamma}\}_{p_2(3)}\right)\nonumber\\
+	&=  \eta^{2}\left( \vert\psi_{\alpha}\}_2\otimes\vert\psi_{\beta}\}_3\otimes\vert\psi_{\gamma}\}_1\right)
+$$
+
+At this point, we don't have any restriction on $\alpha,\beta,\gamma$ and treat them as if they are all distinct and the many-body wave function for the 3 identical particles can be constructed by summing over all possible permutations. In fact, if $\alpha,\beta,\gamma$ are all distinct quantum numbers, we know there will be 6 of such terms and the normalization should be $\sqrt{3!}^{-1}$. To be more specific, when $\alpha\neq\beta\neq\gamma$, we have
+
+$$
+	\vert\phi_{N=3}\rangle& = \frac{1}{\sqrt{6}}
+	\Big\{ 
+		\left( \vert\psi_{\alpha}\}_1\otimes\vert\psi_{\beta}\}_2\otimes\vert\psi_{\gamma}\}_3\right)+
+		\eta\left( \vert\psi_{\alpha}\}_1\otimes\vert\psi_{\beta}\}_3\otimes\vert\psi_{\gamma}\}_2\right)+\nonumber\\
+		&\left( \vert\psi_{\alpha}\}_2\otimes\vert\psi_{\beta}\}_3\otimes\vert\psi_{\gamma}\}_1\right)+
+		\eta\left( \vert\psi_{\alpha}\}_2\otimes\vert\psi_{\beta}\}_1\otimes\vert\psi_{\gamma}\}_3\right)+\nonumber\\
+		&\left( \vert\psi_{\alpha}\}_3\otimes\vert\psi_{\beta}\}_1\otimes\vert\psi_{\gamma}\}_2\right)+
+		\eta\left( \vert\psi_{\alpha}\}_3\otimes\vert\psi_{\beta}\}_2\otimes\vert\psi_{\gamma}\}_1\right)
+	\Big\}\nonumber\\
+	&= \Big\vert\left\{ \alpha,\beta,\gamma \right\}\Big\rangle
+$$
+
+
+Next, let's assume $\alpha=\beta=x$. Following the same protocol, we have
+
+$$
+	P^{\eta}_{p_2}\left[ \vert\psi_{\alpha}\}_1\otimes\vert\psi_{\beta}\}_2\otimes\vert\psi_{\gamma}\}_3 \right]
+	&=  \left[ \eta \right]^{2}\left( \vert\psi_{x}\}_2\otimes\vert\psi_{x}\}_3\otimes\vert\psi_{\gamma}\}_1\right)\nonumber\\
+	P^{\eta}_{p_5}\left[ \vert\psi_{\alpha}\}_1\otimes\vert\psi_{\beta}\}_2\otimes\vert\psi_{\gamma}\}_3 \right]
+	&=  \left[ \eta \right]^{3}\left( \vert\psi_{x}\}_3\otimes\vert\psi_{x}\}_2\otimes\vert\psi_{\gamma}\}_1\right)
+$$
+
+If we have $\eta=-1$, for fermions, the two terms canceled. We can convince ourselves easily that all the terms canceled with each other precisely. This is the Pauli exclusion principle.
+
+If we have $\eta=+1$, for bosons, the two terms adds up. However, one tricky fact is, the tensor product is actually abelian and the two basis are actually identical. Therefore, instead of using 6 basis states to construct a wave function with indistinguishability as in the case where $\alpha,\beta,\gamma$ are all distinct, we only 3 basis to achieve our goal when two of the quantum numbers are identical!
+
+To be more specific, when $\alpha=\beta=x,\gamma\neq x$, we have
+
+$$
+	\vert\phi_{N=3}\rangle&= \frac{
+		\vert\psi_{x}\}_1\vert\psi_{x}\}_2\vert\psi_{\gamma}\}_3+
+		\vert\psi_{x}\}_2\vert\psi_{x}\}_3\vert\psi_{\gamma}\}_1+
+		\vert\psi_{x}\}_3\vert\psi_{x}\}_1\vert\psi_{\gamma}\}_2
+	}{\sqrt{\frac{3!}{2!1!}}}\nonumber\\
+	&= \Big\vert\left\{ x,x,\gamma \right\}\Big\rangle
+$$
+
+With the above explicit expression, we can try to swap any of the particle index and show that the wave function is indeed symmetric or anti-symmetric wave functions for bosons/fermions.
+```
 ### The many-body Hamiltonian
 
 $$
