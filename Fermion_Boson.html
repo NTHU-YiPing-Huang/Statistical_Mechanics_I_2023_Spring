@@ -41,7 +41,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Phonon and photon" href="phonon_photon.html" />
+    <link rel="next" title="Second quantization" href="2nd_quantization.html" />
     <link rel="prev" title="Oscillators" href="oscillators.html" /> 
 </head>
 
@@ -76,8 +76,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Free Fermions and Bosons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2nd_quantization.html">Second quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
 </ul>
 </li>
 </ul>
@@ -131,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Quantum many-body system (non-interacting limit)<a class="headerlink" href="#quantum-many-body-system-non-interacting-limit" title="Permalink to this heading"></a></h2>
 <p>Now we know we have Fermions and Bosons. How to describe such a quantum system? To define a quantum system, we need to specify the Hamiltonian, <span class="math notranslate nohighlight">\(H\)</span>, and the corresponding Hilbert space,<span class="math notranslate nohighlight">\(\mathcal{H}\)</span>. Here, I will give a quick overview of the general description of quantum many-body systems with <span class="math notranslate nohighlight">\(N\)</span> particles.</p>
 <section id="the-hilbert-space">
-<h3>The Hilbert space<a class="headerlink" href="#the-hilbert-space" title="Permalink to this heading"></a></h3>
+<span id="mhilbertspace"></span><h3>The Hilbert space<a class="headerlink" href="#the-hilbert-space" title="Permalink to this heading"></a></h3>
 <p>Let’s consider the wave function of distinguishable many-body system first. Since the particles are distinguishable, we can label the Hilbert space accordingly. The total Hilbert space is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -189,7 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The specific definition of occupation number representation is</p>
 <div class="math notranslate nohighlight">
 \[
-\{\underbrace{\gamma_1,\gamma_2,\cdots ,\gamma_{n_1}}_{n_1\text{ states in } \phi_{\mu=1}}; \underbrace{\gamma_{n_1+1},\gamma_{n_1+2},\cdots,\gamma_{n_1+n_2}}_{n_2 \text{ states in } \phi_{\mu=2}};\cdots;\underbrace{\gamma_{\sum_{\mu=1}^{M-1}+1},\gamma_{\sum_{\mu=1}^{M-1}+2},\cdots,\gamma_{\sum_{\mu=1}^{M}n_{\mu}}}_{n_M\text{ states in } \phi_{\mu=M}}\}\text{.}
+\{\underbrace{\gamma_1,\gamma_2,\cdots ,\gamma_{n_1}}_{n_1\text{ states in } \phi_{\mu=1}}; \underbrace{\gamma_{n_1+1},\gamma_{n_1+2},\cdots,\gamma_{n_1+n_2}}_{n_2 \text{ states in } \phi_{\mu=2}};\cdots;\underbrace{\gamma_{\sum_{\mu=1}^{M-1}n_{\mu}+1},\gamma_{\sum_{\mu=1}^{M-1}n_{\mu}+2},\cdots,\gamma_{\sum_{\mu=1}^{M}n_{\mu}}}_{n_M\text{ states in } \phi_{\mu=M}}\}\text{.}
 \]</div>
 <p>The generalized wave function for <span class="math notranslate nohighlight">\(N\)</span> particle system should be</p>
 <div class="math notranslate nohighlight">
@@ -203,12 +203,12 @@ const thebe_selector_output = ".output, .cell_output"
 P_{S/AS}\left[ \vert \phi_{\gamma_1}\}_1 \otimes\vert \phi_{\gamma_2}\}_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_N\right]&amp;=\sum_p P^{\eta}_p\left[ \vert \phi_{\gamma_1}\}_1 \otimes\vert \phi_{\gamma_2}\}_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_N\right]\nonumber\\
 &amp;=\sum_{p}\eta^{\overline{p}}\vert \phi_{\gamma_1}\}_{p(1)} \otimes\vert \phi_{\gamma_2}\}_{p(2)} \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_{p(N)}\text{.}
 \end{split}\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(\eta=\pm1\)</span> for symmetric or anti-symmetric summation, <span class="math notranslate nohighlight">\(p\)</span> is an element of the <span class="math notranslate nohighlight">\(N\)</span> object permutation. <span class="math notranslate nohighlight">\(p(j)\)</span> is the <span class="math notranslate nohighlight">\(j\)</span>-th object of this permutation. <span class="math notranslate nohighlight">\(\overline{p}\)</span> represent an integer which is the number required to swap nearby elements in the permutation <span class="math notranslate nohighlight">\(p\)</span> such that it gets back to an ordered permutation. For example, for a 3 object permutation <span class="math notranslate nohighlight">\(p=[231]\)</span>, <span class="math notranslate nohighlight">\(\overline{p}=2\)</span> since we need to swap 31 then swap 21 to get to the permutation <span class="math notranslate nohighlight">\([123]\)</span>.  The summation contains <span class="math notranslate nohighlight">\(\frac{N!}{\prod_{\mu}n_{\mu}!}\)</span> terms. That’s why the normalization factor is <span class="math notranslate nohighlight">\(\sqrt{\frac{N!}{\prod_{\mu}n_{\mu}!}}^{-1}\)</span>.</p>
+<p>Here, <span class="math notranslate nohighlight">\(\eta=\pm1\)</span> for symmetric or anti-symmetric summation, <span class="math notranslate nohighlight">\(p\)</span> is an element of the <span class="math notranslate nohighlight">\(N\)</span> object permutation. <span class="math notranslate nohighlight">\(p(j)\)</span> is the <span class="math notranslate nohighlight">\(j\)</span>-th object of this permutation. <span class="math notranslate nohighlight">\(\overline{p}\)</span> represent an integer which is the number required to swap nearby elements in the permutation <span class="math notranslate nohighlight">\(p\)</span> such that it gets back to an ordered permutation. For example, for a 3 object permutation <span class="math notranslate nohighlight">\(p=[231]\)</span>, <span class="math notranslate nohighlight">\(\overline{p}=2\)</span> since we need to swap 31 then swap 21 to get to the permutation <span class="math notranslate nohighlight">\([123]\)</span>.  The summation contains <span class="math notranslate nohighlight">\(\frac{N!}{\prod_{\mu}n_{\mu}!}\)</span> terms. That’s why the normalization factor is <span class="math notranslate nohighlight">\(\sqrt{\frac{N!}{\prod_{\mu}n_{\mu}!}}^{-1}\)</span>. However, because of the Pauli exclusion principle, <span class="math notranslate nohighlight">\(n_{\mu}=0/1\)</span> in fermion case. For bosons, we don’t have such restriction.</p>
 <p>From this construction, we can also see the Pauli exclusion principle. When <span class="math notranslate nohighlight">\(\gamma_i=\gamma_j\)</span>, the pairs of permutations related by a swap between <span class="math notranslate nohighlight">\(p(i)\)</span> and <span class="math notranslate nohighlight">\(p(j)\)</span> will differ by a minus sign. All such pairs therefore cancels with each other and leads to the Pauli exclusion principle.</p>
 <p>We start from something simple and derive the generalized form for the many-body wave function when the indistinguishable nature of quantum particles are considered from the formal intuition. But what exactly are we doing here? Essentially, we are trying to construct the basis to describe the total Hilbert space <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>! Especially, we want to have the basis that satisfy the quantum statistics. To really check our understanding is correct, let’s try to ask ourselves: what’s the simplest non-trivial example that we can construct to build our intuition?</p>
 <div class="tip admonition">
 <p class="admonition-title">Exercise</p>
-<p>Consider the simplest nontrivial case: the three particle system.
+<p>Consider the simplest nontrivial case: the three boson system.
 The permutation of 3 particles has 6 different configurations. Let’s list them explicitly:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -468,7 +468,7 @@ From the Bose-Einstein distribution, we have <span class="math notranslate nohig
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="oscillators.html" class="btn btn-neutral float-left" title="Oscillators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="phonon_photon.html" class="btn btn-neutral float-right" title="Phonon and photon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="2nd_quantization.html" class="btn btn-neutral float-right" title="Second quantization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

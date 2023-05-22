@@ -41,7 +41,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Phonon and photon" href="phonon_photon.html" /> 
+    <link rel="next" title="Phonon and photon" href="phonon_photon.html" />
+    <link rel="prev" title="Free Fermions and Bosons" href="Fermion_Boson.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -75,8 +76,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Second quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
 </ul>
 </li>
 </ul>
@@ -108,8 +109,8 @@ const thebe_selector_output = ".output, .cell_output"
              
   <section class="tex2jax_ignore mathjax_ignore" id="second-quantization">
 <h1>Second quantization<a class="headerlink" href="#second-quantization" title="Permalink to this heading"></a></h1>
-<section id="qualitative-difference-between-non-interacting-quantum-many-particle-system-and-the-interacting-many-body-system">
-<h2>Qualitative difference between non-interacting quantum many-particle system and the interacting many-body system<a class="headerlink" href="#qualitative-difference-between-non-interacting-quantum-many-particle-system-and-the-interacting-many-body-system" title="Permalink to this heading"></a></h2>
+<section id="qualitative-difference-between-non-interacting-quantum-many-particle-system-and-the-interacting-many-body-system-why-second-quantization">
+<h2>Qualitative difference between non-interacting quantum many-particle system and the interacting many-body system: Why second quantization?<a class="headerlink" href="#qualitative-difference-between-non-interacting-quantum-many-particle-system-and-the-interacting-many-body-system-why-second-quantization" title="Permalink to this heading"></a></h2>
 <p>To deal with quantum many-body systems, it is important to keep the structure of its quantum statistics. <em>i.e.</em> whether the system is formed by fermions or bosons. In the previous section, we work in the basis that forming the partition function and related calculations are almost trivial.</p>
 <p>The reason that the related calculation is trivial is because we work in the eigen basis of the system. However, it is usually very challenging to get the eigen basis for the many-body quantum systems. Let’s try to understand the qualitative difference between the non-interacting many-particle systems and the interacting many-body systems.</p>
 <p>We can start from the simplest quantum system: a system formed by quantum bits (two-level system). The dimension of the Hilbert space for a quantum bit is 2. This is the simplest non-trivial case where we can have the non-trivial structure due to the superposition principle. (If there is only one basis in the space, we cannot show the superposition structure). Let’s use <span class="math notranslate nohighlight">\(\mathcal{H}_b\)</span> to represent the Hilbert space of the quantum bit. To be more specific, we can assign the two basis in the Hilbert space to be <span class="math notranslate nohighlight">\(\left\{ |\uparrow\rangle,|\downarrow\rangle \right\}\)</span>. The most general state in this space is given by <span class="math notranslate nohighlight">\(c_{\uparrow}|\uparrow\rangle+c_{\downarrow}|\downarrow\rangle\)</span>.</p>
@@ -122,9 +123,229 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Using some non-perturbative methods, such as mean-field theory or variational method to get the relevant states of our problem. We will introduce the idea of mean field theory which is a versatile method for interacting problem.</p></li>
 </ul>
 <p>Here, we will introduce a notation, <em>second quantization</em>, which is convenient to develop a perturbation analysis for the quantum many-body system. We have learned the single particle perturbation theory in quantum mechanics. The challenge here is how to develop the corresponding theory when we consider the quantum statistics(fermions or bosons) of our problem. To do that, we need to find a convenient representation for the many-body wave function and the many-body Hamiltonian. That representation is the <em>second quantization</em> formulation that we are going to introduce.</p>
+<p>Note that, the formal expression of second quantization looks pretty much like what you will learned in the quantum field theory. Second quantization is essentially an expression of quantum mechanics but just with many particles. However, in quantum field theory, usually there are other structures such as Lorentz invariance. So, make sure you know what you are doing!</p>
 </section>
 <section id="the-many-body-states-and-operators-in-the-second-quantization-representation">
 <h2>The many-body states and operators in the second quantization representation<a class="headerlink" href="#the-many-body-states-and-operators-in-the-second-quantization-representation" title="Permalink to this heading"></a></h2>
+<section id="review-of-the-occupation-number-representation">
+<h3>Review of the occupation number representation<a class="headerlink" href="#review-of-the-occupation-number-representation" title="Permalink to this heading"></a></h3>
+<p>We have briefly discussed the many-body Hilbert space <a class="reference internal" href="Fermion_Boson.html#mhilbertspace"><span class="std std-ref">The Hilbert space</span></a>. The key concept here is the occupation number representation of the wave function. Let’s review our notation briefly here.</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(|\{n_{u}\}\rangle\)</span> with <span class="math notranslate nohighlight">\(\sum_u n_u=N\)</span>: We use <span class="math notranslate nohighlight">\(|\rangle\)</span> to denote the many-particle wave function with quantum statistics considered. Here, <span class="math notranslate nohighlight">\(\{n_u\}\)</span> is the corresponding occupation number of the state.</p></li>
+<li><p><span class="math notranslate nohighlight">\(|u_i\}\)</span>: We use <span class="math notranslate nohighlight">\(|\}\)</span> to denote the single particle wave function, no information about quantum statistics.</p></li>
+<li><p>The corresponding many-particle wave function is</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+|\phi_N\rangle=\sqrt{\frac{\prod_{u}n_u!}{N!}}\sum_{p_{u}} P_{p_{u}}^{\eta}\left[|u_1,u_2,\cdots,u_{n_1};u_{n_1+1},u_{n_1+2},\cdots,u_{n_1+n_2};\cdots\}\right]\text{.}
+\]</div>
+<p>Here we define</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p_{u}\)</span>: permutation of <span class="math notranslate nohighlight">\(N\)</span> objects with <span class="math notranslate nohighlight">\(n_u\)</span> identical objects <span class="math notranslate nohighlight">\(|u\}\)</span>. The number of such permutation is <span class="math notranslate nohighlight">\(\frac{N!}{\prod n_u!}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span>: <span class="math notranslate nohighlight">\(\eta=\pm1\)</span> for Bosons/Fermions</p></li>
+<li><p><span class="math notranslate nohighlight">\(P_{p_{u}}^{\eta}\left[\quad\right]\)</span>: symmetrize or anti-symmetrize the single particle states with the corresponding phase factor.</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\overline{p_{u}}\)</span>: The number of nearest neighbor swapping to go from <span class="math notranslate nohighlight">\(p_{u}\)</span> to the reference permutation, <span class="math notranslate nohighlight">\(\{1,2,3,...\}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P^{\eta}_{p_{u}}\left[|u_1\}_1|u_2\}_2\cdots|u_{m}\}_{m}...\right]=\eta^{\overline{p_{u}}}|u_1\}_{p_{u}(1)}|u_2\}_{p_{u}(2)}\cdots|u_{m}\}_{p_{u}(m)}...\)</span>. When <span class="math notranslate nohighlight">\(\eta=-1\)</span> for fermion, this corresponds to the so called <em>Slater determinant</em>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="the-many-particle-operators">
+<h3>The many-particle operators<a class="headerlink" href="#the-many-particle-operators" title="Permalink to this heading"></a></h3>
+<section id="the-n-p-particle-operator">
+<h4>The <span class="math notranslate nohighlight">\(N_p\)</span> particle operator<a class="headerlink" href="#the-n-p-particle-operator" title="Permalink to this heading"></a></h4>
+<p>An operator that at least requires <span class="math notranslate nohighlight">\(N_p\)</span> single particle wave functions to determine its matrix element is considered as an <span class="math notranslate nohighlight">\(N_p\)</span> particle operator. (Trivial addition does not count)</p>
+<p>Or, we can say <span class="math notranslate nohighlight">\(N_p\)</span>-particle operators are operators that act non-trivially on <span class="math notranslate nohighlight">\(N_p\)</span> single-particle Hilbert space.</p>
+<p><strong>examples</strong></p>
+<ul class="simple">
+<li><p>1-particle operator:</p>
+<ul>
+<li><p>kinetic energy: given a single particle state <span class="math notranslate nohighlight">\(|q\}\)</span>, we can evaluate the matrix element <span class="math notranslate nohighlight">\(\{q|\frac{\widehat{P}^2}{2m}|q\}\)</span>.</p></li>
+<li><p>Zeeman field: given a spin state <span class="math notranslate nohighlight">\(|\uparrow\rangle\)</span>, we can evaluate the matrix element <span class="math notranslate nohighlight">\(\{\uparrow|B_z\widehat{S_z}|\uparrow\}\)</span>.</p></li>
+</ul>
+</li>
+<li><p>2-particle operator:</p>
+<ul>
+<li><p>Coulomb interaction: Usually we use <span class="math notranslate nohighlight">\(\widehat{H}_c=V(\widehat{r_1}-\widehat{r_2})\)</span> to express the Coulomb interaction. Given <span class="math notranslate nohighlight">\(|r_1\}\)</span> and <span class="math notranslate nohighlight">\(|r_2\}\)</span>, we can evaluate the matrix element <span class="math notranslate nohighlight">\(_1\{r_1|_2\{r_2|V(\widehat{r_1}-\widehat{r_2})|r_1\}_1|r_2\}_2\)</span>.</p></li>
+<li><p>exchange energy: It describes how two quantum spins are coupled. Usually we have <span class="math notranslate nohighlight">\(\widehat{H}_J=-J\widehat{S}_1\cdot\widehat{S}_2\)</span>. Given <span class="math notranslate nohighlight">\(|\uparrow\}_1|\uparrow\}_2\)</span>, we can evaluate the matrix element <span class="math notranslate nohighlight">\(\{\uparrow|\{\uparrow|\widehat{H}_J|\uparrow\}|\uparrow\}\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p>To learn how to express the many-body operators using the many-body basis, we start from the simplest non-trivial case: bosonic one-particle operator.</p>
+</section>
+</section>
+<section id="the-second-quantization-representation-of-an-one-particle-operator-for-bosons">
+<h3>The second quantization representation of an one-particle operator for bosons<a class="headerlink" href="#the-second-quantization-representation-of-an-one-particle-operator-for-bosons" title="Permalink to this heading"></a></h3>
+<p>Let’s use the following notation to define the 1-particle operator for <span class="math notranslate nohighlight">\(N\)</span> bosons. We have the definition of the 1-particle operator. Basically, we have all the matrix elements for the operator. That is, we have <span class="math notranslate nohighlight">\(_j\{\alpha|\widehat{O}^{(I)}_j|\beta\}_j\)</span>. For simplicity, we will drop the index <span class="math notranslate nohighlight">\(j\)</span> to represent the generic matrix element for single-particle operator, <span class="math notranslate nohighlight">\(\{\alpha|\widehat{O}^{(I)}|\beta\}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\widehat{O}^{(I)}_{total}&amp;=\sum_{j=1}^N\widehat{O}^{(I)}_j \\
+&amp;=\left(\sum_{\phi_N}|\phi_N\rangle\langle \phi_N|\right)\sum_{j=1}^N\widehat{O}^{(I)}_j\left(\sum_{\phi_N'}|\phi_N'\rangle\langle \phi_N'|\right)
+\end{split}\]</div>
+<p>The goal is to express the sum of the one-particle operator via the many-body wave function. To do that, we need to evaluate the matrix element <span class="math notranslate nohighlight">\(\langle \phi_N|\widehat{O}^{(I)}_{total}|\phi_N'\rangle\)</span>.</p>
+<p>Let’s try to imagine what we are facing. <span class="math notranslate nohighlight">\(|\phi_N\rangle\)</span> is the symmetric sum of the single particle wave function. Therefore, we have <span class="math notranslate nohighlight">\(\frac{N!}{\prod_{u}n_{u}!}\)</span> terms in <span class="math notranslate nohighlight">\(|\phi_N\rangle\)</span>. Similarly, for <span class="math notranslate nohighlight">\(|\phi_N'\rangle\)</span>, we have <span class="math notranslate nohighlight">\(\frac{N!}{\prod_{v}n_{v}!}\)</span>. Also, we have the <span class="math notranslate nohighlight">\(\sum_{j=1}^N\)</span> for the operator <span class="math notranslate nohighlight">\(\widehat{O}^{(I)}_j\)</span>. So we have lots of terms. It appears that it is hopeless for use to evaluate the matrix element. Luckily, lots of the terms are zero.</p>
+<p>We need to express the many-particle states using the single-particle states since that’s how we connect to the matrix element for the single-particle operator.</p>
+<p>The generic term that appears in sum that express the matrix element <span class="math notranslate nohighlight">\(\langle \phi_N|\widehat{O}^{(I)}_{total}|\phi_N'\rangle\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+&amp;\left(_{p_{\alpha}(1)}\{u_1|_{p_{\alpha}(2)}\{u_2|\cdots\right)\widehat{O}^{(I)}_j\left(|v_1\}_{p_{\beta}(1)}|v_2\}_{p_{\beta}(2)}\cdots\right)\\
+&amp;=\cdots\underbrace{_{p_{\alpha}(i)}\{u_i|O^{(I)}_j|v_k\}_{p_{\beta}(k)}}_{p_{\alpha}(i)=p_{\beta}(k)=j}\cdots \overbrace{\underbrace{_{p_{\alpha}(\tilde{i})}\{u_{\tilde{i}}|v_{\tilde{k}}\}_{p_{\beta}(\tilde{k})}}_{p_{\alpha}(\tilde{i})=p_{\beta}(\tilde{k})\neq j}}^{\delta_{u_{\tilde{i}},v_{\tilde{k}}}}\cdots \text{.}
+\end{split}\]</div>
+<p>Here, we explicitly show two possible terms when we evaluate the matrix element.
+Since the generic term in the <span class="math notranslate nohighlight">\(\sum_{p_{\alpha}}\sum_{p_{\beta}}\sum_j\)</span> is expressed using single particle states. Therefore, we need to pick the inner product in the same single particle Hilbert space. There are two possibilities, either we pick the <span class="math notranslate nohighlight">\(j\)</span>-th Hilbert space where <span class="math notranslate nohighlight">\(\widehat{O}^{(I)}_j\)</span> acts non-trivially or we pick other Hilbert spaces where we only need to take care of the inner product of two single particle states. Since the single-particle wave functions are orthonormal, the later case will give us a Kronecker delta function to make sure the single particle quantum number at that single particle Hilbert space to be identical.</p>
+<p>Let’s pulse and think about what’s the meaning of the above expression. Let’s consider the cases when the two sets of quantum numbers <span class="math notranslate nohighlight">\(\{u_i\}\)</span> and <span class="math notranslate nohighlight">\(\{v_i\}\)</span> are</p>
+<ol class="simple">
+<li><p>identical</p></li>
+<li><p>different by one quantum number</p></li>
+<li><p>different by two quantum numbers or more</p></li>
+</ol>
+<p>Starting from the simplest case when the two sets of quantum numbers are identical, <span class="math notranslate nohighlight">\(\{u_i\}=\{v_i\}\)</span>. For each permutation <span class="math notranslate nohighlight">\(p_{\alpha}\)</span>, we expect to find a <span class="math notranslate nohighlight">\(p_{\beta}\)</span> such that all the quantum number are arranged in the correct way such that the inner product in each Hilbert space is <span class="math notranslate nohighlight">\(1\)</span> and the full product is identical with the diagonal matrix element of the <span class="math notranslate nohighlight">\(j\)</span>-th operator <span class="math notranslate nohighlight">\(\widehat{O}^{(I)}_j\)</span>.</p>
+<p>In the second case, we have one quantum number that is different. To have non-zero contribution, we need to arrange the correct permutation as we discussed in the first case, but also, we need to put the different quantum numbers in the <span class="math notranslate nohighlight">\(j\)</span>-th Hilbert space such that it is evaluating the off-diagonal matrix element of <span class="math notranslate nohighlight">\(\widehat{O}^{(I)}_j\)</span> which will not be 0 in general. The reason is simple, if we don’t do that, the different quantum numbers need to do inner product at other single particle Hilbert space which will inevitably give us 0.</p>
+<p>Now it should be obvious that for one-particle operator, if the two sets of quantum numbers differ by more than one quantum number, the result will always be 0. Since we can put one of the distinct pair in the <span class="math notranslate nohighlight">\(j\)</span>-th Hilbert space to evaluate the off-diagonal matrix element of <span class="math notranslate nohighlight">\(\widehat{O}^{(I)}_j\)</span>. But the next pair of distinct quantum numbers will do the inner product in other single-particle Hilbert space and gives us 0!</p>
+<p>That’s a huge simplification, we only need to care about the first two situation. So let’s put things down in a more precise mathematical expression.</p>
+<section id="the-matrix-element-for-an-one-particle-operator-for-bosons">
+<h4>The matrix element for an one-particle operator for bosons<a class="headerlink" href="#the-matrix-element-for-an-one-particle-operator-for-bosons" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(\{u_i\}=\{v_i\}\)</span>, we should have</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+&amp;\sum_{p_{u}}\sum_{p_{v}}\sum_{j=1}^N\cdots _{p_{u}(i)}\{u_i|\widehat{O}^{(I)}_j|v_k\}_{p_{v}(k)}\cdots \delta_{u_{\tilde{i}},v_{\tilde{k}};p_{u}(\tilde{i})=p_{v}(\tilde{k})}\cdots \\
+&amp;=\underbrace{\frac{N!}{\prod_{u}(n_{u}!)}}_{\sum_{p_{u}},\sum_{p_{v}=p_{u}}}\underbrace{\left(\sqrt{\frac{\prod_{u} (n_{u}!)}{N!}}\right)^2}_{\text{normalization from }\langle \phi_N|,|\phi'_N\rangle}\sum_{j=1}^N \{u_i|\widehat{O}_j^{(I)}|u_i\}_{p_u(i)=j} \\
+&amp;=\sum_{\alpha} \{\alpha|\widehat{O}^{(I)}|\alpha\} n_{\alpha}
+\end{split}\]</div>
+<p>Notice here <span class="math notranslate nohighlight">\(p_{\beta}\)</span> is chosen such that the quantum number <span class="math notranslate nohighlight">\(\{v_i\}\)</span> is identical with <span class="math notranslate nohighlight">\(\{u_i\}\)</span>. Also, in the last equality, we switch from the single particle representation to the occupation number representation.</p>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(\{u_i\}=\{v_i\}\)</span> except when <span class="math notranslate nohighlight">\(i=i^*\)</span>. Now we should be careful, let’s use <span class="math notranslate nohighlight">\(\alpha,\beta\)</span> to label the quantum number <span class="math notranslate nohighlight">\(u_{i^*}=\alpha,v_{i^*}=\beta\)</span>. When we switch to occupation number representation, we should have</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\{u_i\}&amp;\to \{\cdots,n_{\alpha},\cdots,n_{\beta},\cdots\}\\
+\{v_i\}&amp;\to \{\cdots,n_{\alpha}-1,\cdots,n_{\beta}+1,\cdots\}
+\end{split}\]</div>
+<p>Here, we use the occupation number of <span class="math notranslate nohighlight">\(\{u_i\}\)</span> as the reference.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+&amp;\sum_{p_{u}}\sum_{p_{v}}\sum_{j=1}^N\cdots _{p_{u}(i)}\{u_i|\widehat{O}^{(I)}_j|v_k\}_{p_{v}(k)}\cdots \delta_{u_{\tilde{i}},v_{\tilde{k}};p_{u}(\tilde{i})=p_{v}(\tilde{k})}\cdots \\
+&amp;=\underbrace{\frac{N!\overbrace{n_{\alpha}}^{\beta \text{ can be attached with arbitrary }\alpha}}{\prod_{u}(n_{u}!)}}_{\sum_{p_{u}}\sum_{p_{v}}}\times \underbrace{\left(\sqrt{\frac{\prod_{u} (n_{u}!)}{N!}}\right)}_{\text{normalization from }\langle \phi_N|}\underbrace{\left(\sqrt{\frac{\prod_{v\neq\alpha,\beta} (n_{v}!)}{N!}}\sqrt{(n_{\alpha}-1)!(n_{\beta}+1)!}\right)}_{\text{normalization from }|\phi'_N\rangle}\times\\
+&amp;\sum_{j=1}^N \{u_{i^*}|\widehat{O}_j^{(I)}|v_{i^*}\}_{p_u(i^*)=p_v(i^*)} \\
+&amp;=\sqrt{n_{\alpha}(n_{\beta}+1)} \{\alpha|\widehat{O}^{(I)}|\beta\}
+\end{split}\]</div>
+<p>In the last equality, we use the fact that for each permutation, only when <span class="math notranslate nohighlight">\(j=p_u(i^*)=p_v(i^*)\)</span> will give non-zero matrix element.</p>
+<p>Recall that <span class="math notranslate nohighlight">\(\widehat{O}^{(I)}\)</span> is hermitian, so we should also have the hermitian conjugate matrix element with similar structure. We can simply perform the hermitian conjugate of the operator. This operation corresponds to <span class="math notranslate nohighlight">\(u\leftrightarrow v\)</span>, which is equivalent to <span class="math notranslate nohighlight">\(\alpha\leftrightarrow \beta\)</span>.
+The corresponding matrix element is</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{n_{\beta}(n_{\alpha}+1)} \{\beta|\widehat{O}^{(I)}|\alpha\}\text{.}
+\]</div>
+<ul class="simple">
+<li><p>Now we should see why the rest of the terms are zero! When <span class="math notranslate nohighlight">\(u_{i^*}=\alpha_1\neq v_{i^*}=\beta_1\)</span> and <span class="math notranslate nohighlight">\(u_{j^*}=\alpha_2\neq v_{j^*}=\beta_2\)</span>, we will have terms like</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\cdots \{u_{i^*}|\widehat{O}_j^{(I)}|v_{i^*}\}_{p_u(i^*)=p_v(i^*)}\cdots\{u_{j^*}|v_{j^*}\}_{p_u(j^*)=p_v(j^*)}\cdots=0\text{.}
+\]</div>
+<p>To sum up,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle \phi_N|\widehat{O}^{(I)}_{total}|\phi'_N\rangle=
+\left\{
+\begin{array}{c}
+\sum_{\alpha}(\widehat{O})_{\alpha,\alpha}n_{\alpha}\\
+\sum_{\alpha\neq \beta}(\widehat{O})_{\alpha,\beta}\sqrt{n_{\alpha}(n_{\beta}+1)}
+\end{array}
+\right.
+\end{split}\]</div>
+<p>We went through the long derivation and understand that even though the permutation gives us lots of combinations, most of the terms are zero. The next question is: can we have a concise way to systematically express the many-particle operator and states such that we can do the book keeping process more efficiently? That’s what we are going to show in the next section. We will introduce the idea of creation and destruction operators. We can see shortly why they are convenient tools to represent the many-particle operators. The representation of many-particle operators using the creation/destruction operators is the <strong>second quantization</strong>.</p>
+</section>
+<section id="the-bosonic-creation-destruction-operators">
+<h4>The bosonic creation/destruction operators<a class="headerlink" href="#the-bosonic-creation-destruction-operators" title="Permalink to this heading"></a></h4>
+<p>The bosonic creation/destruction operators, <span class="math notranslate nohighlight">\(b^{\dagger}_k/b_k\)</span> are defined as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{c}
+&amp;[b_k,b_{k'}^{\dagger}]=\delta_{k,k'}\\
+&amp;[b_k,b_{k'}]=[b_k^{\dagger},b_{k'}^{\dagger}]=0
+\end{array}
+\text{.}
+\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(k,k'\)</span> are single particle quantum numbers. <span class="math notranslate nohighlight">\([A,B]=AB-BA\)</span> is the commutator.
+The simplest Hermitian object we can form is</p>
+<div class="math notranslate nohighlight">
+\[
+\widehat{n}_k=b_k^{\dagger}b_k\text{.}
+\]</div>
+<p>At this moment, we don’t know what is <span class="math notranslate nohighlight">\(\widehat{n}_k\)</span>. However, we do know it is Hermitian and diagonalizable. So we can assign the eigen states of <span class="math notranslate nohighlight">\(\widehat{n}_k\)</span> as <span class="math notranslate nohighlight">\(|n_k\rangle\)</span> with</p>
+<div class="math notranslate nohighlight">
+\[
+\widehat{n}_k|n_k\rangle=n_k|n_k\rangle\text{.}
+\]</div>
+<p>The eigen value <span class="math notranslate nohighlight">\(n_k\ge0\)</span> since</p>
+<div class="math notranslate nohighlight">
+\[
+n_k=\langle n_k|\widehat{n}_k|n_k\rangle=\sum_m\langle n_k|b_k^{\dagger}|m\rangle\langle m|b_k|n_k\rangle=\sum_m |\langle m|b_k|n_k\rangle|^2\ge0\text{.}
+\]</div>
+<p>Next, we can ask what’s the effect of <span class="math notranslate nohighlight">\(b_k\)</span> when it is applied to <span class="math notranslate nohighlight">\(|n_k\rangle\)</span>. We can notice</p>
+<div class="math notranslate nohighlight">
+\[
+[\widehat{n}_k,b_k]=-b_k
+\]</div>
+<p>When apply this relation to <span class="math notranslate nohighlight">\(|n_k\rangle\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\widehat{n}_k(b_k|n_k\rangle)=(n_k-1)(b_k|n_k\rangle)
+\]</div>
+<p>So, <span class="math notranslate nohighlight">\(b_k\)</span> lower the quantum number by 1.
+From this observation, the possible values of <span class="math notranslate nohighlight">\(n_k\)</span> is fixed to be non-zero integers. If they are not, we can always have some <span class="math notranslate nohighlight">\(n_k&lt;0\)</span> which violates our previous proof. If <span class="math notranslate nohighlight">\(n_k\)</span> is integer, it will stop at <span class="math notranslate nohighlight">\(n_k=0\)</span>.</p>
+<p>Once we know this fact, we can construct the action of <span class="math notranslate nohighlight">\(b_k\)</span> on <span class="math notranslate nohighlight">\(|n_k\rangle\)</span> explicitly.</p>
+<p>Assume <span class="math notranslate nohighlight">\(b_k|n_k\rangle=c_1|n_k-1\rangle\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+n_k=\langle n_k|b_k^{\dagger}b_k|n_k\rangle=\langle n_k|c_1^*c_1|n_k-1\rangle=|c_1|^2
+\]</div>
+<p>So we know <span class="math notranslate nohighlight">\(c_1=\sqrt{n_k}e^{i\phi_1}\)</span>. Here the phase can be gauged away and we can have</p>
+<div class="math notranslate nohighlight">
+\[
+b_k|n_k\rangle=\sqrt{n_k}|n_k-1\rangle\text{.}
+\]</div>
+<p>Using the commutator relation, we can also show</p>
+<div class="math notranslate nohighlight">
+\[
+b_k^{\dagger}|n_k\rangle=\sqrt{n_k+1}|n_k+1\rangle\text{.}
+\]</div>
+<p>Using the bosonic creation/destruction operator, we can easily represent the operator <span class="math notranslate nohighlight">\(\widehat{O}^{(I)}_{total}\)</span> in the occupation basis as</p>
+<div class="math notranslate nohighlight">
+\[
+\widehat{O}^{(I)}_{total}=\sum_{\alpha,\beta} b_{\alpha}^{\dagger} [\widehat{O}^{(I)}]_{\alpha,\beta} b_{\beta}\text{.}
+\]</div>
+</section>
+<section id="bosonic-hamiltonian-in-second-quantization-representation">
+<h4>Bosonic Hamiltonian in second quantization representation<a class="headerlink" href="#bosonic-hamiltonian-in-second-quantization-representation" title="Permalink to this heading"></a></h4>
+<p>Here, we construct the representation for one-particle operator. The construction for bosonic two-particle operator can be found in <span id="id1">[<a class="reference internal" href="MD_files/biblio.html#id22" title="Alexander L Fetter and John Dirk Walecka. Quantum theory of many-particle systems. Courier Corporation, 2012.">FW12</a>]</span>. It will be left as an exercise.</p>
+</section>
+</section>
+<section id="what-is-left">
+<h3>What is left…<a class="headerlink" href="#what-is-left" title="Permalink to this heading"></a></h3>
+<ol>
+<li><p>Second quantization for fermions: to construct the second quantized expression of fermions, one needs to take care of the phase factor carefully. Therefore, we need to introduce fermionic creation/destruction operators.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	[f_k,f^{\dagger}_{k'}]_+&amp;=\delta_{k,k'}\\
+	[f_k,f_{k'}]+&amp;=[f^{\dagger}_k,f^{\dagger}_{k'}]_+=0
+	\end{split}\]</div>
+</li>
+<li><p>A concise treatment of the problem can be found in <span id="id2">[<a class="reference internal" href="MD_files/biblio.html#id23" title="Richard P Feynman. Statistical mechanics: a set of lectures. CRC press, 2018.">Fey18</a>]</span>.</p></li>
+<li><p>Perturbation theory using second quantization: Basically, that’s related to the Feynman diagram and is beyond the scope of the current course.</p></li>
+<li><p>Other quantum mechanical techniques can be reformulated in second quantization language. <em>e.g.</em> variational method, mean field theory, etc.</p></li>
+<li><p>In general, the second quantized Hamiltonian looks like</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\widehat{H}=\sum_{i,j}a_i^{\dagger}\{i|\widehat{T}|j\}a_j+\frac{1}{2}\sum_{i,j,k,l}a_i^{\dagger}a_j^{\dagger}\{ij|\widehat{V}|kl\}a_la_k \text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(a_k\)</span> can be bosonic or fermionic operators. <span class="math notranslate nohighlight">\(\widehat{T}\)</span> is the one-particle operators such as kinetic energy. <span class="math notranslate nohighlight">\(\widehat{V}\)</span> is the two-particle operators such as Coulomb interaction.</p>
+</section>
 </section>
 </section>
 
@@ -151,7 +372,8 @@ const thebe_selector_output = ".output, .cell_output"
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="phonon_photon.html" class="btn btn-neutral float-left" title="Phonon and photon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Fermion_Boson.html" class="btn btn-neutral float-left" title="Free Fermions and Bosons" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="phonon_photon.html" class="btn btn-neutral float-right" title="Phonon and photon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

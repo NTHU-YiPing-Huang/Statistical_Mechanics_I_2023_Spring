@@ -27,6 +27,7 @@ It seems above argument is quite general. However, something sutble will happen 
 
 Now we know we have Fermions and Bosons. How to describe such a quantum system? To define a quantum system, we need to specify the Hamiltonian, $H$, and the corresponding Hilbert space,$\mathcal{H}$. Here, I will give a quick overview of the general description of quantum many-body systems with $N$ particles.
 
+(MHilbertSpace)=
 ### The Hilbert space
 
 Let's consider the wave function of distinguishable many-body system first. Since the particles are distinguishable, we can label the Hilbert space accordingly. The total Hilbert space is
@@ -101,7 +102,7 @@ We basically has $N$ particles and each particle has its own quantum number $\ga
 The specific definition of occupation number representation is
 
 $$
-\{\underbrace{\gamma_1,\gamma_2,\cdots ,\gamma_{n_1}}_{n_1\text{ states in } \phi_{\mu=1}}; \underbrace{\gamma_{n_1+1},\gamma_{n_1+2},\cdots,\gamma_{n_1+n_2}}_{n_2 \text{ states in } \phi_{\mu=2}};\cdots;\underbrace{\gamma_{\sum_{\mu=1}^{M-1}+1},\gamma_{\sum_{\mu=1}^{M-1}+2},\cdots,\gamma_{\sum_{\mu=1}^{M}n_{\mu}}}_{n_M\text{ states in } \phi_{\mu=M}}\}\text{.}
+\{\underbrace{\gamma_1,\gamma_2,\cdots ,\gamma_{n_1}}_{n_1\text{ states in } \phi_{\mu=1}}; \underbrace{\gamma_{n_1+1},\gamma_{n_1+2},\cdots,\gamma_{n_1+n_2}}_{n_2 \text{ states in } \phi_{\mu=2}};\cdots;\underbrace{\gamma_{\sum_{\mu=1}^{M-1}n_{\mu}+1},\gamma_{\sum_{\mu=1}^{M-1}n_{\mu}+2},\cdots,\gamma_{\sum_{\mu=1}^{M}n_{\mu}}}_{n_M\text{ states in } \phi_{\mu=M}}\}\text{.}
 $$
 
 The generalized wave function for $N$ particle system should be
@@ -117,7 +118,7 @@ P_{S/AS}\left[ \vert \phi_{\gamma_1}\}_1 \otimes\vert \phi_{\gamma_2}\}_2 \otime
 &=\sum_{p}\eta^{\overline{p}}\vert \phi_{\gamma_1}\}_{p(1)} \otimes\vert \phi_{\gamma_2}\}_{p(2)} \otimes\cdots\otimes\vert \phi_{\gamma_N}\}_{p(N)}\text{.}
 $$
 
-Here, $\eta=\pm1$ for symmetric or anti-symmetric summation, $p$ is an element of the $N$ object permutation. $p(j)$ is the $j$-th object of this permutation. $\overline{p}$ represent an integer which is the number required to swap nearby elements in the permutation $p$ such that it gets back to an ordered permutation. For example, for a 3 object permutation $p=[231]$, $\overline{p}=2$ since we need to swap 31 then swap 21 to get to the permutation $[123]$.  The summation contains $\frac{N!}{\prod_{\mu}n_{\mu}!}$ terms. That's why the normalization factor is $\sqrt{\frac{N!}{\prod_{\mu}n_{\mu}!}}^{-1}$.
+Here, $\eta=\pm1$ for symmetric or anti-symmetric summation, $p$ is an element of the $N$ object permutation. $p(j)$ is the $j$-th object of this permutation. $\overline{p}$ represent an integer which is the number required to swap nearby elements in the permutation $p$ such that it gets back to an ordered permutation. For example, for a 3 object permutation $p=[231]$, $\overline{p}=2$ since we need to swap 31 then swap 21 to get to the permutation $[123]$.  The summation contains $\frac{N!}{\prod_{\mu}n_{\mu}!}$ terms. That's why the normalization factor is $\sqrt{\frac{N!}{\prod_{\mu}n_{\mu}!}}^{-1}$. However, because of the Pauli exclusion principle, $n_{\mu}=0/1$ in fermion case. For bosons, we don't have such restriction.
 
 From this construction, we can also see the Pauli exclusion principle. When $\gamma_i=\gamma_j$, the pairs of permutations related by a swap between $p(i)$ and $p(j)$ will differ by a minus sign. All such pairs therefore cancels with each other and leads to the Pauli exclusion principle.
 
@@ -125,7 +126,7 @@ We start from something simple and derive the generalized form for the many-body
 
 ```{admonition} Exercise
 :class: tip
-Consider the simplest nontrivial case: the three particle system.
+Consider the simplest nontrivial case: the three boson system.
 The permutation of 3 particles has 6 different configurations. Let's list them explicitly:
 
 $$

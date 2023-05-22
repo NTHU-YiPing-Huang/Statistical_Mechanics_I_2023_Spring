@@ -5,6 +5,7 @@
 ```{admonition} Summary
 :class: tip
 * Partition functions of interacting free systems are factorizable.
+* Introduction of second quantization formulation--It is an exact reformulation of standard description of many-particle quantum mechanics.
 * Sometimes, interacting free models can provide valuable insights for our system.
 	* $T^3$ dependence of specific heat $\to$ linear dispersive bosonic mode?
 	* $T$ dependence of specific heat $\to$ existence of fermi surface?
