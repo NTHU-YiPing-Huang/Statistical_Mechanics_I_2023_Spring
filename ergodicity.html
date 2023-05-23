@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
       <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -83,6 +84,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="free_systems.html">Other interacting free systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
 </ul>
 
         </div>
@@ -112,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
              
   <section class="tex2jax_ignore mathjax_ignore" id="ergodicity">
 <h1>Ergodicity<a class="headerlink" href="#ergodicity" title="Permalink to this heading"></a></h1>
-<p>Here we will introduce an abstract concept– ergodicity. The idea provides a connection between time-evolution and the statistical description of the system. However, prove a system is ergodic or not is in general difficult. (That’s why I skip the discussion during the lecture. For those who are interested in this concept, please check <span id="id1">[<a class="reference internal" href="MD_files/biblio.html#id3" title="James Sethna. Statistical mechanics: entropy, order parameters, and complexity. Volume 14. Oxford University Press, USA, 2021.">Set21</a>]</span> and the related references.) Therefore, the approach is usually we assume our system is ergodic. Then, we argue the <strong>time average</strong> equals <strong>micro canonical averages</strong>. We will discuss the concept of ergodicity here and the concept of <strong>micro canonical ensemble</strong> later.</p>
+<p>Here we will introduce an abstract concept– ergodicity. The idea provides a connection between time-evolution and the statistical description of the system. However, prove a system is ergodic or not is in general difficult. (That’s why I skip the discussion during the lecture. For those who are interested in this concept, please check <span id="id1">[<a class="reference internal" href="biblio.html#id3" title="James Sethna. Statistical mechanics: entropy, order parameters, and complexity. Volume 14. Oxford University Press, USA, 2021.">Set21</a>]</span> and the related references.) Therefore, the approach is usually we assume our system is ergodic. Then, we argue the <strong>time average</strong> equals <strong>micro canonical averages</strong>. We will discuss the concept of ergodicity here and the concept of <strong>micro canonical ensemble</strong> later.</p>
 <p>In the study of statistical mechanics, we are trying to describe the observables of many-body system under time-evolution using statistical description. The bottleneck that we are trying to pass is how to go from time-evolution to statistics? The Liouville’s theorem suggest that understanding the time-evolution in phase space is a good approach as it has the nice properties 3 that we discussed in the last section, <em>i.e.</em> it is possible to have a probability density function <span class="math notranslate nohighlight">\(\rho\)</span> does not depends on <span class="math notranslate nohighlight">\(t\)</span> explicitly. But it does not tell us how to derive the probability density function.</p>
 <p>The time average starting at initial condition <span class="math notranslate nohighlight">\(\xi(t=0)\)</span> is</p>
 <div class="math notranslate nohighlight">

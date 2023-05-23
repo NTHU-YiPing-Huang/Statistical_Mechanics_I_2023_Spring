@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
       <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -80,6 +81,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
 </ul>
 
         </div>
@@ -319,10 +322,15 @@ b_k^{\dagger}|n_k\rangle=\sqrt{n_k+1}|n_k+1\rangle\text{.}
 \[
 \widehat{O}^{(I)}_{total}=\sum_{\alpha,\beta} b_{\alpha}^{\dagger} [\widehat{O}^{(I)}]_{\alpha,\beta} b_{\beta}\text{.}
 \]</div>
+<p>We can show that the above mentioned matrix element can be derived by</p>
+<div class="math notranslate nohighlight">
+\[
+[\widehat{O}^{(I)}_{total}]_{\{n_u\},\{n_v\}}=\langle \{n_u\}|\sum_{\alpha,\beta} b_{\alpha}^{\dagger} [\widehat{O}^{(I)}]_{\alpha,\beta} b_{\beta}|\{n_v\}\rangle \text{.}
+\]</div>
 </section>
 <section id="bosonic-hamiltonian-in-second-quantization-representation">
 <h4>Bosonic Hamiltonian in second quantization representation<a class="headerlink" href="#bosonic-hamiltonian-in-second-quantization-representation" title="Permalink to this heading"></a></h4>
-<p>Here, we construct the representation for one-particle operator. The construction for bosonic two-particle operator can be found in <span id="id1">[<a class="reference internal" href="MD_files/biblio.html#id22" title="Alexander L Fetter and John Dirk Walecka. Quantum theory of many-particle systems. Courier Corporation, 2012.">FW12</a>]</span>. It will be left as an exercise.</p>
+<p>Here, we construct the representation for one-particle operator. The construction for bosonic two-particle operator can be found in <span id="id1">[<a class="reference internal" href="biblio.html#id22" title="Alexander L Fetter and John Dirk Walecka. Quantum theory of many-particle systems. Courier Corporation, 2012.">FW12</a>]</span>. It will be left as an exercise.</p>
 </section>
 </section>
 <section id="what-is-left">
@@ -335,7 +343,7 @@ b_k^{\dagger}|n_k\rangle=\sqrt{n_k+1}|n_k+1\rangle\text{.}
 	[f_k,f_{k'}]+&amp;=[f^{\dagger}_k,f^{\dagger}_{k'}]_+=0
 	\end{split}\]</div>
 </li>
-<li><p>A concise treatment of the problem can be found in <span id="id2">[<a class="reference internal" href="MD_files/biblio.html#id23" title="Richard P Feynman. Statistical mechanics: a set of lectures. CRC press, 2018.">Fey18</a>]</span>.</p></li>
+<li><p>A concise treatment of the problem can be found in <span id="id2">[<a class="reference internal" href="biblio.html#id23" title="Richard P Feynman. Statistical mechanics: a set of lectures. CRC press, 2018.">Fey18</a>]</span>.</p></li>
 <li><p>Perturbation theory using second quantization: Basically, that’s related to the Feynman diagram and is beyond the scope of the current course.</p></li>
 <li><p>Other quantum mechanical techniques can be reformulated in second quantization language. <em>e.g.</em> variational method, mean field theory, etc.</p></li>
 <li><p>In general, the second quantized Hamiltonian looks like</p></li>

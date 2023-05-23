@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
       <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -83,6 +84,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="free_systems.html">Other interacting free systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
 </ul>
 
         </div>
@@ -163,7 +166,7 @@ H=\sum_{i=1}^{N}\frac{\textbf{P}_i^2}{2m} +U(\textbf{R}_i)\text{.}
 \end{split}\]</div>
 <div class="tip admonition">
 <p class="admonition-title">What?</p>
-<p>We are studying the classical ideal gas model. Why indistinguishable is important? (Indistinguishiability is a subtle concept in quantum mechanics. How can “identical” particles to be “distniguishable” or “un-distinguishable”? Here, a good reference is <span id="id1">[<a class="reference internal" href="MD_files/biblio.html#id8" title="Ramamurti Shankar. Principles of quantum mechanics. Springer Science &amp; Business Media, 2012.">Sha12</a>]</span>. The question is whether the concept of path is still applicable. For quantum particles, the wave function interpretation will ruin the concept of path.) If we consider a lattice system with quantum spins, do we have the <span class="math notranslate nohighlight">\((N!)^{-1}\)</span> factor in the partition function?</p>
+<p>We are studying the classical ideal gas model. Why indistinguishable is important? (Indistinguishiability is a subtle concept in quantum mechanics. How can “identical” particles to be “distniguishable” or “un-distinguishable”? Here, a good reference is <span id="id1">[<a class="reference internal" href="biblio.html#id8" title="Ramamurti Shankar. Principles of quantum mechanics. Springer Science &amp; Business Media, 2012.">Sha12</a>]</span>. The question is whether the concept of path is still applicable. For quantum particles, the wave function interpretation will ruin the concept of path.) If we consider a lattice system with quantum spins, do we have the <span class="math notranslate nohighlight">\((N!)^{-1}\)</span> factor in the partition function?</p>
 </div>
 <p>The integration over <span class="math notranslate nohighlight">\(\textbf{R}_i\)</span> is simple, it just gives the volume <span class="math notranslate nohighlight">\(V\)</span>. We can use the property of delta function <span class="math notranslate nohighlight">\(\delta( Ax)=A^{-1}\delta(x)\)</span> to proceed. We will have</p>
 <div class="math notranslate nohighlight">

@@ -229,6 +229,12 @@ $$
 \widehat{O}^{(I)}_{total}=\sum_{\alpha,\beta} b_{\alpha}^{\dagger} [\widehat{O}^{(I)}]_{\alpha,\beta} b_{\beta}\text{.}
 $$
 
+We can show that the above mentioned matrix element can be derived by
+
+$$
+[\widehat{O}^{(I)}_{total}]_{\{n_u\},\{n_v\}}=\langle \{n_u\}|\sum_{\alpha,\beta} b_{\alpha}^{\dagger} [\widehat{O}^{(I)}]_{\alpha,\beta} b_{\beta}|\{n_v\}\rangle \text{.}
+$$
+
 #### Bosonic Hamiltonian in second quantization representation
 
 Here, we construct the representation for one-particle operator. The construction for bosonic two-particle operator can be found in {cite:p}`fetter2012quantum`. It will be left as an exercise.

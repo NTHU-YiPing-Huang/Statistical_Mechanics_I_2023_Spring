@@ -5,42 +5,45 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phases and phase transitions &mdash; 2023 Statistical Mechanics (I) - PHYS521000</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
+    <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-        <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-        <script src="../_static/tabs.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script src="_static/tabs.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-        <script src="../_static/design-tabs.js"></script>
+        <script src="_static/design-tabs.js"></script>
         <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-        <script async="async" src="../_static/sphinx-thebe.js"></script>
+        <script async="async" src="_static/sphinx-thebe.js"></script>
         <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Phases and phase diagram" href="phase_diagram.html" />
+    <link rel="prev" title="Phonon and photon" href="phonon_photon.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,10 +51,10 @@ const thebe_selector_output = ".output, .cell_output"
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../syllabus.html" class="icon icon-home"> Statistical Mechanics (I)
+            <a href="syllabus.html" class="icon icon-home"> Statistical Mechanics (I)
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -60,18 +63,27 @@ const thebe_selector_output = ".output, .cell_output"
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../numerical_tools.html">Numerical tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_tools.html">Numerical tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Postulates_SM.html">Postulates of statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../free_systems.html">Other interacting free systems</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="free_systems.html">Other interacting free systems</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Phases and phase transitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
 </ul>
 
         </div>
@@ -80,17 +92,17 @@ const thebe_selector_output = ".output, .cell_output"
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../syllabus.html">Statistical Mechanics (I)</a>
+          <a href="syllabus.html">Statistical Mechanics (I)</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../syllabus.html" class="icon icon-home"></a></li>
+      <li><a href="syllabus.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Phases and phase transitions</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/MD_files/phases_transitions.md" rel="nofollow"> View page source</a>
+            <a href="_sources/phases_transitions.md" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -146,11 +158,34 @@ const thebe_selector_output = ".output, .cell_output"
 <p>One of the reason that it is not obvious to appreciate this subject is because we need to start from something simple: we usually start with interacting free system. It is difficult to unleash the full potential of statistical mechanics. The study of phases, phase transitions and critical phenomena provides a very nice platform to introduce those fantastic ideas. Especially when interacting effect is included. However, due to the time limit, we will not be able to cover those amazing concepts this semester. We will discuss those ideas in more detail in the Statistical Mechanics (II).</p>
 </section>
 </section>
+<section id="the-spirit-of-model-studying">
+<h2>The spirit of model studying<a class="headerlink" href="#the-spirit-of-model-studying" title="Permalink to this heading"></a></h2>
+<p>In the study of phases or phase transitions, one will encounter various models. Ising model, Heisnberg model, Potts model, dimer models, height models, etc. They are related to various interesting concepts including topology and gauge theories. However, why should we study those models? What can we learn from studying of those models?</p>
+<p>We will discuss one of the important models – the Ising model. After we study the Ising model, one will soon realize that the model are quite ‘’simple’’. It is so simple that it is not clear why such a simple model would be relevant to describe our nature. Other above mentioned models also share similar features that they seem to be ad hoc models for special purposes. There should be some physical arguments about why we should study such models and how such ad hoc models could help us understand certain physical phenomena.</p>
+<p>Conceptually, it is tied with the idea that we are looking for a simplest nontrivial model to help us understand specific physical phenomena.
+From this perspective, the Ising model is the simplest non-trivial model to study phase transitions.
+To study phase transitions, at least the model needs to have two phases.
+Ising model host a disordered phase at high temperature and a ordered phase at zero temperature limit.
+Surprisingly, Ising model also demonstrate two types of phase transitions: the first order phase transition and continuous phase transition depends on whether the <span class="math notranslate nohighlight">\(Z_2\)</span> symmetry is explicitly broken.
+However, with only discrete symmetry, we don’t expect Ising model to demonstrate the behavior of phase transition with continuous symmetry.
+To study those phenomena, one needs to find a simplest nontrivial model with continuous symmetry.</p>
+<p>We describe the model as ‘simple’ models in a sense that the physical meaning and the expression of the model can be related clearly. But that does not mean they are easy to study or understand. However, because of the ‘simplicity’, one can go pretty far to understand those models. Sometimes, one can even solve it exactly.</p>
+<p>On the other hand, one could feel studying those models are usually far away from physical reality.
+How could such highly simplified models gives us hints about what happened in nature? The traditional approach is to start from microscopic physics and include different effects one by one.
+If certain phenomena is not captured, we include more parameters into our model.
+Such bottom up approach usually have very strong connection with microscopic details.
+However it usually also leads to a complicated Hamiltonian which can only be solved approximately.
+Comparing with the idealistic models which can be solved exactly, one might reach the conclusion that we should just give up those beautiful structure and use computers to help us solving those complicate but realistic model.</p>
+<p>The problem about this approach is about the generality. Starting from realistic but complicate models, one can make some predictions. Or even fit the experimental data pretty well by tuning parameters. However, what is the general structure for the model is usually hidden behind the complicated competing effects. The simple toy models might not give us quantitatively correct answers. However, the simple structure helps us to identify the universal behavior and the mechanism behind the universal behaviors.</p>
+<p>From this point of view, studying those simple but nontrivial models actually is quite valuable to understand the general behavior without the microscopic details. However, how to get the simplest non-trivial model as a starting point is an art. The theoretical framework that address this question is the concept of renormalization group(RG) and effective theory. One can use RG to identify the relevant ingredients for constructing a simplest non-trivial model. The two approach has their pros and cons, one should keep that in mind and use them according to different purposes.</p>
+</section>
 <section id="ising-model-the-simplest-non-trivial-system">
 <h2>Ising model–The simplest non-trivial system<a class="headerlink" href="#ising-model-the-simplest-non-trivial-system" title="Permalink to this heading"></a></h2>
 <p>It is amazing that Ising model teaches us so many things including the physics of phases and phase transitions. It is crucial to build a physical picture about what is a phase and what are the corresponding phase diagram from a simple system that we can grasp the key concepts. Therefore, we will focus on the phases and phase diagram of the ferromagnetic Ising model with nearest-neighbor interaction on hypercubic lattices.</p>
 <p>We will start with heuristic physical arguments to understand the phases and phase diagram. During the argument, we can observe the close relation between dimensionality and the strength of fluctuation. Then, we will switch to the more formal approach to derive the partition function of Ising models. In one-dimensional Ising model with external field, we will introduce the transfer matrix method which can give us the exact expression of the partition function. Unfortunately, the approach cannot be generalize to higher dimension. Therefore, we will introduce the mean-field approach which is more versatile but still with its own limitation. Hopefully, in the last lecture, we could introduce the Ginsburg-Landau theory and leave it as a teaser for the more advanced concept such as renormalization group and its connection with critical phenomena and universality class. Those interesting topics will be discussed in the next semester course of statistical mechanics (II).</p>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -166,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./MD_files"
+            path: "./."
         },
         predefinedOutput: true
     }
@@ -175,7 +210,10 @@ const thebe_selector_output = ".output, .cell_output"
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="phonon_photon.html" class="btn btn-neutral float-left" title="Phonon and photon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="phase_diagram.html" class="btn btn-neutral float-right" title="Phases and phase diagram" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

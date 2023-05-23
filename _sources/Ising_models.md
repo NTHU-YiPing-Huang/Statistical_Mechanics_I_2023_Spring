@@ -27,7 +27,7 @@ H=\sum_{\langle i,j\rangle} J S_iS_j-\sum_i H S_i; J<0 \text{.}
 $$
 
 
-# The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)
+## The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)
 
 We want to use the Ising model to study phases and phase transition. Could we argue that the model should show at least two phases?
 We can derive the partition function as

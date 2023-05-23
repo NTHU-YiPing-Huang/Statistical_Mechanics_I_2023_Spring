@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
       <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -41,6 +42,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Phases and phase transitions" href="phases_transitions.html" />
     <link rel="prev" title="Second quantization" href="2nd_quantization.html" /> 
 </head>
 
@@ -79,6 +81,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Phonon and photon</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
 </ul>
 
         </div>
@@ -108,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
              
   <section class="tex2jax_ignore mathjax_ignore" id="phonon-and-photon">
 <h1>Phonon and photon<a class="headerlink" href="#phonon-and-photon" title="Permalink to this heading"></a></h1>
-<p>We are going to discuss the statistical mechanics for phonon and photon. Here, we will brief discuss the origin of phonon and photon. The discussion will just focus on the physics and the relevant formalism to derive statistical mechanics descriptions. For readers who want to review details of the derivation, we will refer to the nice reference <span id="id1">[<a class="reference internal" href="MD_files/biblio.html#id10" title="Steven H Simon. The Oxford solid state basics. OUP Oxford, 2013.">Sim13</a>]</span>.</p>
+<p>We are going to discuss the statistical mechanics for phonon and photon. Here, we will brief discuss the origin of phonon and photon. The discussion will just focus on the physics and the relevant formalism to derive statistical mechanics descriptions. For readers who want to review details of the derivation, we will refer to the nice reference <span id="id1">[<a class="reference internal" href="biblio.html#id10" title="Steven H Simon. The Oxford solid state basics. OUP Oxford, 2013.">Sim13</a>]</span>.</p>
 <section id="phonon">
 <h2>Phonon<a class="headerlink" href="#phonon" title="Permalink to this heading"></a></h2>
 <p>Phonons are the quantum of sound wave. Therefore, in order to understand it, we need to have a rough picture of sound wave in solid. To get the core concept, we will focus on the simplest type of phonon: phonon in simple lattice system.</p>
@@ -130,7 +134,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The key difference between the system with <em>continuous</em> and <em>discrete</em> translation symmetry is the conservation law. For system with <em>continuous</em> translation symmetry, we have momentum conservation. For system with <em>discrete</em> translation symmetry, we have <em>quasimomentum</em> (or <em>crystal momentum</em>) conservation. The <em>quasimomentum</em> conservation means the wave vector <span class="math notranslate nohighlight">\(q\)</span> is well defined up to integer multiples of <span class="math notranslate nohighlight">\(G_0\)</span>. <em>i.e.</em> <span class="math notranslate nohighlight">\(q\equiv q+G_0\)</span>. Why it is so? it is related to the fact that the discrete representations of continuous wave for wave with wave vector <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(q+G_0\)</span> are indistinguishable. The phenomena is called <em>wave aliasing</em>. See the <a class="reference external" href="https://en.wikipedia.org/wiki/Crystal_momentum">wikipedia link</a> and the <a class="reference external" href="https://en.wikipedia.org/wiki/Crystal_momentum#/media/File:Quasimomentum.gif">wikipedia gif</a>.</p>
 <p>Because of the quasimomentum conservation, we usually focus our description for <span class="math notranslate nohighlight">\(q\in(-G_0/2,G_0/2]\)</span>. This region is called the first Brillouin zone.</p>
 <p>Usually, when we open the textbook of solid state physics, we will see two phonon bands in the first Brillouin zone. The branch that is gapless with <span class="math notranslate nohighlight">\(\lim_{|q|\to0}E(q)\propto |q|\)</span> is the acoustic phonon. The branch that is gapped is the optical phonon.</p>
-<p>In the last section, we discussed <span class="math notranslate nohighlight">\(N\)</span> decoupled quantum harmonic oscillator. They can be considered as a good approximation to the optical phonon if the gapped modes are approximately <span class="math notranslate nohighlight">\(q\)</span> independent. In fact, that is the Einstein’s phonon model<span id="id2">[<a class="reference internal" href="MD_files/biblio.html#id11" title="Albert Einstein. Die plancksche theorie der strahlung und die theorie der spezifischen wärme. Annalen der Physik, 327(1):180–190, 1907.">Ein07</a>]</span>.</p>
+<p>In the last section, we discussed <span class="math notranslate nohighlight">\(N\)</span> decoupled quantum harmonic oscillator. They can be considered as a good approximation to the optical phonon if the gapped modes are approximately <span class="math notranslate nohighlight">\(q\)</span> independent. In fact, that is the Einstein’s phonon model<span id="id2">[<a class="reference internal" href="biblio.html#id11" title="Albert Einstein. Die plancksche theorie der strahlung und die theorie der spezifischen wärme. Annalen der Physik, 327(1):180–190, 1907.">Ein07</a>]</span>.</p>
 </section>
 <section id="classical-1d-sound-wave">
 <h3>Classical 1D sound wave<a class="headerlink" href="#classical-1d-sound-wave" title="Permalink to this heading"></a></h3>
@@ -239,6 +243,7 @@ After some algebra, we found</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="2nd_quantization.html" class="btn btn-neutral float-left" title="Second quantization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="phases_transitions.html" class="btn btn-neutral float-right" title="Phases and phase transitions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

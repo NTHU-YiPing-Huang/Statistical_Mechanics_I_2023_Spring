@@ -10,32 +10,6 @@ Those phases can be achieve via different physical condition. For example, we ca
 
 In fact, there are more than three phases for a many-body system. We could have ferromagnetic for magnetic systems, we could have insulator as plastic, we could have plasma as our sun. There are so many phases out there. How to understand them? How to characterize the transition between different phases? Why the transition between different phases could be an interesting subject to understand? We will try to elaborate this part.
 
-## The spirit of model studying
-
-In the study of phases or phase transitions, one will encounter various models. Ising model, Heisnberg model, Potts model, dimer models, height models, etc. They are related to various interesting concepts including topology and gauge theories. However, why should we study those models? What can we learn from studying of those models?
-
-We will discuss one of the important models -- the Ising model. After we study the Ising model, one will soon realize that the model are quite ``simple''. It is so simple that it is not clear why such a simple model would be relevant to describe our nature. Other above mentioned models also share similar features that they seem to be ad hoc models for special purposes. There should be some physical arguments about why we should study such models and how such ad hoc models could help us understand certain physical phenomena.
-
-Conceptually, it is tied with the idea that we are looking for a simplest nontrivial model to help us understand specific physical phenomena.
-From this perspective, the Ising model is the simplest non-trivial model to study phase transitions.
-To study phase transitions, at least the model needs to have two phases.
-Ising model host a disordered phase at high temperature and a ordered phase at zero temperature limit. 
-Surprisingly, Ising model also demonstrate two types of phase transitions: the first order phase transition and continuous phase transition depends on whether the $Z_2$ symmetry is explicitly broken. 
-However, with only discrete symmetry, we don't expect Ising model to demonstrate the behavior of phase transition with continuous symmetry.
-To study those phenomena, one needs to find a simplest nontrivial model with continuous symmetry.
-
-We describe the model as 'simple' models in a sense that the physical meaning and the expression of the model can be related clearly. But that does not mean they are easy to study or understand. However, because of the 'simplicity', one can go pretty far to understand those models. Sometimes, one can even solve it exactly.
-
-On the other hand, one could feel studying those models are usually far away from physical reality.
-How could such highly simplified models gives us hints about what happened in nature? The traditional approach is to start from microscopic physics and include different effects one by one.
-If certain phenomena is not captured, we include more parameters into our model.
-Such bottom up approach usually have very strong connection with microscopic details.
-However it usually also leads to a complicated Hamiltonian which can only be solved approximately.
-Comparing with the idealistic models which can be solved exactly, one might reach the conclusion that we should just give up those beautiful structure and use computers to help us solving those complicate but realistic model.
-
-The problem about this approach is about the generality. Starting from realistic but complicate models, one can make some predictions. Or even fit the experimental data pretty well by tuning parameters. However, what is the general structure for the model is usually hidden behind the complicated competing effects. The simple toy models might not give us quantitatively correct answers. However, the simple structure helps us to identify the universal behavior and the mechanism behind the universal behaviors.
-
-From this point of view, studying those simple but nontrivial models actually is quite valuable to understand the general behavior without the microscopic details. However, how to get the simplest non-trivial model as a starting point is an art. The theoretical framework that address this question is the concept of renormalization group(RG) and effective theory. One can use RG to identify the relevant ingredients for constructing a simplest non-trivial model. The two approach has their pros and cons, one should keep that in mind and use them according to different purposes.
 
 
 ## The formal description of our system
